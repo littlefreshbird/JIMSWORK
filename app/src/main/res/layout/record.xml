@@ -75,14 +75,13 @@
             android:id="@+id/rgSex"
             android:layout_width="fill_parent"
             android:layout_height="50dp"
-            android:layout_marginRight="30dp"
             android:checkedButton="@+id/male"
             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radiobutton1"
                 android:textSize="10dp"
-                android:layout_marginLeft="210dp"
+                android:layout_marginLeft="190dp"
                 android:checked="true"
                 android:paddingTop="5dip"
                 android:layout_width="wrap_content"

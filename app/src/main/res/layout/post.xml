@@ -32,7 +32,7 @@
                 android:layout_width="fill_parent"
                 android:layout_margin="12dp"
                 android:textSize="@dimen/micro_text_size"
-                android:hint="请输入信息..."
+                android:hint="暂定格式..."
                 android:gravity="start"
                 android:maxLength="500"
 

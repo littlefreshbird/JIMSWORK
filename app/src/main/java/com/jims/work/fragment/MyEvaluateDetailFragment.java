@@ -21,10 +21,9 @@ import static com.jims.work.R.id.ratingbar;
 
 public class MyEvaluateDetailFragment extends Fragment {
 
-    private String[] name = { "张强" };
+    private String[] name = { "王林" };
 
     private String[] desc = { "2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合，这次多亏了这个医生"};
-
     private int[] imageids = { R.drawable.image_myhead};
     private String[] time = {"2016-09-29"};
     private String[] client ={"满意度:"};
@@ -46,6 +45,7 @@ public class MyEvaluateDetailFragment extends Fragment {
             listItem.put("time", time[i]);
             listItem.put("client", client[i]);
             listItem.put("count", count[i]);
+
             listItem.put("sexmaletop", sexmaletop[i]);
 
             listItems.add(listItem);
@@ -57,10 +57,6 @@ public class MyEvaluateDetailFragment extends Fragment {
                 new int[] { R.id.tweet_listitem_userface, R.id.tweet_listitem_username,R.id.tweetcontent ,R.id.questiontime,R.id.tweet_listitem_client,R.id.tweet_listitem_commentCount,R.id.sexmaletop});
         lvinfo=(ListView)view.findViewById(R.id.tweet_listitem_content);
         lvinfo.setAdapter(simpleAdapter); // ΪListView��������
-
-
-
-
         initView(view);
         return view;
     }

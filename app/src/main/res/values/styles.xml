@@ -88,4 +88,16 @@
         <item name="android:minWidth">80dip</item>
         <item name="android:maxWidth">80dip</item>
     </style>
+
+    <!-- 小标题字体style -->
+    <style name="SmallTitleString">
+        <item name="android:textColor">@color/lightgrey</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 大标题字体style -->
+    <style name="BigTitleString">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

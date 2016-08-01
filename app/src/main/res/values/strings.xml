@@ -89,7 +89,10 @@
 
     <string name="voice_short_tips">录音时间太短</string>
 
+    <string name="reply">回复</string>
 
+    <item name="tag_first" type="id"></item>
+    <item name="tag_second" type="id"></item>
     <string name="wenzhen">我的问诊</string>
     <string name="fuwu">我的服务</string>
 
