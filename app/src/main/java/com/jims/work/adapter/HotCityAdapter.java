@@ -1,14 +1,15 @@
 package com.jims.work.adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.jims.work.CityPositionActivity;
 import com.jims.work.R;
 import com.jims.work.entity.City;
 
@@ -59,7 +60,17 @@ public class HotCityAdapter extends BaseAdapter {
 
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(mContext,mHotCityList.get(position).getName() + "", Toast.LENGTH_SHORT).show();
+				//Toast.makeText(mContext,mHotCityList.get(position).getName() + "", Toast.LENGTH_SHORT).show();
+				SharedPreferences pref = mContext.getSharedPreferences("data",Context.MODE_PRIVATE);
+				SharedPreferences.Editor editor = pref.edit();
+				editor.putString("CITY",mHotCityList.get(position).getName());
+				editor.commit();
+				if(CityPositionActivity.class.isInstance(mContext))
+				{
+					// 转化为activity，然后finish就行了
+					CityPositionActivity activity = (CityPositionActivity)mContext;
+					activity.finish();
+				}
 			}
 		});
 		return convertView;

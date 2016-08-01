@@ -71,22 +71,21 @@ public class DayNewsListAdapter extends BaseCalendarListAdapter<ListCanlendarIte
         contentViewHolder.state.setText(model.getState());
         if (model.getState().equals("未开始")) {
             contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_unstart,null));
-            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.lightcoral));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.khaki,null));
         }else if (model.getState().equals("进行中")) {
             contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_starting,null));
-            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.color_theme));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.color_theme,null));
         }else if (model.getState().equals("已结束")) {
             contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_started,null));
-            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.gray));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.gray,null));
         }
 //        GenericDraweeHierarchy hierarchy = GenericDraweeHierarchyBuilder.newInstance(convertView.getResources())
 //                .setRoundingParams(RoundingParams.asCircle())
 //                .build();
 //        contentViewHolder.newsImageView.setHierarchy(hierarchy);
 //        contentViewHolder.newsImageView.setImageURI(Uri.parse(model.getImages().get(0)));
-        Picasso.with(convertView.getContext()).load(Uri.parse(model.getImages())).placeholder(R.drawable.load_logo).error(R.drawable.load_logo)
+        Picasso.with(convertView.getContext()).load(Uri.parse(model.getImages()))
                 .into(contentViewHolder.image);
-
         return convertView;
     }
 
