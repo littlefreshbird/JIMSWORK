@@ -52,13 +52,16 @@
         <activity android:name=".NewDoctorListActivity" />
         <activity android:name=".RecordActivity" />
         <activity android:name=".DoctorClassActivity" />
-        <activity android:name=".DoctorMessageActivity" />
         <activity android:name=".MyServiceActivity" />
         <activity android:name=".MyinquiryDetailAcivity" />
         <activity android:name=".MyEvaluateDetailAcivity" />
         <activity android:name=".MyHistoryListActivity" />
         <activity android:name=".MyComplaintActivity" />
         <activity android:name=".CaseLoadingActivity"></activity>
+        <activity android:name=".RecordcaseActivity"></activity>
+        <activity android:name=".MyComplaintDetailActivity"></activity>
+        <activity android:name=".ReplyActivity"></activity>
+
     </application>
 
 </manifest>
