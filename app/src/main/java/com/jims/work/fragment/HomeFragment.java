@@ -23,6 +23,7 @@ import com.jims.work.FreeTreatActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
+import com.jims.work.ScanPatientActivity;
 import com.jims.work.view.UPMarqueeView;
 
 import java.util.ArrayList;
@@ -383,7 +384,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
                 break;
             case R.id.layout_freetreat: //义诊
-                startActivity(new Intent(getActivity(), FreeTreatActivity.class));
+                startActivity(new Intent(getActivity(), ScanPatientActivity.class));
                 break;
 
             case R.id.img_home_search_code: // 二维码扫描

@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.example.just.myapplication.MainActivity">
+       <item
+        android:id="@+id/deletephoto"
+        android:showAsAction="never"
+        android:title="删除照片"
+        tools:ignore="AppCompatResource"/>
+
+
+    </menu>
