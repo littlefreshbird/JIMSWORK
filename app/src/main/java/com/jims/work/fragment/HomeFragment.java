@@ -3,6 +3,7 @@ package com.jims.work.fragment;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,7 +17,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jims.work.CaseLoadingActivity;
+import com.jims.work.CityPositionActivity;
 import com.jims.work.DoctorClassActivity;
+import com.jims.work.FreeTreatActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
@@ -24,6 +27,8 @@ import com.jims.work.view.UPMarqueeView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -34,6 +39,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private TextView mTextview;
     private ImageView mImageView;
     private ImageView mImgCover;
+    private TextView mTextView;
     private int mLastPos;// 记录上一次ViewPager的位置
     private boolean isDragging;// 是否被拖拽
     private boolean isFoucusRight; // ScrollView是否滚动到右侧
@@ -57,10 +63,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         autoScroll();
         initParam();
         initdata();
+        initcity();
         initupView();
         setOnListener();
         return layout;
 
+    }
+
+    private void initcity() {
+        SharedPreferences pref = getContext().getSharedPreferences("data",MODE_PRIVATE);
+        String city = pref.getString("CITY","北京");//第二个参数为默认值
+        mTextview.setText(city);
     }
 
     private void initView() {
@@ -68,8 +81,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mImgCover = (ImageView) layout.findViewById(R.id.img_cover);
         mImageView = (ImageView) layout.findViewById(R.id.img_indicator01);
 
+       mTextview = (TextView) layout.findViewById(R.id.top_title_text);
+        mTextview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity(), CityPositionActivity.class));
+
+
+            }
+        });
 
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -157,7 +181,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
 
-
     private class MyPagerAdapter extends FragmentStatePagerAdapter {
 
         public MyPagerAdapter(FragmentManager fm) {
@@ -227,6 +250,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         }
     }
+
     /**
      * 实例化控件
      */
@@ -238,6 +262,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
      * 初始化数据
      */
     private void initdata() {
+
         data = new ArrayList<>();
         data.add("家人给2岁孩子喝这个，孩子智力倒退10岁!!!");
         data.add("冬季养生的方法和要点！");
@@ -247,6 +272,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         data.add("冬季为何是哮喘发作的高峰期！");
 
     }
+
     /**
      * 初始化界面程序
      */
@@ -309,6 +335,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             upviews.add(moreView);
         }
     }
+
     private void setOnListener() {
 
         layout.findViewById(R.id.quick_ask).setOnClickListener(this);
@@ -319,15 +346,28 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_special2).setOnClickListener(this);
         layout.findViewById(R.id.layout_special3).setOnClickListener(this);
         layout.findViewById(R.id.layout_special4).setOnClickListener(this);
+        layout.findViewById(R.id.layout_freetreat).setOnClickListener(this);
 
 
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initcity();
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+           /* case R.id.top_title_text: // 城市定位
+                startActivity(new Intent(getActivity(), CityPositionActivity.class));
+               // getActivity().finish();
+                break;*/
+
             case R.id.quick_ask: // 快速问诊
                 startActivity(new Intent(getActivity(), PostActivity.class));
-                getActivity().finish();
+                //getActivity().finish();
                 break;
             case R.id.quick_find: // 查找医生
                 startActivity(new Intent(getActivity(), DoctorClassActivity.class));
@@ -347,10 +387,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.layout_special4: //
                 startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
                 break;
+            case R.id.layout_freetreat: //义诊
+                startActivity(new Intent(getActivity(), FreeTreatActivity.class));
+                break;
 
             case R.id.img_home_search_code: // 二维码扫描
-                 // ((MainActivity) getActivity()).scanQRCode();
-                 break;
+                // ((MainActivity) getActivity()).scanQRCode();
+                break;
             default:
                 break;
         }

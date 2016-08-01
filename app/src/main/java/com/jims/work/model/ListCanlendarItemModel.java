@@ -9,12 +9,14 @@ public class ListCanlendarItemModel {
     private String images;
     private String address;
     private String keshi;
+    private String state;
 
-    public ListCanlendarItemModel(String title, String images, String address, String keshi) {
+    public ListCanlendarItemModel(String title, String images, String address, String keshi, String state) {
         this.title = title;
         this.images = images;
         this.address = address;
         this.keshi = keshi;
+        this.state = state;
     }
 
     public String getTitle() {
@@ -47,5 +49,13 @@ public class ListCanlendarItemModel {
 
     public void setKeshi(String keshi) {
         this.keshi = keshi;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

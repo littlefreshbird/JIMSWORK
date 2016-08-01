@@ -68,13 +68,25 @@ public class DayNewsListAdapter extends BaseCalendarListAdapter<ListCanlendarIte
         contentViewHolder.time.setText(date);
         contentViewHolder.address.setText(model.getAddress());
         contentViewHolder.keshi.setText(model.getKeshi());
+        contentViewHolder.state.setText(model.getState());
+        if (model.getState().equals("未开始")) {
+            contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_unstart,null));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.lightcoral));
+        }else if (model.getState().equals("进行中")) {
+            contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_starting,null));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.color_theme));
+        }else if (model.getState().equals("已结束")) {
+            contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_started,null));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.gray));
+        }
 //        GenericDraweeHierarchy hierarchy = GenericDraweeHierarchyBuilder.newInstance(convertView.getResources())
 //                .setRoundingParams(RoundingParams.asCircle())
 //                .build();
 //        contentViewHolder.newsImageView.setHierarchy(hierarchy);
 //        contentViewHolder.newsImageView.setImageURI(Uri.parse(model.getImages().get(0)));
-        Picasso.with(convertView.getContext()).load(Uri.parse(model.getImages()))
+        Picasso.with(convertView.getContext()).load(Uri.parse(model.getImages())).placeholder(R.drawable.load_logo).error(R.drawable.load_logo)
                 .into(contentViewHolder.image);
+
         return convertView;
     }
 
@@ -85,11 +97,13 @@ public class DayNewsListAdapter extends BaseCalendarListAdapter<ListCanlendarIte
     }
 
 
-    static class ViewHolder {
+    static  class ViewHolder {
         @BindView(R.id.image)
         ImageView image;
         @BindView(R.id.title)
         TextView title;
+        @BindView(R.id.state)
+        TextView state;
         @BindView(R.id.keshi)
         TextView keshi;
         @BindView(R.id.address)
