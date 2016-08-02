@@ -87,10 +87,8 @@
         <activity android:name=".CityPositionActivity"></activity>
         <activity android:name=".ReplyActivity"/>
         <activity android:name=".ScanPatientActivity"></activity>
-
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="qoBNVZqS1moe1uPuoCb6xtvWGLqCrnEA"/>
     </application>
-
 </manifest>
