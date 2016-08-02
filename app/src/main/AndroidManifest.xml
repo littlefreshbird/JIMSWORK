@@ -73,7 +73,6 @@
         <activity android:name=".NewDoctorListActivity" />
         <activity android:name=".RecordActivity" />
         <activity android:name=".DoctorClassActivity" />
-        <activity android:name=".DoctorMessageActivity" />
         <activity android:name=".MyServiceActivity" />
         <activity android:name=".MyinquiryDetailAcivity" />
         <activity android:name=".MyEvaluateDetailAcivity" />
