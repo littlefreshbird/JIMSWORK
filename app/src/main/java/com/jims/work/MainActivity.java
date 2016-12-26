@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //gong
         //hdy
+        //312321312312
         setContentView(R.layout.activity_main);
     }
 }
