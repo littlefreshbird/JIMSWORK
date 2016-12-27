@@ -12,7 +12,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.EditText;
 
-import com.doctor.demo.R;
+
 
 
 public class EditTextWithDel extends EditText {
