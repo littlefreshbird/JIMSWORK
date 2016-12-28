@@ -38,9 +38,9 @@ public class EditTextWithDel extends EditText {
 		mContext = context;
 		init();
 	}
-	
+
 	private void init() {
-		imgAble = mContext.getResources().getDrawable(R.drawable.delete);
+//		imgAble = mContext.getResources().getDrawable(R.drawable.delete);
 		addTextChangedListener(new TextWatcher() {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {}
@@ -53,14 +53,14 @@ public class EditTextWithDel extends EditText {
 		});
 		setDrawable();
 	}
-	
+
 	private void setDrawable() {
 		if(length() < 1)
 			setCompoundDrawablesWithIntrinsicBounds(null, null, imgInable, null);
 		else
 			setCompoundDrawablesWithIntrinsicBounds(null, null, imgAble, null);
 	}
-	
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (imgAble != null && event.getAction() == MotionEvent.ACTION_UP) {
@@ -70,7 +70,7 @@ public class EditTextWithDel extends EditText {
             Rect rect = new Rect();
             getGlobalVisibleRect(rect);
             rect.left = rect.right - 50;
-            if(rect.contains(eventX, eventY)) 
+            if(rect.contains(eventX, eventY))
             	setText("");
         }
         return super.onTouchEvent(event);
