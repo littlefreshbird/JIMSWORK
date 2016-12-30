@@ -82,7 +82,7 @@
                android:id="@+id/zhaohuipass"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:textColor="@color/black"
+               android:textColor="@color/gray"
                android:layout_gravity="right"
                android:layout_marginTop="5dp"
                android:layout_marginRight="28dp"
