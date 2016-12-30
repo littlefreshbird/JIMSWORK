@@ -20,7 +20,7 @@ import com.jims.work.fragment.base.BaseFragment;
  * Created by gong on 2016/12/27.
  */
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private ViewPager mPager;
     private int[] mBanner = new int[]{R.drawable.img_home_banner1,
             R.drawable.img_home_banner2, R.drawable.img_home_banner3,
@@ -32,7 +32,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private boolean isDragging;// 是否被拖拽
     private boolean isFoucusRight; // ScrollView是否滚动到右侧
     private View layout;
-
 
 
     @Override
@@ -162,7 +161,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private class MyPagerAdapter  extends FragmentStatePagerAdapter {
+    private class MyPagerAdapter extends FragmentStatePagerAdapter {
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -183,7 +182,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private class MyPagerListener implements   ViewPager.OnPageChangeListener {
+    private class MyPagerListener implements ViewPager.OnPageChangeListener {
 
         @Override
         public void onPageScrolled(int position, float positionOffset,
@@ -232,3 +231,4 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+}

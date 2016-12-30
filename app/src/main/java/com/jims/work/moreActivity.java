@@ -1,8 +1,7 @@
 package com.jims.work;
 
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -36,7 +35,7 @@ public class MoreActivity extends FragmentActivity implements View.OnClickListen
     LinearLayout layoutAbout;
     @BindView(R.id.btn_logout)
     Button btnLogout;
-
+//kjkjkjkjk
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

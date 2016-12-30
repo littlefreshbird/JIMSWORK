@@ -73,6 +73,9 @@
         android:layout_below="@+id/title_relativelayout">
 
 
+        <include
+            android:id="@+id/layout_home_banner"
+            layout="@layout/fragment_banner" />
 
 
     </LinearLayout>
