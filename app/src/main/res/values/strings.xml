@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">JIMSWORK</string>
+    <string name="home">首页</string>
+    <string name="health">寻医</string>
+    <string name="service">我的服务</string>
+    <string name="mine">我的</string>
+
 </resources>
