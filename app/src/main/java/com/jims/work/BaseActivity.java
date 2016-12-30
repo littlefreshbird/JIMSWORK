@@ -12,11 +12,7 @@ import android.view.Window;
 import com.jims.work.utils.BaseInterfaces;
 
 
-/**
- * BaseActivity
- * @author Administrator
- *
- */
+
 public  class BaseActivity extends FragmentActivity implements BaseInterfaces {
 
 	private Dialog loadbar = null;
