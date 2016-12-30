@@ -311,4 +311,6 @@
 
     <!--主题-->
     <color name="color_theme">#32cd32</color>
+    <!--个人中心背景色-->
+    <color name="android_layout_bg">#f2f3f5</color>
 </resources>
