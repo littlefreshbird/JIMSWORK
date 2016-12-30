@@ -14,4 +14,14 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
     </style>
+
+    <!-- 筛选菜单ToggleButton -->
+    <style name="FilterToggleButton">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:textOn"></item>
+        <item name="android:textOff"></item>
+        <item name="android:background">@drawable/btn_open</item>
+    </style>
 </resources>
