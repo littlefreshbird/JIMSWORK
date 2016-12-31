@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
     <!-- 标题栏布局 -->
 
     <RelativeLayout
@@ -65,19 +67,25 @@
             android:layout_marginLeft="5dp"
             android:background="@mipmap/common_search" />
     </RelativeLayout>
-    <LinearLayout
-        android:id="@+id/LinearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+
+    <ScrollView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_below="@+id/title_relativelayout">
+        <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/title_relativelayout">
+            <include
+                layout="@layout/items_home_top_menu" />
+            <include
+                layout="@layout/items_home_center_menu" />
+            <include
+                android:id="@+id/layout_home_banner"
+                layout="@layout/fragment_banner" />
 
 
-        <include
-            android:id="@+id/layout_home_banner"
-            layout="@layout/fragment_banner" />
-
-
-    </LinearLayout>
-
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

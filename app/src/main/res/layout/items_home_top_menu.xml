@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/item_height_large"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/img_answers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/main_page_icon_quick_ask" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+
+           >
+        <TextView
+            android:id="@+id/quick_answers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/img_answers"
+            android:layout_marginTop="9dp"
+            android:textColor="#030303"
+            android:text="快速问诊"
+            android:textSize="@dimen/small_middle_text_size"
+            />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+
+                android:layout_marginTop="2dp"
+                android:layout_below="@+id/quick_answers"
+                android:text="每天3000个问题被专业医生解答"
+                android:textSize="@dimen/small_text_size"
+                />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/userarrow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/personel_arrow_right" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f2f3f5" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/item_height_large"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/img_find_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/main_page_icon_find_doctor" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+
+            >
+            <TextView
+                android:id="@+id/quick_find_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+
+                android:layout_marginTop="9dp"
+                android:textColor="#030303"
+                android:text="查找医生"
+                android:textSize="@dimen/small_middle_text_size"
+                />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+
+                android:layout_marginTop="2dp"
+                android:layout_below="@+id/quick_answers"
+                android:text="搜全国名医 对症咨询"
+                android:textSize="@dimen/small_text_size"
+                />
+        </LinearLayout>
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20px"
+            android:layout_centerVertical="true"
+            android:background="@drawable/personel_arrow_right" />
+
+    </RelativeLayout>
+</LinearLayout>
