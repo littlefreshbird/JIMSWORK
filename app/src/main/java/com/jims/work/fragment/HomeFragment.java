@@ -2,6 +2,7 @@ package com.jims.work.fragment;
 
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,15 +15,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.jims.work.MoreActivity;
 import com.jims.work.R;
-import com.jims.work.fragment.base.BaseFragment;
+import com.jims.work.UserInfoActivity;
 import com.jims.work.view.UPMarqueeView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeFragment extends BaseFragment implements View.OnClickListener {
+public class HomeFragment extends Fragment implements View.OnClickListener {
     private ViewPager mPager;
     private int[] mBanner = new int[]{R.drawable.img_home_banner1,
             R.drawable.img_home_banner2, R.drawable.img_home_banner3,
@@ -38,6 +40,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private UPMarqueeView upview1;
     List<String> data = new ArrayList<>();
     List<View> upviews = new ArrayList<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,7 +56,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         initParam();
         initdata();
         initupView();
+        setOnListener();
         return layout;
+
     }
 
     private void initView() {
@@ -120,7 +125,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             default:
                 break;
         }
-    }*/
+    }
 /*
     *//**
          * 转到商品详情
@@ -155,10 +160,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     }
 
-    @Override
-    public void onClick(View view) {
 
-    }
 
     private class MyPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -309,6 +311,25 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
             //添加到循环滚动数组里面去
             upviews.add(moreView);
+        }
+    }
+    private void setOnListener() {
+
+        layout.findViewById(R.id.quick_ask).setOnClickListener(this);
+
+        layout.findViewById(R.id.quick_find).setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.quick_ask: // 快速问诊
+                startActivity(new Intent(getActivity(), UserInfoActivity.class));
+                break;
+            case R.id.quick_find: // 查找医生
+                startActivity(new Intent(getActivity(), MoreActivity.class));
+                break;
+            default:
+                break;
         }
     }
 }
