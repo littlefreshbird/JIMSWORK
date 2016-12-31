@@ -7,7 +7,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme1">
         <activity
             android:name=".MainActivity"
 
@@ -25,6 +25,24 @@
         <activity android:name=".RegisterNextActivity" />
         <activity android:name=".UserInfoActivity" />
         <activity android:name=".MoreActivity"></activity>
+
+
+        <activity android:name=".PostActivity">
+
+        </activity>
+
+        <activity android:name=".DoctorListActivity">
+
+        </activity>
+
+        <activity android:name=".RecordActivity">
+
+        </activity>
+
+        <activity android:name=".DoctorClassActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

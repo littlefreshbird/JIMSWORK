@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jims.work.MoreActivity;
+import com.jims.work.PostActivity;
 import com.jims.work.R;
 import com.jims.work.UserInfoActivity;
 import com.jims.work.view.UPMarqueeView;
@@ -323,7 +324,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.quick_ask: // 快速问诊
-                startActivity(new Intent(getActivity(), UserInfoActivity.class));
+                startActivity(new Intent(getActivity(), PostActivity.class));
                 break;
             case R.id.quick_find: // 查找医生
                 startActivity(new Intent(getActivity(), MoreActivity.class));

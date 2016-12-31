@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class LoginActivity extends BaseActivity {
 
-private Button btnlogin;
+    private Button btnlogin;
     private TextView btnRegister;
 
     @Override

@@ -1,5 +1,14 @@
 <resources>
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light">
+        &lt;!&ndash; Customize your theme here. &ndash;&gt;
+        &lt;!&ndash;底线&ndash;&gt;
+        <item name="colorAccent">@color/colorAccent</item>
+        &lt;!&ndash;BAR&ndash;&gt;
+        <item name="colorPrimary">@color/white</item>
+        &lt;!&ndash;通知栏&ndash;&gt;
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 
+    </style>-->
     <!-- Base application theme. -->
     <!--<style name="Theme" parent="Theme.AppCompat.Light.DarkActionBar">-->
         <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
@@ -23,5 +32,22 @@
         <item name="android:textOn"></item>
         <item name="android:textOff"></item>
         <item name="android:background">@drawable/btn_open</item>
+    </style>
+
+    <style name="hospital_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/layout_height_60</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="text_20_blacks">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/textSize_20</item>
+    </style>
+
+    <style name="text_16_darkgray">
+        <item name="android:textColor">@color/darkgray</item>
+        <item name="android:textSize">@dimen/textSize_16</item>
     </style>
 </resources>
