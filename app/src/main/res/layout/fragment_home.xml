@@ -80,10 +80,17 @@
             <include
                 layout="@layout/items_home_top_menu" />
             <include
-                layout="@layout/items_home_center_menu" />
-            <include
                 android:id="@+id/layout_home_banner"
                 layout="@layout/fragment_banner" />
+            <include
+                layout="@layout/items_home_center_menu" />
+
+
+            <include
+                layout="@layout/items_home_upview" />
+            <include
+                layout="@layout/items_home_special" />
+
 
 
         </LinearLayout>
