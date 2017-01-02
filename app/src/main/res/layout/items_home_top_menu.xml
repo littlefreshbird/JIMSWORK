@@ -48,6 +48,7 @@
                 android:layout_below="@+id/quick_answers"
                 android:text="每天3000个问题被专业医生解答"
                 android:textSize="@dimen/small_text_size"
+                android:textColor="@color/darkgray"
                 />
         </LinearLayout>
         <ImageView
@@ -104,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-
+                android:textColor="@color/darkgray"
                 android:layout_marginTop="2dp"
                 android:layout_below="@+id/quick_answers"
                 android:text="搜全国名医 对症咨询"
