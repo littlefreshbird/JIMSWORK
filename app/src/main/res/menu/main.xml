@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.example.just.myapplication.MainActivity">
+
+       <item
+        android:id="@+id/action"
+        android:showAsAction="never"
+        android:title="提交报告"
+        tools:ignore="AppCompatResource"/>
+        <item
+           android:id="@+id/action_photo"
+           android:showAsAction="never"
+           android:title="删除照片"
+        tools:ignore="AppCompatResource"/>
+       <item
+           android:id="@+id/action_fanhui"
+           android:showAsAction="never"
+           android:title="注册档案"
+           tools:ignore="AppCompatResource"/>
+
+       <item
+        android:id="@+id/action_qianjin"
+        android:showAsAction="never"
+        tools:ignore="AppCompatResource"
+        android:title="下一步"/>
+    </menu>

@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.example.just.myapplication.MainActivity">
+       <item
+        android:id="@+id/tijiao"
+        android:showAsAction="never"
+        android:title="提交"
+        tools:ignore="AppCompatResource"/>
+        <item
+        android:id="@+id/guanzhu"
+        android:showAsAction="never"
+        android:title="关注"
+        tools:ignore="AppCompatResource"/>
+        <item
+           android:id="@+id/dingyue"
+           android:showAsAction="never"
+           android:title="订阅"
+        tools:ignore="AppCompatResource"/>
+
+    </menu>
