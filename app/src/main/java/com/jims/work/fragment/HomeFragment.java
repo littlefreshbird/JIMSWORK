@@ -2,6 +2,7 @@ package com.jims.work.fragment;
 
 
 import android.animation.ObjectAnimator;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -325,6 +326,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.quick_ask: // 快速问诊
                 startActivity(new Intent(getActivity(), PostActivity.class));
+                getActivity().finish();
                 break;
             case R.id.quick_find: // 查找医生
                 startActivity(new Intent(getActivity(), MoreActivity.class));

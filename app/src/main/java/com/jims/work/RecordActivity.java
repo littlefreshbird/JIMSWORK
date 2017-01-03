@@ -25,7 +25,7 @@ public class RecordActivity extends AppCompatActivity {
     private EditText editone,edittwo;
     private RadioButton radiobutton1,radiobutton2;
     private TextView textone,texttwo,textthree,textfour ;
-    private TextView buttonone;
+    private TextView buttonone,buttontwo;
     private RadioGroup radiogroup;
     private static final int DATE_ID = 1;
 
@@ -45,7 +45,8 @@ public class RecordActivity extends AppCompatActivity {
         textthree= (TextView) findViewById(R.id.textthree);
         textfour= (TextView) findViewById(R.id.textfour);
         buttonone=(Button)findViewById(R.id.buttonone);
-        buttonone.setBackgroundColor(Color.GREEN);
+        buttontwo=(Button)findViewById(R.id.buttontwo);
+        //buttontwo.setBackgroundColor(Color.GREEN);
         radiogroup=(RadioGroup) findViewById(R.id.rgSex);
         radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -65,10 +66,10 @@ public class RecordActivity extends AppCompatActivity {
             }
         });
 
-        buttonone.setOnClickListener(new View.OnClickListener() {
+        buttontwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(RecordActivity.this,PostActivity.class);
+                Intent intent=new Intent(RecordActivity.this,DoctorClassActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -96,8 +97,8 @@ public class RecordActivity extends AppCompatActivity {
     //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
     public boolean onSupportNavigateUp() {
-       // Intent intent=new Intent(RecordActivity.this,MainActivity.class);//点击回主页
-        //startActivity(intent);
+       Intent intent=new Intent(RecordActivity.this,PostActivity.class);
+        startActivity(intent);
         finish();
         return super.onSupportNavigateUp();
     }

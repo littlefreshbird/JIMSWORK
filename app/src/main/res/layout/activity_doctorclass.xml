@@ -12,7 +12,7 @@
 
         <ImageView
             android:id="@+id/toolbar_profile_back"
-            android:layout_width="@dimen/layout_height_70"
+            android:layout_width="@dimen/layout_height_80"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
-                android:gravity="center"
+                android:gravity="start"
                 android:text="寻医" />
         </RelativeLayout>
     </RelativeLayout>

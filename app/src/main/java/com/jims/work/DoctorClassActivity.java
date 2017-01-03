@@ -1,11 +1,14 @@
 package com.jims.work;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBar;
+import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -34,14 +37,13 @@ public class DoctorClassActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_doctorclass);
-		
-		
+
 		doctor_class_gridview = (GridView) findViewById(R.id.doctor_class_gridview);
-		
+
 		doctor_class_gridview.setSelector(new ColorDrawable(Color.TRANSPARENT));
-		
+
 		adapter_GridView_doctorclass = new Adapter_GridView_Doctorclass(this, pic_path_hot,str_path_hot);
-	
+
 		doctor_class_gridview.setAdapter(adapter_GridView_doctorclass);
 
 
@@ -65,25 +67,23 @@ public class DoctorClassActivity extends FragmentActivity {
 					default:
 						break;
 				}
-			
-			
-			
+
+
+
 			}
 		});
-	
-		
+
+
 		ImageView toolbar_profile_back = (ImageView) findViewById(R.id.toolbar_profile_back);
 		toolbar_profile_back.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
 				Intent intent = new Intent(DoctorClassActivity.this,
-						PostActivity.class);
+						RecordActivity.class);
 				startActivity(intent);
 				finish();
 			}
 		});
 	}
-	
-	
 
 }

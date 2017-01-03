@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -24,6 +25,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -35,6 +37,8 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.jims.work.R.id.buttontwo;
+
 
 /**
  * Created by Just on 2016/12/25.
@@ -43,6 +47,7 @@ import java.util.TimerTask;
 public class PostActivity extends AppCompatActivity {
     private EditText edit;
     private GridView gridView;
+    private Button button_1;
     private final int IMAGE_OPEN = 1;        //打开图片标记
     private String pathImage;                       //选择图片路径
     private Bitmap bmp;                               //导入临时图片
@@ -58,13 +63,22 @@ public class PostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post);
         edit=(EditText)findViewById(R.id.edit);
+        button_1=(Button)findViewById(R.id.button_1);
+        //button_1.setBackgroundColor(Color.GREEN);
+        button_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(PostActivity.this,RecordActivity.class);
+                startActivity(intent);
+                PostActivity.this.finish();
+            }
+        });
         ActionBar actionBar = getSupportActionBar();
        // actionBar.setDisplayShowHomeEnabled(true);
       /*  actionBar.setLogo(R.mipmap.ozone_pressed);*/
        // actionBar.setDisplayUseLogoEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-
 
         /*
          * 防止键盘挡住输入框
@@ -75,7 +89,6 @@ public class PostActivity extends AppCompatActivity {
                 SOFT_INPUT_ADJUST_PAN);
         //锁定屏幕
        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.post);
         //获取控件对象
         gridView = (GridView) findViewById(R.id.gridView);
 
@@ -197,7 +210,7 @@ public class PostActivity extends AppCompatActivity {
                 PostActivity.this.finish();
                 return true;
             case R.id.action_qianjin:
-                Intent intent= new Intent(PostActivity.this,DoctorClassActivity.class);
+                Intent intent= new Intent(PostActivity.this,RecordActivity.class);
                 startActivity(intent);
                 PostActivity.this.finish();
                 return true;

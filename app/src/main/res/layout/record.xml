@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/white"
               android:orientation="vertical">
 
 
@@ -10,13 +11,13 @@
         android:layout_height="40dp"
         android:layout_marginTop="50dp"
         android:orientation="horizontal"
-        android:background="@drawable/bg_edittext"
+
         >
      <TextView
          android:id="@+id/textone"
          android:layout_width="wrap_content"
          android:layout_height="40dp"
-         android:textSize="20dp"
+         android:textSize="@dimen/small_middle_text_size"
          android:paddingTop="5dip"
          android:textColorHint="@color/dim_foreground_material_light"
          android:hint="姓名："/>
@@ -28,19 +29,18 @@
     </LinearLayout>
 
 
-
-         <LinearLayout
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="40dp"
-    android:layout_marginTop="50dp"
+    android:layout_marginTop="10dp"
     android:orientation="horizontal"
-    android:background="@drawable/bg_edittext"
+
     >
     <TextView
         android:id="@+id/texttwo"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:textSize="20dp"
+        android:textSize="@dimen/small_middle_text_size"
         android:paddingTop="5dip"
         android:textColorHint="@color/dim_foreground_material_light"
         android:hint="年龄："/>
@@ -56,15 +56,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        android:background="@drawable/bg_edittext"
+
       >
         <TextView
             android:id="@+id/textthree"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:textSize="20dp"
+            android:textSize="@dimen/small_middle_text_size"
             android:paddingTop="5dip"
             android:textColorHint="@color/dim_foreground_material_light"
             android:hint="性别："/>
@@ -97,22 +97,41 @@
         android:id="@+id/textfour"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:textColorHint="@color/dim_foreground_material_light"
         android:paddingTop="5dip"
         android:hint="出生日期"
-        android:textSize="20dp"
+        android:textSize="@dimen/small_middle_text_size"
         android:gravity="start"/>
+    <RelativeLayout
+        android:id="@+id/Layout_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
     <Button
         android:id="@+id/buttonone"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:textColorHint="@color/dim_foreground_material_light"
         android:background="@drawable/bg_edittext"
         android:paddingTop="5dip"
-        android:text="下一步"
-        android:textSize="20dp"
+        android:text="选择已有档案"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/small_middle_text_size"
         android:gravity="center"/>
-
+    <Button
+        android:id="@+id/buttontwo"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColorHint="@color/dim_foreground_material_light"
+        android:background="@drawable/bg_edittext"
+        android:paddingTop="5dip"
+        android:text="完成"
+        android:layout_marginTop="200dp"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/small_middle_text_size"
+        android:gravity="center"/>
+    </RelativeLayout>
 </LinearLayout>
