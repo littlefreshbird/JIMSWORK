@@ -46,27 +46,27 @@
 
 
         <activity android:name=".PostActivity"
-                  android:label="提交病情">
+                  >
 
         </activity>
 
-        <activity android:name=".DoctorListActivity">
+        <activity android:name=".DoctorListActivity"
+                 >
 
         </activity>
 
         <activity android:name=".RecordActivity"
-                  android:label="注册档案"
             >
 
         </activity>
 
         <activity android:name=".DoctorClassActivity"
-                  android:label="找医生">
+                  >
 
         </activity>
 
         <activity android:name=".DoctorMessageActivity"
-                  android:label="看医生">
+                  >
 
         </activity>
 

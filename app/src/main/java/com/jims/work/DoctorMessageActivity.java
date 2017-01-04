@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,10 +28,7 @@ public class DoctorMessageActivity extends AppCompatActivity {
         setContentView(R.layout.doctormsg);
         text=(TextView)findViewById(R.id.text);
         imageView=(ImageView) findViewById(R.id.imageView);
-        ActionBar actionBar = getSupportActionBar();
-        // 返回箭头（默认不显示）
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
+        setCustomActionBar();
     }
     //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
@@ -66,5 +66,17 @@ public class DoctorMessageActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    private void setCustomActionBar() {
+        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
+        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_msg, null);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setCustomView(mActionBarView, lp);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
     }
 }

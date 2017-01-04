@@ -15,6 +15,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -75,10 +77,12 @@ public class PostActivity extends AppCompatActivity {
                 PostActivity.this.finish();
             }
         });
-        ActionBar actionBar = getSupportActionBar();
+        setCustomActionBar();
+
+/*        ActionBar actionBar = getSupportActionBar();
         // 返回箭头（默认不显示）
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
+        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);*/
         /*
          * 防止键盘挡住输入框
          * 不希望遮挡设置activity属性 android:windowSoftInputMode="adjustPan"
@@ -329,6 +333,17 @@ public class PostActivity extends AppCompatActivity {
         });
         builder.create().show();
     }
-
+    private void setCustomActionBar() {
+        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
+        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setCustomView(mActionBarView, lp);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
+    }
 }
 
