@@ -19,9 +19,9 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         UserInfoActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_userinfo);
         ButterKnife.bind(this);
-
 
         userinfoBack.setOnClickListener(this);
     }

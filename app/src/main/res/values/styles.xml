@@ -43,7 +43,7 @@
 
     <style name="text_20_blacks">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">@dimen/textSize_20</item>
+        <item name="android:textSize">@dimen/medium_text_size</item>
     </style>
 
     <style name="text_16_darkgray">

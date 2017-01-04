@@ -5,42 +5,38 @@
     android:background="#EDEDED"
     android:orientation="vertical" >
     <RelativeLayout
-        android:id="@+id/personal_top_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white" >
+        android:id="@+id/toolbar_profile"
+        style="@style/hospital_title"
+        android:orientation="horizontal" >
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/userinfo_back"
+            android:layout_width="@dimen/layout_height_50"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
 
-            android:orientation="horizontal"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true">
-            <ImageView
-                android:id="@+id/userinfo_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_margin="12dp"
+            android:padding="15dp"
+            android:src="@drawable/action_bar_back" />
 
-                android:background="@drawable/action_bar_back_normal"/>
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="33dp"
+            android:layout_centerInParent="true" >
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
+                android:id="@+id/text_view_toolbar_title"
+                style="@style/text_20_blacks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
                 android:gravity="center"
-                android:layout_marginLeft="80dp"
-                android:layout_gravity="center"
-                android:text="管理个人信息"
-                android:textColor="@color/black"
-                android:textSize="@dimen/medium_text_size" />
-
-        </LinearLayout>
+                android:text="基本信息" />
+        </RelativeLayout>
     </RelativeLayout>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/gray" />
     <ScrollView
         android:layout_marginTop="10dp"
         android:layout_width="fill_parent"

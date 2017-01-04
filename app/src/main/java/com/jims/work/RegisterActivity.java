@@ -13,10 +13,12 @@ import android.widget.RelativeLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.jims.work.R.id.img_back;
+
 public class RegisterActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.img_back)
+    @BindView(img_back)
     ImageView imgBack;
     @BindView(R.id.layout_login_topbar)
     RelativeLayout layoutLoginTopbar;
@@ -41,6 +43,12 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(RegisterActivity.this, RegisterNextActivity.class);
                 startActivity(intent);
+            }
+        });
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

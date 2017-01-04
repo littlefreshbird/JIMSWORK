@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/img_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:padding="3dp"
+        android:src="@drawable/load_logo" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="6dp"
+        android:layout_toRightOf="@+id/img_icon"
+        android:text="李云龙"
+        android:textColor="@color/black"
+        android:textSize="@dimen/textSize_16" />
+
+    <TextView
+        android:id="@+id/tv_buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/rect_green"
+        android:paddingLeft="3sp"
+        android:paddingRight="3sp"
+        android:text="已订阅"
+            android:textColor="@color/color_theme"
+        android:textSize="@dimen/textSize_12"/>
+
+    <TextView
+        android:id="@+id/tv_attention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+         android:layout_below="@id/tv_buy"
+       
+        android:background="@drawable/rect_green"
+        android:paddingLeft="3sp"
+        android:paddingRight="3sp"
+        android:text="已关注"
+        android:textColor="@color/color_theme"
+        android:textSize="@dimen/textSize_12" />
+
+    <TextView
+        android:id="@+id/tv_hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@+id/img_icon"
+        android:text="承德附属医院"
+        android:textColor="@color/dimgray"
+        android:textSize="@dimen/textSize_14" />
+
+    <TextView
+        android:id="@+id/tv_classes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_hospital"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@+id/img_icon"
+        android:text="口腔科"
+        android:textColor="@color/dimgray"
+        android:textSize="@dimen/textSize_14" />
+
+    <TextView
+        android:id="@+id/tv_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_classes"
+        android:layout_marginLeft="6dp"
+        android:layout_toRightOf="@+id/tv_classes"
+        android:text="主任医师"
+        android:textColor="@color/dimgray"
+        android:textSize="@dimen/textSize_14" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_0.5"
+        android:layout_below="@id/tv_classes"
+        android:layout_marginTop="8dp"
+        android:background="@color/divider_color" />
+
+</RelativeLayout>

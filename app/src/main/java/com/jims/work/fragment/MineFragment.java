@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.jims.work.LoginActivity;
 import com.jims.work.MoreActivity;
-import com.jims.work.MyDoctorsActivity;
+import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.MyEvaluateActivity;
 import com.jims.work.R;
 import com.jims.work.UserInfoActivity;
@@ -54,7 +54,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), MyEvaluateActivity.class));
                 break;
             case R.id.layout_mine_doctors: // 我的医生
-                startActivity(new Intent(getActivity(), MyDoctorsActivity.class));
+                startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
                 break;
             case R.id.layout_more: // 更多
 
