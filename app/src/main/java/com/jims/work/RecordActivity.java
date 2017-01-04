@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -34,8 +35,9 @@ public class RecordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.record);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setHomeButtonEnabled(true);
+        // 返回箭头（默认不显示）
         actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
         editone = (EditText) findViewById(R.id.editone);
         edittwo = (EditText) findViewById(R.id.edittwo);
         radiobutton1= (RadioButton) findViewById(R.id.radiobutton1);
@@ -94,12 +96,17 @@ public class RecordActivity extends AppCompatActivity {
             textfour.setText("出生日期：          "+year+"-"+monthOfYear+"-"+dayOfMonth);
         }
     };
-    //调用onSuppprtNavigateup()为actionbar左上角点击事件
+
+    //点击事件
     @Override
-    public boolean onSupportNavigateUp() {
-       Intent intent=new Intent(RecordActivity.this,PostActivity.class);
-        startActivity(intent);
-        finish();
-        return super.onSupportNavigateUp();
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent=new Intent(RecordActivity.this,PostActivity.class);
+                startActivity(intent);
+                finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -37,6 +37,7 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import static com.jims.work.R.drawable.action_bar_back;
 import static com.jims.work.R.id.buttontwo;
 
 
@@ -61,6 +62,7 @@ public class PostActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.post);
         edit=(EditText)findViewById(R.id.edit);
         button_1=(Button)findViewById(R.id.button_1);
@@ -74,12 +76,9 @@ public class PostActivity extends AppCompatActivity {
             }
         });
         ActionBar actionBar = getSupportActionBar();
-       // actionBar.setDisplayShowHomeEnabled(true);
-      /*  actionBar.setLogo(R.mipmap.ozone_pressed);*/
-       // actionBar.setDisplayUseLogoEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
+        // 返回箭头（默认不显示）
         actionBar.setDisplayHomeAsUpEnabled(true);
-
+        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
         /*
          * 防止键盘挡住输入框
          * 不希望遮挡设置activity属性 android:windowSoftInputMode="adjustPan"
@@ -173,14 +172,15 @@ public class PostActivity extends AppCompatActivity {
             }
         });
     }
-    //调用onSuppprtNavigateup()为actionbar左上角点击事件
+
+  /*  //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
     public boolean onSupportNavigateUp() {
         Intent intent=new Intent(PostActivity.this,MainActivity.class);//点击回主页
         startActivity(intent);
         finish();
         return super.onSupportNavigateUp();
-    }
+    }*/
     //调用menu中的main资源
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -189,10 +189,13 @@ public class PostActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
     //点击事件
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent1=new Intent(PostActivity.this,MainActivity.class);//点击回主页
+                startActivity(intent1);
+                finish();
             case R.id.action:
                openInputMethod(edit);
                 return true;

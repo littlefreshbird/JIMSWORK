@@ -12,12 +12,12 @@
 
         <ImageView
             android:id="@+id/toolbar_profile_back"
-            android:layout_width="@dimen/layout_height_80"
+            android:layout_width="@dimen/layout_height_50"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:layout_gravity="center"
+
             android:padding="15dp"
-            android:src="@mipmap/btn_back" />
+            android:src="@drawable/action_bar_back" />
 
         <RelativeLayout
             android:layout_width="200dp"

@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -17,6 +20,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jims.work.bean.GoodsInfo;
 import com.jims.work.utils.Constants;
@@ -33,7 +37,7 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 /**
  * Created by Just on 2016/12/29.
  */
-public class DoctorListActivity extends Activity implements
+public class DoctorListActivity extends AppCompatActivity implements
         OnClickListener {
 
     private ArrayList<GoodsInfo> goodsList = new ArrayList<GoodsInfo>();
@@ -87,6 +91,10 @@ public class DoctorListActivity extends Activity implements
         setOnListener();
         initListView();
         mProgressBar.setVisibility(View.GONE);
+        ActionBar actionBar = getSupportActionBar();
+        // 返回箭头（默认不显示）
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
     }
 
     private void initGoods() {
@@ -546,5 +554,17 @@ public class DoctorListActivity extends Activity implements
         TextView tvhospital;
         TextView tvclasses;
         TextView tvposition;
+    }
+    //点击事件
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent=new Intent(DoctorListActivity.this,DoctorClassActivity.class);//点击回主页
+                startActivity(intent);
+                finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

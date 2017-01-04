@@ -26,8 +26,9 @@ public class DoctorMessageActivity extends AppCompatActivity {
         text=(TextView)findViewById(R.id.text);
         imageView=(ImageView) findViewById(R.id.imageView);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setHomeButtonEnabled(true);
+        // 返回箭头（默认不显示）
         actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
     }
     //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
@@ -49,6 +50,10 @@ public class DoctorMessageActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent=new Intent(DoctorMessageActivity.this,DoctorListActivity.class);//点击回主页
+                startActivity(intent);
+                finish();
             case R.id.tijiao:
                 Toast.makeText(this, "已提交", Toast.LENGTH_SHORT).show();
                 return true;
