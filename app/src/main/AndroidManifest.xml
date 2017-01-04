@@ -46,8 +46,8 @@
         <activity android:name=".MyDoctorsListActivity" />
         <activity android:name=".EvaluateDetailActivity" />
         <activity android:name=".MoreActivity"></activity>
-
-
+        <activity android:name=".LookforActivity" />
+        <activity android:name=".LookforFinishActivity" />
         <activity android:name=".PostActivity"
                   android:label="提交病情">
 

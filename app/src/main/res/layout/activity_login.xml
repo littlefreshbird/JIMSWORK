@@ -79,16 +79,16 @@
             android:textSize="@dimen/small_middle_text_size" />
 
         <TextView
-               android:id="@+id/zhaohuipass"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:textColor="@color/gray"
-               android:layout_gravity="right"
-               android:layout_marginTop="5dp"
-               android:layout_marginRight="28dp"
-                   android:text="忘记密码？"
-                     android:textSize="@dimen/small_text_size"
-                    android:paddingLeft="12dp" />
+            android:id="@+id/zhaohuipass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="28dp"
+            android:text="忘记密码？"
+            android:textSize="@dimen/small_text_size"
+            android:paddingLeft="12dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
