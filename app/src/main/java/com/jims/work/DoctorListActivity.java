@@ -231,9 +231,10 @@ public class DoctorListActivity extends Activity implements
      * @param info
      */
     private void gotoDetail(GoodsInfo info) {
-        Intent intent = new Intent(this, DoctorListActivity.class);
+        Intent intent = new Intent(DoctorListActivity.this, DoctorMessageActivity.class);
         //intent.putExtra(Constants.INTENT_KEY.INFO_TO_DETAIL, info);
-        startActivity(intent);
+        startActivity(intent);DoctorListActivity.this.finish();
+
     }
 
     /**
