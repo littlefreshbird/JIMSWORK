@@ -3,6 +3,7 @@ package com.jims.work;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 
 import butterknife.BindView;
@@ -15,9 +16,13 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        UserInfoActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userinfo);
         ButterKnife.bind(this);
+
+
         userinfoBack.setOnClickListener(this);
     }
     @Override

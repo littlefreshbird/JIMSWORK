@@ -12,7 +12,6 @@
 
     <style name="AppTheme1" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-
         <item name="actionBarSize">45dp</item>
         <!--底线-->
         <item name="colorAccent">@color/colorAccent</item>
