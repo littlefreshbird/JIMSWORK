@@ -1,13 +1,13 @@
 package com.jims.work.bean;
 
-import com.activeandroid.Model;
+
 
 import java.io.Serializable;
 
 
 
 //@Table(name = "MyDoctor")
-public class MyDoctorsInfor extends Model implements Serializable, Cloneable {
+public class MyDoctorsInfor  implements Serializable, Cloneable {
 	/**
 	 * 
 	 */

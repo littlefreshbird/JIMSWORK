@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 import com.jims.work.bean.MyDoctorsInfor;
 import com.jims.work.utils.MyListView;
-import com.lib.uil.UILUtils;
-
 import java.util.ArrayList;
 
 public class MyDoctorsListActivity extends Activity implements
@@ -168,7 +166,7 @@ public class MyDoctorsListActivity extends Activity implements
             holder.tvclasses.setText(DoctorsInfo.getClasses());
             holder.tvhospital.setText(DoctorsInfo.getHospital());
             holder.tvposition.setText(DoctorsInfo.getPosition());
-            UILUtils.displayImage(MyDoctorsListActivity.this, DoctorsInfo.getGoodsIcon(), holder.imgIcon);
+           // UILUtils.displayImage(MyDoctorsListActivity.this, DoctorsInfo.getGoodsIcon(), holder.imgIcon);
 
             return inflate;
         }
