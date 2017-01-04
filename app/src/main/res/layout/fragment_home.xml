@@ -42,27 +42,26 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/topbar_code_search" />
 
-        <EditText
-            android:id="@+id/mainactivity_title_edit"
+        <TextView
+            android:id="@+id/mainactivity_title_text"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="8dp"
 
             android:layout_toLeftOf="@id/mainactivity_title_position_map"
             android:layout_toRightOf="@id/top_title_city_spinner"
             android:background="@drawable/main_page_search_bg"
-            android:hint="查找医生、医院"
+            android:text="查找医生、医院"
             android:paddingLeft="30dp"
-            android:textColor="@android:color/black"
+            android:textColor="@color/gray"
             android:textSize="@dimen/small_text_size" />
 
         <ImageView
             android:id="@+id/mainactivity_title_search_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/mainactivity_title_edit"
+            android:layout_alignLeft="@id/mainactivity_title_text"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:background="@mipmap/common_search" />

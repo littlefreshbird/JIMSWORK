@@ -1,6 +1,7 @@
 package com.jims.work;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,7 @@ public class MyDoctorsListActivity extends Activity implements
     private ArrayList<MyDoctorsInfor> goodsListCopy = new ArrayList<MyDoctorsInfor>();	//备份，用于排序后恢复
 
     private GoodsListAdapter mListAdapter;
-    private ImageView mImgOverlay;
+    private ImageView mImgOverlay,mImgMORE;
     private MyListView mListView;
     private ProgressBar mProgressBar;
 
@@ -59,12 +60,15 @@ public class MyDoctorsListActivity extends Activity implements
     private void setOnListener() {
         mImgOverlay.setOnClickListener(this);
         findViewById(R.id.toolbar_profile_back).setOnClickListener(this);
+        mImgMORE.setOnClickListener(this);
+        findViewById(R.id.toolbar_profile_more).setOnClickListener(this);
 
     }
 
     private void initView() {
         mImgOverlay = (ImageView) findViewById(R.id.img_overlay);
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar1);
+        mImgMORE= (ImageView) findViewById(R.id.toolbar_profile_more);
 
     }
 
@@ -204,8 +208,12 @@ public class MyDoctorsListActivity extends Activity implements
             case R.id.toolbar_profile_back: // 返回
                 finish();
                 break;
-
-
+            case R.id.toolbar_profile_more://添加我的医生
+                Intent intent = new Intent(MyDoctorsListActivity.this,
+                        DoctorClassActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             default:
                 break;
         }

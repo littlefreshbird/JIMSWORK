@@ -2,7 +2,6 @@ package com.jims.work.fragment;
 
 
 import android.animation.ObjectAnimator;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -19,7 +18,6 @@ import android.widget.TextView;
 import com.jims.work.MoreActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
-import com.jims.work.UserInfoActivity;
 import com.jims.work.view.UPMarqueeView;
 
 import java.util.ArrayList;
@@ -31,7 +29,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private int[] mBanner = new int[]{R.drawable.img_home_banner1,
             R.drawable.img_home_banner2, R.drawable.img_home_banner3,
             R.drawable.img_home_banner4};
-
+    private TextView mTextview;
     private ImageView mImageView;
     private ImageView mImgCover;
     private int mLastPos;// 记录上一次ViewPager的位置
@@ -67,6 +65,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         mImgCover = (ImageView) layout.findViewById(R.id.img_cover);
         mImageView = (ImageView) layout.findViewById(R.id.img_indicator01);
+
 
     }
 

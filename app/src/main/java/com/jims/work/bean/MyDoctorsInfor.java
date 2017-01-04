@@ -1,7 +1,5 @@
 package com.jims.work.bean;
 
-
-
 import java.io.Serializable;
 
 
