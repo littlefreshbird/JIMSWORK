@@ -183,7 +183,7 @@
                 android:orientation="vertical" >
 
                 <LinearLayout
-                    android:id="@+id/layout_mine_collects"
+                    android:id="@+id/layout_mine_doctors"
                     style="@style/MineItemStyle"
                     android:background="@drawable/bg_item_top" >
 
@@ -201,7 +201,7 @@
                         android:layout_weight="1.0"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="我的关注"
+                        android:text="我的医生"
                         android:textColor="@color/black"
                         android:textSize="@dimen/small_text_size" />
 
@@ -213,7 +213,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layout_mine_messages"
+                    android:id="@+id/layout_mine_evaluate"
                     style="@style/MineItemStyle"
                     android:background="@drawable/bg_item_center" >
 
@@ -243,7 +243,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layout_mine_appoint"
+                    android:id="@+id/layout_mine_complaint"
                     style="@style/MineItemStyle"
                     android:background="@drawable/bg_item_bottom" >
 
@@ -298,7 +298,7 @@
                         android:layout_weight="1.0"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="浏览记录"
+                        android:text="诊疗记录"
                         android:textColor="@color/black"
                         android:textSize="@dimen/small_text_size" />
 
@@ -328,7 +328,7 @@
                         android:layout_weight="1.0"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="评价商品"
+                        android:text="健康档案"
                         android:textColor="@color/black"
                         android:textSize="@dimen/small_text_size" />
 

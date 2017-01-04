@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jims.work">
+
     <!-- 基本权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -28,8 +29,7 @@
         android:theme="@style/AppTheme1">
         <activity
             android:name=".MainActivity"
-
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".LoginActivity"
             android:theme="@android:style/Theme.NoTitleBar">
@@ -42,34 +42,23 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RegisterNextActivity" />
         <activity android:name=".UserInfoActivity" />
-        <activity android:name=".MoreActivity"></activity>
-
-
-        <activity android:name=".PostActivity"
-                  android:label="提交病情">
-
-        </activity>
-
-        <activity android:name=".DoctorListActivity">
-
-        </activity>
-
-        <activity android:name=".RecordActivity"
-                  android:label="注册档案"
-            >
-
-        </activity>
-
-        <activity android:name=".DoctorClassActivity"
-                  android:label="找医生">
-
-        </activity>
-
-        <activity android:name=".DoctorMessageActivity"
-                  android:label="看医生">
-
-        </activity>
-
+        <activity android:name=".MoreActivity" />
+        <activity
+            android:name=".PostActivity"
+            android:label="提交病情" />
+        <activity android:name=".DoctorListActivity" />
+        <activity
+            android:name=".RecordActivity"
+            android:label="注册档案" />
+        <activity
+            android:name=".DoctorClassActivity"
+            android:label="找医生" />
+        <activity
+            android:name=".DoctorMessageActivity"
+            android:label="看医生" />
+        <activity android:name=".MyEvaluateActivity" />
+        <activity android:name=".MyDoctorsActivity" />
+        <activity android:name=".EvaluateDetailActivity"></activity>
     </application>
 
 </manifest>
