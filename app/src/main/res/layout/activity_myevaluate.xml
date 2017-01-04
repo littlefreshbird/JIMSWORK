@@ -26,9 +26,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="12dp"
             android:layout_toRightOf="@+id/img_myevaluate_back"
-            android:text="我的投诉"
+            android:text="我的评价"
             android:textColor="@color/black"
-            android:textSize="@dimen/small_middle_text_size" />
+            android:textSize="@dimen/medium_text_size" />
     </RelativeLayout>
 
     <fragment

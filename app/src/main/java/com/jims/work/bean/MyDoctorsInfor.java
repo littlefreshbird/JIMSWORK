@@ -1,36 +1,34 @@
 package com.jims.work.bean;
 
 import com.activeandroid.Model;
-import com.activeandroid.annotation.Column;
-import com.activeandroid.annotation.Table;
 
 import java.io.Serializable;
 
 
 
-@Table(name = "MyDoctor")
+//@Table(name = "MyDoctor")
 public class MyDoctorsInfor extends Model implements Serializable, Cloneable {
 	/**
 	 * 
 	 */
 
-	@Column
+	//@Column
 	String names; // ����
-	@Column
+	//@Column
 	String hospital; // ҽԺ
-	@Column
+	//@Column
 	String classes; // ����
-	@Column
+	//@Column
 	String position; // ְλ
 
 
-	@Column
+	//@Column
 	String goodsId; // id
-	@Column
+	//@Column
 	String goodsIcon;
-	@Column
+	//@Column
 	String attention; // 
-	@Column
+	//@Column
 	String buy; // 
 	public String getNames() {
 		return names;

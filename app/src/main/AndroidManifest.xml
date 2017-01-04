@@ -44,6 +44,7 @@
         <activity android:name=".UserInfoActivity" />
         <activity android:name=".MyEvaluateActivity" />
         <activity android:name=".MyDoctorsListActivity" />
+        <activity android:name=".EvaluateDetailActivity" />
         <activity android:name=".MoreActivity"></activity>
 
 

@@ -81,7 +81,7 @@ public class MyDoctorsListActivity extends Activity implements
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 MyDoctorsInfor info = goodsList.get(position);
-                //gotoDetail(info);
+               // gotoDetail(info);
             }
         });
         mListView.setOnScroll2TopListener(new MyListView.OnScroll2TopListener() {
@@ -123,7 +123,6 @@ public class MyDoctorsListActivity extends Activity implements
 
     /**
      * 将二级菜单的选择结果设置给一级菜单
-     * @param
      * @param
      */
 //	public void setSelectedResult(String result) {
