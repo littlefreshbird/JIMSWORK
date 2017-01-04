@@ -577,5 +577,6 @@ public class DoctorListActivity extends AppCompatActivity implements
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
+        actionBar.setElevation(2);
     }
 }

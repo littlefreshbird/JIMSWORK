@@ -78,5 +78,6 @@ public class DoctorMessageActivity extends AppCompatActivity {
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
+        actionBar.setElevation(2);
     }
 }

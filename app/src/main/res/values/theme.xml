@@ -12,12 +12,14 @@
 
     <style name="AppTheme1" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
+
+        <item name="actionBarSize">45dp</item>
         <!--底线-->
         <item name="colorAccent">@color/colorAccent</item>
         <!--BAR-->
         <item name="colorPrimary">@color/white</item>
         <!--通知栏-->
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorText</item>
 
     </style>
 

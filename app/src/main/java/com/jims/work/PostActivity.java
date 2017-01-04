@@ -79,10 +79,6 @@ public class PostActivity extends AppCompatActivity {
         });
         setCustomActionBar();
 
-/*        ActionBar actionBar = getSupportActionBar();
-        // 返回箭头（默认不显示）
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);*/
         /*
          * 防止键盘挡住输入框
          * 不希望遮挡设置activity属性 android:windowSoftInputMode="adjustPan"
@@ -344,6 +340,7 @@ public class PostActivity extends AppCompatActivity {
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
+        actionBar.setElevation(2);
     }
 }
 
