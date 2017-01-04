@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.jims.work.LoginActivity;
 import com.jims.work.MoreActivity;
+import com.jims.work.MyDoctorsActivity;
+import com.jims.work.MyEvaluateActivity;
 import com.jims.work.R;
 import com.jims.work.UserInfoActivity;
 
@@ -30,7 +32,9 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_userinfo).setOnClickListener(this);
         layout.findViewById(R.id.personal_login_button).setOnClickListener(this);
         layout.findViewById(R.id.layout_more).setOnClickListener(this);
-
+        layout.findViewById(R.id.layout_mine_evaluate).setOnClickListener(this);
+        layout.findViewById(R.id.layout_mine_complaint).setOnClickListener(this);
+        layout.findViewById(R.id.layout_mine_doctors).setOnClickListener(this);
     }
 
 
@@ -43,7 +47,15 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             case R.id.layout_userinfo: // 个人信息
                 startActivity(new Intent(getActivity(), UserInfoActivity.class));
                 break;
-
+            case R.id.layout_mine_evaluate: // 我的评价
+                startActivity(new Intent(getActivity(), MyEvaluateActivity.class));
+                break;
+            case R.id.layout_mine_complaint: // 我的投诉
+                startActivity(new Intent(getActivity(), MyEvaluateActivity.class));
+                break;
+            case R.id.layout_mine_doctors: // 我的医生
+                startActivity(new Intent(getActivity(), MyDoctorsActivity.class));
+                break;
             case R.id.layout_more: // 更多
 
                 startActivity(new Intent(getActivity(), MoreActivity.class));
@@ -53,19 +65,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 Intent intent = new Intent(getActivity(), WebActivity.class);
                 intent.putExtra("direction", 5);
                 startActivity(intent);
-                break;
-            case R.id.layout_mine_wallet: // 我的钱包
-                startActivity(new Intent(getActivity(), PurseActivity.class));
-                break;
-            case R.id.layout_mine_messages: // 我的消息
-                startActivity(new Intent(getActivity(), MessageCenterActivity.class));
-                break;
-            case R.id.layout_mine_collects: // 我的关注
-                startActivity(new Intent(getActivity(), FavorActivity.class));
-                break;
-            case R.id.layout_mine_history: // 浏览记录
-                startActivity(new Intent(getActivity(), HistoryActivity.class));
-                break;
+
             case R.id.layout_mine_appoint: // 我的预约
                 Intent intent3 = new Intent(getActivity(), WebActivity.class);
                 intent3.putExtra("direction", 9);
@@ -81,11 +81,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 intent5.putExtra("direction", 10);
                 startActivity(intent5);
                 break;
-            case R.id.layout_mine_discuss: // 评价商品
-                Intent intent6 = new Intent(getActivity(), WebActivity.class);
-                intent6.putExtra("direction", 11);
-                startActivity(intent6);
-                break;
+
 */
             default:
                 break;

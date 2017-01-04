@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:descendantFocusability="blocksDescendants"
+	android:paddingLeft="6dip"
+	android:paddingRight="6dip"
+	android:paddingTop="8dip"
+	android:background="@color/white"
+	android:paddingBottom="7dip">
+
+	<ListView
+		android:id="@+id/tweet_listitem_content"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:divider="@color/gray"
+		android:dividerHeight="1dp"
+		android:layout_marginTop="5dp"
+		android:scrollbarAlwaysDrawVerticalTrack="true"
+		/>
+
+</LinearLayout> 

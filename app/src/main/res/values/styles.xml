@@ -50,4 +50,14 @@
         <item name="android:textColor">@color/darkgray</item>
         <item name="android:textSize">@dimen/textSize_16</item>
     </style>
+
+    <!--我的评价-->
+    <style name="user_face_image">
+        <item name="android:layout_width">30.0dip</item>
+        <item name="android:layout_height">30.0dip</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:padding">1.0dip</item>
+        <item name="android:clickable">true</item>
+    </style>
+
 </resources>
