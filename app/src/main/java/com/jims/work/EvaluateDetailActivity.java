@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.jims.work.utils.Utils;
+
 public class EvaluateDetailActivity extends FragmentActivity {
     private	String itemclick="";
 

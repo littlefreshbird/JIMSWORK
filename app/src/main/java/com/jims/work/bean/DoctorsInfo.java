@@ -1,12 +1,11 @@
 package com.jims.work.bean;
 
-import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 import java.io.Serializable;
 
 
-public class GoodsInfo implements Serializable, Cloneable {
+public class DoctorsInfo implements Serializable, Cloneable {
 	/**
 	 * 
 	 */
@@ -61,9 +60,9 @@ public class GoodsInfo implements Serializable, Cloneable {
 		this.goodsposition = goodsposition;
 	}
 
-	public GoodsInfo(String goodsname, String goodshospital, String goodsclasses, String goodsposition, String goodsId,
-					 String goodsName2, Drawable goodsIcon, String goodsType, double goodsPrice, String goodsPercent,
-					 int goodsComment, int isPhone, int isFavor) {
+	public DoctorsInfo(String goodsname, String goodshospital, String goodsclasses, String goodsposition, String goodsId,
+					   String goodsName2, Drawable goodsIcon, String goodsType, double goodsPrice, String goodsPercent,
+					   int goodsComment, int isPhone, int isFavor) {
 		super();
 		this.goodsnames = goodsname;
 		this.goodshospital = goodshospital;
@@ -110,7 +109,7 @@ public class GoodsInfo implements Serializable, Cloneable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		GoodsInfo other = (GoodsInfo) obj;
+		DoctorsInfo other = (DoctorsInfo) obj;
 		if (goodsComment != other.goodsComment)
 			return false;
 		if (goodsIcon == null) {
@@ -221,8 +220,8 @@ public class GoodsInfo implements Serializable, Cloneable {
 	}
 
 	@Override
-	public GoodsInfo clone() {
-		return new GoodsInfo(goodsnames,
+	public DoctorsInfo clone() {
+		return new DoctorsInfo(goodsnames,
 		goodshospital,
 		goodsclasses,
 		goodsposition,goodsId, goodsName, goodsIcon, goodsType, goodsPrice, goodsPercent, goodsComment, isPhone, isFavor);

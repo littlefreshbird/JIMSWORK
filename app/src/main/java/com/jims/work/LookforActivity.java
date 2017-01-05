@@ -8,6 +8,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.jims.work.utils.Utils;
+
 public class LookforActivity extends Activity {
 private ImageView imageView;
 	protected void onCreate(Bundle savedInstanceState) {

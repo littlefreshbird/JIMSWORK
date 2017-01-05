@@ -21,7 +21,7 @@ public class BannerItemFragment extends Fragment implements OnClickListener {
 	private int position;
 	private ImageView mImageView;
 	private int imageRes;
-	//private GoodsInfo goodsInfo;
+	//private DoctorsInfo goodsInfo;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,7 +47,7 @@ public class BannerItemFragment extends Fragment implements OnClickListener {
 		}*/
 	}
 
-	/*public void setGoodsInfo(GoodsInfo goodsInfo) {
+	/*public void setGoodsInfo(DoctorsInfo goodsInfo) {
 		this.goodsInfo = goodsInfo;
 	}*/
 

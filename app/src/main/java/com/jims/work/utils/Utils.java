@@ -1,4 +1,4 @@
-package com.jims.work;
+package com.jims.work.utils;
 
 public class Utils {
 

@@ -1,7 +1,6 @@
 package com.jims.work;
 
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -22,10 +21,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.jims.work.bean.GoodsInfo;
-import com.jims.work.utils.Constants;
+import com.jims.work.bean.DoctorsInfo;
 import com.jims.work.utils.MyListView;
 import com.jims.work.utils.NumberUtils;
 
@@ -34,16 +31,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
-
 /**
  * Created by Just on 2016/12/29.
  */
 public class DoctorListActivity extends AppCompatActivity implements
         OnClickListener {
 
-    private ArrayList<GoodsInfo> goodsList = new ArrayList<GoodsInfo>();
-    private ArrayList<GoodsInfo> goodsListCopy = new ArrayList<GoodsInfo>();	//备份，用于排序后恢复
+    private ArrayList<DoctorsInfo> goodsList = new ArrayList<DoctorsInfo>();
+    private ArrayList<DoctorsInfo> goodsListCopy = new ArrayList<DoctorsInfo>();	//备份，用于排序后恢复
 
    /* private MenuDrawer mDrawer;*/
     private GoodsListAdapter mListAdapter;
@@ -97,17 +92,17 @@ public class DoctorListActivity extends AppCompatActivity implements
     }
 
     private void initGoods() {
-        goodsList.add(new GoodsInfo("李云龙","承德附属医院","心血管内科","副主任医师","100001", "胸闷、心悸、高血压、心功能不全、心脏病、肺动脉高压",context.getResources().getDrawable(R.drawable.doctor1,null), "服饰鞋包", 153.00, "好评96%", 1224, 1, 0));
-        goodsList.add(new GoodsInfo("李运昌","承德市中心医院","神经外科","副主任医师","100002", "脑肿瘤、脑外伤、呕吐、脑缺血、脑积水、动脉瘤", context.getResources().getDrawable(R.drawable.doctor2,null), "服饰鞋包", 479.00, "好评95%", 645, 0, 0));
-        goodsList.add(new GoodsInfo("周慧敏","承德妇幼保健院","小儿科","副主任医师","100003", "新生儿疾病、发育、幼儿急疹、母乳性黄疸、手足口病、尿布皮炎",context.getResources().getDrawable(R.drawable.doctor3,null), "服饰鞋包", 149.00, "暂无评价", 1856, 0, 0));
-        goodsList.add(new GoodsInfo("李云龙","承德附属医院","心血管内科","副主任医师","100001", "胸闷、心悸、高血压、心功能不全、心脏病、肺动脉高压", context.getResources().getDrawable(R.drawable.doctor4,null), "服饰鞋包", 153.00, "好评96%", 1224, 1, 0));
-        goodsList.add(new GoodsInfo("李运昌","承德市中心医院","神经外科","副主任医师","100002", "脑肿瘤、脑外伤、呕吐、脑缺血、脑积水、动脉瘤", context.getResources().getDrawable(R.drawable.doctor5,null), "服饰鞋包", 479.00, "好评95%", 645, 0, 0));
-        goodsList.add(new GoodsInfo("周慧敏","承德妇幼保健院","小儿科","副主任医师","100003", "新生儿疾病、发育、幼儿急疹、母乳性黄疸、手足口病、尿布皮炎", context.getResources().getDrawable(R.drawable.doctor1,null), "服饰鞋包", 149.00, "暂无评价", 1856, 0, 0));
-        goodsList.add(new GoodsInfo("李云龙","承德附属医院","心血管内科","副主任医师","100001", "胸闷、心悸、高血压、心功能不全、心脏病、肺动脉高压", context.getResources().getDrawable(R.drawable.doctor2,null), "服饰鞋包", 479.00, "好评95%", 645, 0, 0));
-        goodsList.add(new GoodsInfo("周慧敏","承德妇幼保健院","小儿科","副主任医师","100003", "新生儿疾病、发育、幼儿急疹、母乳性黄疸、手足口病、尿布皮炎",context.getResources().getDrawable(R.drawable.doctor3,null), "服饰鞋包", 149.00, "暂无评价", 1856, 0, 0));
-        goodsList.add(new GoodsInfo("李云龙","承德附属医院","心血管内科","副主任医师","100001", "胸闷、心悸、高血压、心功能不全、心脏病、肺动脉高压", context.getResources().getDrawable(R.drawable.doctor4,null), "服饰鞋包", 153.00, "好评96%", 1224, 1, 0));
-        goodsList.add(new GoodsInfo("李运昌","承德市中心医院","神经外科","副主任医师","100002", "脑肿瘤、脑外伤、呕吐、脑缺血、脑积水、动脉瘤", context.getResources().getDrawable(R.drawable.doctor5,null), "服饰鞋包", 479.00, "好评95%", 645, 0, 0));
-        goodsList.add(new GoodsInfo("周慧敏","承德妇幼保健院","小儿科","副主任医师","100003", "新生儿疾病、发育、幼儿急疹、母乳性黄疸、手足口病、尿布皮炎", context.getResources().getDrawable(R.drawable.doctor1,null), "服饰鞋包", 149.00, "暂无评价", 1856, 0, 0));
+        goodsList.add(new DoctorsInfo("李云龙","承德附属医院","心血管内科","副主任医师","100001", "胸闷、心悸、高血压、心功能不全、心脏病、肺动脉高压",context.getResources().getDrawable(R.drawable.doctor1,null), "服饰鞋包", 153.00, "好评96%", 1224, 1, 0));
+        goodsList.add(new DoctorsInfo("李运昌","承德市中心医院","神经外科","副主任医师","100002", "脑肿瘤、脑外伤、呕吐、脑缺血、脑积水、动脉瘤", context.getResources().getDrawable(R.drawable.doctor2,null), "服饰鞋包", 479.00, "好评95%", 645, 0, 0));
+        goodsList.add(new DoctorsInfo("周慧敏","承德妇幼保健院","小儿科","副主任医师","100003", "新生儿疾病、发育、幼儿急疹、母乳性黄疸、手足口病、尿布皮炎",context.getResources().getDrawable(R.drawable.doctor3,null), "服饰鞋包", 149.00, "暂无评价", 1856, 0, 0));
+        goodsList.add(new DoctorsInfo("李云龙","承德附属医院","心血管内科","副主任医师","100001", "胸闷、心悸、高血压、心功能不全、心脏病、肺动脉高压", context.getResources().getDrawable(R.drawable.doctor4,null), "服饰鞋包", 153.00, "好评96%", 1224, 1, 0));
+        goodsList.add(new DoctorsInfo("李运昌","承德市中心医院","神经外科","副主任医师","100002", "脑肿瘤、脑外伤、呕吐、脑缺血、脑积水、动脉瘤", context.getResources().getDrawable(R.drawable.doctor5,null), "服饰鞋包", 479.00, "好评95%", 645, 0, 0));
+        goodsList.add(new DoctorsInfo("周慧敏","承德妇幼保健院","小儿科","副主任医师","100003", "新生儿疾病、发育、幼儿急疹、母乳性黄疸、手足口病、尿布皮炎", context.getResources().getDrawable(R.drawable.doctor1,null), "服饰鞋包", 149.00, "暂无评价", 1856, 0, 0));
+        goodsList.add(new DoctorsInfo("李云龙","承德附属医院","心血管内科","副主任医师","100001", "胸闷、心悸、高血压、心功能不全、心脏病、肺动脉高压", context.getResources().getDrawable(R.drawable.doctor2,null), "服饰鞋包", 479.00, "好评95%", 645, 0, 0));
+        goodsList.add(new DoctorsInfo("周慧敏","承德妇幼保健院","小儿科","副主任医师","100003", "新生儿疾病、发育、幼儿急疹、母乳性黄疸、手足口病、尿布皮炎",context.getResources().getDrawable(R.drawable.doctor3,null), "服饰鞋包", 149.00, "暂无评价", 1856, 0, 0));
+        goodsList.add(new DoctorsInfo("李云龙","承德附属医院","心血管内科","副主任医师","100001", "胸闷、心悸、高血压、心功能不全、心脏病、肺动脉高压", context.getResources().getDrawable(R.drawable.doctor4,null), "服饰鞋包", 153.00, "好评96%", 1224, 1, 0));
+        goodsList.add(new DoctorsInfo("李运昌","承德市中心医院","神经外科","副主任医师","100002", "脑肿瘤、脑外伤、呕吐、脑缺血、脑积水、动脉瘤", context.getResources().getDrawable(R.drawable.doctor5,null), "服饰鞋包", 479.00, "好评95%", 645, 0, 0));
+        goodsList.add(new DoctorsInfo("周慧敏","承德妇幼保健院","小儿科","副主任医师","100003", "新生儿疾病、发育、幼儿急疹、母乳性黄疸、手足口病、尿布皮炎", context.getResources().getDrawable(R.drawable.doctor1,null), "服饰鞋包", 149.00, "暂无评价", 1856, 0, 0));
         goodsListCopy.addAll(goodsList);
     }
 
@@ -184,7 +179,7 @@ public class DoctorListActivity extends AppCompatActivity implements
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                GoodsInfo info = goodsList.get(position - 1);
+                DoctorsInfo info = goodsList.get(position - 1);
                 gotoDetail(info);
             }
         });
@@ -237,7 +232,7 @@ public class DoctorListActivity extends AppCompatActivity implements
      * 商品详情
      * @param info
      */
-    private void gotoDetail(GoodsInfo info) {
+    private void gotoDetail(DoctorsInfo info) {
         Intent intent = new Intent(DoctorListActivity.this, DoctorMessageActivity.class);
         //intent.putExtra(Constants.INTENT_KEY.INFO_TO_DETAIL, info);
         startActivity(intent);DoctorListActivity.this.finish();
@@ -278,17 +273,17 @@ public class DoctorListActivity extends AppCompatActivity implements
                 inflate = convertView;
                 holder = (ViewHolder) inflate.getTag();
             }
-            GoodsInfo goodsInfo = goodsList.get(position);
-            holder.tvTitle.setText(goodsInfo.getGoodsName());
-            holder.tvPrice.setText(NumberUtils.formatPrice(goodsInfo.getGoodsPrice()));
-            holder.tvPercent.setText(goodsInfo.getGoodsPercent());
-            holder.tvNum.setText(goodsInfo.getGoodsComment() + "人");
-            holder.tvname.setText(goodsInfo.getGoodsname());
-            holder.tvclasses.setText(goodsInfo.getGoodsclasses());
-            holder.tvhospital.setText(goodsInfo.getGoodshospital());
-            holder.tvposition.setText(goodsInfo.getGoodsposition());
-           // UILUtils.displayImage(DoctorListActivity.this, goodsInfo.getGoodsIcon(), holder.imgIcon);
-            if (goodsInfo.getIsPhone() == 1) {
+            DoctorsInfo doctorsInfo = goodsList.get(position);
+            holder.tvTitle.setText(doctorsInfo.getGoodsName());
+            holder.tvPrice.setText(NumberUtils.formatPrice(doctorsInfo.getGoodsPrice()));
+            holder.tvPercent.setText(doctorsInfo.getGoodsPercent());
+            holder.tvNum.setText(doctorsInfo.getGoodsComment() + "人");
+            holder.tvname.setText(doctorsInfo.getGoodsname());
+            holder.tvclasses.setText(doctorsInfo.getGoodsclasses());
+            holder.tvhospital.setText(doctorsInfo.getGoodshospital());
+            holder.tvposition.setText(doctorsInfo.getGoodsposition());
+           // UILUtils.displayImage(DoctorListActivity.this, doctorsInfo.getGoodsIcon(), holder.imgIcon);
+            if (doctorsInfo.getIsPhone() == 1) {
                 holder.imgVip.setVisibility(View.VISIBLE);
             } else {
                 holder.imgVip.setVisibility(View.INVISIBLE);
@@ -331,10 +326,10 @@ public class DoctorListActivity extends AppCompatActivity implements
                 inflate = convertView;
                 holder = (ViewHolder) inflate.getTag();
             }
-            GoodsInfo goodsInfo = goodsList.get(position);
-            holder.tvTitle.setText(goodsInfo.getGoodsName());
-            holder.tvPrice.setText(NumberUtils.formatPrice(goodsInfo.getGoodsPrice()));
-           // UILUtils.displayImage(DoctorListActivity.this, goodsInfo.getGoodsIcon(), holder.imgIcon);
+            DoctorsInfo doctorsInfo = goodsList.get(position);
+            holder.tvTitle.setText(doctorsInfo.getGoodsName());
+            holder.tvPrice.setText(NumberUtils.formatPrice(doctorsInfo.getGoodsPrice()));
+           // UILUtils.displayImage(DoctorListActivity.this, doctorsInfo.getGoodsIcon(), holder.imgIcon);
             return inflate;
         }
 
@@ -420,10 +415,10 @@ public class DoctorListActivity extends AppCompatActivity implements
         mImgPrice.setImageResource(R.mipmap.sort_button_price_up);
         mImgPriceList.setImageResource(R.mipmap.sort_button_price_up);
         mImgPriceGrid.setImageResource(R.mipmap.sort_button_price_up);
-        Collections.sort(goodsList, new Comparator<GoodsInfo>() {
+        Collections.sort(goodsList, new Comparator<DoctorsInfo>() {
 
             @Override
-            public int compare(GoodsInfo lhs, GoodsInfo rhs) {
+            public int compare(DoctorsInfo lhs, DoctorsInfo rhs) {
                 return Double.compare(lhs.getGoodsPrice(), rhs.getGoodsPrice());
             }
         });
@@ -439,10 +434,10 @@ public class DoctorListActivity extends AppCompatActivity implements
         mImgPrice.setImageResource(R.mipmap.sort_button_price_down);
         mImgPriceList.setImageResource(R.mipmap.sort_button_price_down);
         mImgPriceGrid.setImageResource(R.mipmap.sort_button_price_down);
-        Collections.sort(goodsList, new Comparator<GoodsInfo>() {
+        Collections.sort(goodsList, new Comparator<DoctorsInfo>() {
 
             @Override
-            public int compare(GoodsInfo lhs, GoodsInfo rhs) {
+            public int compare(DoctorsInfo lhs, DoctorsInfo rhs) {
                 return Double.compare(rhs.getGoodsPrice(), lhs.getGoodsPrice());
             }
         });
