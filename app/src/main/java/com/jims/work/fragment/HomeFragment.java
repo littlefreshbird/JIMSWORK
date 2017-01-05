@@ -245,11 +245,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private void initdata() {
         data = new ArrayList<>();
         data.add("家人给2岁孩子喝这个，孩子智力倒退10岁!!!");
-        data.add("iPhone8最感人变化成真，必须买买买买!!!!");
-        data.add("简直是白菜价！日本玩家33万甩卖15万张游戏王卡");
-        data.add("iPhone7价格曝光了！看完感觉我的腰子有点疼...");
-        data.add("主人内疚逃命时没带够，回废墟狂挖30小时！");
-        data.add("竟不是小米乐视！看水抢了骁龙821首发了！！！");
+        data.add("冬季养生的方法和要点！");
+        data.add("为什么你的黑眼圈总是消不掉？");
+        data.add("有关咳嗽的30个常见问题！");
+        data.add("雾霾持续加重，哪些措施能保护我们？");
+        data.add("冬季为何是哮喘发作的高峰期！");
 
     }
     /**

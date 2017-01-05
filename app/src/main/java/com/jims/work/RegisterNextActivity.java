@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,6 +26,8 @@ public class RegisterNextActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        RegisterNextActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_register_next);
         ButterKnife.bind(this);
         imgRegisternextBack.setOnClickListener(new View.OnClickListener() {
