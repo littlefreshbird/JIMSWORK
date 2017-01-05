@@ -51,7 +51,7 @@
                 android:id="@+id/TextView05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="医院查询"
+                android:text="家庭医生"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/micro_text_size" />
         </LinearLayout>
@@ -74,7 +74,7 @@
                 android:id="@+id/TextView06"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="科室简介"
+                android:text="健康管理"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/micro_text_size" />
         </LinearLayout>
@@ -97,7 +97,7 @@
                 android:id="@+id/TextView04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="疾病查询"
+                android:text="上传病例"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/micro_text_size" />
         </LinearLayout>
