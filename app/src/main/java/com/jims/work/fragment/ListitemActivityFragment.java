@@ -12,7 +12,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.jims.work.EvaluateDetailActivity;
+import com.jims.work.MyEvaluateDetailAcivity;
 import com.jims.work.R;
 
 import java.util.ArrayList;
@@ -28,10 +28,10 @@ public class ListitemActivityFragment extends  Fragment {
 	    		+ "2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合。", "某某这个医院医生能力不行，在这治病三年了，根本没什么效果！","我要投诉"
 	    				+ "我要投诉，我要投诉。。。","我要投诉1某某医院的张医生。。。","我要投诉某某医院的刘医生。。。","我要投诉某某医院的王医生。。。","我要投诉某某医院的赵医生。。。"};  
 	  
-	    private int[] imageids = { R.drawable.menu3, R.drawable.menu3,
-	            R.drawable.menu3, R.drawable.menu3 ,R.drawable.menu3,R.drawable.menu3,R.drawable.menu3,R.drawable.menu3,R.drawable.menu3};  
-	    private String[] time = {"2016-07-29","2016-05-23","2016-05-05","2015-12-18","2015-11-11","2015-10-10","2015-06-09","2015-05-03","2015-03-10"};
-		 private String[] client ={"来自于:华为","来自于:华为","来自于:华为","来自于:华为","来自于:华为","来自于:华为","来自于:华为","来自于:华为","来自于:华为"};
+	    private int[] imageids = { R.drawable.image_myhead, R.drawable.image_myhead,
+	            R.drawable.image_myhead, R.drawable.image_myhead ,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead};
+	    private String[] time = {"2016-09-29","2016-08-23","2016-06-05","2015-12-18","2015-11-11","2015-10-10","2015-06-09","2015-05-03","2015-03-10"};
+		 private String[] client ={"满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:"};
 		 private  int[] count = {5,6,4,11,9,6,0,0,0};
 		 private int[]  sexmaletop={R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male};
 	    ListView lvinfo;
@@ -48,7 +48,7 @@ public class ListitemActivityFragment extends  Fragment {
             listItem.put("desc", desc[i]);  
             listItem.put("time", time[i]);  
             listItem.put("client", client[i]);  
-            listItem.put("count", count[i]); 
+            listItem.put("count", count[i]);
             listItem.put("sexmaletop", sexmaletop[i]); 
             
             listItems.add(listItem);  
@@ -72,7 +72,7 @@ public class ListitemActivityFragment extends  Fragment {
 					                // TODO Auto-generated method stub
 					    
 					            	Intent intent = new Intent(getActivity(),
-					            			EvaluateDetailActivity.class);
+					            			MyEvaluateDetailAcivity.class);
 					    			Bundle bundle = new Bundle();
 					    			bundle.putString("arg2", itemclivk);		
 					    			intent.putExtras(bundle);

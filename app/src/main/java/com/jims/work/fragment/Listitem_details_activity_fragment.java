@@ -25,7 +25,7 @@ public class Listitem_details_activity_fragment extends Fragment {
 	    				+ "运奥运奥运","12345645","1234654865416","1314546514658","13246548565"};  
 	  
 	    private int[] imageids = { R.drawable.menu1, R.drawable.menu2,
-	            R.drawable.menu3, R.drawable.menu1 ,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1};  
+	            R.drawable.menu1, R.drawable.menu1 ,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1};
 	    
 //回复数据	        
 		private String[] replyname={"张医生", "李医生", "陆医生", "刘医生" };
@@ -36,7 +36,7 @@ public class Listitem_details_activity_fragment extends Fragment {
 		  private String[] timedetails = {"2016-07-29","2016-05-23","2016-05-05","2015-12-18"};
 		  private String[] clientdetails ={"来自于:华为","来自于:华为","来自于:华为","来自于:华为"};
 		 private int[] replyimageids = { R.drawable.menu1, R.drawable.menu2,  
-		            R.drawable.menu3, R.drawable.menu1 ,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1}; 
+		            R.drawable.menu1, R.drawable.menu1 ,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1};
 
 		 private int[]  sexmaleitem={R.drawable.male,R.drawable.female,R.drawable.female,R.drawable.female};
 		  // ListView lvinfo;

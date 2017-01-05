@@ -330,6 +330,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.quick_find: // 查找医生
                 startActivity(new Intent(getActivity(), MoreActivity.class));
                 break;
+            case R.id.img_home_search_code: // 二维码扫描
+                 // ((MainActivity) getActivity()).scanQRCode();
+                 break;
             default:
                 break;
         }

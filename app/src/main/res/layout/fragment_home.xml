@@ -34,7 +34,7 @@
             android:clickable="true" />
 
         <ImageView
-            android:id="@+id/mainactivity_title_position_map"
+            android:id="@+id/img_home_search_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -49,7 +49,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
 
-            android:layout_toLeftOf="@id/mainactivity_title_position_map"
+            android:layout_toLeftOf="@id/img_home_search_code"
             android:layout_toRightOf="@id/top_title_city_spinner"
             android:background="@drawable/main_page_search_bg"
             android:text="查找医生、医院"
