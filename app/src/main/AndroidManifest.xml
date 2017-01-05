@@ -75,7 +75,7 @@
                   android:label="看医生">
 
         </activity>
-
+        <activity android:name=".MyEvaluateDetailAcivity" />
     </application>
 
 </manifest>
