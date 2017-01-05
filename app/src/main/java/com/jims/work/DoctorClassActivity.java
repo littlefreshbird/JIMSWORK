@@ -1,14 +1,11 @@
 package com.jims.work;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.ActionBar;
-import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -55,13 +52,13 @@ public class DoctorClassActivity extends FragmentActivity {
 				switch (position){
 					case 0:
 					Intent intent = new Intent(DoctorClassActivity.this,
-							DoctorListActivity.class);
+							NewDoctorListActivity.class);
 					startActivity(intent);
 						finish();
 						break;
 					case 1:
 						Intent intent1 = new Intent(DoctorClassActivity.this,
-								DoctorListActivity.class);
+								NewDoctorListActivity.class);
 						startActivity(intent1);
 						finish();
 						break;
