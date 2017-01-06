@@ -7,7 +7,6 @@ import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -21,7 +20,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -38,9 +36,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import static com.jims.work.R.drawable.action_bar_back;
-import static com.jims.work.R.id.buttontwo;
 
 
 /**
@@ -77,8 +72,8 @@ public class PostActivity extends AppCompatActivity {
                 PostActivity.this.finish();
             }
         });
-        setCustomActionBar();
 
+       setCustomActionBar();
         /*
          * 防止键盘挡住输入框
          * 不希望遮挡设置activity属性 android:windowSoftInputMode="adjustPan"
@@ -143,7 +138,7 @@ public class PostActivity extends AppCompatActivity {
                                         startActivityForResult(getImageByCamera, CAMERA_SUCCESS);
                                     }else{
                                         Intent intent = new Intent(Intent.ACTION_PICK,
-                                                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                                                MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                                         startActivityForResult(intent, IMAGE_OPEN);
                                     }
                                 }
@@ -329,7 +324,7 @@ public class PostActivity extends AppCompatActivity {
         });
         builder.create().show();
     }
-    private void setCustomActionBar() {
+    public void setCustomActionBar() {
         ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
         View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
         ActionBar actionBar = getSupportActionBar();
