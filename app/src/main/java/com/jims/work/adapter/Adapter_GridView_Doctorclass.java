@@ -1,4 +1,4 @@
-package com.jims.work.bean;
+package com.jims.work.adapter;
 
 
 

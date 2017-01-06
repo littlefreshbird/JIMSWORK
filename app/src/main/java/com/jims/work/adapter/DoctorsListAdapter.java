@@ -13,7 +13,6 @@ import com.jims.work.R;
 import com.jims.work.bean.DoctorsInfo;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -64,19 +63,33 @@ public class DoctorsListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int i, View convertView, ViewGroup viewGroup) {
+    public View getView(int position, View convertView, ViewGroup viewGroup) {
         ViewHolder viewHolder;
         if (convertView != null) {
             viewHolder = (ViewHolder) convertView.getTag();
         } else {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_goods_list_list, null);
-            viewHolder = new DoctorsListAdapter.ViewHolder(convertView);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_doctors_list, null);
+            viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         }
-
+        fillValue(position, viewHolder);
         return convertView;
 
     }
+
+    private void fillValue(int position, ViewHolder viewHolder) {
+        viewHolder.imgIcon.setImageDrawable(list.get(position).getIcon());
+        viewHolder.tvName.setText(list.get(position).getNames());
+        viewHolder.tvClasses.setText(list.get(position).getClasses());
+        viewHolder.tvPosition.setText(list.get(position).getPosition());
+        viewHolder.tvHospital.setText(list.get(position).getHospital());
+        viewHolder.tvDetail.setText(list.get(position).getDetail());
+        viewHolder.tvPrice.setText(list.get(position).getPrice());
+        viewHolder.tvNum.setText(list.get(position).getComment()+"人");
+        viewHolder.tvPercent.setText(list.get(position).getPercent());
+
+    }
+
 
     static class ViewHolder {
         @BindView(R.id.img_icon)
@@ -90,7 +103,7 @@ public class DoctorsListAdapter extends BaseAdapter {
         @BindView(R.id.tv_hospital)
         TextView tvHospital;
         @BindView(R.id.tv_title)
-        TextView tvTitle;
+        TextView tvDetail;
         @BindView(R.id.tv_price)
         TextView tvPrice;
         @BindView(R.id.tv_num)

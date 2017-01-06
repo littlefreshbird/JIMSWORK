@@ -15,7 +15,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class ListDropDownAdapter extends BaseAdapter {
+public class GirdDropDownAdapter extends BaseAdapter {
+
 
     private Context context;
     private List<String> list;
@@ -26,7 +27,7 @@ public class ListDropDownAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
-    public ListDropDownAdapter(Context context, List<String> list) {
+    public GirdDropDownAdapter(Context context, List<String> list) {
         this.context = context;
         this.list = list;
     }
@@ -52,7 +53,7 @@ public class ListDropDownAdapter extends BaseAdapter {
         if (convertView != null) {
             viewHolder = (ViewHolder) convertView.getTag();
         } else {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_default_drop_down, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_grid_drop_down, null);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         }
@@ -61,24 +62,22 @@ public class ListDropDownAdapter extends BaseAdapter {
     }
 
     private void fillValue(int position, ViewHolder viewHolder) {
-        viewHolder.text.setText(list.get(position));
+        viewHolder.mText.setText(list.get(position));
         if (checkItemPosition != -1) {
             if (checkItemPosition == position) {
-                viewHolder.text.setTextColor(context.getResources().getColor(R.color.white));
-                viewHolder.text.setBackgroundResource(R.color.check_bg);
+                viewHolder.mText.setTextColor(context.getResources().getColor(R.color.white));
+                viewHolder.mText.setBackgroundResource(R.drawable.check_bg);
             } else {
-                viewHolder.text.setTextColor(context.getResources().getColor(R.color.drop_down_unselected));
-                viewHolder.text.setBackgroundResource(R.color.white);
+                viewHolder.mText.setTextColor(context.getResources().getColor(R.color.drop_down_unselected));
+                viewHolder.mText.setBackgroundResource(R.drawable.uncheck_bg);
             }
         }
     }
 
-    static
 
-
-    class ViewHolder {
+    static class ViewHolder {
         @BindView(R.id.text)
-        TextView text;
+        TextView mText;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
