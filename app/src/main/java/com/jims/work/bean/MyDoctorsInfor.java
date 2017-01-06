@@ -1,12 +1,9 @@
 package com.jims.work.bean;
 
 
-
-
-
 public class MyDoctorsInfor {
 	/**
-	 * 
+	 *
 	 */
 
 	//@Column
@@ -24,7 +21,7 @@ public class MyDoctorsInfor {
 	//@Column
 	String goodsIcon;
 	//@Column
-	String attention; // 
+	String attention; //
 	//@Column
 	String buy; // 
 	public String getNames() {
@@ -141,7 +138,7 @@ public class MyDoctorsInfor {
 		return true;
 	}
 	public MyDoctorsInfor(String names, String hospital, String classes, String position, String goodsId,
-			String goodsIcon, String attention, String buy) {
+						  String goodsIcon, String attention, String buy) {
 		super();
 		this.names = names;
 		this.hospital = hospital;
@@ -152,10 +149,10 @@ public class MyDoctorsInfor {
 		this.attention = attention;
 		this.buy = buy;
 	}
-	
 
 
 
 
-	
+
+
 }
