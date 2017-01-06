@@ -22,6 +22,7 @@
                 android:id="@+id/ImageView07"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
                 android:src="@drawable/icon_main_page_buy_medicine" />
 
             <TextView
@@ -29,6 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="免费义诊 "
+                android:layout_marginTop="5dp"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/micro_text_size" />
         </LinearLayout>
@@ -45,12 +47,14 @@
                 android:id="@+id/ImageView06"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
                 android:src="@drawable/icon_main_page_find_hospital" />
 
             <TextView
                 android:id="@+id/TextView05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:text="家庭医生"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/micro_text_size" />
@@ -68,7 +72,7 @@
                 android:id="@+id/ImageView05"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_main_page_oversea" />
+                android:src="@drawable/icon_main_page_health" />
 
             <TextView
                 android:id="@+id/TextView06"
@@ -91,6 +95,7 @@
                 android:id="@+id/ImageView04"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
                 android:src="@drawable/icon_main_page_self_check" />
 
             <TextView
@@ -98,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="病例上传"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/dark"
                 android:textSize="@dimen/micro_text_size" />
         </LinearLayout>

@@ -22,17 +22,17 @@ import java.util.Map;
 
 public class ListitemActivityFragment extends  Fragment {
 	 
-	  private String[] name = { "china", "china", "china", "china","china","china","china","china","china" };  
+	  private String[] name = { "王林", "张强", "张惠妹", "周琴","明明","小刘","李红","志彬","高建国" };
 	  
-	   private String[] desc = { "亚健康有什么症状吗？", "我小孩今年8岁,乘坐自行车摔倒擦伤了脸,使用什么方法才能不留疤痕?", "这个张大夫对待病人态度不好！"
-	    		+ "2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合。", "某某这个医院医生能力不行，在这治病三年了，根本没什么效果！","我要投诉"
+	   private String[] desc = { "医生服务态度很好，很满意！", "我小孩今年8岁,乘坐自行车摔倒擦伤了脸,医生很细心，谢谢！", "这个张大夫对待病人态度不好！"
+	    		+ "2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合，这次多亏了这个医生。", "在这个医院医生能力不行，在这治病三年了，根本没什么效果！","我要投诉"
 	    				+ "我要投诉，我要投诉。。。","我要投诉1某某医院的张医生。。。","我要投诉某某医院的刘医生。。。","我要投诉某某医院的王医生。。。","我要投诉某某医院的赵医生。。。"};  
 	  
 	    private int[] imageids = { R.drawable.image_myhead, R.drawable.image_myhead,
 	            R.drawable.image_myhead, R.drawable.image_myhead ,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead};
 	    private String[] time = {"2016-09-29","2016-08-23","2016-06-05","2015-12-18","2015-11-11","2015-10-10","2015-06-09","2015-05-03","2015-03-10"};
 		 private String[] client ={"满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:"};
-		 private  int[] count = {5,6,4,11,9,6,0,0,0};
+		 private  int[] count = {5,4,4,5,5,3,4,1,2};
 		 private int[]  sexmaletop={R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male};
 	    ListView lvinfo;
 		    List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>(); 

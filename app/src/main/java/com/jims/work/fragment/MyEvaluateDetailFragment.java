@@ -17,9 +17,9 @@ import java.util.Map;
 
 public class MyEvaluateDetailFragment extends Fragment {
 
-    private String[] name = { "china" };
+    private String[] name = { "张强" };
 
-    private String[] desc = { "亚健康有什么症状吗？"};
+    private String[] desc = { "2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合，这次多亏了这个医生"};
 
     private int[] imageids = { R.drawable.image_myhead};
     private String[] time = {"2016-09-29"};
