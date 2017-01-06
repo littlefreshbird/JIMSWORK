@@ -1,11 +1,10 @@
 package com.jims.work.bean;
 
-import java.io.Serializable;
 
 
 
-//@Table(name = "MyDoctor")
-public class MyDoctorsInfor  implements Serializable, Cloneable {
+
+public class MyDoctorsInfor {
 	/**
 	 * 
 	 */

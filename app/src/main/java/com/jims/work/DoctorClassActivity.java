@@ -13,7 +13,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import com.jims.work.bean.Adapter_GridView_Doctorclass;
+import com.jims.work.adapter.Adapter_GridView_Doctorclass;
 import com.jims.work.utils.Constants;
 
 /**
