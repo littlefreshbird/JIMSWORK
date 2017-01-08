@@ -1,8 +1,12 @@
 package com.jims.work;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -53,8 +57,16 @@ public class NewDoctorListActivity extends AppCompatActivity {
         context = NewDoctorListActivity.this;
         initGoods();
         initview();
+        setCustomActionBar();
     }
-
+    //调用onSuppprtNavigateup()为actionbar左上角点击事件
+    @Override
+    public boolean onSupportNavigateUp() {
+        Intent intent=new Intent(NewDoctorListActivity.this,DoctorClassActivity.class);
+        startActivity(intent);
+        finish();
+        return super.onSupportNavigateUp();
+    }
     private void initGoods() {
         doctorsList.add(new DoctorsInfo("李云龙", "承德附属医院", "心血管内科", "副主任医师", "100001", "胸闷、心悸、高血压、心功能不全、心脏病、肺动脉高压", context.getResources().getDrawable(R.drawable.doctor1, null), "", "153.00", "好评96%", 1224, 1, 0));
         doctorsList.add(new DoctorsInfo("李运昌", "承德市中心医院", "神经外科", "副主任医师", "100002", "脑肿瘤、脑外伤、呕吐、脑缺血、脑积水、动脉瘤", context.getResources().getDrawable(R.drawable.doctor2, null), "", "479.00", "好评95%", 645, 0, 0));
@@ -153,5 +165,18 @@ public class NewDoctorListActivity extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+    }
+    private void setCustomActionBar() {
+        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
+        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_msg, null);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setCustomView(mActionBarView, lp);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
+        actionBar.setElevation(2);
     }
 }

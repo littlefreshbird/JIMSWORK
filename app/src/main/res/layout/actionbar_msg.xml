@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textSize="@dimen/text_size_large"
+        android:textSize="@dimen/text_size_medium"
         android:text="看医生"
         android:textColor="@color/colorText"/>
 </RelativeLayout>

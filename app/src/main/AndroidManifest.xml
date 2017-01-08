@@ -72,7 +72,22 @@
                   android:label="看医生">
 
         </activity>
+
+        <activity android:name=".MyServiceActivity"
+                  >
+
+        </activity>
+
+        <activity android:name=".MyinquiryDetailAcivity"
+            >
+
+        </activity>
+
+
         <activity android:name=".MyEvaluateDetailAcivity" />
+
+
+
     </application>
 
 </manifest>

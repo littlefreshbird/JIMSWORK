@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:gravity="center"
-                android:text="评价详情"
+                android:text="@string/wenzhen"
                 android:textColor="@color/black"
                 android:textSize="@dimen/medium_text_size"/>
         </RelativeLayout>

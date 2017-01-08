@@ -88,4 +88,10 @@
     <string name="voice_seconds_tips">还可以说%1$s秒</string>
 
     <string name="voice_short_tips">录音时间太短</string>
+
+
+    <string name="wenzhen">我的问诊</string>
+    <string name="fuwu">我的服务</string>
+
+    <string name="dingyue">我的订阅</string>
 </resources>
