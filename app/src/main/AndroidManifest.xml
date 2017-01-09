@@ -45,45 +45,18 @@
         <activity android:name=".MyEvaluateActivity" />
         <activity android:name=".MyDoctorsListActivity" />
         <activity android:name=".EvaluateDetailActivity" />
-        <activity android:name=".MoreActivity"></activity>
+        <activity android:name=".MoreActivity"/>
         <activity android:name=".LookforActivity" />
         <activity android:name=".LookforFinishActivity" />
-        <activity android:name=".PostActivity"
-                 >
-
-        </activity>
-
-        <activity android:name=".NewDoctorListActivity">
-
-        </activity>
-
-        <activity android:name=".RecordActivity"
-                             >
-
-        </activity>
-
-        <activity android:name=".DoctorClassActivity"
-                 >
-
-        </activity>
-
-        <activity android:name=".DoctorMessageActivity"
-                 >
-
-        </activity>
-
-        <activity android:name=".MyServiceActivity"
-                  >
-
-        </activity>
-
-        <activity android:name=".MyinquiryDetailAcivity"
-            >
-
-        </activity>
-
-
+        <activity android:name=".PostActivity"/>
+        <activity android:name=".NewDoctorListActivity"/>
+        <activity android:name=".RecordActivity"/>
+        <activity android:name=".DoctorClassActivity"/>
+        <activity android:name=".DoctorMessageActivity"/>
+        <activity android:name=".MyServiceActivity"/>
+        <activity android:name=".MyinquiryDetailAcivity"/>
         <activity android:name=".MyEvaluateDetailAcivity" />
+        <activity android:name=".MyHistoryListActivity" />
     </application>
 
 </manifest>
