@@ -99,7 +99,7 @@
                 android:layout_marginLeft="3dp"
                 android:layout_toRightOf="@id/grab_doctor_img"
                 android:text="名医限量抢"
-                android:textSize="@dimen/textSize_14" />
+                android:textSize="@dimen/small_text_size" />
               <TextView
                 android:id="@+id/grab_doctor_det_text"
                 android:layout_width="wrap_content"
@@ -108,7 +108,7 @@
                 android:layout_below="@id/grab_doctor_tit_text"
                 android:text="全国名医 ，限量服务"
                 android:textColor="@color/gray"
-                android:textSize="@dimen/textSize_12" />
+                android:textSize="@dimen/micro_text_size" />
         </RelativeLayout>
 
         <View
@@ -140,7 +140,7 @@
                 android:layout_marginLeft="3dp"
                 android:layout_toRightOf="@id/volunteer_doctor_img"
                 android:text="今日义诊"
-                android:textSize="@dimen/textSize_14" />
+                android:textSize="@dimen/small_text_size" />
               <TextView
                 android:id="@+id/volunteer_doctor_det_text"
                 android:layout_width="wrap_content"
@@ -149,7 +149,7 @@
                 android:layout_below="@id/volunteer_doctor_tit_text"
                 android:text="免费出诊，服务群众"
                 android:textColor="@color/gray"
-                android:textSize="@dimen/textSize_12" />
+                android:textSize="@dimen/micro_text_size" />
         </RelativeLayout>
     </LinearLayout>
 

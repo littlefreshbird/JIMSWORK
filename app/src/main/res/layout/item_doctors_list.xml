@@ -24,7 +24,7 @@
         android:layout_toRightOf="@+id/img_icon"
         android:text="李云龙"
         android:textColor="@color/black"
-        android:textSize="@dimen/textSize_16" />
+        android:textSize="@dimen/micro_text_size" />
 
     <TextView
         android:id="@+id/tv_classes"
@@ -35,7 +35,7 @@
         android:layout_toRightOf="@+id/tv_name"
         android:text="口腔科"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_14" />
+        android:textSize="@dimen/small_text_size" />
 
     <TextView
         android:id="@+id/tv_position"
@@ -46,7 +46,7 @@
         android:layout_toRightOf="@+id/tv_classes"
         android:text="主任医师"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_14" />
+        android:textSize="@dimen/small_text_size" />
 
     <TextView
         android:id="@+id/tv_hospital"
@@ -58,7 +58,7 @@
         android:layout_toRightOf="@+id/img_icon"
         android:text="承德附属医院"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_14" />
+        android:textSize="@dimen/small_text_size" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -69,7 +69,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="2dp"
         android:layout_toRightOf="@+id/img_icon"
-         android:textSize="@dimen/textSize_12" 
+         android:textSize="@dimen/micro_text_size"
         android:ellipsize="end"
         android:lines="2"
         android:text="AKG K450 头戴式耳机头戴式耳机头戴式耳机头戴式耳机头戴式耳机头戴式耳机"
@@ -95,7 +95,7 @@
         android:layout_toRightOf="@+id/tv_percent"
         android:text="12386人"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_12" />
+        android:textSize="@dimen/micro_text_size" />
 
     <ImageView
         android:id="@+id/img_icon_vip"
@@ -115,7 +115,7 @@
         android:layout_alignLeft="@+id/tv_price"
         android:text="好评95%"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_12" />
+        android:textSize="@dimen/micro_text_size" />
 
     <View
         android:layout_width="match_parent"

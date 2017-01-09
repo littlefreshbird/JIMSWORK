@@ -63,9 +63,7 @@
 
         </LinearLayout>
         <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/gray" />
+            style="@style/register_view"/>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -88,9 +86,7 @@
 
         </LinearLayout>
         <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/gray" />
+            style="@style/register_view" />
         <Button
             android:id="@+id/btn_register_next"
             android:layout_width="match_parent"

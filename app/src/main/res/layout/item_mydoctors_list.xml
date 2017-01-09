@@ -23,7 +23,7 @@
         android:layout_toRightOf="@+id/img_icon"
         android:text="李云龙"
         android:textColor="@color/black"
-        android:textSize="@dimen/textSize_16" />
+        android:textSize="@dimen/small_middle_text_size" />
 
     <TextView
         android:id="@+id/tv_buy"
@@ -36,7 +36,7 @@
         android:paddingRight="3sp"
         android:text="已订阅"
             android:textColor="@color/palegreen"
-        android:textSize="@dimen/textSize_12"/>
+        android:textSize="@dimen/micro_text_size"/>
 
     <TextView
         android:id="@+id/tv_attention"
@@ -50,7 +50,7 @@
         android:paddingRight="3sp"
         android:text="已关注"
         android:textColor="@color/palegreen"
-        android:textSize="@dimen/textSize_12" />
+        android:textSize="@dimen/micro_text_size" />
 
     <TextView
         android:id="@+id/tv_hospital"
@@ -62,7 +62,7 @@
         android:layout_toRightOf="@+id/img_icon"
         android:text="承德附属医院"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_14" />
+        android:textSize="@dimen/small_text_size" />
 
     <TextView
         android:id="@+id/tv_classes"
@@ -74,7 +74,7 @@
         android:layout_toRightOf="@+id/img_icon"
         android:text="口腔科"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_14" />
+        android:textSize="@dimen/small_text_size" />
 
     <TextView
         android:id="@+id/tv_position"
@@ -85,7 +85,7 @@
         android:layout_toRightOf="@+id/tv_classes"
         android:text="主任医师"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_14" />
+        android:textSize="@dimen/small_text_size" />
 
     <View
         android:layout_width="match_parent"

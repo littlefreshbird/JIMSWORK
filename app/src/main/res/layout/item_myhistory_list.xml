@@ -24,7 +24,7 @@
 
         android:text="承德附属医院"
         android:textColor="@color/black"
-        android:textSize="@dimen/textSize_16" />
+        android:textSize="@dimen/small_middle_text_size" />
 
     <TextView
         android:id="@+id/tv_classes"
@@ -35,7 +35,7 @@
         android:layout_toRightOf="@+id/tv_hospital"
         android:text="口腔科"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_14" />
+        android:textSize="@dimen/small_text_size" />
 
     <TextView
         android:id="@+id/tv_position"
@@ -47,7 +47,7 @@
         android:layout_toRightOf="@+id/tv_name"
         android:text="主任医师"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_14" />
+        android:textSize="@dimen/small_text_size" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -59,7 +59,7 @@
 
         android:text="李云龙"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_14" />
+        android:textSize="@dimen/small_middle_text_size" />
 
  <!--   <TextView
         android:id="@+id/tv_title"
@@ -85,7 +85,7 @@
         android:layout_marginBottom="2dp"
         android:text="诊疗时间："
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_12"/>
+        android:textSize="@dimen/micro_text_size"/>
 
     <TextView
         android:id="@+id/tv_num"
@@ -97,7 +97,7 @@
         android:layout_toRightOf="@+id/tv_percent"
         android:text="张强"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_12" />
+        android:textSize="@dimen/micro_text_size" />
 
     <TextView
         android:id="@+id/tV_time"
@@ -108,7 +108,7 @@
         android:layout_marginLeft="2dp"
         android:layout_toRightOf="@+id/tv_price"
         android:text="2016-12-12"
-        android:textSize="@dimen/textSize_12"/>
+        android:textSize="@dimen/micro_text_size"/>
 
     <TextView
         android:id="@+id/tv_percent"
@@ -118,7 +118,7 @@
         android:layout_alignLeft="@+id/tv_price"
         android:text="就诊人："
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/textSize_12" />
+        android:textSize="@dimen/micro_text_size" />
 
     <View
         android:layout_width="match_parent"
