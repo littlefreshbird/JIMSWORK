@@ -88,15 +88,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dip"
-                    android:textColor="@color/gray"
+
                     android:textSize="@dimen/micro_text_size" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="2dip"
-                    android:src="@drawable/img_star" />
+                <RatingBar
+                    android:id="@+id/ratingbar"
+                    style="@style/roomRatingBar"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:numStars="5"
+                    android:rating = "3"
+                    android:stepSize="1"/>
+                <!-- <ImageView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center_vertical"
+                     android:layout_marginLeft="2dip"
+                     android:src="@drawable/img_star" />-->
 
                 <TextView
                     android:id="@+id/tweet_listitem_commentCount"
