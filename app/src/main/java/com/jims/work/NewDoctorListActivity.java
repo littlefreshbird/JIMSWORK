@@ -62,7 +62,7 @@ public class NewDoctorListActivity extends AppCompatActivity {
     //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
     public boolean onSupportNavigateUp() {
-        Intent intent=new Intent(NewDoctorListActivity.this,DoctorClassActivity.class);
+        Intent intent=new Intent(NewDoctorListActivity.this,RecordActivity.class);
         startActivity(intent);
         finish();
         return super.onSupportNavigateUp();

@@ -70,7 +70,7 @@ public class RecordActivity extends AppCompatActivity {
         buttontwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(RecordActivity.this,DoctorClassActivity.class);
+                Intent intent=new Intent(RecordActivity.this,NewDoctorListActivity.class);
                 startActivity(intent);
                 finish();
             }

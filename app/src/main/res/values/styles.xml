@@ -23,7 +23,19 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
     </style>
+    <style name="actionbar_bg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
 
+    <style name="actionbar_tx_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textSize">@dimen/activity_horizontal_margin</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
     <!-- 筛选菜单ToggleButton -->
     <style name="FilterToggleButton">
         <item name="android:layout_width">60dp</item>
