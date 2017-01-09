@@ -12,7 +12,7 @@
         android:layout_height="45dip">
 
         <ImageView
-            android:id="@+id/img_back"
+            android:id="@+id/img_registerback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"

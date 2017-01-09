@@ -33,8 +33,7 @@ public class RegisterNextActivity extends AppCompatActivity {
         imgRegisternextBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(RegisterNextActivity.this,RegisterActivity.class);
-                startActivity(intent);
+               finish();
             }
         });
         btnRegisterNext.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +41,7 @@ public class RegisterNextActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(RegisterNextActivity.this,MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

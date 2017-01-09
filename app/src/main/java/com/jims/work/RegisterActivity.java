@@ -13,13 +13,9 @@ import android.widget.RelativeLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.jims.work.R.id.img_back;
-
 public class RegisterActivity extends AppCompatActivity {
 
 
-    @BindView(img_back)
-    ImageView imgBack;
     @BindView(R.id.layout_login_topbar)
     RelativeLayout layoutLoginTopbar;
     @BindView(R.id.edit_mobile)
@@ -30,6 +26,8 @@ public class RegisterActivity extends AppCompatActivity {
     EditText editCode;
     @BindView(R.id.access_next)
     Button accessNext;
+    @BindView(R.id.img_registerback)
+    ImageView imgRegisterback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +43,7 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        imgBack.setOnClickListener(new View.OnClickListener() {
+        imgRegisterback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
