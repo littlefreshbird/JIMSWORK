@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/id_title"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@color/white" >
+
+        <ImageView
+            android:id="@+id/img_mycomplaint_back"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:padding="15dp"
+            android:src="@drawable/action_bar_back" />
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="33dp"
+            android:layout_centerInParent="true" >
+
+            <TextView
+                style="@style/text_20_blacks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="我的投诉"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small_middle_text_size"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/gray" />
+    <fragment
+        android:id="@+id/complainitems"
+        android:name="com.jims.work.fragment.ListitemActivityFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        />
+</LinearLayout>

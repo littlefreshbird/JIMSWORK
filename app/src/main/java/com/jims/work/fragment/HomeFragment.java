@@ -15,7 +15,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.jims.work.MoreActivity;
+import com.jims.work.CaseLoadingActivity;
+import com.jims.work.DoctorClassActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
 import com.jims.work.view.UPMarqueeView;
@@ -68,13 +69,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
     }
-
-   /* private void activeCategory() {
-        MainActivity activity = (MainActivity) getActivity();
-        activity.activeCategory();
-    }*/
-
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -319,6 +313,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.quick_ask).setOnClickListener(this);
 
         layout.findViewById(R.id.quick_find).setOnClickListener(this);
+        layout.findViewById(R.id.layout_case_uploading).setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -328,7 +323,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 getActivity().finish();
                 break;
             case R.id.quick_find: // 查找医生
-                startActivity(new Intent(getActivity(), MoreActivity.class));
+                startActivity(new Intent(getActivity(), DoctorClassActivity.class));
+                break;
+            case R.id.layout_case_uploading: // 病例上传
+                startActivity(new Intent(getActivity(), CaseLoadingActivity.class));
                 break;
             case R.id.img_home_search_code: // 二维码扫描
                  // ((MainActivity) getActivity()).scanQRCode();

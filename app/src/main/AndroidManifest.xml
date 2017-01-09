@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jims.work">
+
     <!-- 基本权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -28,8 +29,7 @@
         android:theme="@style/AppTheme1">
         <activity
             android:name=".MainActivity"
-
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".LoginActivity"
             android:theme="@android:style/Theme.NoTitleBar">
@@ -45,18 +45,20 @@
         <activity android:name=".MyEvaluateActivity" />
         <activity android:name=".MyDoctorsListActivity" />
         <activity android:name=".EvaluateDetailActivity" />
-        <activity android:name=".MoreActivity"/>
+        <activity android:name=".MoreActivity" />
         <activity android:name=".LookforActivity" />
         <activity android:name=".LookforFinishActivity" />
-        <activity android:name=".PostActivity"/>
-        <activity android:name=".NewDoctorListActivity"/>
-        <activity android:name=".RecordActivity"/>
-        <activity android:name=".DoctorClassActivity"/>
-        <activity android:name=".DoctorMessageActivity"/>
-        <activity android:name=".MyServiceActivity"/>
-        <activity android:name=".MyinquiryDetailAcivity"/>
+        <activity android:name=".PostActivity" />
+        <activity android:name=".NewDoctorListActivity" />
+        <activity android:name=".RecordActivity" />
+        <activity android:name=".DoctorClassActivity" />
+        <activity android:name=".DoctorMessageActivity" />
+        <activity android:name=".MyServiceActivity" />
+        <activity android:name=".MyinquiryDetailAcivity" />
         <activity android:name=".MyEvaluateDetailAcivity" />
         <activity android:name=".MyHistoryListActivity" />
+        <activity android:name=".MyComplaintActivity" />
+        <activity android:name=".CaseLoadingActivity"></activity>
     </application>
 
 </manifest>
