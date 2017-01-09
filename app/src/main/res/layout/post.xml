@@ -36,7 +36,7 @@
                 android:gravity="start"
                 android:maxLength="500"
 
-                 />
+                />
             <!-- 网格显示图片 行列间距5dp 每列宽度90dp -->
             <GridView
                 android:id="@+id/gridView"
