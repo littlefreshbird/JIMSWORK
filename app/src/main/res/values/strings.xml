@@ -6,7 +6,7 @@
     <string name="mine">我的</string>
     <string name="personal_login">登录/注册</string>
 
-
+    <string name="calendar_item_new_count">%d条</string>
     <string name="title_following">Following</string>
     <string name="toolbar_bio">Bio</string>
     <string name="toolbar_details">Details</string>

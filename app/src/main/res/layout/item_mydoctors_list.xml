@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
          android:layout_below="@id/tv_buy"
-       
+
         android:background="@drawable/rect_green"
         android:paddingLeft="3sp"
         android:paddingRight="3sp"

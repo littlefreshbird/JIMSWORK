@@ -193,7 +193,6 @@
                     android:background="@drawable/personel_arrow_right" />
 
             </RelativeLayout>
-
             <View
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
@@ -210,11 +209,11 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="8dp"
                     android:textColor="#030303"
-                    android:text="身高"
+                    android:text="我的二维码名片"
                     android:textSize="@dimen/small_text_size"
                     />
                 <TextView
-                    android:id="@+id/heights"
+                    android:id="@+id/namecade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -248,11 +247,11 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="8dp"
                     android:textColor="#030303"
-                    android:text="体重"
+                    android:text="身高"
                     android:textSize="@dimen/small_text_size"
                     />
                 <TextView
-                    android:id="@+id/weights"
+                    android:id="@+id/heights"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -286,6 +285,44 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="8dp"
                     android:textColor="#030303"
+                    android:text="体重"
+                    android:textSize="@dimen/small_text_size"
+                    />
+                <TextView
+                    android:id="@+id/weights"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@+id/userarrow7"
+                    android:layout_marginTop="8dp"
+                    android:text="未填写"
+                    />
+
+                <ImageView
+                    android:id="@+id/userarrow7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/personel_arrow_right" />
+
+            </RelativeLayout>
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d7d7d7" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#030303"
                     android:text="腰围"
                     android:textSize="@dimen/small_text_size"
                     />
@@ -294,13 +331,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_toLeftOf="@+id/userarrow6"
+                    android:layout_toLeftOf="@+id/userarrow8"
                     android:layout_marginTop="8dp"
                     android:text="未填写"
                     />
 
                 <ImageView
-                    android:id="@+id/userarrow6"
+                    android:id="@+id/userarrow8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -332,13 +369,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_toLeftOf="@+id/userarrow7"
+                    android:layout_toLeftOf="@+id/userarrow9"
                     android:layout_marginTop="8dp"
                     android:text="未填写"
                     />
 
                 <ImageView
-                    android:id="@+id/userarrow7"
+                    android:id="@+id/userarrow9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -370,13 +407,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_toLeftOf="@+id/userarrow8"
+                    android:layout_toLeftOf="@+id/userarrow10"
                     android:layout_marginTop="8dp"
                     android:text="未填写"
                     />
 
                 <ImageView
-                    android:id="@+id/userarrow8"
+                    android:id="@+id/userarrow10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -408,13 +445,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_toLeftOf="@+id/userarrow9"
+                    android:layout_toLeftOf="@+id/userarrow11"
                     android:layout_marginTop="8dp"
                     android:text="未填写"
                     />
 
                 <ImageView
-                    android:id="@+id/userarrow9"
+                    android:id="@+id/userarrow11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -447,13 +484,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_toLeftOf="@+id/userarrow10"
+                    android:layout_toLeftOf="@+id/userarrow12"
                     android:layout_marginTop="8dp"
                     android:text="未填写"
                     />
 
                 <ImageView
-                    android:id="@+id/userarrow10"
+                    android:id="@+id/userarrow12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"

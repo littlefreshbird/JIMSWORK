@@ -18,6 +18,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
 /**
  * Created by Just on 2016/12/29.
  */
@@ -25,7 +27,7 @@ import android.widget.Toast;
 public class RecordActivity extends AppCompatActivity {
     private EditText editone,edittwo;
     private RadioButton radiobutton1,radiobutton2;
-    private TextView textone,texttwo,textthree,textfour,textfive ;
+    private TextView textone,texttwo,textthree,textfour ;
     private TextView buttonone,buttontwo;
     private RadioGroup radiogroup;
     private static final int DATE_ID = 1;
@@ -43,9 +45,9 @@ public class RecordActivity extends AppCompatActivity {
         texttwo= (TextView) findViewById(R.id.texttwo);
         textthree= (TextView) findViewById(R.id.textthree);
         textfour= (TextView) findViewById(R.id.textfour);
-        textfive= (TextView) findViewById(R.id.textfive);
         buttonone=(Button)findViewById(R.id.buttonone);
         buttontwo=(Button)findViewById(R.id.buttontwo);
+        //buttontwo.setBackgroundColor(Color.GREEN);
         radiogroup=(RadioGroup) findViewById(R.id.rgSex);
         radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -58,13 +60,12 @@ public class RecordActivity extends AppCompatActivity {
             }
         });
 
-        textfive.setOnClickListener(new View.OnClickListener() {
+        textfour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDialog(DATE_ID);
             }
         });
-
 
         buttontwo.setOnClickListener(new View.OnClickListener() {
             @Override

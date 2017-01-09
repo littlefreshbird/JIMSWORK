@@ -12,6 +12,7 @@ import com.jims.work.LoginActivity;
 import com.jims.work.MoreActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.MyEvaluateActivity;
+import com.jims.work.MyHistoryListActivity;
 import com.jims.work.R;
 import com.jims.work.UserInfoActivity;
 
@@ -35,6 +36,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_mine_evaluate).setOnClickListener(this);
         layout.findViewById(R.id.layout_mine_complaint).setOnClickListener(this);
         layout.findViewById(R.id.layout_mine_doctors).setOnClickListener(this);
+        layout.findViewById(R.id.layout_mine_history).setOnClickListener(this);
+
     }
 
 
@@ -55,6 +58,9 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.layout_mine_doctors: // 我的医生
                 startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
+                break;
+            case R.id.layout_mine_history: // 诊疗记录
+                startActivity(new Intent(getActivity(), MyHistoryListActivity.class));
                 break;
             case R.id.layout_more: // 更多
 
