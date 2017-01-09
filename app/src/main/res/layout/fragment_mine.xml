@@ -400,47 +400,7 @@
                         android:src="@drawable/personel_arrow_right" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/layout_mine_service_manager"
-                    style="@style/MineItemStyle"
-                    android:background="@drawable/bg_item_bottom" >
 
-                    <ImageView
-                        android:layout_width="26.0dip"
-                        android:layout_height="26.0dip"
-                        android:layout_marginLeft="20.0dip"
-                        android:layout_marginRight="15.0dip"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/android_my_service_manager" />
-
-                    <TextView
-                        android:layout_width="0.0dip"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.0"
-                        android:ellipsize="end"
-                        android:singleLine="true"
-                        android:text="服务管家"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:includeFontPadding="false"
-                        android:paddingBottom="2.0dip"
-                        android:paddingLeft="8.0dip"
-                        android:paddingRight="8.0dip"
-                        android:paddingTop="2.0dip"
-                        android:text="wode 等"
-                        android:textColor="@color/gray"
-                        android:textSize="@dimen/micro_text_size" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="15dp"
-                        android:src="@drawable/personel_arrow_right" />
-                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/layout_mine_feedback"
@@ -473,43 +433,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/item_margin_bottom"
-                android:layout_marginTop="@dimen/item_margin_top"
-                android:orientation="vertical" >
 
-                <LinearLayout
-                    android:id="@+id/layout_mine_android_my_jd_assitant"
-                    style="@style/MineItemStyle"
-                    android:background="@drawable/bg_item" >
-
-                    <ImageView
-                        android:layout_width="26.0dip"
-                        android:layout_height="26.0dip"
-                        android:layout_marginLeft="20.0dip"
-                        android:layout_marginRight="15.0dip"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/android_my_history" />
-
-                    <TextView
-                        android:layout_width="0.0dip"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1.0"
-                        android:ellipsize="end"
-                        android:singleLine="true"
-                        android:text="贴心服务"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="15dp"
-                        android:src="@drawable/personel_arrow_right" />
-                </LinearLayout>
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
