@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 
+import com.jims.work.fragment.ServiceFragment;
+
 public class MyinquiryDetailAcivity extends AppCompatActivity {
     private ImageView mimageView;
     @Override
@@ -19,8 +21,10 @@ public class MyinquiryDetailAcivity extends AppCompatActivity {
         mimageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MyinquiryDetailAcivity.this,MyServiceActivity.class);
-                startActivity(intent);
+                ServiceFragment serviceFragment=new ServiceFragment();
+                serviceFragment.setMenuVisibility(true);
+               // Intent intent=new Intent(MyinquiryDetailAcivity.this,ServiceFragment.class);
+               // startActivity(intent);
                 finish();
             }
         });
