@@ -27,15 +27,24 @@
          />
    </com.jims.work.utils.BorderRelativeLayout>
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fragment_more_vp"
+        android:layout_below="@id/fragment_more_layout"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation"
+        />
+
     <LinearLayout
         android:id="@+id/fragment_more_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/fragment_more_titlebar"
 
-        >
+        android:layout_below="@+id/fragment_more_titlebar"
+        android:layout_alignParentStart="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="@dimen/text_size_small"
-                android:text="我的关注"
+                android:text="我的医生"
                 android:textColor="@color/colorText"
                 android:gravity="center"
                 />
@@ -83,7 +92,7 @@
                 android:layout_weight="1"
                 android:textSize="@dimen/text_size_small"
                 android:textColor="@color/colorText"
-                android:text="我的订阅"
+                android:text="当前服务"
                 android:gravity="center"
                 />
         </LinearLayout>
@@ -95,14 +104,4 @@
             android:background="@color/white"
             />
     </LinearLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/fragment_more_vp"
-        android:layout_below="@id/fragment_more_layout"
-        android:layout_marginTop="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:flipInterval="30"
-        android:persistentDrawingCache="animation"
-        />
 </RelativeLayout>
