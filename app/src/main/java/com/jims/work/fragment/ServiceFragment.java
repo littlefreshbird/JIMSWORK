@@ -1,26 +1,23 @@
 package com.jims.work.fragment;
 
 import android.content.res.Resources;
-import android.graphics.Paint;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.DisplayMetrics;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.support.v4.app.Fragment;
-import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.jims.work.R;
-import com.jims.work.RegisterActivity;
 import com.jims.work.adapter.MyFragmentPagerAdapter;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.view.View.OnClickListener;
+
 import java.util.ArrayList;
 
 public class ServiceFragment extends Fragment   {
