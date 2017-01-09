@@ -6,26 +6,22 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 
-public class MyEvaluateActivity extends AppCompatActivity {
+public class MyComplaintDetailActivity extends AppCompatActivity {
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        MyEvaluateActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
+        MyComplaintDetailActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_myevaluate);
-
-        ImageView iv_title_bar_left = (ImageView) findViewById(R.id.img_myevaluate_back);
-        iv_title_bar_left.setOnClickListener(new View.OnClickListener() {
-
+        setContentView(R.layout.activity_mycomplaint_detail);
+        ImageView mimageView= (ImageView) findViewById(R.id.img_mycomplaint_detail_back);
+        mimageView.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
 
                 finish();
-
-
             }
         });
 
     }
-
 }
