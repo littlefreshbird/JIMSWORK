@@ -23,7 +23,7 @@
             android:layout_height="33dp"
             android:layout_centerInParent="true" >
 
-            <TextView
+           <TextView
                 android:id="@+id/text_view_toolbar_title"
                 style="@style/text_20_blacks"
                 android:layout_width="match_parent"
