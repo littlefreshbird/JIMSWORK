@@ -32,7 +32,7 @@
                 android:gravity="center"
                 android:text="@string/wenzhen"
                 android:textColor="@color/black"
-                android:textSize="@dimen/medium_text_size"/>
+                android:textSize="@dimen/small_middle_text_size"/>
         </RelativeLayout>
     </RelativeLayout>
     <View
