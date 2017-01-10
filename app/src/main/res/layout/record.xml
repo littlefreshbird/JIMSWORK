@@ -8,7 +8,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
 
         android:orientation="horizontal"
 
@@ -33,7 +34,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
 
         >
@@ -58,7 +59,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         >
         <TextView
@@ -100,6 +101,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
+
         android:orientation="horizontal"
         android:weightSum="1">
         <TextView
@@ -137,7 +139,7 @@
             android:textColor="@color/white"
             android:background="@drawable/bg_edittext"
             android:paddingTop="5dip"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="选择已有档案"
             android:textSize="@dimen/small_text_size"
             android:gravity="center"/>
