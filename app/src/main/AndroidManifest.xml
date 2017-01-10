@@ -33,10 +33,6 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@android:style/Theme.NoTitleBar">
-
-        </activity>
-        <activity
-            android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -63,8 +59,7 @@
         <activity android:name=".MyHistoryListActivity" />
         <activity android:name=".MyComplaintActivity" />
         <activity android:name=".CaseLoadingActivity" />
-        <activity android:name=".MyComplaintDetailActivity" />
-        <activity android:name=".GuideActivity"></activity>
+        <activity android:name=".MyComplaintDetailActivity"></activity>
     </application>
 
 </manifest>

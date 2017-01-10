@@ -183,8 +183,8 @@ public class CaseLoadingActivity extends AppCompatActivity {
                 CaseLoadingActivity.this.finish();
                 return true;
             case R.id.action_qianjin:
-                Toast.makeText(this, "提交完成", Toast.LENGTH_SHORT).show();
-                Intent intent= new Intent(CaseLoadingActivity.this,MainActivity.class);
+
+                Intent intent= new Intent(CaseLoadingActivity.this,RecordcaseActivity.class);
                 startActivity(intent);
                 CaseLoadingActivity.this.finish();
                 return true;
