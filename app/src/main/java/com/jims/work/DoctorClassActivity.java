@@ -76,9 +76,7 @@ public class DoctorClassActivity extends FragmentActivity {
 		toolbar_profile_back.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
-				Intent intent = new Intent(DoctorClassActivity.this,
-						RecordActivity.class);
-				startActivity(intent);
+
 				finish();
 			}
 		});

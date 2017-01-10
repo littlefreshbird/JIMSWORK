@@ -228,7 +228,7 @@ public class MyDoctorsListActivity extends Activity implements
 //		overridePendingTransition(0, 0);
     }
 
-    class ViewHolder {
+    public class ViewHolder {
         ImageView imgIcon;
         TextView tv_buy;
         TextView tv_attention;

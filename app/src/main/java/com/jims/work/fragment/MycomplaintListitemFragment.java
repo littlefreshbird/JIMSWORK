@@ -20,12 +20,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ListitemActivityFragment extends  Fragment {
+public class MycomplaintListitemFragment extends  Fragment {
 	 
 	  private String[] name = { "张强", "张强", "张强", "张强","张强","张强","张强","张强","张强" };
 	  
-	   private String[] desc = { "医生服务态度很好，很满意！", "我小孩今年8岁,乘坐自行车摔倒擦伤了脸,医生很细心，谢谢！", "这个张大夫对待病人态度不好！"
-	    		+ "2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合，这次多亏了这个医生。", "在这个医院医生能力不行，在这治病三年了，根本没什么效果！","我要投诉"
+	   private String[] desc = { "医生服务态度不好，非常不满意！", "我小孩今年8岁,乘坐自行车摔倒擦伤了脸,医生态度恶劣！", "这个张大夫对待病人态度不好！"
+	    		+ "2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合，这个医生看了好几回都不好。", "在这个医院医生能力不行，在这治病三年了，根本没什么效果！","我要投诉"
 	    				+ "我要投诉，我要投诉。。。","我要投诉1某某医院的张医生。。。","我要投诉某某医院的刘医生。。。","我要投诉某某医院的王医生。。。","我要投诉某某医院的赵医生。。。"};  
 	  
 	    private int[] imageids = { R.drawable.image_myhead, R.drawable.image_myhead,
@@ -56,7 +56,7 @@ public class ListitemActivityFragment extends  Fragment {
 
 	   
 			SimpleAdapter simpleAdapter = new SimpleAdapter(getActivity(), listItems,
-		            R.layout.simple_item, 
+		            R.layout.mycomplaint_item,
 		            new String[] { "imageids", "name", "desc","time","client","count","sexmaletop"   },
 		            new int[] { R.id.tweet_listitem_userface, R.id.tweet_listitem_username,R.id.tweetcontent ,R.id.questiontime,R.id.tweet_listitem_client,R.id.tweet_listitem_commentCount,R.id.sexmaletop});
 			   lvinfo=(ListView)view.findViewById(R.id.tweet_listitem_content);

@@ -2,7 +2,7 @@ package com.jims.work.fragment;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +13,8 @@ import com.jims.work.adapter.CalendarItemAdapter;
 import com.jims.work.adapter.DayNewsListAdapter;
 import com.jims.work.fragment.base.BaseFragment;
 import com.jims.work.model.CustomCalendarItemModel;
-import com.jims.work.retrofit.RetrofitProvider;
-import com.jims.work.service.NewsService;
+import com.jims.work.model.ListCanlendarItemModel;
+
 import com.kelin.calendarlistview.library.CalendarHelper;
 import com.kelin.calendarlistview.library.CalendarListView;
 
@@ -40,7 +40,7 @@ public class HealthFragment extends BaseFragment {
     private DayNewsListAdapter dayNewsListAdapter;
     private CalendarItemAdapter calendarItemAdapter;
     //key:date "yyyy-mm-dd" format.
-    private TreeMap<String, List<NewsService.News.StoriesBean>> listTreeMap = new TreeMap<>();
+    private TreeMap<String, List<ListCanlendarItemModel>> listTreeMap = new TreeMap<>();
 
     private Handler handler = new Handler();
     @Override
@@ -59,8 +59,9 @@ public class HealthFragment extends BaseFragment {
         calendarItemAdapter = new CalendarItemAdapter(getContext());
         calendarListView.setCalendarListViewAdapter(calendarItemAdapter, dayNewsListAdapter);
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.MONTH, -7);
-       // loadNewsList(DAY_FORMAT.format(calendar.getTime()));
+        calendar.add(Calendar.MONTH, 0);
+
+        loadNewsList(DAY_FORMAT.format(calendar.getTime()));
         //actionBar.setTitle(YEAR_MONTH_FORMAT.format(calendar.getTime()));
 
         // deal with refresh and load more event.
@@ -71,7 +72,7 @@ public class HealthFragment extends BaseFragment {
                 Calendar calendar = CalendarHelper.getCalendarByYearMonthDay(date);
                 calendar.add(Calendar.MONTH, -1);
                 calendar.set(Calendar.DAY_OF_MONTH, 1);
-              //  loadNewsList(DAY_FORMAT.format(calendar.getTime()));
+                loadNewsList(DAY_FORMAT.format(calendar.getTime()));
             }
 
             @Override
@@ -80,7 +81,7 @@ public class HealthFragment extends BaseFragment {
                 Calendar calendar = CalendarHelper.getCalendarByYearMonthDay(date);
                 calendar.add(Calendar.MONTH, 1);
                 calendar.set(Calendar.DAY_OF_MONTH, 1);
-               // loadNewsList(DAY_FORMAT.format(calendar.getTime()));
+                loadNewsList(DAY_FORMAT.format(calendar.getTime()));
             }
         });
 
@@ -127,18 +128,17 @@ public class HealthFragment extends BaseFragment {
         }
         for (int i = 0; i < set.size(); i++) {
             String day = set.get(i);
-            NewsService.News news = new NewsService.News();
-            news.setDate(day);
 
-            if (listTreeMap.get(day) != null) {
-                List<NewsService.News.StoriesBean> list = listTreeMap.get(day);
 
-            } else {
-                List<NewsService.News.StoriesBean> list = new ArrayList<NewsService.News.StoriesBean>();
-                list=news.getStories();
+
+                List<ListCanlendarItemModel> list = new ArrayList<ListCanlendarItemModel>();
+                list.add(new ListCanlendarItemModel("李云龙","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471855743&di=f63c2ee8173acac5df640d73e7e48827&src=http://p.3761.com/pic/88711413852949.jpg","承德市双桥区市中心医院","儿科"));
+                list.add(new ListCanlendarItemModel("李运昌","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471853209&di=c7c5b93eb5398edee0d5ff1e6083358b&src=http://p.3761.com/pic/70691413852950.jpg","承德市双桥区市中心医院","儿科"));
+            list.add(new ListCanlendarItemModel("李云龙","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471855743&di=f63c2ee8173acac5df640d73e7e48827&src=http://p.3761.com/pic/88711413852949.jpg","承德市双桥区市中心医院","儿科"));
+            list.add(new ListCanlendarItemModel("李运昌","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471853209&di=c7c5b93eb5398edee0d5ff1e6083358b&src=http://p.3761.com/pic/70691413852950.jpg","承德市双桥区市中心医院","儿科"));
 
                 listTreeMap.put(day, list);
-            }
+
         }
 
         dayNewsListAdapter.setDateDataMap(listTreeMap);

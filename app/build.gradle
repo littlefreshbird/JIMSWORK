@@ -34,9 +34,6 @@ dependencies {
     compile files('libs/jpush-sdk-release1.7.3.jar')
     compile project(':dropdownmenu')
     compile 'com.kelin.calendarlistview:library:1.0.1'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
 
 }

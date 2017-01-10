@@ -9,16 +9,18 @@ import android.widget.TextView;
 
 import com.jims.work.R;
 import com.jims.work.fragment.HealthFragment;
-import com.jims.work.service.NewsService;
+import com.jims.work.model.ListCanlendarItemModel;
 import com.kelin.calendarlistview.library.BaseCalendarListAdapter;
 import com.kelin.calendarlistview.library.CalendarHelper;
 import com.squareup.picasso.Picasso;
 
 import java.util.Calendar;
-import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
-public class DayNewsListAdapter extends BaseCalendarListAdapter<NewsService.News.StoriesBean> {
+public class DayNewsListAdapter extends BaseCalendarListAdapter<ListCanlendarItemModel> {
 
 
     public DayNewsListAdapter(Context context) {
@@ -28,7 +30,7 @@ public class DayNewsListAdapter extends BaseCalendarListAdapter<NewsService.News
     @Override
     public View getSectionHeaderView(String date, View convertView, ViewGroup parent) {
         HeaderViewHolder headerViewHolder;
-        List<NewsService.News.StoriesBean> modelList = dateDataMap.get(date);
+
         if (convertView != null) {
             headerViewHolder = (HeaderViewHolder) convertView.getTag();
         } else {
@@ -52,28 +54,27 @@ public class DayNewsListAdapter extends BaseCalendarListAdapter<NewsService.News
     }
 
     @Override
-    public View getItemView(NewsService.News.StoriesBean model, String date, int pos, View convertView, ViewGroup parent) {
-        ContentViewHolder contentViewHolder;
+    public View getItemView(ListCanlendarItemModel model, String date, int pos, View convertView, ViewGroup parent) {
+        ViewHolder contentViewHolder;
         if (convertView != null) {
-            contentViewHolder = (ContentViewHolder) convertView.getTag();
+            contentViewHolder = (ViewHolder) convertView.getTag();
         } else {
             convertView = inflater.inflate(R.layout.listitem_calendar_content, null);
-            contentViewHolder = new ContentViewHolder();
-            contentViewHolder.titleTextView = (TextView) convertView.findViewById(R.id.title);
-            contentViewHolder.timeTextView = (TextView) convertView.findViewById(R.id.time);
-            contentViewHolder.newsImageView = (ImageView) convertView.findViewById(R.id.image);
+            contentViewHolder = new ViewHolder(convertView);
             convertView.setTag(contentViewHolder);
         }
 
-        contentViewHolder.titleTextView.setText(model.getTitle());
-        contentViewHolder.timeTextView.setText(date);
+        contentViewHolder.title.setText(model.getTitle());
+        contentViewHolder.time.setText(date);
+        contentViewHolder.address.setText(model.getAddress());
+        contentViewHolder.keshi.setText(model.getKeshi());
 //        GenericDraweeHierarchy hierarchy = GenericDraweeHierarchyBuilder.newInstance(convertView.getResources())
 //                .setRoundingParams(RoundingParams.asCircle())
 //                .build();
 //        contentViewHolder.newsImageView.setHierarchy(hierarchy);
 //        contentViewHolder.newsImageView.setImageURI(Uri.parse(model.getImages().get(0)));
-        Picasso.with(convertView.getContext()).load(Uri.parse(model.getImages().get(0)))
-                .into(contentViewHolder.newsImageView);
+        Picasso.with(convertView.getContext()).load(Uri.parse(model.getImages()))
+                .into(contentViewHolder.image);
         return convertView;
     }
 
@@ -83,10 +84,21 @@ public class DayNewsListAdapter extends BaseCalendarListAdapter<NewsService.News
         ImageView isFavImage;
     }
 
-    private static class ContentViewHolder {
-        TextView titleTextView;
-        TextView timeTextView;
-        ImageView newsImageView;
-    }
 
+    static class ViewHolder {
+        @BindView(R.id.image)
+        ImageView image;
+        @BindView(R.id.title)
+        TextView title;
+        @BindView(R.id.keshi)
+        TextView keshi;
+        @BindView(R.id.address)
+        TextView address;
+        @BindView(R.id.time)
+        TextView time;
+
+        ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
+    }
 }

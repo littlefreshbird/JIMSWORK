@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.jims.work.CaseLoadingActivity;
 import com.jims.work.DoctorClassActivity;
+import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
 import com.jims.work.view.UPMarqueeView;
@@ -314,6 +315,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         layout.findViewById(R.id.quick_find).setOnClickListener(this);
         layout.findViewById(R.id.layout_case_uploading).setOnClickListener(this);
+        layout.findViewById(R.id.layout_special1).setOnClickListener(this);
+        layout.findViewById(R.id.layout_special2).setOnClickListener(this);
+        layout.findViewById(R.id.layout_special3).setOnClickListener(this);
+        layout.findViewById(R.id.layout_special4).setOnClickListener(this);
+
+
     }
     @Override
     public void onClick(View v) {
@@ -328,6 +335,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.layout_case_uploading: // 病例上传
                 startActivity(new Intent(getActivity(), CaseLoadingActivity.class));
                 break;
+            case R.id.layout_special1: //
+                startActivity(new Intent(getActivity(), DoctorClassActivity.class));
+                break;
+            case R.id.layout_special2: // 我的医生
+                startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
+                break;
+            case R.id.layout_special3: //
+                startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
+                break;
+            case R.id.layout_special4: //
+                startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
+                break;
+
             case R.id.img_home_search_code: // 二维码扫描
                  // ((MainActivity) getActivity()).scanQRCode();
                  break;

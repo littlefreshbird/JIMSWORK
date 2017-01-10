@@ -30,14 +30,14 @@
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
                 android:gravity="center"
-                android:text="@string/wenzhen"
+                android:text="评价详情"
                 android:textColor="@color/black"
                 android:textSize="@dimen/small_middle_text_size"/>
         </RelativeLayout>
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.1dp"
+        android:layout_height="0.5dp"
         android:background="@color/gray" />
     <fragment
         android:id="@+id/complainitems"
