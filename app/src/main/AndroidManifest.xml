@@ -64,9 +64,9 @@
         <activity android:name=".MyHistoryListActivity" />
         <activity android:name=".MyComplaintActivity" />
         <activity android:name=".CaseLoadingActivity" />
-        <activity android:name=".MyComplaintDetailActivity">
+        <activity android:name=".MyComplaintDetailActivity"/>
 
-        </activity>
+        <activity android:name=".FreeTreatActivity"/>
     </application>
 
 </manifest>
