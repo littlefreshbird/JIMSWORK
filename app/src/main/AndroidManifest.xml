@@ -59,6 +59,7 @@
         <activity android:name=".MyHistoryListActivity" />
         <activity android:name=".MyComplaintActivity" />
         <activity android:name=".CaseLoadingActivity"></activity>
+        <activity android:name=".RecordcaseActivity"></activity>
     </application>
 
 </manifest>

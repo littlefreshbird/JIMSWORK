@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DialogTitle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -19,15 +20,17 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 
 /**
  * Created by Just on 2016/12/29.
  */
 
-public class RecordActivity extends AppCompatActivity {
+public class RecordcaseActivity extends AppCompatActivity {
     private EditText editone,edittwo;
     private RadioButton radiobutton1,radiobutton2;
-    private TextView textone,texttwo,textthree,textfour,textfive ;
+    private TextView textone,textthree,textfour,textfive ;
     private TextView buttonone,buttontwo;
     private RadioGroup radiogroup;
     private static final int DATE_ID = 1;
@@ -35,16 +38,14 @@ public class RecordActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.record);
+        setContentView(R.layout.record_case);
         setCustomActionBar();
         editone = (EditText) findViewById(R.id.editone);
         edittwo = (EditText) findViewById(R.id.edittwo);
         radiobutton1= (RadioButton) findViewById(R.id.radiobutton1);
         radiobutton2= (RadioButton) findViewById(R.id.radiobutton2);
         textone= (TextView) findViewById(R.id.textone);
-        texttwo= (TextView) findViewById(R.id.texttwo);
         textthree= (TextView) findViewById(R.id.textthree);
-        textfour= (TextView) findViewById(R.id.textfour);
         textfive= (TextView) findViewById(R.id.textfive);
         buttonone=(Button)findViewById(R.id.buttonone);
         buttontwo=(Button)findViewById(R.id.buttontwo);
@@ -54,9 +55,9 @@ public class RecordActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if(checkedId==R.id.radiobutton1){
-                    Toast.makeText(RecordActivity.this, "男", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RecordcaseActivity.this, "您选择了门诊病历", Toast.LENGTH_SHORT).show();
                 }else if(checkedId==R.id.radiobutton2){
-                    Toast.makeText(RecordActivity.this, "女", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RecordcaseActivity.this, "您选择了住院病历", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -64,6 +65,13 @@ public class RecordActivity extends AppCompatActivity {
         textfive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               /* final Calendar c = Calendar.getInstance();
+                int mYear = c.get(Calendar.YEAR);
+                int mMonth = c.get(Calendar.MONTH);
+                int mDay = c.get(Calendar.DAY_OF_MONTH);
+                new DatePickerDialog(RecordcaseActivity.this,
+                        onDateSetListener,
+                        mYear, mMonth, mDay).show();*/
                 showDialog(DATE_ID);
             }
         });
@@ -71,9 +79,7 @@ public class RecordActivity extends AppCompatActivity {
         buttontwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(RecordActivity.this,NewDoctorListActivity.class);
-                startActivity(intent);
-                finish();
+                Toast.makeText(RecordcaseActivity.this, "已提交病例", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -96,7 +102,6 @@ public class RecordActivity extends AppCompatActivity {
             textfive.setText(year+"-"+monthOfYear+"-"+dayOfMonth);
             textfive.setTextSize(12);
             textfive.setTextColor(Color.BLACK);
-
         }
     };
 
@@ -105,7 +110,7 @@ public class RecordActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent intent=new Intent(RecordActivity.this,PostActivity.class);
+                Intent intent=new Intent(RecordcaseActivity.this,CaseLoadingActivity.class);
                 startActivity(intent);
                 finish();
             default:
@@ -114,7 +119,7 @@ public class RecordActivity extends AppCompatActivity {
     }
     private void setCustomActionBar() {
         ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_record, null);
+        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_recordcase, null);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setCustomView(mActionBarView, lp);
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);

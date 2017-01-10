@@ -11,6 +11,49 @@
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
         android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/textthree"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="@dimen/micro_text_size"
+            android:paddingTop="5dip"
+            android:textColorHint="@color/dim_foreground_material_light"
+            android:hint="      病例类别:   "/>
+
+        <RadioGroup
+            android:id="@+id/rgSex"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:checkedButton="@+id/male"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radiobutton1"
+                android:textSize="10dp"
+                android:layout_marginLeft="130dp"
+                android:checked="true"
+                android:paddingTop="5dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="门诊病历"/>
+
+            <RadioButton
+                android:id="@+id/radiobutton2"
+                android:textSize="10dp"
+                android:paddingTop="5dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="住院病历"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
 
         >
         <TextView
@@ -20,7 +63,7 @@
             android:textSize="@dimen/micro_text_size"
             android:paddingTop="5dip"
             android:textColorHint="@color/dim_foreground_material_light"
-            android:hint="      姓名:   "/>
+            android:hint="      门诊机构:   "/>
         <EditText
             android:id="@+id/editone"
             android:layout_width="fill_parent"
@@ -28,79 +71,10 @@
             android:layout_height="40dp"
             />
     </LinearLayout>
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-
-        >
-        <TextView
-            android:id="@+id/texttwo"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:textSize="@dimen/micro_text_size"
-            android:paddingTop="5dip"
-            android:textColorHint="@color/dim_foreground_material_light"
-            android:hint="      年龄:   "/>
-        <EditText
-            android:id="@+id/edittwo"
-            android:numeric="integer"
-            android:layout_width="fill_parent"
-            android:layout_marginRight="40dp"
-            android:layout_height="40dp"
-            />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        >
-        <TextView
-            android:id="@+id/textthree"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:textSize="@dimen/micro_text_size"
-            android:paddingTop="5dip"
-            android:textColorHint="@color/dim_foreground_material_light"
-            android:hint="      性别:   "/>
-
-        <RadioGroup
-            android:id="@+id/rgSex"
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:checkedButton="@+id/male"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/radiobutton1"
-                android:textSize="10dp"
-                android:layout_marginLeft="210dp"
-                android:checked="true"
-                android:paddingTop="5dip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="男"/>
-
-            <RadioButton
-                android:id="@+id/radiobutton2"
-                android:textSize="10dp"
-                android:paddingTop="5dip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
-                android:text="女"/>
-        </RadioGroup>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal"
         android:weightSum="1">
         <TextView
@@ -110,10 +84,10 @@
             android:textSize="@dimen/micro_text_size"
             android:paddingTop="5dip"
             android:textColorHint="@color/dim_foreground_material_light"
-            android:hint="      出生日期："/>
+            android:hint="      住院日期："/>
         <TextView
             android:id="@+id/textfive"
-            android:hint="请选择出生日期"
+            android:hint="请选择住院日期"
             android:gravity="end"
             android:textSize="@dimen/micro_text_size"
             android:layout_width="fill_parent"
@@ -131,18 +105,6 @@
         android:layout_height="match_parent"
         android:gravity="center" >
         <Button
-            android:id="@+id/buttonone"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/white"
-            android:background="@drawable/bg_edittext"
-            android:paddingTop="5dip"
-            android:text="选择已有档案"
-            android:textSize="@dimen/small_text_size"
-            android:gravity="center"/>
-        <Button
             android:id="@+id/buttontwo"
             android:layout_width="300dp"
             android:layout_height="40dp"
@@ -150,7 +112,7 @@
             android:background="@drawable/bg_edittext"
             android:paddingTop="5dip"
             android:text="完成"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="30dp"
             android:textColor="@color/white"
             android:textSize="@dimen/small_text_size"
             android:gravity="center"/>
