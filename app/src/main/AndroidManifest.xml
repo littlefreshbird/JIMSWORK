@@ -33,12 +33,17 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name=".GuideActivity" />
+        <activity android:name=".SplashActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".RecordcaseActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RegisterNextActivity" />
         <activity android:name=".UserInfoActivity" />
@@ -59,7 +64,9 @@
         <activity android:name=".MyHistoryListActivity" />
         <activity android:name=".MyComplaintActivity" />
         <activity android:name=".CaseLoadingActivity" />
-        <activity android:name=".MyComplaintDetailActivity"></activity>
+        <activity android:name=".MyComplaintDetailActivity">
+
+        </activity>
     </application>
 
 </manifest>
