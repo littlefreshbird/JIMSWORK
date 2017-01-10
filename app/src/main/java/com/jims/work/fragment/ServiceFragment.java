@@ -52,8 +52,8 @@ public class ServiceFragment extends Fragment   {
         return view;
     }
     private void initTextView(View parentView){
-      /*  one=(TextView)parentView.findViewById(R.id.one);
-        one.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG );*/
+        /* one=(TextView)parentView.findViewById(R.id.one);
+           one.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG );*/
         mTxOne = (TextView) parentView.findViewById(R.id.fragment_more_tab1);
         mTxTwo = (TextView) parentView.findViewById(R.id.fragment_more_tab2);
         mTxThree = (TextView) parentView.findViewById(R.id.fragment_more_tab3);
