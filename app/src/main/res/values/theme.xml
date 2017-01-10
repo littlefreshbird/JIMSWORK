@@ -19,7 +19,7 @@
         <item name="colorPrimary">@color/white</item>
         <!--通知栏-->
         <item name="colorPrimaryDark">@color/colorText</item>
-
+        <item name="android:windowNoTitle">true</item>
     </style>
 
 

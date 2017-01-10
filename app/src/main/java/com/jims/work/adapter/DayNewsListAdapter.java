@@ -68,6 +68,17 @@ public class DayNewsListAdapter extends BaseCalendarListAdapter<ListCanlendarIte
         contentViewHolder.time.setText(date);
         contentViewHolder.address.setText(model.getAddress());
         contentViewHolder.keshi.setText(model.getKeshi());
+        contentViewHolder.state.setText(model.getState());
+        if (model.getState().equals("未开始")) {
+            contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_unstart,null));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.khaki,null));
+        }else if (model.getState().equals("进行中")) {
+            contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_starting,null));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.color_theme,null));
+        }else if (model.getState().equals("已结束")) {
+            contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_started,null));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.gray,null));
+        }
 //        GenericDraweeHierarchy hierarchy = GenericDraweeHierarchyBuilder.newInstance(convertView.getResources())
 //                .setRoundingParams(RoundingParams.asCircle())
 //                .build();
@@ -85,11 +96,13 @@ public class DayNewsListAdapter extends BaseCalendarListAdapter<ListCanlendarIte
     }
 
 
-    static class ViewHolder {
+    static  class ViewHolder {
         @BindView(R.id.image)
         ImageView image;
         @BindView(R.id.title)
         TextView title;
+        @BindView(R.id.state)
+        TextView state;
         @BindView(R.id.keshi)
         TextView keshi;
         @BindView(R.id.address)
