@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="30dp"
+
         android:orientation="horizontal"
 
         >
@@ -33,7 +33,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+
         android:orientation="horizontal"
 
         >
@@ -58,7 +58,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+
         android:orientation="horizontal"
         >
         <TextView
@@ -100,7 +100,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:weightSum="1">
         <TextView
@@ -129,16 +128,16 @@
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center" >
+         >
         <Button
             android:id="@+id/buttonone"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:background="@drawable/bg_edittext"
             android:paddingTop="5dip"
+            android:layout_marginTop="10dp"
             android:text="选择已有档案"
             android:textSize="@dimen/small_text_size"
             android:gravity="center"/>
@@ -150,7 +149,7 @@
             android:background="@drawable/bg_edittext"
             android:paddingTop="5dip"
             android:text="完成"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="80dp"
             android:textColor="@color/white"
             android:textSize="@dimen/small_text_size"
             android:gravity="center"/>
