@@ -132,10 +132,10 @@ public class HealthFragment extends BaseFragment {
 
 
                 List<ListCanlendarItemModel> list = new ArrayList<ListCanlendarItemModel>();
-                list.add(new ListCanlendarItemModel("李云龙","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471855743&di=f63c2ee8173acac5df640d73e7e48827&src=http://p.3761.com/pic/88711413852949.jpg","承德市双桥区市中心医院","儿科"));
-                list.add(new ListCanlendarItemModel("李运昌","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471853209&di=c7c5b93eb5398edee0d5ff1e6083358b&src=http://p.3761.com/pic/70691413852950.jpg","承德市双桥区市中心医院","儿科"));
-            list.add(new ListCanlendarItemModel("李云龙","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471855743&di=f63c2ee8173acac5df640d73e7e48827&src=http://p.3761.com/pic/88711413852949.jpg","承德市双桥区市中心医院","儿科"));
-            list.add(new ListCanlendarItemModel("李运昌","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471853209&di=c7c5b93eb5398edee0d5ff1e6083358b&src=http://p.3761.com/pic/70691413852950.jpg","承德市双桥区市中心医院","儿科"));
+                list.add(new ListCanlendarItemModel("李云龙","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471855743&di=f63c2ee8173acac5df640d73e7e48827&src=http://p.3761.com/pic/88711413852949.jpg","承德市双桥区市中心医院","儿科","未开始"));
+                list.add(new ListCanlendarItemModel("李运昌","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471853209&di=c7c5b93eb5398edee0d5ff1e6083358b&src=http://p.3761.com/pic/70691413852950.jpg","承德市双桥区市中心医院","儿科","进行中"));
+                list.add(new ListCanlendarItemModel("李云龙","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471855743&di=f63c2ee8173acac5df640d73e7e48827&src=http://p.3761.com/pic/88711413852949.jpg","承德市双桥区市中心医院","儿科","已结束"));
+                list.add(new ListCanlendarItemModel("李运昌","https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1471853209&di=c7c5b93eb5398edee0d5ff1e6083358b&src=http://p.3761.com/pic/70691413852950.jpg","承德市双桥区市中心医院","儿科","未开始"));
 
                 listTreeMap.put(day, list);
 

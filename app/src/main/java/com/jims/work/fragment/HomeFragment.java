@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.jims.work.CaseLoadingActivity;
 import com.jims.work.CityPositionActivity;
 import com.jims.work.DoctorClassActivity;
+import com.jims.work.FreeTreatActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
@@ -69,6 +70,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         mImgCover = (ImageView) layout.findViewById(R.id.img_cover);
         mImageView = (ImageView) layout.findViewById(R.id.img_indicator01);
+
        mTextview = (TextView) layout.findViewById(R.id.top_title_text);
         mTextview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +81,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             }
         });
+
     }
 
     @Override
@@ -168,7 +171,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
 
-
     private class MyPagerAdapter extends FragmentStatePagerAdapter {
 
         public MyPagerAdapter(FragmentManager fm) {
@@ -238,6 +240,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             }
         }
     }
+
     /**
      * 实例化控件
      */
@@ -258,6 +261,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         data.add("冬季为何是哮喘发作的高峰期！");
 
     }
+
     /**
      * 初始化界面程序
      */
@@ -320,6 +324,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             upviews.add(moreView);
         }
     }
+
     private void setOnListener() {
 
         layout.findViewById(R.id.quick_ask).setOnClickListener(this);
@@ -330,9 +335,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_special2).setOnClickListener(this);
         layout.findViewById(R.id.layout_special3).setOnClickListener(this);
         layout.findViewById(R.id.layout_special4).setOnClickListener(this);
+        layout.findViewById(R.id.layout_freetreat).setOnClickListener(this);
 
 
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -363,10 +370,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.layout_special4: //
                 startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
                 break;
+            case R.id.layout_freetreat: //义诊
+                startActivity(new Intent(getActivity(), FreeTreatActivity.class));
+                break;
 
             case R.id.img_home_search_code: // 二维码扫描
-                 // ((MainActivity) getActivity()).scanQRCode();
-                 break;
+                // ((MainActivity) getActivity()).scanQRCode();
+                break;
             default:
                 break;
         }

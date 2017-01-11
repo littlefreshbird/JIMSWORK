@@ -11,7 +11,7 @@
         android:layout_marginTop="20dp" >
 
         <LinearLayout
-            android:id="@+id/layout_my_focus"
+            android:id="@+id/layout_freetreat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
