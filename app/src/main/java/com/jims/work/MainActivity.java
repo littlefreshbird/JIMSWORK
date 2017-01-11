@@ -1,12 +1,14 @@
 package com.jims.work;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jims.work.bean.Tab;
 import com.jims.work.fragment.HealthFragment;
@@ -18,16 +20,17 @@ import com.jims.work.widget.FragmentTabHost;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends FragmentActivity {
 
     private LayoutInflater mInflater;
     private FragmentTabHost mTabhost;
     private List<Tab> mTabs = new ArrayList<>(4);
+    private long exitTime=0;//两次按返回退出
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
         initTab();
@@ -61,6 +64,23 @@ public class MainActivity extends BaseActivity {
         text.setText(tab.getTitle());
         return  view;
     }
+    @Override
+    public void onBackPressed() {
 
+
+        exit();  ///退出应用
+
+    }
+
+    public void exit() {   //退出应用
+        if ((System.currentTimeMillis() - exitTime) > 2000) {
+            Toast.makeText(getApplicationContext(), "再按一次退出程序",
+                    Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            finish();
+            //System.exit(0);
+        }
+    }
 
 }
