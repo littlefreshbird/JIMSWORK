@@ -3,6 +3,7 @@ package com.jims.work.fragment;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -26,6 +27,8 @@ import com.jims.work.view.UPMarqueeView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -60,10 +63,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         autoScroll();
         initParam();
         initdata();
+        initcity();
         initupView();
         setOnListener();
         return layout;
 
+    }
+
+    private void initcity() {
+        SharedPreferences pref = getContext().getSharedPreferences("data",MODE_PRIVATE);
+        String city = pref.getString("CITY","北京");//第二个参数为默认值
+        mTextview.setText(city);
     }
 
     private void initView() {
@@ -252,6 +262,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
      * 初始化数据
      */
     private void initdata() {
+
         data = new ArrayList<>();
         data.add("家人给2岁孩子喝这个，孩子智力倒退10岁!!!");
         data.add("冬季养生的方法和要点！");
@@ -338,6 +349,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_freetreat).setOnClickListener(this);
 
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        initcity();
     }
 
     @Override

@@ -5,7 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.jims.work.fragment.ServiceFragment">
+    <com.jims.work.utils.BorderRelativeLayout
+        android:id="@+id/fragment_more_titlebar"
+        style="@style/actionbar_bg"
+
+        >
+        <!--<ImageView
+            android:id="@+id/image"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/action_bar_back"/>-->
+        <TextView
+            android:id="@+id/one"
+            style="@style/actionbar_tx_title"
+            android:text="义诊"
+            />
+    </com.jims.work.utils.BorderRelativeLayout>
     <com.kelin.calendarlistview.library.CalendarListView
+        android:layout_below="@+id/fragment_more_titlebar"
         android:id="@+id/calendar_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

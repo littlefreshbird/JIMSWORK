@@ -1,6 +1,7 @@
 package com.jims.work.adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -158,6 +159,10 @@ public class CityListAdapter extends BaseAdapter {
 					@Override
 					public void onClick(View v) {
 						Toast.makeText(mContext,mAllCityList.get(position).getName(),Toast.LENGTH_SHORT).show();
+						SharedPreferences pref = mContext.getSharedPreferences("data",Context.MODE_PRIVATE);
+						SharedPreferences.Editor editor = pref.edit();
+						editor.putString("CITY",mAllCityList.get(position).getName());
+						editor.commit();
 					}
 				});
 				String currentStr = getAlpha(mAllCityList.get(position).getPinyin());
