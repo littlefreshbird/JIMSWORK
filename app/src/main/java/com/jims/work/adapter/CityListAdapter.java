@@ -9,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -159,7 +158,6 @@ public class CityListAdapter extends BaseAdapter {
 					
 					@Override
 					public void onClick(View v) {
-
 						SharedPreferences pref = mContext.getSharedPreferences("data",Context.MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("CITY",mAllCityList.get(position).getName());

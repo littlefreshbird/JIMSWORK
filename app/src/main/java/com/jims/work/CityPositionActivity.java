@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -38,7 +39,7 @@ public class CityPositionActivity extends Activity {
     private TextView tv_dialog, tv_noresult;
     private MyLetterView myLetterView;
     private ListView lv_city, lv_result;
-
+    private ImageView img_city_back;
     private List<City> allCityList;//所有的城市
     private List<City> hotCityList;//热门城市列表
     private List<City> searchCityList;//搜索城市列表
@@ -150,6 +151,14 @@ public class CityPositionActivity extends Activity {
         myLetterView = (MyLetterView) findViewById(R.id.my_letterview);
         lv_city = (ListView) findViewById(R.id.lv_city);
         lv_result = (ListView) findViewById(R.id.lv_result);
+        img_city_back= (ImageView) findViewById(R.id.img_city_back);
+        //返回页面
+        img_city_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void initData() {

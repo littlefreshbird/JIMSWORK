@@ -69,13 +69,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         return layout;
 
     }
-
     private void initcity() {
         SharedPreferences pref = getContext().getSharedPreferences("data",MODE_PRIVATE);
         String city = pref.getString("CITY","北京");//第二个参数为默认值
         mTextview.setText(city);
     }
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        initcity();
+    }
     private void initView() {
 
         mImgCover = (ImageView) layout.findViewById(R.id.img_cover);
@@ -87,7 +90,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             public void onClick(View v) {
 
                 startActivity(new Intent(getActivity(), CityPositionActivity.class));
-
 
             }
         });
@@ -262,7 +264,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
      * 初始化数据
      */
     private void initdata() {
-
         data = new ArrayList<>();
         data.add("家人给2岁孩子喝这个，孩子智力倒退10岁!!!");
         data.add("冬季养生的方法和要点！");
@@ -349,12 +350,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_freetreat).setOnClickListener(this);
 
 
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        initcity();
     }
 
     @Override
