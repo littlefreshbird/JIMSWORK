@@ -326,6 +326,7 @@ public class FreeTreatActivity extends AppCompatActivity {
 
     @OnClick(R.id.button_1)
     public void onClick() {
+        ScanPatientActivity.sScanPatientActivity.finish();
         finish();
     }
 }

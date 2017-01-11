@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+              android:padding="14dp">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10.0dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5.0dip"
+            android:text="获取病人基本信息"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:background="@drawable/shape_bg"
+        android:orientation="horizontal"
+        android:padding="5.0dip">
+
+
+        <EditText
+            android:id="@+id/input_message"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:hint="输入身份证或者手机号码"
+            android:inputType="number"
+            android:maxLength="9"
+            android:paddingBottom="10.0dip"
+            android:paddingTop="10.0dip"
+            android:textColor="#ff323232"
+            android:textColorHint="#ffc2c2c2"
+            android:textSize="@dimen/text_size_medium"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/scan_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30.0dip"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="20.0dip"
+        android:text="点击扫描二维码获取信息"
+        android:textColor="#ffff6134"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edittext"
+        android:gravity="center"
+        android:paddingTop="5dip"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:textSize="@dimen/small_text_size"/>
+
+</LinearLayout>
