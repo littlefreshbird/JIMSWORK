@@ -46,9 +46,9 @@ public class PostActivity extends AppCompatActivity {
     private EditText edit;
     private GridView gridView;
     private Button button_1;
-    private final int IMAGE_OPEN = 1;        //打开图片标记
+    private final int IMAGE_OPEN = 1;               //打开图片标记
     private String pathImage;                       //选择图片路径
-    private Bitmap bmp;                               //导入临时图片
+    private Bitmap bmp;                             //导入临时图片
     private ArrayList<HashMap<String, Object>> imageItem;
     private SimpleAdapter simpleAdapter;     //适配器private static final int PHOTO_SUCCESS = 1;
     private static final int PHOTO_SUCCESS = 1;
