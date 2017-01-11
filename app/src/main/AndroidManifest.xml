@@ -81,8 +81,9 @@
         <activity android:name=".MyComplaintActivity" />
         <activity android:name=".CaseLoadingActivity" />
         <activity android:name=".MyComplaintDetailActivity">
-            <activity android:name=".FreeTreatActivity"/>
+
         </activity>
+        <activity android:name=".FreeTreatActivity"/>
         <activity android:name=".CityPositionActivity"></activity>
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
