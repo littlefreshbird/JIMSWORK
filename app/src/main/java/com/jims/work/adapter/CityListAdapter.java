@@ -15,6 +15,7 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
+import com.jims.work.CityPositionActivity;
 import com.jims.work.R;
 import com.jims.work.entity.City;
 import com.jims.work.view.MyGridView;
@@ -158,11 +159,17 @@ public class CityListAdapter extends BaseAdapter {
 					
 					@Override
 					public void onClick(View v) {
-						Toast.makeText(mContext,mAllCityList.get(position).getName(),Toast.LENGTH_SHORT).show();
+
 						SharedPreferences pref = mContext.getSharedPreferences("data",Context.MODE_PRIVATE);
 						SharedPreferences.Editor editor = pref.edit();
 						editor.putString("CITY",mAllCityList.get(position).getName());
 						editor.commit();
+						if(CityPositionActivity.class.isInstance(mContext))
+						{
+							// 转化为activity，然后finish就行了
+							CityPositionActivity activity = (CityPositionActivity)mContext;
+							activity.finish();
+						}
 					}
 				});
 				String currentStr = getAlpha(mAllCityList.get(position).getPinyin());

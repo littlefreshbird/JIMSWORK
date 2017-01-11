@@ -87,7 +87,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             public void onClick(View v) {
 
                 startActivity(new Intent(getActivity(), CityPositionActivity.class));
-               getActivity().finish();
+
 
             }
         });
