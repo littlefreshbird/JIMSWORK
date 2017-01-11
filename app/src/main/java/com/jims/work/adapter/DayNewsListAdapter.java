@@ -71,13 +71,13 @@ public class DayNewsListAdapter extends BaseCalendarListAdapter<ListCanlendarIte
         contentViewHolder.state.setText(model.getState());
         if (model.getState().equals("未开始")) {
             contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_unstart,null));
-            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.khaki,null));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.khaki));
         }else if (model.getState().equals("进行中")) {
             contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_starting,null));
-            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.color_theme,null));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.color_theme));
         }else if (model.getState().equals("已结束")) {
             contentViewHolder.state.setBackground(convertView.getContext().getResources().getDrawable(R.drawable.free_treat_started,null));
-            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.gray,null));
+            contentViewHolder.state.setTextColor(convertView.getContext().getResources().getColor(R.color.gray));
         }
 //        GenericDraweeHierarchy hierarchy = GenericDraweeHierarchyBuilder.newInstance(convertView.getResources())
 //                .setRoundingParams(RoundingParams.asCircle())
