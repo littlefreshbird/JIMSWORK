@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jims.work.CaseLoadingActivity;
+import com.jims.work.CityPositionActivity;
 import com.jims.work.DoctorClassActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.PostActivity;
@@ -34,6 +35,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private TextView mTextview;
     private ImageView mImageView;
     private ImageView mImgCover;
+    private TextView mTextView;
     private int mLastPos;// 记录上一次ViewPager的位置
     private boolean isDragging;// 是否被拖拽
     private boolean isFoucusRight; // ScrollView是否滚动到右侧
@@ -67,9 +69,18 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         mImgCover = (ImageView) layout.findViewById(R.id.img_cover);
         mImageView = (ImageView) layout.findViewById(R.id.img_indicator01);
+       mTextview = (TextView) layout.findViewById(R.id.top_title_text);
+        mTextview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                startActivity(new Intent(getActivity(), CityPositionActivity.class));
+               getActivity().finish();
 
+            }
+        });
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -325,9 +336,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+           /* case R.id.top_title_text: // 城市定位
+                startActivity(new Intent(getActivity(), CityPositionActivity.class));
+               // getActivity().finish();
+                break;*/
+
             case R.id.quick_ask: // 快速问诊
                 startActivity(new Intent(getActivity(), PostActivity.class));
-                getActivity().finish();
+                //getActivity().finish();
                 break;
             case R.id.quick_find: // 查找医生
                 startActivity(new Intent(getActivity(), DoctorClassActivity.class));
