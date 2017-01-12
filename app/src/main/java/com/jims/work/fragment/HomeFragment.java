@@ -2,6 +2,7 @@ package com.jims.work.fragment;
 
 
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,7 +20,6 @@ import android.widget.TextView;
 import com.jims.work.CaseLoadingActivity;
 import com.jims.work.CityPositionActivity;
 import com.jims.work.DoctorClassActivity;
-import com.jims.work.FreeTreatActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
@@ -287,7 +287,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         upview1.setOnItemClickListener(new UPMarqueeView.OnItemClickListener() {
             @Override
             public void onItemClick(int position, View view) {
-
+                startActivity(new Intent(getActivity(), Activity.class));
             }
         });
     }
