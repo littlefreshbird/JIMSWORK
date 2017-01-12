@@ -58,6 +58,16 @@ public class CaseLoadingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_caseloading);
         edit=(EditText)findViewById(R.id.edit);
         button_1=(Button)findViewById(R.id.button_1);
+        //button_1.setBackgroundColor(Color.GREEN);
+        button_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(CaseLoadingActivity.this,RecordcaseActivity.class);
+                startActivity(intent);
+                CaseLoadingActivity.this.finish();
+            }
+        });
+
         setCustomActionBar();
         /*
          * 防止键盘挡住输入框

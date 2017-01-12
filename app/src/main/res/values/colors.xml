@@ -47,6 +47,8 @@
     <color name="bisque">#ffe4c4</color>
     <!-- 桔黄色 -->
     <color name="moccasin">#ffe4b5</color>
+  <!-- 灰色 -->
+  <color name="lightgrey">#999999</color>
     <!-- 鹿皮色 -->
     <color name="navajowhite">#ffdead</color>
     <!-- 纳瓦白 -->

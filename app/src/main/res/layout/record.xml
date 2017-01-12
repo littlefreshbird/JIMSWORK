@@ -81,7 +81,7 @@
             <RadioButton
                 android:id="@+id/radiobutton1"
                 android:textSize="10dp"
-                android:layout_marginLeft="210dp"
+                android:layout_marginLeft="190dp"
                 android:checked="true"
                 android:paddingTop="5dip"
                 android:layout_width="wrap_content"
@@ -94,10 +94,10 @@
                 android:paddingTop="5dip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="30dp"
                 android:text="女"/>
         </RadioGroup>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"

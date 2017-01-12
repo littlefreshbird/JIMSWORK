@@ -10,7 +10,7 @@
     android:paddingTop="8dip" >
 
     <ImageView
-        android:id="@+id/tweet_listitem_userface"
+        android:id="@+id/idquiry_listitem_userface"
         style="@style/user_face_image" />
     <LinearLayout
         android:layout_width="fill_parent"
@@ -29,7 +29,7 @@
                 android:orientation="horizontal" >
 
                 <TextView
-                    android:id="@+id/tweet_listitem_username"
+                    android:id="@+id/idquiry_listitem_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
@@ -38,22 +38,22 @@
                     android:textSize="@dimen/small_text_size" />
 
                 <ImageView
-                    android:id="@+id/sexmaletop"
+                    android:id="@+id/idquiry_sexmaletop"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/tweet_listitem_username"
                     />
 
-
                 <TextView
-                    android:id="@+id/questiontime"
+                    android:id="@+id/idquiry_questiontime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:text="fd"
                     android:textColor="@color/gray"
                     android:textSize="@dimen/micro_text_size" />
+
             </RelativeLayout>
 
             <!--
@@ -68,7 +68,7 @@
             -->
 
             <TextView
-                android:id="@+id/tweetcontent"
+                android:id="@+id/idquiry_tweetcontent"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -84,30 +84,32 @@
                 android:orientation="horizontal" >
 
                 <TextView
-                    android:id="@+id/tweet_listitem_client"
+                    android:id="@+id/idquiry_listitem_client"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dip"
 
                     android:textSize="@dimen/micro_text_size" />
+                <ImageView
+                    android:id="@+id/idquiry_listitem_dianzan"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/dianzan"/>
 
-                <RatingBar
-                    android:id="@+id/ratingbar"
-                    style="@style/roomRatingBar"
-                    android:layout_width="80dp"
-                    android:layout_height="20dp"
-                    android:numStars="5"
-                    android:rating = "3"
-                    android:stepSize="1"/>
+                <!-- <ImageView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center_vertical"
+                     android:layout_marginLeft="2dip"
+                     android:src="@drawable/img_star" />-->
 
                 <TextView
-                    android:id="@+id/tweet_listitem_commentCount"
+                    android:id="@+id/idquiry_listitem_commentCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dip"
                     android:textColor="@color/gray"
                     android:textSize="@dimen/micro_text_size" />
-
             </LinearLayout>
 
         </LinearLayout>
@@ -122,33 +124,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="3dip"
-                    android:layout_marginLeft="10dip"
-                    android:src="@drawable/doctor1" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dip"
-                    android:layout_marginTop="3dip"
-                    android:orientation="vertical" >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dip"
-                        android:text="李云龙"
-                        android:textSize="@dimen/small_text_size"
-                        android:textColor="@color/text_color"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dip"
-                        android:text="承德附属医院 口腔科"
-                        android:textSize="@dimen/micro_text_size"
-                        android:textColor="@color/gray"/>
-                </LinearLayout>
+
+
             </RelativeLayout>
 
         </LinearLayout>

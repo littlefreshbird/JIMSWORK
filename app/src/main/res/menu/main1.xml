@@ -1,20 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.example.just.myapplication.MainActivity">
-       <item
-        android:id="@+id/tijiao"
-        android:showAsAction="never"
-        android:title="提交"
-        tools:ignore="AppCompatResource"/>
+
         <item
-        android:id="@+id/guanzhu"
-        android:showAsAction="never"
-        android:title="关注"
+           android:id="@+id/huifu"
+           android:showAsAction="ifRoom"
+           android:title="回复"
+           android:icon="@mipmap/btn_comment_send"
+         tools:ignore="AppCompatResource"/>
+
+    <item
+        android:id="@+id/jietie"
+        android:showAsAction="ifRoom"
+        android:title="结贴"
+        android:icon="@mipmap/drop_down_checked"
         tools:ignore="AppCompatResource"/>
-        <item
-           android:id="@+id/dingyue"
-           android:showAsAction="never"
-           android:title="订阅"
-        tools:ignore="AppCompatResource"/>
+
+
 
     </menu>

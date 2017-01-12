@@ -5,7 +5,7 @@
        <item
         android:id="@+id/action"
         android:showAsAction="never"
-        android:title="提交报告"
+        android:title="预留"
         tools:ignore="AppCompatResource"/>
         <item
            android:id="@+id/action_photo"
@@ -15,12 +15,12 @@
        <item
            android:id="@+id/action_fanhui"
            android:showAsAction="never"
-           android:title="注册档案"
+           android:title="预留"
            tools:ignore="AppCompatResource"/>
 
        <item
         android:id="@+id/action_qianjin"
         android:showAsAction="never"
         tools:ignore="AppCompatResource"
-        android:title="下一步"/>
+        android:title="预留"/>
     </menu>
