@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="@dimen/text_size_small"
-                android:text="我的医生"
+                android:text="家庭医生"
                 android:textColor="@color/colorText"
                 android:gravity="center"
                 />
