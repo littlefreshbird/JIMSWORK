@@ -25,7 +25,11 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     RelativeLayout usernameInfo;
     @BindView(R.id.name_text)
     TextView nameText;
-
+    @BindView(R.id.sex)
+    TextView sex;
+    @BindView(R.id.sex_info1)
+    RelativeLayout sexInfo;
+    int yourChoice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         UserInfoActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
@@ -55,6 +59,9 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             case R.id.username_info:
                 showInputDialog();
                 break;
+            case R.id.sex_info1:
+                showSingleChoiceDialog();
+                break;
             default:
                 break;
         }
@@ -71,11 +78,11 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(UserInfoActivity.this,
+                       /* Toast.makeText(UserInfoActivity.this,
                                 editText.getText().toString(),
-                                Toast.LENGTH_SHORT).show();
-                        SharedPreferences preferences=getSharedPreferences("user", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor=preferences.edit();
+                                Toast.LENGTH_SHORT).show();*/
+                        SharedPreferences preferences = getSharedPreferences("user", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
 
                         editor.putString("name", editText.getText().toString());
 
@@ -85,14 +92,49 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                     }
                 }).show();
     }
+
+
+
+    private void showSingleChoiceDialog() {
+
+        final String[] items = {"男", "女"};
+        yourChoice = -1;
+        AlertDialog.Builder singleChoiceDialog =
+                new AlertDialog.Builder(UserInfoActivity.this);
+        singleChoiceDialog.setTitle("性别");
+        // 第二个参数是默认选项，此处设置为0
+        singleChoiceDialog.setSingleChoiceItems(items, 1,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        yourChoice = which;
+                    }
+                });
+        singleChoiceDialog.setPositiveButton("确定",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (yourChoice != -1) {
+                            Toast.makeText(UserInfoActivity.this,
+                                    "你选择了" + items[yourChoice],
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+        singleChoiceDialog.show();
+    }
+
+
+
     @Override
     public void onResume() {
         super.onResume();
         initmessage();
     }
+
     private void initmessage() {
-        SharedPreferences preferences=getSharedPreferences("user", Context.MODE_PRIVATE);
-        String name=preferences.getString("name", "未填写");
+        SharedPreferences preferences = getSharedPreferences("user", Context.MODE_PRIVATE);
+        String name = preferences.getString("name", "未填写");
         nameText.setText(name);
         nameText.setTextSize(12);
 

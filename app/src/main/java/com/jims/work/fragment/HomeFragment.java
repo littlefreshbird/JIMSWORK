@@ -2,6 +2,7 @@ package com.jims.work.fragment;
 
 
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,9 +18,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jims.work.CaseLoadingActivity;
+import com.jims.work.CaseseclectActivity;
 import com.jims.work.CityPositionActivity;
 import com.jims.work.DoctorClassActivity;
-import com.jims.work.FreeTreatActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
@@ -287,7 +288,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         upview1.setOnItemClickListener(new UPMarqueeView.OnItemClickListener() {
             @Override
             public void onItemClick(int position, View view) {
-
+                startActivity(new Intent(getActivity(), Activity.class));
             }
         });
     }
@@ -374,8 +375,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.layout_special1: //
                 startActivity(new Intent(getActivity(), DoctorClassActivity.class));
                 break;
-            case R.id.layout_special2: // 我的医生
-                startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
+            case R.id.layout_special2: // 我的病例
+                startActivity(new Intent(getActivity(), CaseseclectActivity.class));
                 break;
             case R.id.layout_special3: //
                 startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
