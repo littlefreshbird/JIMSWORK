@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static android.R.attr.id;
 import static com.jims.work.R.id.ratingbar;
 
 public class MyEvaluateDetailFragment extends Fragment {
@@ -36,7 +37,7 @@ public class MyEvaluateDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=LayoutInflater.from(getActivity()).inflate(R.layout.activity_listitem, null);
-         ratingBar = (RatingBar)getActivity(). findViewById(ratingbar);
+         ratingBar = (RatingBar)getActivity(). findViewById(R.id.ratingbar);
         for (int i = 0; i < name.length; i++) {
             Map<String, Object> listItem = new HashMap<String, Object>();
             listItem.put("imageids", imageids[i]);

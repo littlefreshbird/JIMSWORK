@@ -10,15 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.Toast;
-
+import android.widget.TextView;
 import com.jims.work.adapter.MyhistoryListAdapter;
 import com.jims.work.bean.MyhistoryInfo;
 import com.jims.work.utils.MyListView;
-
 import java.util.ArrayList;
-
 import butterknife.ButterKnife;
+
 
 
 /**
@@ -28,17 +26,27 @@ import butterknife.ButterKnife;
 public class CaseseclectActivity extends AppCompatActivity {
     private ArrayList<MyhistoryInfo> doctorsList = new ArrayList<MyhistoryInfo>();
     private MyListView mListView;
+    private TextView top_title_text;
 
     MyhistoryListAdapter mDoctorsListAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        CaseseclectActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
+        getSupportActionBar().hide();
         setContentView(R.layout.caseseclect);
+        top_title_text=(TextView)findViewById(R.id.top_title_text);
+        top_title_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(CaseseclectActivity.this,MainActivity.class);//点击回主页
+                startActivity(intent);
+                finish();
+            }
+        });
         ButterKnife.bind(this);
-       /* CaseseclectActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
-        getSupportActionBar().hide();*/
-      setCustomActionBar();
+
+      //setCustomActionBar();
         initGoods();
         initview();
     }
@@ -69,7 +77,7 @@ public class CaseseclectActivity extends AppCompatActivity {
                                     int position, long id) {
                 MyhistoryInfo info = doctorsList.get(position);
                 if(position==0){
-                    Intent intent=new Intent(CaseseclectActivity.this,CaseLoadingActivitytest.class);//点击回主页
+                    Intent intent=new Intent(CaseseclectActivity.this,CaseLoadingActivitytest.class);//点击进详细页面
                     startActivity(intent);
                     finish();
                 }

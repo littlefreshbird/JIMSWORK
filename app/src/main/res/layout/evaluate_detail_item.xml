@@ -90,10 +90,10 @@
                     android:layout_marginRight="10dip"
 
                     android:textSize="@dimen/micro_text_size" />
-
                 <RatingBar
                     android:id="@+id/ratingbar"
                     style="@style/roomRatingBar"
+
                     android:layout_width="80dp"
                     android:layout_height="20dp"
                     android:numStars="5"
