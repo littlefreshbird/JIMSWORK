@@ -2,13 +2,18 @@ package com.jims.work.adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.jims.work.DoctorDetailActivity;
+import com.jims.work.LoginActivity;
+import com.jims.work.MainActivity;
 import com.jims.work.R;
 import com.jims.work.bean.DoctorsInfo;
 
@@ -85,9 +90,21 @@ public class DoctorsListAdapter extends BaseAdapter {
         viewHolder.tvHospital.setText(list.get(position).getHospital());
         viewHolder.tvDetail.setText(list.get(position).getDetail());
         viewHolder.tvPrice.setText(list.get(position).getPrice());
-        viewHolder.tvNum.setText(list.get(position).getComment()+"人");
+        viewHolder.tvNum.setText(list.get(position).getComment() + "人");
         viewHolder.tvPercent.setText(list.get(position).getPercent());
-
+        viewHolder.doctorLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DoctorDetailActivity.class);
+                context.startActivity(intent);
+                if(DoctorDetailActivity.class.isInstance(context))
+                {
+                    // 转化为activity，然后finish就行了
+                    DoctorDetailActivity activity = (DoctorDetailActivity)context;
+                    activity.finish();
+                }
+            }
+        });
     }
 
 
@@ -102,7 +119,7 @@ public class DoctorsListAdapter extends BaseAdapter {
         TextView tvPosition;
         @BindView(R.id.tv_hospital)
         TextView tvHospital;
-        @BindView(R.id.tv_title)
+        @BindView(R.id.tv_detail)
         TextView tvDetail;
         @BindView(R.id.tv_price)
         TextView tvPrice;
@@ -112,6 +129,8 @@ public class DoctorsListAdapter extends BaseAdapter {
         ImageView imgIconVip;
         @BindView(R.id.tv_percent)
         TextView tvPercent;
+        @BindView(R.id.doctor_layout)
+        RelativeLayout doctorLayout;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);

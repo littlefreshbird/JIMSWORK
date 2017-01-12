@@ -1,5 +1,7 @@
 package com.jims.work.utils;
 
+import android.graphics.Color;
+
 public class Constants {
 
 	public static final class INTENT_KEY{
@@ -22,7 +24,15 @@ public class Constants {
 		/**注销*/
 		public static final String LOGOUT = "logout";
 	}
-	
+	public static final int[] tagColors = new int[]{
+			Color.parseColor("#90C5F0"),
+			Color.parseColor("#91CED5"),
+			Color.parseColor("#F88F55"),
+			Color.parseColor("#C0AFD0"),
+			Color.parseColor("#E78F8F"),
+			Color.parseColor("#67CCB7"),
+			Color.parseColor("#F6BC7E")
+	};
 	public static final class BROADCAST_FILTER {
 		public static final String FILTER_CODE = "broadcast_filter";
 		public static final String EXTRA_CODE = "broadcast_intent";

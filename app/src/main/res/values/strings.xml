@@ -7,94 +7,13 @@
     <string name="personal_login">登录/注册</string>
 
     <string name="calendar_item_new_count">%d条</string>
-    <string name="title_following">Following</string>
-    <string name="toolbar_bio">Bio</string>
-    <string name="toolbar_details">Details</string>
-    <string name="lorem_ipsum_short">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </string>
-    <string name="lorem_ipsum_long">医学博士、医学哲学博士、教授、主任医师、博士生导师，北京同仁医院院长、北京市耳鼻咽喉科研究所所长、首都医科大学耳鼻咽喉科学院院长、世界卫生组织防聋合作中心主任，兼任中华医学会耳鼻咽喉头颈外科学分会主任委员，中国医师协会耳鼻咽喉科医师分会会长，世界华人耳鼻咽喉头颈外科学会会长。
-主持研究的“慢性鼻窦炎鼻息肉诊治研究”、“人工耳蜗技术的临床应用及研究”、“阻塞性睡眠呼吸暂停低通气综合征研究与诊治”分别于2001年、2006年、2009年获得国家科技进步奖二等奖，2007年获何梁何利科学与技术进步奖。 </string>
-
-    <string name="alert_testtime">检测时间</string>
-    <string name="alert_kuozhangya">扩张压\n(mmGh)</string>
-    <string name="alert_shousuoya">收缩压\n(mmGh)</string>
-    <string name="login_username_hint">请输入用户名&#8230;</string>
-    <string name="login_password_hint">请输入密码&#8230;</string>
-    <string name="login_password_hint_sure">请再次输入密码&#8230;</string>
-    <string name="login_email_hint">请在此输入密码&#8230;</string>
-    <string name="login">登录</string>
-    <string name="register">注册</string>
-    <string name="register_txt1">还没有账号？</string>
-    <string name="register_txt2">立即注册 ></string>
-    <string name="login_account">账号 </string>
-    <string name="login_pwd">密码 </string>
-    <string name="login_email">确认密码 </string>
-    <string name="message_search_hint">搜索&#8230;</string>
-
-    <string name="main_tab_recent">会话</string>
-    <string name="main_tab_contact">联系人</string>
-    <string name="mian_tab_set">设置</string>
-
-    <string name="xlistview_header_hint_normal">下拉刷新</string>
-    <string name="xlistview_header_hint_ready">松开刷新数据</string>
-    <string name="xlistview_header_hint_loading">正在加载&#8230;</string>
-    <string name="xlistview_header_last_time">上次更新时间：</string>
-    <string name="xlistview_footer_hint_normal">查看更多</string>
-    <string name="xlistview_footer_hint_ready">松开载入更多</string>
-
-    <string name="add_avator">头像</string>
-    <string name="add_nick">昵称</string>
-    <string name="add_name">账号</string>
-    <string name="add_name_hint">请输入昵称&#8230;</string>
-    <string name="add_gender">性别</string>
-
-    <string name="set_notify">接收新消息通知</string>
-    <string name="set_myinfo">个人资料</string>
-    <string name="set_blacklist">黑名单</string>
-    <string name="set_voice">声音</string>
-    <string name="set_vibrate">震动</string>
-    <string name="tips">提示</string>
-
-    <string name="logout">退出登陆</string>
-    <string name="pop_photo">拍照</string>
-    <string name="pop_choose">从手机相册选中</string>
-    <string name="network_tips">当前网络不可用,请检查您的网络!</string>
-    <string name="toast_error_password_null">密码不能为空</string>
-    <string name="toast_error_username_null">用户名不能为空</string>
-    <string name="toast_error_comfirm_password">输入的两次密码不一致</string>
-
-    <string name="blacklist">黑名单</string>
-    <string name="chat">发起会话</string>
-    <string name="add_friend">添加好友</string>
-
-    <string name="send_state">已读</string>
-
-    <string name="longclick_speak">长按说话</string>
-    <string name="picture">照片</string>
-    <string name="camera">拍摄</string>
-    <string name="location">位置</string>
-
-    <string name="black_tips">已添加至黑名单，你将不再收到对方的消息!</string>
-
-    <string name="username">用户名</string>
-    <string name="search">搜索</string>
-
-    <string name="new_friends">新朋友</string>
-
-    <string name="near_people">附近的人</string>
-
-    <string name="voice_up_tips">手指上滑,取消发送</string>
-    <string name="voice_cancel_tips">松开手指，取消发送</string>
-
-    <string name="voice_seconds_tips">还可以说%1$s秒</string>
-
-    <string name="voice_short_tips">录音时间太短</string>
 
     <string name="reply">回复</string>
 
     <item name="tag_first" type="id"></item>
     <item name="tag_second" type="id"></item>
-    <string name="wenzhen">我的问诊</string>
-    <string name="fuwu">我的服务</string>
 
-    <string name="dingyue">我的订阅</string>
+    <string name="add_tag">Add Tag</string>
+    <string name="subscibe">订阅</string>
+    <string name="attention">关注</string>
 </resources>
