@@ -110,7 +110,8 @@ public class CityListAdapter extends BaseAdapter {
 				tvCurrentLocateCity.setText(currentCity);
 				pbLocate.setVisibility(View.GONE);
 				tvCurrentLocateCity.setEnabled(false);
-				
+
+
 			}else{
 				tvCurrentLocateCity.setEnabled(true);
 				myLocationClient.start();
@@ -123,6 +124,7 @@ public class CityListAdapter extends BaseAdapter {
 					tvLocate.setText("正在定位");
 					tvCurrentLocateCity.setVisibility(View.GONE);
 					myLocationClient.start();
+
 				}
 			});
 			
@@ -264,8 +266,24 @@ public class CityListAdapter extends BaseAdapter {
 				tvCurrentLocateCity.setVisibility(View.VISIBLE);
 				tvCurrentLocateCity.setText(currentCity);
 				myLocationClient.stop();
+
 				pbLocate.setVisibility(View.GONE);
 			}
+			/*tvCurrentLocateCity.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					SharedPreferences pref = mContext.getSharedPreferences("data",Context.MODE_PRIVATE);
+					SharedPreferences.Editor editor = pref.edit();
+					editor.putString("CITY",currentCity);
+					editor.commit();
+					if(CityPositionActivity.class.isInstance(mContext))
+					{
+						// 转化为activity，然后finish就行了
+						CityPositionActivity activity = (CityPositionActivity)mContext;
+						activity.finish();
+					}
+				}
+			});*/
 		}
 
 		
