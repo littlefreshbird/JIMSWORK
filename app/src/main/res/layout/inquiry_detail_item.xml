@@ -33,7 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
-                    android:text="fd"
+                    android:text=""
                     android:textColor="@color/royalblue"
                     android:textSize="@dimen/small_text_size" />
 

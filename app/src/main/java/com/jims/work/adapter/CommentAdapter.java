@@ -18,6 +18,8 @@ import com.jims.work.R;
 import com.jims.work.bean.Comment;
 import com.jims.work.view.MyListView;
 
+import static com.baidu.location.h.i.O;
+
 
 public class CommentAdapter extends BaseAdapter {
 	private LayoutInflater inflater;
@@ -108,5 +110,6 @@ public class CommentAdapter extends BaseAdapter {
 		// private TextView tv_user_comment_date; //
 		private TextView btn_comment_reply; // 评论者 二级评论按钮
 		private MyListView lv_user_comment_replys; // 评论者 二级品论内容列表
+
 	}
 }

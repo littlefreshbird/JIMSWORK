@@ -79,10 +79,10 @@
         <activity android:name=".MyHistoryListActivity"/>
         <activity android:name=".MyComplaintActivity"/>
         <activity android:name=".CaseLoadingActivity"/>
-
+        <activity android:name=".CaseseclectActivity"/>
         <activity android:name=".MyComplaintDetailActivity"></activity>
 
-
+        <activity android:name=".CaseLoadingActivitytest"></activity>
         <activity android:name=".FreeTreatActivity"/>
         <activity android:name=".CityPositionActivity"></activity>
         <activity android:name=".ReplyActivity"/>

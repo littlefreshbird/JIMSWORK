@@ -16,6 +16,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jims.work.adapter.CommentAdapter;
@@ -27,6 +29,8 @@ import com.jims.work.fragment.ServiceFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.jims.work.R.id.ratingbar;
+
 /**
  * Created by Just on 2017/1/11.
  */
@@ -35,19 +39,18 @@ public class ReplyActivity extends AppCompatActivity {
     private ListView lv_user_comments;
     private Button btn_comment, btn_reply;
     private EditText edt_reply;
-
     private CommentAdapter commentAdapter;
     private CommentReplyAdapter commentReplyAdapter;
-
     private static final int ONE_COMMENT_CODE = -1;
-
     private List<Comment> commentList;
     private List<Reply> replyList;
+    private RatingBar ratingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reply);
+        ratingBar = (RatingBar)findViewById(ratingbar);
         setCustomActionBar();
         initView();
         initCommentData();
@@ -100,7 +103,17 @@ public class ReplyActivity extends AppCompatActivity {
             onCreateDialog(ONE_COMMENT_CODE, position);
         }
     };
+    /**
+     * 评价监听
+     */
+    private View.OnClickListener pinglunToCommentListener = new View.OnClickListener() {
 
+        @Override
+        public void onClick(View v) {
+            int position = (Integer) v.getTag();
+            onCreateDialog(ONE_COMMENT_CODE, position);
+        }
+    };
     /**
      * 互相回复的监听（楼中楼）
      */
@@ -146,7 +159,7 @@ public class ReplyActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         } else {
                             Comment comment = new Comment();
-                            comment.setUsername("海盗");
+                            comment.setUsername("方医生");
                             comment.setContent(edt_reply.getText().toString());
 
                             commentList.add(comment);

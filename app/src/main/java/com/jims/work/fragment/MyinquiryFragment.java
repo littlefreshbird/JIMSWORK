@@ -31,9 +31,9 @@ public class MyinquiryFragment extends  Fragment {
 
    private String[] name = { "王林发的帖子", "王林发的帖子", "王林发的帖子", "王林发的帖子","王林发的帖子","王林发的帖子","王林发的帖子","王林发的帖子","王林发的帖子" };
 
-    private String[] desc = { "医生服务态度很好，很满意！", "我小孩今年8岁,乘坐自行车摔倒擦伤了脸,医生很细心，谢谢！", "这个张大夫对待病人态度不好！"
-            + "2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合，这次多亏了这个医生。", "在这个医院医生能力不行，在这治病三年了，根本没什么效果！","我要投诉"
-           + "我要投诉，我要投诉。。。","我要投诉1某某医院的张医生。。。","我要投诉某某医院的刘医生。。。","我要投诉某某医院的王医生。。。","我要投诉某某医院的赵医生。。。"};
+    private String[] desc = { "腿疼怎么办！", "感冒怎么办！", "咳嗽怎么办"
+            + "很傻怎么办", "我要投诉你去哪","我要投诉"
+           + "我要投诉，我要投诉。。。","小朋友不吃饭怎么办","我要投诉某某医院的刘医生。。。","我要投诉某某医院的王医生。。。","我要投诉某某医院的赵医生。。。"};
     private int[] imageid = { R.drawable.image_myhead, R.drawable.image_myhead,
             R.drawable.image_myhead, R.drawable.image_myhead ,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead};
     private int[] imageids = { R.mipmap.dianzan,  R.mipmap.dianzan,
@@ -51,10 +51,10 @@ public class MyinquiryFragment extends  Fragment {
 
         for (int i = 0; i < name.length; i++) {
             Map<String, Object> listItem = new HashMap<String, Object>();
-           listItem.put("name", name[i]);
-           listItem.put("desc", desc[i]);
+            listItem.put("name", name[i]);
+            listItem.put("desc", desc[i]);
             listItem.put("time", time[i]);
-           listItem.put("client", client[i]);
+            listItem.put("client", client[i]);
             listItem.put("imageids", imageids[i]);
             listItem.put("imageid", imageid[i]);
             listItems.add(listItem);
