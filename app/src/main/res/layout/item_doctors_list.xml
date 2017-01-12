@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingTop="8dp" >
+                android:id="@+id/doctor_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingTop="8dp">
 
     <ImageView
         android:id="@+id/img_icon"
@@ -13,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:background="#ffffff"
         android:padding="3dp"
-        android:src="@mipmap/load_logo" />
+        android:src="@mipmap/load_logo"/>
 
     <TextView
         android:id="@+id/tv_name"
@@ -24,7 +25,7 @@
         android:layout_toRightOf="@+id/img_icon"
         android:text="李云龙"
         android:textColor="@color/black"
-        android:textSize="@dimen/micro_text_size" />
+        android:textSize="@dimen/micro_text_size"/>
 
     <TextView
         android:id="@+id/tv_classes"
@@ -35,7 +36,7 @@
         android:layout_toRightOf="@+id/tv_name"
         android:text="口腔科"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/small_text_size" />
+        android:textSize="@dimen/small_text_size"/>
 
     <TextView
         android:id="@+id/tv_position"
@@ -46,7 +47,7 @@
         android:layout_toRightOf="@+id/tv_classes"
         android:text="主任医师"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/small_text_size" />
+        android:textSize="@dimen/small_text_size"/>
 
     <TextView
         android:id="@+id/tv_hospital"
@@ -58,10 +59,10 @@
         android:layout_toRightOf="@+id/img_icon"
         android:text="承德附属医院"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/small_text_size" />
+        android:textSize="@dimen/small_text_size"/>
 
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/tv_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_hospital"
@@ -69,21 +70,21 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="2dp"
         android:layout_toRightOf="@+id/img_icon"
-         android:textSize="@dimen/micro_text_size"
         android:ellipsize="end"
         android:lines="2"
         android:text="AKG K450 头戴式耳机头戴式耳机头戴式耳机头戴式耳机头戴式耳机头戴式耳机"
-        android:textColor="@color/darkgray" />
+        android:textColor="@color/darkgray"
+        android:textSize="@dimen/micro_text_size"/>
 
     <TextView
         android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_title"
-        android:layout_alignLeft="@+id/tv_title"
+        android:layout_alignLeft="@+id/tv_detail"
+        android:layout_below="@+id/tv_detail"
         android:layout_marginBottom="2dp"
         android:text="￥389.00"
-        android:textColor="@color/orange" />
+        android:textColor="@color/orange"/>
 
     <TextView
         android:id="@+id/tv_num"
@@ -95,7 +96,7 @@
         android:layout_toRightOf="@+id/tv_percent"
         android:text="12386人"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/micro_text_size" />
+        android:textSize="@dimen/micro_text_size"/>
 
     <ImageView
         android:id="@+id/img_icon_vip"
@@ -105,23 +106,23 @@
         android:layout_marginBottom="2dp"
         android:layout_marginLeft="2dp"
         android:layout_toRightOf="@+id/tv_price"
-        android:src="@mipmap/product_price_vip" />
+        android:src="@mipmap/product_price_vip"/>
 
     <TextView
         android:id="@+id/tv_percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         android:layout_below="@+id/tv_price"
         android:layout_alignLeft="@+id/tv_price"
+        android:layout_below="@+id/tv_price"
         android:text="好评95%"
         android:textColor="@color/dimgray"
-        android:textSize="@dimen/micro_text_size" />
+        android:textSize="@dimen/micro_text_size"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/layout_height_0.5"
         android:layout_below="@+id/tv_percent"
         android:layout_marginTop="8dp"
-        android:background="@color/divider_color" />
+        android:background="@color/divider_color"/>
 
 </RelativeLayout>
