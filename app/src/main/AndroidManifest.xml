@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jims.work">
+          package="com.jims.work">
     <!-- 这个权限用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
     <!-- 这个权限用于访问GPS定位 -->
@@ -19,23 +19,23 @@
     <!-- SD卡读取权限，用户写入离线定位数据 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
     <!-- 基本权限 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
     <!-- 二维码扫描权限 -->
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
     <!-- 申明权限 操作SD卡 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -45,50 +45,51 @@
         android:theme="@style/AppTheme1">
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".LoginActivity"
             android:theme="@android:style/Theme.NoTitleBar">
 
         </activity>
-        <activity android:name=".GuideActivity" />
+        <activity android:name=".GuideActivity"/>
         <activity android:name=".SplashActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
-        <activity android:name=".RecordcaseActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".RegisterNextActivity" />
-        <activity android:name=".UserInfoActivity" />
-        <activity android:name=".MyEvaluateActivity" />
-        <activity android:name=".MyDoctorsListActivity" />
-        <activity android:name=".EvaluateDetailActivity" />
-        <activity android:name=".MoreActivity" />
-        <activity android:name=".LookforActivity" />
-        <activity android:name=".LookforFinishActivity" />
-        <activity android:name=".PostActivity" />
-        <activity android:name=".NewDoctorListActivity" />
-        <activity android:name=".RecordActivity" />
-        <activity android:name=".DoctorClassActivity" />
-        <activity android:name=".MyServiceActivity" />
-        <activity android:name=".MyinquiryDetailAcivity" />
-        <activity android:name=".MyEvaluateDetailAcivity" />
-        <activity android:name=".MyHistoryListActivity" />
-        <activity android:name=".MyComplaintActivity" />
-        <activity android:name=".CaseLoadingActivity" />
+        <activity android:name=".RecordcaseActivity"/>
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".RegisterNextActivity"/>
+        <activity android:name=".UserInfoActivity"/>
+        <activity android:name=".MyEvaluateActivity"/>
+        <activity android:name=".MyDoctorsListActivity"/>
+        <activity android:name=".EvaluateDetailActivity"/>
+        <activity android:name=".MoreActivity"/>
+        <activity android:name=".LookforActivity"/>
+        <activity android:name=".LookforFinishActivity"/>
+        <activity android:name=".PostActivity"/>
+        <activity android:name=".NewDoctorListActivity"/>
+        <activity android:name=".RecordActivity"/>
+        <activity android:name=".DoctorClassActivity"/>
+        <activity android:name=".MyServiceActivity"/>
+        <activity android:name=".MyinquiryDetailAcivity"/>
+        <activity android:name=".MyEvaluateDetailAcivity"/>
+        <activity android:name=".MyHistoryListActivity"/>
+        <activity android:name=".MyComplaintActivity"/>
+        <activity android:name=".CaseLoadingActivity"/>
         <activity android:name=".MyComplaintDetailActivity">
 
         </activity>
         <activity android:name=".FreeTreatActivity"/>
         <activity android:name=".CityPositionActivity"></activity>
-        <activity android:name=".ReplyActivity" />
+        <activity android:name=".ReplyActivity"/>
+        <activity android:name=".ScanPatientActivity"></activity>
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="qoBNVZqS1moe1uPuoCb6xtvWGLqCrnEA" />
+            android:value="qoBNVZqS1moe1uPuoCb6xtvWGLqCrnEA"/>
     </application>
 
 </manifest>
