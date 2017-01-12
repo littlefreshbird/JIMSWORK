@@ -84,6 +84,7 @@
                 android:layout_height="5dp"
                 android:background="#d7d7d7" />
             <RelativeLayout
+                android:id="@+id/username_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -98,7 +99,7 @@
                     android:textSize="@dimen/small_text_size"
                     />
                 <TextView
-                    android:id="@+id/nicheng"
+                    android:id="@+id/name_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/userarrow1"
