@@ -373,13 +373,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), CaseLoadingActivity.class));
                 break;
             case R.id.layout_special1: //
-                startActivity(new Intent(getActivity(), DoctorClassActivity.class));
+                startActivity(new Intent(getActivity(), PostActivity.class));
                 break;
             case R.id.layout_special2: // 我的病例
                 startActivity(new Intent(getActivity(), CaseseclectActivity.class));
                 break;
-            case R.id.layout_special3: //
-                startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
+            case R.id.layout_special3: //热门科室
+                startActivity(new Intent(getActivity(), DoctorClassActivity.class));
                 break;
             case R.id.layout_special4: //
                 startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));

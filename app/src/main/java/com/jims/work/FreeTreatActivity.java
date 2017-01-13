@@ -178,9 +178,7 @@ public class FreeTreatActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent intent1 = new Intent(mContext, MainActivity.class);//点击回主页
-                startActivity(intent1);
-                finish();
+                  finish();
             case R.id.action:
                 openInputMethod(edit);
                 return true;

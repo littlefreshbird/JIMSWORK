@@ -109,7 +109,7 @@ public class CityListAdapter extends BaseAdapter {
 				tvCurrentLocateCity.setVisibility(View.VISIBLE);
 				tvCurrentLocateCity.setText(currentCity);
 				pbLocate.setVisibility(View.GONE);
-				tvCurrentLocateCity.setEnabled(false);
+				//tvCurrentLocateCity.setEnabled(false);
 
 
 			}else{
@@ -120,10 +120,26 @@ public class CityListAdapter extends BaseAdapter {
 			tvCurrentLocateCity.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					pbLocate.setVisibility(View.VISIBLE);
-					tvLocate.setText("正在定位");
-					tvCurrentLocateCity.setVisibility(View.GONE);
-					myLocationClient.start();
+					if (!isNeedRefresh) {
+						SharedPreferences pref = mContext.getSharedPreferences("data",Context.MODE_PRIVATE);
+						SharedPreferences.Editor editor = pref.edit();
+						editor.putString("CITY",currentCity);
+						editor.commit();
+						if(CityPositionActivity.class.isInstance(mContext))
+						{
+							// 转化为activity，然后finish就行了
+							CityPositionActivity activity = (CityPositionActivity)mContext;
+							activity.finish();
+						}
+
+					}else{
+						pbLocate.setVisibility(View.VISIBLE);
+						tvLocate.setText("正在定位");
+						tvCurrentLocateCity.setVisibility(View.GONE);
+						myLocationClient.start();
+
+					}
+
 
 				}
 			});
@@ -258,6 +274,7 @@ public class CityListAdapter extends BaseAdapter {
 				tvCurrentLocateCity.setVisibility(View.VISIBLE);
 				tvCurrentLocateCity.setText("重新选择");
 				pbLocate.setVisibility(View.GONE);
+				isNeedRefresh=true;
 				return;
 			}else{
 				//定位成功
@@ -266,24 +283,10 @@ public class CityListAdapter extends BaseAdapter {
 				tvCurrentLocateCity.setVisibility(View.VISIBLE);
 				tvCurrentLocateCity.setText(currentCity);
 				myLocationClient.stop();
-
+				isNeedRefresh=false;
 				pbLocate.setVisibility(View.GONE);
 			}
-			/*tvCurrentLocateCity.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					SharedPreferences pref = mContext.getSharedPreferences("data",Context.MODE_PRIVATE);
-					SharedPreferences.Editor editor = pref.edit();
-					editor.putString("CITY",currentCity);
-					editor.commit();
-					if(CityPositionActivity.class.isInstance(mContext))
-					{
-						// 转化为activity，然后finish就行了
-						CityPositionActivity activity = (CityPositionActivity)mContext;
-						activity.finish();
-					}
-				}
-			});*/
+
 		}
 
 		

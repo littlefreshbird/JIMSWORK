@@ -163,6 +163,7 @@
                 android:layout_height="1dp"
                 android:background="#d7d7d7" />
             <RelativeLayout
+                android:id="@+id/datepicker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -177,7 +178,7 @@
                     android:textSize="@dimen/small_text_size"
                     />
                 <TextView
-                    android:id="@+id/age"
+                    android:id="@+id/dateDisplay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -239,6 +240,7 @@
                 android:layout_height="1dp"
                 android:background="#d7d7d7" />
             <RelativeLayout
+                android:id="@+id/user_height"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -353,6 +355,7 @@
                 android:layout_height="5dp"
                 android:background="#d7d7d7" />
             <RelativeLayout
+                android:id="@+id/user_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -367,7 +370,7 @@
                     android:textSize="@dimen/small_text_size"
                     />
                 <TextView
-                    android:id="@+id/area"
+                    android:id="@+id/address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -449,7 +452,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_toLeftOf="@+id/userarrow11"
                     android:layout_marginTop="8dp"
-                    android:text="未填写"
+                    android:text="未绑定邮箱"
                     />
 
                 <ImageView
