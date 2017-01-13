@@ -79,7 +79,6 @@
         <activity android:name=".MyHistoryListActivity"/>
         <activity android:name=".MyComplaintActivity"/>
         <activity android:name=".CaseLoadingActivity"/>
-        <activity android:name=".CaseseclectActivity"/>
         <activity android:name=".MyComplaintDetailActivity"></activity>
         <activity android:name=".CaseLoadingActivitytest"></activity>
 

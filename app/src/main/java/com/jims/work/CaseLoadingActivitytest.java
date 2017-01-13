@@ -1,19 +1,10 @@
 package com.jims.work;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -21,22 +12,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import static com.jims.work.R.menu.main;
 
@@ -77,8 +58,8 @@ public class CaseLoadingActivitytest extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent intent=new Intent(CaseLoadingActivitytest.this,CaseseclectActivity.class);//点击回主页
-                startActivity(intent);
+                /*Intent intent=new Intent(CaseLoadingActivitytest.this,CaseseclectActivity.class);//点击回主页
+                startActivity(intent);*/
                 finish();
             default:
                 return super.onOptionsItemSelected(item);

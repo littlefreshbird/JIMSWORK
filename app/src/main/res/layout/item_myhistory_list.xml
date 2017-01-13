@@ -61,26 +61,26 @@
         android:textColor="@color/dimgray"
         android:textSize="@dimen/small_middle_text_size" />
 
- <!--   <TextView
+   <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_hospital"
+        android:layout_below="@id/tv_name"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="2dp"
         android:layout_toRightOf="@+id/img_icon"
-         android:textSize="@dimen/textSize_12" 
+         android:textSize="@dimen/small_text_size"
         android:ellipsize="end"
-        android:lines="2"
-        android:text="AKG K450 头戴式耳机头戴式耳机头戴式耳机头戴式耳机头戴式耳机头戴式耳机"
-        android:textColor="@color/darkgray" />-->
+        android:lines="1"
+        android:text="发热三天，咳嗽严重，头痛失眠，食欲不好，已输液治疗一星期，不见好转"
+        android:textColor="@color/black" />
 
     <TextView
-        android:id="@+id/tv_price"
+        android:id="@+id/tv_text_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_name"
+        android:layout_below="@+id/tv_title"
         android:layout_alignLeft="@+id/tv_name"
         android:layout_marginBottom="2dp"
         android:text="诊疗时间："
@@ -103,10 +103,10 @@
         android:id="@+id/tV_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tv_price"
+        android:layout_alignBottom="@+id/tv_text_history"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="2dp"
-        android:layout_toRightOf="@+id/tv_price"
+        android:layout_toRightOf="@+id/tv_text_history"
         android:text="2016-12-12"
         android:textSize="@dimen/micro_text_size"/>
 
@@ -114,8 +114,8 @@
         android:id="@+id/tv_percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         android:layout_below="@+id/tv_price"
-        android:layout_alignLeft="@+id/tv_price"
+         android:layout_below="@+id/tv_text_history"
+        android:layout_alignLeft="@+id/tv_text_history"
         android:text="就诊人："
         android:textColor="@color/dimgray"
         android:textSize="@dimen/micro_text_size" />
