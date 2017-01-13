@@ -65,7 +65,7 @@ public class MyhistoryListseclectAdapter extends BaseAdapter {
         if (convertView != null) {
             viewHolder = (ViewHolder) convertView.getTag();
         } else {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_myhistory_list, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_myhistoryseclect_list, null);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         }
