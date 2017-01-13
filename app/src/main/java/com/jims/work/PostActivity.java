@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,11 +15,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -36,6 +39,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import static com.jims.work.fragment.ServiceFragment.num;
 
 
 /**
@@ -55,6 +60,8 @@ public class PostActivity extends AppCompatActivity {
     private static final int CAMERA_SUCCESS = 2;
     private boolean bl=false;
     private int position1=0;
+    float scaleWidth;
+    float scaleHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +69,8 @@ public class PostActivity extends AppCompatActivity {
 
         setContentView(R.layout.post);
         edit=(EditText)findViewById(R.id.edit);
+        DisplayMetrics dm=new DisplayMetrics();//创建矩阵
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
         button_1=(Button)findViewById(R.id.button_1);
         //button_1.setBackgroundColor(Color.GREEN);
         button_1.setOnClickListener(new View.OnClickListener() {
@@ -167,7 +176,6 @@ public class PostActivity extends AppCompatActivity {
             }
         });
     }
-
   /*  //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
     public boolean onSupportNavigateUp() {
