@@ -29,8 +29,6 @@ import com.jims.work.fragment.ServiceFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.jims.work.R.id.ratingbar;
-
 /**
  * Created by Just on 2017/1/11.
  */
@@ -50,8 +48,8 @@ public class ReplyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reply);
-        ratingBar = (RatingBar)findViewById(R.id.ratingbar1);
-     /*   ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+        ratingBar = (RatingBar)findViewById(R.id.ratingbar2);
+       /* ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 ratingBar.setRating(rating);

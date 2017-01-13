@@ -85,9 +85,9 @@
                     android:text="满意度 ："
                     android:textColor="@color/blue"
                     android:textSize="12sp"></TextView>
-               <!-- style="@style/roomRatingBar"-->
+               <!--    style="@style/roomRatingBar"-->
                 <RatingBar
-                    android:id="@+id/ratingbar"
+                    android:id="@+id/ratingbar2"
                     style="?android:attr/ratingBarStyleSmall"
                     android:layout_marginLeft="150dp"
                     android:layout_width="80dp"
