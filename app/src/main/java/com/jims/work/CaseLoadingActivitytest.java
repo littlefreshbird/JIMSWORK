@@ -1,5 +1,6 @@
 package com.jims.work;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -58,8 +59,8 @@ public class CaseLoadingActivitytest extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                /*Intent intent=new Intent(CaseLoadingActivitytest.this,CaseseclectActivity.class);//点击回主页
-                startActivity(intent);*/
+                Intent intent=new Intent(CaseLoadingActivitytest.this,CaseseclectActivity.class);//点击回主页
+                startActivity(intent);
                 finish();
             default:
                 return super.onOptionsItemSelected(item);
