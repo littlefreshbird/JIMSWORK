@@ -50,7 +50,13 @@ public class ReplyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reply);
-        ratingBar = (RatingBar)findViewById(R.id.ratingbar);
+        ratingBar = (RatingBar)findViewById(R.id.ratingbar1);
+     /*   ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                ratingBar.setRating(rating);
+            }
+        });*/
         setCustomActionBar();
         initView();
         initCommentData();
