@@ -97,8 +97,8 @@
                 <action android:name="com.baidu.location.service_v2.2" />
             </intent-filter>
         </service>
-
         <activity android:name=".DoctorDetailActivity"></activity>
+        <activity android:name=".FreeTreatTaskActivity"/>
         <activity android:name=".MyHistoryDetailActivity"></activity>
     </application>
 
