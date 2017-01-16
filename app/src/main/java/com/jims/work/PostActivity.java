@@ -301,8 +301,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent intent1=new Intent(PostActivity.this,MainActivity.class);//点击回主页
-                startActivity(intent1);
+
                 finish();
             case R.id.action:
                openInputMethod(edit);

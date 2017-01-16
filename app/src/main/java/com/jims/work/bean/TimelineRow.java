@@ -9,7 +9,7 @@ import java.util.Date;
 public class TimelineRow {
 
     private int id;
-    private Date date;
+    private String date;
     private String title;
     private String description;
     private Bitmap image;
@@ -19,7 +19,7 @@ public class TimelineRow {
     private int backgroundColor;
     private int backgroundSize;
 
-    public TimelineRow(int id, Date date, String title, String  description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize, int backgroundColor, int backgroundSize) {
+    public TimelineRow(int id, String date, String title, String  description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize, int backgroundColor, int backgroundSize) {
         this.id = id;
         this.date = date;
         this.title = title;
@@ -32,7 +32,7 @@ public class TimelineRow {
         this.backgroundSize = backgroundSize;
     }
 
-    public TimelineRow(int id, Date date, String title, String  description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize) {
+    public TimelineRow(int id, String date, String title, String  description, Bitmap image, int bellowLineColor, int bellowLineSize, int imageSize) {
         this.id = id;
         this.date = date;
         this.title = title;
@@ -109,12 +109,12 @@ public class TimelineRow {
         this.image = image;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
 
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

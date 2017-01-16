@@ -100,7 +100,7 @@ public class TimelineViewAdapter extends ArrayAdapter<TimelineRow> {
         }
 
 
-        rowDate.setText(getPastTime(row.getDate()));
+        rowDate.setText(row.getDate());
         if (row.getTitle() == null)
             rowTitle.setVisibility(View.GONE);
         else

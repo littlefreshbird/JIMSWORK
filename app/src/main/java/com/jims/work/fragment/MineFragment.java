@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jims.work.FreeTreatTaskActivity;
 import com.jims.work.LoginActivity;
 import com.jims.work.MoreActivity;
 import com.jims.work.MyComplaintActivity;
@@ -38,6 +39,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_mine_complaint).setOnClickListener(this);
         layout.findViewById(R.id.layout_mine_doctors).setOnClickListener(this);
         layout.findViewById(R.id.layout_mine_history).setOnClickListener(this);
+        layout.findViewById(R.id.layout_mine_free_treat_task).setOnClickListener(this);
 
     }
 
@@ -62,6 +64,9 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.layout_mine_history: // 诊疗记录
                 startActivity(new Intent(getActivity(), MyHistoryListActivity.class));
+                break;
+            case R.id.layout_mine_free_treat_task: // 诊疗记录
+                startActivity(new Intent(getActivity(), FreeTreatTaskActivity.class));
                 break;
             case R.id.layout_more: // 更多
 
