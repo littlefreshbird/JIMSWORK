@@ -92,6 +92,7 @@
                     android:layout_marginLeft="150dp"
                     android:layout_width="80dp"
                     android:layout_height="30dp"
+                    android:isIndicator="false"
                     android:numStars="5"
                     android:rating = "3"
                     android:stepSize="1"/>

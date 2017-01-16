@@ -92,19 +92,19 @@
                     android:textSize="@dimen/micro_text_size" />
                 <ImageView
                     android:id="@+id/reply_listitem_dianzan"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@mipmap/ganmao0"/>
                 <ImageView
                     android:id="@+id/reply_listitem_dianzan1"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="10dp"
                     android:src="@mipmap/ganmao1"/>
                 <ImageView
                     android:id="@+id/reply_listitem_dianzan2"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="10dp"
                     android:src="@mipmap/ganmao2"/>
 

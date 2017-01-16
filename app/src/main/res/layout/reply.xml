@@ -17,8 +17,8 @@
         android:id="@+id/complainitems"
         android:name="com.jims.work.fragment.MyinquiryDetailreplyFragment"
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:layout_weight="1"
+        android:layout_height="200dp"
+
 
         />
     <ListView
