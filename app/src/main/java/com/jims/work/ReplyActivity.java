@@ -1,7 +1,6 @@
 package com.jims.work;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -17,15 +16,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RatingBar;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.jims.work.adapter.CommentAdapter;
 import com.jims.work.adapter.CommentReplyAdapter;
 import com.jims.work.bean.Comment;
 import com.jims.work.bean.Reply;
 import com.jims.work.fragment.ServiceFragment;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/listview01"
+        android:layout_width="fill_parent"
+        android:layout_height="360dp"
+
+        />
+   <!-- android:divider="@color/gray"
+    android:dividerHeight="1dp"
+    android:layout_marginTop="5dp"
+    android:scrollbarAlwaysDrawVerticalTrack="true"-->
+
+    <Button
+        android:id="@+id/wancheng"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:background="@drawable/bg_edittext"
+        android:paddingTop="5dip"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="完成"
+        android:textSize="@dimen/small_text_size"
+        android:gravity="center"/>
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/biankuang"
+        >
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:enabled="false"
+            android:textSize="@dimen/micro_text_size"
+            android:paddingTop="5dip"
+            android:layout_marginLeft="30dp"
+            android:textColorHint="@color/dim_foreground_material_light"
+            android:hint="2222"/>
+        <RadioButton
+            android:id="@+id/radiobutton2"
+            android:textSize="10dp"
+            android:layout_marginLeft="250dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/biankuang"
+        >
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:enabled="false"
+            android:textSize="@dimen/micro_text_size"
+            android:paddingTop="5dip"
+            android:layout_marginLeft="30dp"
+            android:textColorHint="@color/dim_foreground_material_light"
+            android:hint="3333"/>
+        <RadioButton
+            android:id="@+id/radiobutton3"
+            android:textSize="10dp"
+            android:layout_marginLeft="250dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/biankuang"
+        >
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:enabled="false"
+            android:textSize="@dimen/micro_text_size"
+            android:paddingTop="5dip"
+            android:layout_marginLeft="30dp"
+            android:textColorHint="@color/dim_foreground_material_light"
+            android:hint="4444"/>
+        <RadioButton
+            android:id="@+id/radiobutton4"
+            android:textSize="10dp"
+            android:layout_marginLeft="250dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"/>
+    </LinearLayout>-->
+
+
+</LinearLayout>

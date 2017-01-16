@@ -17,11 +17,15 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 
 /**
  * Created by Just on 2016/12/29.
+ * 创建档案或选择已有档案
  */
 
 public class RecordActivity extends AppCompatActivity {
@@ -31,6 +35,9 @@ public class RecordActivity extends AppCompatActivity {
     private TextView buttonone,buttontwo;
     private RadioGroup radiogroup;
     private static final int DATE_ID = 1;
+    private int mYear;
+    private int mMonth;
+    private int mDay;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -38,17 +45,24 @@ public class RecordActivity extends AppCompatActivity {
         setContentView(R.layout.record);
         setCustomActionBar();
         editone = (EditText) findViewById(R.id.editone);
-        edittwo = (EditText) findViewById(R.id.edittwo);
+       // edittwo = (EditText) findViewById(R.id.edittwo);
         radiobutton1= (RadioButton) findViewById(R.id.radiobutton1);
         radiobutton2= (RadioButton) findViewById(R.id.radiobutton2);
-        textone= (TextView) findViewById(R.id.textone);
-        texttwo= (TextView) findViewById(R.id.texttwo);
+      //  textone= (TextView) findViewById(R.id.textone);
+        //texttwo= (TextView) findViewById(R.id.texttwo);
         textthree= (TextView) findViewById(R.id.textthree);
         textfour= (TextView) findViewById(R.id.textfour);
         textfive= (TextView) findViewById(R.id.textfive);
         buttonone=(Button)findViewById(R.id.buttonone);
+        buttonone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(RecordActivity.this,OldrecordActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         buttontwo=(Button)findViewById(R.id.buttontwo);
-        //buttontwo.setBackgroundColor(Color.GREEN);
         radiogroup=(RadioGroup) findViewById(R.id.rgSex);
         radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -60,11 +74,16 @@ public class RecordActivity extends AppCompatActivity {
                 }
             }
         });
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
 
         textfive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDialog(DATE_ID);
+
             }
         });
 
@@ -82,12 +101,25 @@ public class RecordActivity extends AppCompatActivity {
         // TODO Auto-generated method stub
         switch (id) {
             case DATE_ID:
-                return new DatePickerDialog(this,onDateSetListener,2016,12,30);
+                return new DatePickerDialog(this,mDateSetListener,2016,12,30);
         }
         return null;
     }
+    private DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            mYear = year;
+            mMonth = monthOfYear;
+            mDay = dayOfMonth;
+            updateDisplay();
+        }
+    };
+    private void updateDisplay() {
+        textfive.setText(new StringBuilder().append(mYear).append("-")
+                .append(mMonth + 1).append("-").append(mDay).append(" "));
+    }
 
-    //设置时间之后点击SET就会将时间改为你刚刚设置的时间
+   /* //设置时间之后点击SET就会将时间改为你刚刚设置的时间
     DatePickerDialog.OnDateSetListener onDateSetListener = new DatePickerDialog.OnDateSetListener() {
 
         public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -98,7 +130,7 @@ public class RecordActivity extends AppCompatActivity {
             textfive.setTextColor(Color.BLACK);
 
         }
-    };
+    };*/
 
     //点击事件
     @Override

@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
@@ -33,6 +34,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -40,14 +42,19 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import butterknife.OnClick;
+
+import static com.baidu.location.h.i.v;
 import static com.jims.work.fragment.ServiceFragment.num;
 
 
 /**
  * Created by Just on 2016/12/25.
+ * 提交病例
  */
 
-public class PostActivity extends AppCompatActivity {
+public class PostActivity extends AppCompatActivity implements View.OnClickListener {
+    private TextView neike,waike,jingshenke,meirongke,fangsheke,nanke,muyingke,guke,huayanke;
     private EditText edit;
     private GridView gridView;
     private Button button_1;
@@ -60,28 +67,38 @@ public class PostActivity extends AppCompatActivity {
     private static final int CAMERA_SUCCESS = 2;
     private boolean bl=false;
     private int position1=0;
+    private boolean nei,wai,jingshen,meirong,fangshe,nan,muying,gu,huayan=false;
     float scaleWidth;
     float scaleHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.post);
         edit=(EditText)findViewById(R.id.edit);
         DisplayMetrics dm=new DisplayMetrics();//创建矩阵
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-        button_1=(Button)findViewById(R.id.button_1);
-        //button_1.setBackgroundColor(Color.GREEN);
-        button_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(PostActivity.this,RecordActivity.class);
-                startActivity(intent);
-                PostActivity.this.finish();
-            }
-        });
+        button_1=(Button)findViewById(R.id.button_1);//注册档案页
+        neike=(TextView) findViewById(R.id.neike);
+        waike=(TextView) findViewById(R.id.waike);
+        jingshenke=(TextView) findViewById(R.id.jingshenke);
+        meirongke=(TextView) findViewById(R.id.meirongke);
+        fangsheke=(TextView) findViewById(R.id.fangsheke);
+        nanke=(TextView) findViewById(R.id.nanke);
+        muyingke=(TextView) findViewById(R.id.muyingke);
+        guke=(TextView) findViewById(R.id.guke);
+        huayanke=(TextView) findViewById(R.id.huayanke);
 
+        button_1.setOnClickListener(this);
+        neike.setOnClickListener(this);
+        waike.setOnClickListener(this);
+        jingshenke.setOnClickListener(this);
+        meirongke.setOnClickListener(this);
+        fangsheke.setOnClickListener(this);
+        nanke.setOnClickListener(this);
+        muyingke.setOnClickListener(this);
+        guke.setOnClickListener(this);
+        huayanke.setOnClickListener(this);
        setCustomActionBar();
         /*
          * 防止键盘挡住输入框
@@ -153,15 +170,9 @@ public class PostActivity extends AppCompatActivity {
                                 }
                             }).create();
                     dlg.show();
-                    /*Toast.makeText(PostActivity.this, "添加图片", Toast.LENGTH_SHORT).show();
-                    //选择图片
-                    Intent intent = new Intent(Intent.ACTION_PICK,
-                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                    startActivityForResult(intent, IMAGE_OPEN);*/
-                    //通过onResume()刷新数据
                 }
                 else {
-                  //  dialog(position); //增加点击放大效果
+                  //增加点击放大效果
                     position1=position;
                     if(bl==false){
                         Animation testAnim = AnimationUtils.loadAnimation(PostActivity.this, R.anim.anim);
@@ -176,6 +187,100 @@ public class PostActivity extends AppCompatActivity {
             }
         });
     }
+   public void onClick(View v){
+         switch (v.getId()) {
+             case R.id.button_1:
+                 Intent intent = new Intent(PostActivity.this, RecordActivity.class);
+                 startActivity(intent);
+                 PostActivity.this.finish();
+                 break;
+             case R.id.neike:
+                 if(nei==false){
+                     neike.setBackgroundColor(Color.GREEN);
+                     nei=true;
+                 }else{
+                     neike.setBackgroundColor(Color.WHITE);
+                     nei=false;
+                 }
+                 break;
+             case R.id.waike:
+                 if(wai==false){
+                     waike.setBackgroundColor(Color.GREEN);
+                     wai=true;
+                 }else{
+                     waike.setBackgroundColor(Color.WHITE);
+                     wai=false;
+                 }
+                 break;
+             case R.id.jingshenke:
+                 if(jingshen==false){
+                     jingshenke.setBackgroundColor(Color.GREEN);
+                     jingshen=true;
+                 }else{
+                     jingshenke.setBackgroundColor(Color.WHITE);
+                     jingshen=false;
+                 }
+                 break;
+             case R.id.meirongke:
+                 if(meirong==false){
+                     meirongke.setBackgroundColor(Color.GREEN);
+                     meirong=true;
+                 }else{
+                     meirongke.setBackgroundColor(Color.WHITE);
+                     meirong=false;
+                 }
+                 break;
+             case R.id.fangsheke:
+                 if(fangshe==false){
+                     fangsheke.setBackgroundColor(Color.GREEN);
+                     fangshe=true;
+                 }else{
+                     fangsheke.setBackgroundColor(Color.WHITE);
+                     fangshe=false;
+                 }
+                 break;
+             case R.id.nanke:
+                 if(nan==false){
+                     nanke.setBackgroundColor(Color.GREEN);
+                     nan=true;
+                 }else{
+                     nanke.setBackgroundColor(Color.WHITE);
+                     nan=false;
+                 }
+                 break;
+             case R.id.muyingke:
+                 if(muying==false){
+                     muyingke.setBackgroundColor(Color.GREEN);
+                     muying=true;
+                 }else{
+                     muyingke.setBackgroundColor(Color.WHITE);
+                     muying=false;
+                 }
+                 break;
+             case R.id.guke:
+                 if(gu==false){
+                     guke.setBackgroundColor(Color.GREEN);
+                     gu=true;
+                 }else{
+                     guke.setBackgroundColor(Color.WHITE);
+                     gu=false;
+                 }
+                 break;
+             case R.id.huayanke:
+                 if(huayan==false){
+                     huayanke.setBackgroundColor(Color.GREEN);
+                     huayan=true;
+                 }else{
+                     huayanke.setBackgroundColor(Color.WHITE);
+                     huayan=false;
+                 }
+                 break;
+             default:
+                 break;
+
+         }
+
+   }
   /*  //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
     public boolean onSupportNavigateUp() {
