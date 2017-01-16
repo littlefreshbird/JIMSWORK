@@ -1,5 +1,6 @@
 package com.jims.work;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -61,7 +62,7 @@ public class MyHistoryListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 MyhistoryInfo info = doctorsList.get(position);
-                // gotoDetail(info);
+                gotoDetail(info);
             }
         });
         mListView.setOnScroll2TopListener(new MyListView.OnScroll2TopListener() {
@@ -97,5 +98,10 @@ public class MyHistoryListActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+       private void gotoDetail(MyhistoryInfo info) {
+        Intent intent = new Intent(this, MyHistoryDetailActivity.class);
+
+        startActivity(intent);
     }
 }
