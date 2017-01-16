@@ -25,7 +25,7 @@ public class DoctorClassActivity extends FragmentActivity {
 	private Adapter_GridView_Doctorclass adapter_GridView_doctorclass;
 
 
-	private String[] str_path_hot = Constants.MyString.DEPARTMENT;
+	private String[] str_path_hot = Constants.MyString.DEPARTMENT_CLASS;
 	private int[] pic_path_hot = { R.mipmap.clinic_08_color_icon, R.mipmap.clinic_01_color_icon, R.mipmap.clinic_02_color_icon, R.mipmap.clinic_21_color_icon,
 			R.mipmap.clinic_09_color_icon, R.mipmap.clinic_03_color_icon, R.mipmap.clinic_12_color_icon, R.mipmap.clinic_04_color_icon,
 			R.mipmap.clinic_07_color_icon, R.mipmap.clinic_17_color_icon, R.mipmap.clinic_15_color_icon, R.mipmap.clinic_13_color_icon,
