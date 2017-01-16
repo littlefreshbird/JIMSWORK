@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jims.work.CaseLoadingActivity;
+import com.jims.work.CaseseclectActivity;
 import com.jims.work.CityPositionActivity;
 import com.jims.work.DoctorClassActivity;
 import com.jims.work.MyDoctorsListActivity;
@@ -375,7 +376,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), PostActivity.class));
                 break;
             case R.id.layout_special2: // 我的病例
-               // startActivity(new Intent(getActivity(), CaseseclectActivity.class));
+                startActivity(new Intent(getActivity(), CaseseclectActivity.class));
                 break;
             case R.id.layout_special3: //热门科室
                 startActivity(new Intent(getActivity(), DoctorClassActivity.class));

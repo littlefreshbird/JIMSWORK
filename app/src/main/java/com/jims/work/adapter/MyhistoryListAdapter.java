@@ -81,7 +81,7 @@ public class MyhistoryListAdapter extends BaseAdapter {
         viewHolder.tvClasses.setText(list.get(position).getClasses());
         viewHolder.tvPosition.setText(list.get(position).getPosition());
         viewHolder.tvHospital.setText(list.get(position).getHospital());
-       // viewHolder.tvDetail.setText(list.get(position).getDetail());
+        viewHolder.tvDetail.setText(list.get(position).getDetail());
         viewHolder.tv_text_history.setText(list.get(position).getPrice());
         viewHolder.tvNum.setText(list.get(position).getComment());
         viewHolder.tvTime.setText(list.get(position).getTime());
