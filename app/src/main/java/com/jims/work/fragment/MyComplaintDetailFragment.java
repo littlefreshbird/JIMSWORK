@@ -18,6 +18,8 @@ import java.util.Map;
 public class MyComplaintDetailFragment extends Fragment {
 
     private String[] name = { "张强" };
+    private String[] service_type = {"免费问诊" };
+    private String[] question = { "我患有鼻窦炎  最近脖子淋巴结肿大，自己就能摸到五个，做彩超显示快到2厘米了。我想去就医，想问一下，我需要挂什么科？外科还是耳鼻喉科？急！" };
 
     private String[] desc = { "2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合，这个医生看不好，不负责任"};
 
@@ -37,6 +39,8 @@ public class MyComplaintDetailFragment extends Fragment {
             Map<String, Object> listItem = new HashMap<String, Object>();
             listItem.put("imageids", imageids[i]);
             listItem.put("name", name[i]);
+            listItem.put("service_type", service_type[i]);
+            listItem.put("question", question[i]);
             listItem.put("desc", desc[i]);
             listItem.put("time", time[i]);
             listItem.put("client", client[i]);
@@ -48,9 +52,9 @@ public class MyComplaintDetailFragment extends Fragment {
 
 
         SimpleAdapter simpleAdapter = new SimpleAdapter(getActivity(), listItems,
-                R.layout.evaluate_detail_item,
-                new String[] { "imageids", "name", "desc","time","client","count","sexmaletop"   },
-                new int[] { R.id.tweet_listitem_userface, R.id.tweet_listitem_username,R.id.tweetcontent ,R.id.questiontime,R.id.tweet_listitem_client,R.id.tweet_listitem_commentCount,R.id.sexmaletop});
+                R.layout.complaint_detail_item,
+                new String[] { "imageids", "name","question", "desc","time","client","count","sexmaletop","service_type"  },
+                new int[] { R.id.tweet_listitem_userface, R.id.tweet_listitem_username,R.id.listitem_content,R.id.tweetcontent ,R.id.questiontime,R.id.tweet_listitem_client,R.id.tweet_listitem_commentCount,R.id.sexmaletop,R.id.servicetype});
         lvinfo=(ListView)view.findViewById(R.id.tweet_listitem_content);
         lvinfo.setAdapter(simpleAdapter); // ΪListView��������
 
