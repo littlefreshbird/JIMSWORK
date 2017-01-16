@@ -13,7 +13,7 @@
         android:background="@color/white" >
 
         <ImageView
-            android:id="@+id/img_back"
+            android:id="@+id/img_myhistory_back"
             android:layout_width="45dp"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
@@ -49,11 +49,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="医院名称："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="承德市第一附属医院"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
@@ -68,11 +70,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="就诊科室："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="耳鼻喉科"
+            android:text="外科"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
@@ -88,11 +92,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="医生姓名："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="马云龙"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
@@ -108,11 +114,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="医生职称："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="副主任医师"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
@@ -128,11 +136,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="就诊费用："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="758元"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
@@ -148,11 +158,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="就诊日期："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2016年12月13日"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
@@ -168,11 +180,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="就诊地点："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="承德市双滦区双塔山"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
@@ -188,12 +202,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="病情描述："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="发热三天，咳嗽严重，头痛失眠，食欲不好，已输液治疗一星期，不见好转!"
             android:singleLine="false"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
@@ -209,12 +225,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="诊疗结果："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="感冒病症，吃药三天复诊，不适随诊"
             android:singleLine="false"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
 
@@ -231,6 +249,7 @@
             android:layout_height="1dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:background="@color/gray"
             />
 
         <TextView
@@ -246,6 +265,7 @@
             android:layout_height="1dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:background="@color/gray"
             />
     </LinearLayout>
     <LinearLayout
@@ -261,11 +281,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="患者姓名："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="张强"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
 
     </LinearLayout>
@@ -282,11 +304,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="患者年龄："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="45岁"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
 
     </LinearLayout>
@@ -303,11 +327,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="患者性别："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="男"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
 
     </LinearLayout>
@@ -324,11 +350,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="患者电话："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="17758964856"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
     <LinearLayout
@@ -344,11 +372,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="身份证号："
+            android:textColor="@color/black"
             android:textSize="14dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="177589648569865986"
+            android:textColor="@color/black"
             android:textSize="14dp"/>
     </LinearLayout>
 

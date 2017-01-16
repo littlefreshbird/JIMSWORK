@@ -89,6 +89,14 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="qoBNVZqS1moe1uPuoCb6xtvWGLqCrnEA" />
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" />
+            </intent-filter>
+        </service>
 
         <activity android:name=".DoctorDetailActivity"></activity>
         <activity android:name=".MyHistoryDetailActivity"></activity>

@@ -1,6 +1,7 @@
 package com.jims.work;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,7 +81,7 @@ public class MyDoctorsListActivity extends Activity implements
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 MyDoctorsInfor info = goodsList.get(position);
-               // gotoDetail(info);
+                gotoDetail(info);
             }
         });
         mListView.setOnScroll2TopListener(new MyListView.OnScroll2TopListener() {
@@ -114,11 +115,11 @@ public class MyDoctorsListActivity extends Activity implements
      * 商品详情
      * @param info
      */
-   /* private void gotoDetail(MyDoctorsInfor info) {
-        Intent intent = new Intent(this, DoctorsDetailActivity.class);
+    private void gotoDetail(MyDoctorsInfor info) {
+        Intent intent = new Intent(this, DoctorDetailActivity.class);
 
         startActivity(intent);
-    }*/
+    }
 
     /**
      * 将二级菜单的选择结果设置给一级菜单

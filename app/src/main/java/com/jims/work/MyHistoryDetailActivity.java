@@ -1,10 +1,22 @@
 package com.jims.work;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MyHistoryDetailActivity extends AppCompatActivity {
+
+    @BindView(R.id.img_myhistory_back)
+    ImageView imgMyhistoryBack;
+    @BindView(R.id.id_title)
+    RelativeLayout idTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,5 +24,17 @@ public class MyHistoryDetailActivity extends AppCompatActivity {
         MyHistoryDetailActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
         getSupportActionBar().hide();
         setContentView(R.layout.activity_myhistory_detail);
+        ButterKnife.bind(this);
+    }
+
+    @OnClick({R.id.img_myhistory_back, R.id.id_title})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.img_myhistory_back:
+                finish();
+                break;
+            case R.id.id_title:
+                break;
+        }
     }
 }
