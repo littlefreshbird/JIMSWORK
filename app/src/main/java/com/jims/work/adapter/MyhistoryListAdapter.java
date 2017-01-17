@@ -18,7 +18,6 @@ import butterknife.ButterKnife;
 
 
 
-
 public class MyhistoryListAdapter extends BaseAdapter {
     public Context getContext() {
         return context;
@@ -78,11 +77,11 @@ public class MyhistoryListAdapter extends BaseAdapter {
     private void fillValue(int position, ViewHolder viewHolder) {
         //viewHolder.imgIcon.setImageDrawable(list.get(position).getIcon());
         viewHolder.tvName.setText(list.get(position).getNames());
-        viewHolder.tvClasses.setText(list.get(position).getClasses());
+        //viewHolder.tvClasses.setText(list.get(position).getClasses());
         viewHolder.tvPosition.setText(list.get(position).getPosition());
         viewHolder.tvHospital.setText(list.get(position).getHospital());
         viewHolder.tvDetail.setText(list.get(position).getDetail());
-        viewHolder.tv_text_history.setText(list.get(position).getPrice());
+       // viewHolder.tv_timetext.setText(list.get(position).getPrice());
         viewHolder.tvNum.setText(list.get(position).getComment());
         viewHolder.tvTime.setText(list.get(position).getTime());
         viewHolder.tvPercent.setText(list.get(position).getPercent());
@@ -95,16 +94,14 @@ public class MyhistoryListAdapter extends BaseAdapter {
         ImageView imgIcon;*/
         @BindView(R.id.tv_name)
         TextView tvName;
-        @BindView(R.id.tv_classes)
-        TextView tvClasses;
+
         @BindView(R.id.tv_position)
         TextView tvPosition;
         @BindView(R.id.tv_hospital)
         TextView tvHospital;
         @BindView(R.id.tv_title)
         TextView tvDetail;
-        @BindView(R.id.tv_text_history)
-        TextView tv_text_history;
+
         @BindView(R.id.tv_num)
         TextView tvNum;
         @BindView(R.id.tV_time)

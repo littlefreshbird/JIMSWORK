@@ -7,7 +7,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -63,7 +62,8 @@ public class NewDoctorListActivity extends AppCompatActivity {
     //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
     public boolean onSupportNavigateUp() {
-
+//        Intent intent=new Intent(NewDoctorListActivity.this,RecordActivity.class);
+//        startActivity(intent);
         finish();
         return super.onSupportNavigateUp();
     }
@@ -166,7 +166,6 @@ public class NewDoctorListActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

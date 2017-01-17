@@ -9,7 +9,7 @@ public class MyhistoryInfo {
 		private static final long serialVersionUID = 6851895872936891139L;
 		String names; // 医生姓名
 		String hospital; // 医院
-		String classes; // 科室
+		//String classes; // 科室
 		String position; // 职称
 		String Id; // id
 		String detail; // ����
@@ -17,22 +17,22 @@ public class MyhistoryInfo {
 
 
 		String Time; // ����
-		String tv_text_history; // �۸�
+		//String tv_timetext; // �۸�
 		String Percent; // ����
 
 	String Comment; // ��������
 
 
-		public MyhistoryInfo(String names, String hospital, String classes, String position,String detail, String id,String time, String tv_text_history, String percent, String comment) {
+		public MyhistoryInfo(String names, String hospital,  String position,String detail, String id,String time,  String percent, String comment) {
 			this.names = names;
 			this.hospital = hospital;
-			this.classes = classes;
+			//this.classes = classes;
 			this.position = position;
 			Id = id;
 			this.detail = detail;
 			//Icon = icon;
 			Time = time;
-			tv_text_history = tv_text_history;
+			//tv_timetext = tv_timetext;
 			Percent = percent;
 			Comment = comment;
 
@@ -49,13 +49,13 @@ public class MyhistoryInfo {
 
 			if (!names.equals(that.names)) return false;
 			if (!hospital.equals(that.hospital)) return false;
-			if (!classes.equals(that.classes)) return false;
+			//if (!classes.equals(that.classes)) return false;
 			if (!position.equals(that.position)) return false;
 			if (!Id.equals(that.Id)) return false;
 			if (!detail.equals(that.detail)) return false;
 			//if (!Icon.equals(that.Icon)) return false;
 			if (!Time.equals(that.Time)) return false;
-			if (!tv_text_history.equals(that.tv_text_history)) return false;
+			//if (!tv_timetext.equals(that.tv_timetext)) return false;
 			return Percent.equals(that.Percent);
 
 		}
@@ -64,13 +64,13 @@ public class MyhistoryInfo {
 		public int hashCode() {
 			int result = names.hashCode();
 			result = 31 * result + hospital.hashCode();
-			result = 31 * result + classes.hashCode();
+			//result = 31 * result + classes.hashCode();
 			result = 31 * result + position.hashCode();
 			result = 31 * result + Id.hashCode();
 			result = 31 * result + detail.hashCode();
 			//result = 31 * result + Icon.hashCode();
 			result = 31 * result + Time.hashCode();
-			result = 31 * result + tv_text_history.hashCode();
+			//result = 31 * result + tv_timetext.hashCode();
 			result = 31 * result + Percent.hashCode();
 			result = 31 * result + Comment.hashCode();
 
@@ -93,14 +93,14 @@ public class MyhistoryInfo {
 			this.hospital = hospital;
 		}
 
-		public String getClasses() {
+		/*public String getClasses() {
 			return classes;
 		}
 
 		public void setClasses(String classes) {
 			this.classes = classes;
 		}
-
+*/
 		public String getPosition() {
 			return position;
 		}
@@ -141,13 +141,13 @@ public class MyhistoryInfo {
 			Time = time;
 		}
 
-		public String getPrice() {
-			return tv_text_history;
+		/*//public String getPrice() {
+			return tv_timetext;
 		}
 
-		public void setPrice(String tv_text_history) {
-			tv_text_history = tv_text_history;
-		}
+		public void setPrice(String tv_timetext) {
+			tv_timetext = tv_timetext;
+		}*/
 
 		public String getPercent() {
 			return Percent;

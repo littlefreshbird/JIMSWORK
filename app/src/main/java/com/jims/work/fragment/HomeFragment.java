@@ -22,6 +22,7 @@ import com.jims.work.CaseseclectActivity;
 import com.jims.work.CityPositionActivity;
 import com.jims.work.DoctorClassActivity;
 import com.jims.work.MyDoctorsListActivity;
+import com.jims.work.NewDoctorListActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
 import com.jims.work.ScanPatientActivity;
@@ -313,6 +314,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             moreView.findViewById(R.id.rl).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), NewDoctorListActivity.class));
 
                 }
             });
@@ -322,7 +324,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             moreView.findViewById(R.id.rl2).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    startActivity(new Intent(getActivity(), NewDoctorListActivity.class));
                 }
             });
             //进行对控件赋值
