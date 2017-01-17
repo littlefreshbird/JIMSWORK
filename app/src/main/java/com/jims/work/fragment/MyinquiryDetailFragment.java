@@ -1,6 +1,5 @@
 package com.jims.work.fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 import com.jims.work.R;
 
@@ -18,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.jims.work.R.id.ratingbar;
+
 
 public class MyinquiryDetailFragment extends Fragment {
     private String[] name = { "王林" };
@@ -36,7 +34,7 @@ public class MyinquiryDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=LayoutInflater.from(getActivity()).inflate(R.layout.activity_listitem, null);
-         ratingBar = (RatingBar)getActivity(). findViewById(ratingbar);
+        // ratingBar = (RatingBar)getActivity(). findViewById(ratingbar);
         for (int i = 0; i < name.length; i++) {
             Map<String, Object> listItem = new HashMap<String, Object>();
             listItem.put("imageids", imageids[i]);

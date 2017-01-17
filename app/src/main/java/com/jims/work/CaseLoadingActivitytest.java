@@ -38,6 +38,15 @@ public class CaseLoadingActivitytest extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caseloadingtest);
+        button_1=(Button)findViewById(R.id.button_1) ;
+        button_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(CaseLoadingActivitytest.this,MainActivity.class);
+                startActivity(intent);
+                CaseLoadingActivitytest.this.finish();
+            }
+        });
         setCustomActionBar();
         /*
          * 防止键盘挡住输入框

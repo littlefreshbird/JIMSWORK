@@ -26,7 +26,7 @@ public class MyinquiryDetailreplyFragment extends Fragment {
     private int[] imageids = { R.drawable.image_myhead};
     private String[] time = {"2016-09-29"};
     //private String[] client ={"满意度:"};
-   // private  int[] count = {5};
+    // private  int[] count = {5};
     private int[]  sexmaletop={R.drawable.male};
     ListView lvinfo;
     List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
@@ -35,15 +35,15 @@ public class MyinquiryDetailreplyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=LayoutInflater.from(getActivity()).inflate(R.layout.activity_listitem, null);
-         ratingBar = (RatingBar)getActivity(). findViewById(ratingbar);
+        ratingBar = (RatingBar)getActivity(). findViewById(ratingbar);
         for (int i = 0; i < name.length; i++) {
             Map<String, Object> listItem = new HashMap<String, Object>();
             listItem.put("imageids", imageids[i]);
             listItem.put("name", name[i]);
             listItem.put("desc", desc[i]);
             listItem.put("time", time[i]);
-         //   listItem.put("client", client[i]);
-          //  listItem.put("count", count[i]);
+            //   listItem.put("client", client[i]);
+            //  listItem.put("count", count[i]);
 
             listItem.put("sexmaletop", sexmaletop[i]);
 

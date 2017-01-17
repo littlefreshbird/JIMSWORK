@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 
+/*****
+ * 我的评价
+ */
 public class MyEvaluateActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {

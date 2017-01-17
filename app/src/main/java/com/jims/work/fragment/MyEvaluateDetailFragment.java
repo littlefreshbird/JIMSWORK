@@ -1,14 +1,13 @@
 package com.jims.work.fragment;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 import com.jims.work.R;
 
@@ -16,9 +15,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static android.R.attr.id;
-import static com.jims.work.R.id.ratingbar;
 
 public class MyEvaluateDetailFragment extends Fragment {
 
@@ -28,7 +24,7 @@ public class MyEvaluateDetailFragment extends Fragment {
     private int[] imageids = { R.drawable.image_myhead};
     private String[] time = {"2016-09-29"};
     private String[] client ={"满意度:"};
-    private  int[] count = {5};
+    //private  int[] count = {5};
     private int[]  sexmaletop={R.drawable.male};
     ListView lvinfo;
     List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
@@ -45,7 +41,7 @@ public class MyEvaluateDetailFragment extends Fragment {
             listItem.put("desc", desc[i]);
             listItem.put("time", time[i]);
             listItem.put("client", client[i]);
-            listItem.put("count", count[i]);
+           // listItem.put("count", count[i]);
 
             listItem.put("sexmaletop", sexmaletop[i]);
 
