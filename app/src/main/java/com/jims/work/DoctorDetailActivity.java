@@ -66,7 +66,13 @@ public class DoctorDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_detail);
         ButterKnife.bind(this);
         setCustomActionBar();
+        initview();
     }
+
+    private void initview() {
+        tvlongIntro.setText(R.string.doctormessage);
+    }
+
     public void setCustomActionBar() {
         ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
         View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
