@@ -94,59 +94,6 @@
                 android:text="投诉"
                 android:textSize="@dimen/small_text_size" />
 
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dip"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:id="@+id/tweet_listitem_client"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dip"
-                    android:textColor="@color/gray"
-                    android:text="满意度："
-                    android:textSize="@dimen/micro_text_size" />
-
-                <ImageView
-                    android:id="@+id/img_satr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_toRightOf="@+id/tweet_listitem_client"
-                    android:layout_marginLeft="2dip"
-                    android:src="@drawable/img_star" />
-
-                <TextView
-                    android:id="@+id/tweet_listitem_commentCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_toRightOf="@+id/img_satr"
-                    android:textColor="@color/gray"
-                    android:textSize="@dimen/micro_text_size" />
-                <TextView
-                    android:id="@+id/text_service"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="55dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_toLeftOf="@+id/servicetype"
-                    android:textColor="@color/gray"
-                    android:text="服务类型:"
-                    android:textSize="@dimen/micro_text_size" />
-                <TextView
-                    android:id="@+id/servicetype"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="5dp"
-                    android:textColor="@color/gray"
-                    android:text="义诊"
-                    android:textSize="@dimen/micro_text_size" />
-            </RelativeLayout>
-
         </LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
@@ -188,6 +135,70 @@
             </RelativeLayout>
 
         </LinearLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:layout_marginLeft="6dip"
+            android:orientation="horizontal" >
+
+            <!--<TextView
+                android:id="@+id/tweet_listitem_client"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dip"
+                android:textColor="@color/gray"
+                android:text="满意度："
+                android:textSize="@dimen/micro_text_size" />
+
+            <ImageView
+                android:id="@+id/img_satr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/tweet_listitem_client"
+                android:layout_marginLeft="2dip"
+                android:src="@drawable/img_star" />
+
+            <TextView
+                android:id="@+id/tweet_listitem_commentCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_satr"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/micro_text_size" />-->
+            <TextView
+                android:id="@+id/text_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dip"
+                android:textColor="@color/gray"
+                android:text="服务类型:"
+                android:textSize="@dimen/micro_text_size" />
+            <TextView
+                android:id="@+id/servicetype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/text_service"
+
+                android:layout_marginTop="2dip"
+                android:textColor="@color/gray"
+                android:text="义诊"
+                android:textSize="@dimen/micro_text_size" />
+            <TextView
+                android:id="@+id/tv_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/rect_green"
+                android:paddingLeft="3sp"
+                android:paddingRight="3sp"
+                android:text="已评价"
+                android:textColor="@color/palegreen"
+                android:textSize="@dimen/micro_text_size"/>
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
 

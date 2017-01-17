@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:text="fd"
+                android:text="张强"
                 android:textColor="@color/royalblue"
                 android:textSize="@dimen/small_text_size" />
 
@@ -51,21 +51,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="fd"
+                android:text="2012-12-15"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/micro_text_size" />
         </RelativeLayout>
 
-        <!--
+       <LinearLayout
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal" >
          	<TextView
 			android:id="@+id/tweet_listitem_content"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginTop="8dip"
-			android:textSize="@dimen/text_size_15"
-			android:textColor="@color/listitem_black"
-			android:textColorLink="@color/listitem_blue"/>
-        -->
+			android:textSize="@dimen/small_text_size"
+			android:textColor="@color/gray"
+			android:text="服务描述:"/>
+           <TextView
+               android:id="@+id/listitem_content"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:layout_toRightOf="@+id/tweet_listitem_content"
+               android:textSize="@dimen/small_text_size"
+               android:textColor="@color/gray"
+               android:lines="1"
+               android:layout_marginLeft="10dip"
+               android:text="服务描述"/>
+        -</LinearLayout>
 
         <TextView
             android:id="@+id/tweetcontent"
@@ -75,7 +87,8 @@
             android:includeFontPadding="false"
             android:lineSpacingMultiplier="1.5"
             android:textColor="@color/black"
-            android:textSize="@dimen/small_text_size" />
+            android:textSize="@dimen/small_text_size"
+            android:text="评论内容"/>
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -89,22 +102,32 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dip"
                 android:textColor="@color/gray"
-                android:textSize="@dimen/micro_text_size" />
-
-            <ImageView
+                android:textSize="@dimen/micro_text_size"
+                android:text="满意度"/>
+            <RatingBar
+                android:id="@+id/ratingbar2"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating = "5"
+                android:stepSize="1"/>
+            <!--<ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="2dip"
-                android:src="@drawable/img_star" />
+                android:src="@drawable/img_star" />-->
 
-            <TextView
+           <!-- <TextView
                 android:id="@+id/tweet_listitem_commentCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dip"
                 android:textColor="@color/gray"
-                android:textSize="@dimen/micro_text_size" />
+                android:textSize="@dimen/micro_text_size" />-->
         </LinearLayout>
 
     </LinearLayout>
@@ -120,28 +143,28 @@
             android:orientation="horizontal" >
 
          <ImageView
-             android:layout_width="50dp"
-             android:layout_height="50dp"
+             android:layout_width="35dp"
+             android:layout_height="35dp"
              android:layout_marginTop="3dip"
              android:layout_marginLeft="10dip"
              android:src="@drawable/doctor1" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="80dip"
-                android:layout_marginTop="3dip"
+                android:layout_marginLeft="60dip"
+
                 android:orientation="vertical" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dip"
-            android:text="李云龙"
+            android:layout_marginTop="3dip"
+            android:text="李云龙 副主任医师"
             android:textSize="@dimen/small_text_size"
             android:textColor="@color/text_color"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dip"
+                    android:layout_marginTop="3dip"
                     android:text="承德附属医院 口腔科"
                     android:textSize="@dimen/micro_text_size"
                     android:textColor="@color/gray"/>
