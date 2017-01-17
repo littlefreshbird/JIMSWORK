@@ -27,7 +27,6 @@
             android:layout_height="60dp"
             android:textSize="@dimen/micro_text_size"
             android:gravity="center"
-            android:textColorHint="@color/dim_foreground_material_light"
             android:hint="匿名"
             />
     </LinearLayout>
