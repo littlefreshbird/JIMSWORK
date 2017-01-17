@@ -48,6 +48,7 @@ public class Constants {
 	{
 		public static final String HEADERS[]={"科室","性别","综合","职称"};
 		public static final String DEPARTMENT[]={"不限","男科","妇科","儿科","产科","外科","内科","中医科","皮肤性病科","骨科","精神心理科","眼科","口腔面额科","耳鼻喉科","肿瘤科","整形科","营养科"};
+		public static final String DEPARTMENT_CLASS[]={"男科","妇科","儿科","产科","外科","内科","中医科","皮肤性病科","骨科","精神心理科","眼科","口腔面额科","耳鼻喉科","肿瘤科","整形科","营养科"};
 		public static final String SEX[]= {"不限", "男", "女"};
 		public static final String SYNTHETIC[]={"不限","距离","评价","次数"};
 		public static final String PROFESSIONAL[]={"不限","主任医师","副主任医师","主管医师","医师"};

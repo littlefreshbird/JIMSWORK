@@ -14,19 +14,78 @@
         android:background="#ffffff"
         android:padding="3dp"
         android:src="@mipmap/load_logo" />-->
+    <TextView
+        android:id="@+id/tv_timetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="6dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="2dp"
+        android:text="诊疗时间："
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"/>
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_percent"
+        android:layout_alignBottom="@+id/tv_percent"
+
+        android:layout_toRightOf="@+id/tv_percent"
+        android:layout_alignLeft="@+id/tV_time"
+        android:text="张强"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size" />
+
+    <TextView
+        android:id="@+id/tV_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_timetext"
+        android:layout_marginBottom="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="2dp"
+        android:layout_toRightOf="@+id/tv_timetext"
+        android:text="2016-12-12"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"/>
+
+    <TextView
+        android:id="@+id/tv_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_timetext"
+        android:layout_alignLeft="@+id/tv_timetext"
+        android:text="就诊人："
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size" />
+
+    <TextView
+        android:id="@+id/tv_yiyuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_percent"
+        android:layout_marginLeft="6dp"
+
+        android:text="就诊地点："
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size" />
 
     <TextView
         android:id="@+id/tv_hospital"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="6dp"
+        android:layout_below="@id/tv_num"
 
-        android:text="承德附属医院"
+        android:layout_alignLeft="@+id/tv_num"
+        android:layout_toRightOf="@+id/tv_yiyuan"
+        android:text="承德市双滦区双塔山"
         android:textColor="@color/black"
-        android:textSize="@dimen/small_middle_text_size" />
+        android:textSize="@dimen/small_text_size" />
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/tv_classes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,9 +93,19 @@
         android:layout_marginLeft="6dp"
         android:layout_toRightOf="@+id/tv_hospital"
         android:text="口腔科"
-        android:textColor="@color/dimgray"
-        android:textSize="@dimen/small_text_size" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size" />-->
+    <TextView
+        android:id="@+id/tv_yisheng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_yiyuan"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="2dp"
 
+        android:text="就诊医生："
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size" />
     <TextView
         android:id="@+id/tv_position"
         android:layout_width="wrap_content"
@@ -46,7 +115,7 @@
         android:layout_marginTop="2dp"
         android:layout_toRightOf="@+id/tv_name"
         android:text="主任医师"
-        android:textColor="@color/dimgray"
+        android:textColor="@color/black"
         android:textSize="@dimen/small_text_size" />
 
     <TextView
@@ -54,76 +123,43 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_hospital"
+        android:layout_alignLeft="@+id/tv_hospital"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/tv_yisheng"
+        android:text="李云龙"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size" />
+    <TextView
+        android:id="@+id/tv_miaoshu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_yisheng"
         android:layout_marginLeft="6dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="2dp"
 
-        android:text="李云龙"
-        android:textColor="@color/dimgray"
-        android:textSize="@dimen/small_middle_text_size" />
-
+        android:textSize="@dimen/small_text_size"
+        android:text="病情描述："
+        android:textColor="@color/black" />
    <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_name"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="10dp"
+       android:layout_alignLeft="@+id/tv_name"
         android:layout_marginTop="2dp"
-        android:layout_toRightOf="@+id/img_icon"
+        android:layout_toRightOf="@+id/tv_miaoshu"
          android:textSize="@dimen/small_text_size"
         android:ellipsize="end"
         android:lines="1"
         android:text="发热三天，咳嗽严重，头痛失眠，食欲不好，已输液治疗一星期，不见好转"
         android:textColor="@color/black" />
 
-    <TextView
-        android:id="@+id/tv_text_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_title"
-        android:layout_alignLeft="@+id/tv_name"
-        android:layout_marginBottom="2dp"
-        android:text="诊疗时间："
-        android:textColor="@color/dimgray"
-        android:textSize="@dimen/micro_text_size"/>
-
-    <TextView
-        android:id="@+id/tv_num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tv_percent"
-        android:layout_alignBottom="@+id/tv_percent"
-        android:layout_marginLeft="6dp"
-        android:layout_toRightOf="@+id/tv_percent"
-        android:text="张强"
-        android:textColor="@color/dimgray"
-        android:textSize="@dimen/micro_text_size" />
-
-    <TextView
-        android:id="@+id/tV_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tv_text_history"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="2dp"
-        android:layout_toRightOf="@+id/tv_text_history"
-        android:text="2016-12-12"
-        android:textSize="@dimen/micro_text_size"/>
-
-    <TextView
-        android:id="@+id/tv_percent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:layout_below="@+id/tv_text_history"
-        android:layout_alignLeft="@+id/tv_text_history"
-        android:text="就诊人："
-        android:textColor="@color/dimgray"
-        android:textSize="@dimen/micro_text_size" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/layout_height_0.5"
-        android:layout_below="@+id/tv_percent"
+        android:layout_below="@+id/tv_title"
         android:layout_marginTop="8dp"
         android:background="@color/divider_color" />
 
