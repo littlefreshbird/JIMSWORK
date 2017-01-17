@@ -105,7 +105,7 @@
                     android:text="满意度："
                     android:textSize="@dimen/micro_text_size" />
                 <RatingBar
-                    android:id="@+id/ratingbar2"
+                    android:id="@+id/ratingbar"
                     style="?android:attr/ratingBarStyleSmall"
                     android:layout_marginLeft="10dp"
                     android:layout_width="wrap_content"
