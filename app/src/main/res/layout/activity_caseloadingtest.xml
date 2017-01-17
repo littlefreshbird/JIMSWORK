@@ -5,81 +5,247 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+
     android:background="@color/white"
-    >
-
-
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="vertical"
+        android:background="@drawable/biankaugn"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:orientation="vertical"
-            android:id="@+id/linearLayout">
-            <TextView
-                android:id="@+id/edit"
-                android:layout_height="200dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:background="@drawable/wubiankuang"
+            >
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:enabled="false"
+                android:gravity="center"
+                android:background="@drawable/wubiankuang"
+                android:text="编 号: "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"/>
+            <EditText
                 android:layout_width="fill_parent"
-                android:layout_margin="14dp"
-                android:textColor="@color/colorText"
-                android:textSize="@dimen/small_text_size"
-                android:text="由于感冒引起的流鼻涕、咳嗽等症状，因此需要及时就医。上呼吸道感染简称上感，又称普通感冒。是包括鼻腔、咽或喉部急性炎症的总称。广义的上感不是一个疾病诊断，而是一组疾病，包括普通感冒、病毒性咽炎、喉炎、疱疹性咽峡炎、咽结膜热、细菌性咽-扁桃体炎。狭义的上感又称普通感冒，是最常见的急性呼吸道感染性疾病，多呈自限性，但发生率较高。成人每年发生2～4次，儿童发生率更高，每年6～8次。全年皆可发病，冬春季较多。"
-                />
+                android:gravity="center"
+                android:background="@drawable/wubiankuang"
+                android:text="11111111111"
+                android:textSize="12sp"
+                android:layout_height="40dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:background="@drawable/wubiankuang"
+            >
+            <EditText
+                android:layout_width="50dp"
+                android:enabled="false"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="姓 名: "
+                android:background="@drawable/wubiankuang"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"/>
+            <EditText
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:text="李雷"
+                android:textSize="12sp"
+                android:background="@drawable/wubiankuang"
+                android:gravity="center"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"
+                android:gravity="center"
+                android:enabled="false"
+                android:text="性 别: "
+                android:background="@drawable/wubiankuang"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"/>
+
+            <EditText
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@drawable/wubiankuang"
+                android:gravity="center"
+                android:text="男"
+                android:textSize="12sp"
+                android:id="@+id/editText"/>
+
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:enabled="false"
+                android:layout_marginLeft="5dp"
+                android:padding="5dp"
+                android:gravity="center"
+                android:background="@drawable/wubiankuang"
+                android:text="年 龄: "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"/>
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:text="20"
+                android:textSize="12sp"
+                android:background="@drawable/wubiankuang"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/wubiankuang"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:enabled="false"
+                android:padding="5dp"
+                android:text="身份证: "
+                android:background="@drawable/wubiankuang"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"/>
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/wubiankuang"
+                android:text="11111111111"
+                android:textSize="12sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:background="@drawable/wubiankuang"
+            >
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:background="@drawable/wubiankuang"
+                android:enabled="false"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="联系方式: "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"/>
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/wubiankuang"
+                android:text="11111111111"
+                android:textSize="12sp"
+                android:gravity="center"/>
+        </LinearLayout>
     </LinearLayout>
-    <View
-        android:id="@+id/aa"
-        android:layout_width="fill_parent"
-        android:layout_height="0.1dp"
-        android:background="@color/gray"
-        >
-    </View>
+
     <LinearLayout
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="40dp"
         android:orientation="horizontal"
-       >
-        <TextView
-            android:id="@+id/text1"
-            android:layout_height="80dp"
+        android:background="@drawable/wubiankuang"
+        >
+        <EditText
             android:layout_width="80dp"
-            android:layout_margin="12dp"
-            android:background="@mipmap/ganmao0"
-            />
-        <TextView
-            android:id="@+id/text2"
-            android:layout_height="80dp"
-            android:layout_width="80dp"
-            android:layout_margin="12dp"
-            android:background="@mipmap/ganmao1"
-            />
-        <TextView
-            android:id="@+id/text3"
-            android:layout_height="80dp"
-            android:layout_width="80dp"
-            android:layout_margin="12dp"
-            android:background="@mipmap/ganmao2"
-            />
+            android:layout_height="40dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="病情描述: "
+            android:background="@drawable/wubiankuang"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"/>
+        <EditText
+            android:layout_width="50dp"
+            android:enabled="false"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:gravity="center"
+            android:text="科目: "
+            android:background="@drawable/wubiankuang"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"/>
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/wubiankuang"
+            android:text="外科"
+            android:textSize="12sp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_height="80dp"
+        android:layout_width="fill_parent"
+        android:layout_margin="12dp"
+        android:textSize="@dimen/micro_text_size"
+        android:hint="外科是研究外科疾病的发生，发展规律及其临床表现，诊断，预防和治疗的科学，是以手术切除、修补为主要治病手段的专业科室。随着显微外科技术的应用，外科得到了较大的发展。各医院外科的专科设置原则与内科类同，通常与内科相对应。外科疾病分为五大类：创伤，感染，肿瘤，畸形和功能障碍。"
+        android:gravity="start"
+        android:maxLength="500"
+
+        />
+    <!-- 网格显示图片 行列间距5dp 每列宽度90dp -->
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="fill_parent"
+        android:layout_height="130dp"
+        android:layout_margin="5dp"
+        android:background="@color/white"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"
+        android:numColumns="4"
+        android:columnWidth="90dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center" >
+    </GridView>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="15dp"
+        android:textSize="@dimen/micro_text_size"
+        android:text="(友情提示:只能添加5张图片,右上角可以删除已添加图片)"
+        android:gravity="center" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_edittext"
+            android:paddingTop="5dip"
+            android:text="完成"
+            android:textSize="@dimen/small_text_size"
+
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        >
-        <TextView
-            android:id="@+id/text4"
-            android:layout_height="80dp"
-            android:layout_width="80dp"
-            android:layout_margin="12dp"
-            android:background="@mipmap/ganmao3"
-            />
-        <TextView
-            android:id="@+id/text5"
-            android:layout_height="80dp"
-            android:layout_width="80dp"
-            android:layout_margin="12dp"
-            android:background="@mipmap/ganmao4"
-            />
-    </LinearLayout>
+
 </LinearLayout>
+
+
+
+
