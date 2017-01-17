@@ -174,18 +174,35 @@
             android:layout_width="50dp"
             android:enabled="false"
             android:layout_height="40dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="50dp"
             android:gravity="center"
             android:text="科目: "
             android:background="@drawable/wubiankuang"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_small"/>
         <EditText
-            android:layout_width="fill_parent"
+            android:layout_width="50dp"
             android:layout_height="40dp"
             android:background="@drawable/wubiankuang"
             android:text="外科"
             android:textSize="12sp"
+            android:gravity="center"/>
+        <EditText
+            android:layout_width="60dp"
+            android:enabled="false"
+            android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:gravity="center"
+            android:text="主治医师: "
+            android:background="@drawable/wubiankuang"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"/>
+        <EditText
+            android:layout_width="fill_parent"
+            android:textSize="12sp"
+            android:layout_height="40dp"
+            android:background="@drawable/wubiankuang"
+            android:text="张强"
             android:gravity="center"/>
     </LinearLayout>
 
@@ -195,11 +212,35 @@
         android:layout_width="fill_parent"
         android:layout_margin="12dp"
         android:textSize="@dimen/micro_text_size"
-        android:hint="外科是研究外科疾病的发生，发展规律及其临床表现，诊断，预防和治疗的科学，是以手术切除、修补为主要治病手段的专业科室。随着显微外科技术的应用，外科得到了较大的发展。各医院外科的专科设置原则与内科类同，通常与内科相对应。外科疾病分为五大类：创伤，感染，肿瘤，畸形和功能障碍。"
+        android:text="外科是研究外科疾病的发生，发展规律及其临床表现，诊断，预防和治疗的科学，是以手术切除、修补为主要治病手段的专业科室。随着显微外科技术的应用，外科得到了较大的发展。各医院外科的专科设置原则与内科类同，通常与内科相对应。外科疾病分为五大类：创伤，感染，肿瘤，畸形和功能障碍。"
         android:gravity="start"
         android:maxLength="500"
 
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="@drawable/wubiankuang"
+        >
+    <EditText
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="医治药物: "
+        android:background="@drawable/biankaugn"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_small"/>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/wubiankuang"
+        android:textSize="@dimen/micro_text_size"
+        android:text="罗西霉素等抗生素"
+        android:gravity="center"/>
+
+    </LinearLayout>
     <!-- 网格显示图片 行列间距5dp 每列宽度90dp -->
     <GridView
         android:id="@+id/gridView"
@@ -224,14 +265,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         >
         <Button
             android:id="@+id/button_1"
             android:layout_width="300dp"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:background="@drawable/bg_edittext"
