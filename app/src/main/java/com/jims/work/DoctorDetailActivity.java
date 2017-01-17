@@ -1,11 +1,13 @@
 package com.jims.work;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -16,6 +18,7 @@ import com.jims.work.view.TagGroup;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class DoctorDetailActivity extends AppCompatActivity {
 
@@ -73,6 +76,17 @@ public class DoctorDetailActivity extends AppCompatActivity {
         tvlongIntro.setText(R.string.doctormessage);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+
+                finish();
+            default:
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public void setCustomActionBar() {
         ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
         View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
@@ -89,4 +103,15 @@ public class DoctorDetailActivity extends AppCompatActivity {
         actionBar.setElevation(2);
     }
 
+    @OnClick({R.id.btnJoinCollection, R.id.btnRead})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnJoinCollection:
+                Intent intent = new Intent(this, SubscibeActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnRead:
+                break;
+        }
+    }
 }
