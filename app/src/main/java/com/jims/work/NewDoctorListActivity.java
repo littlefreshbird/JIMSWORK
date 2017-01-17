@@ -1,7 +1,6 @@
 package com.jims.work;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -62,8 +61,8 @@ public class NewDoctorListActivity extends AppCompatActivity {
     //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
     public boolean onSupportNavigateUp() {
-        Intent intent=new Intent(NewDoctorListActivity.this,RecordActivity.class);
-        startActivity(intent);
+        /*Intent intent=new Intent(NewDoctorListActivity.this,RecordActivity.class);
+        startActivity(intent);*/
         finish();
         return super.onSupportNavigateUp();
     }
