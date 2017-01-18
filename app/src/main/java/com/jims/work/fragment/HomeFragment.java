@@ -150,8 +150,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
-/*
-    *//**
+/**
          * 转到商品详情
          *//*
     private void gotoDetail(int index) {

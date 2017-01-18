@@ -215,14 +215,14 @@
                     android:text="我的二维码名片"
                     android:textSize="@dimen/small_text_size"
                     />
-                <TextView
+                <ImageView
                     android:id="@+id/namecade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_toLeftOf="@+id/userarrow4"
                     android:layout_marginTop="8dp"
-                    android:text="未填写"
+                    android:background="@drawable/img_search_code"
                     />
 
                 <ImageView
