@@ -18,6 +18,9 @@ import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 
+/***
+ * 诊疗记录
+ */
 public class MyHistoryListActivity extends AppCompatActivity {
 
 
@@ -51,7 +54,7 @@ public class MyHistoryListActivity extends AppCompatActivity {
         doctorsList.add(new MyhistoryInfo("周慧敏", "承德市妇幼保健院", "副主任医师", "查出类风湿3年了。时好时坏,最近小腿前部痒的难受。","100003", "2015-08-14",  "就诊人：", "张强"));
 
     }
-
+     // 初始化
     private void initview() {
         mListView = (MyListView) findViewById(R.id.listView1);
         mDoctorsListAdapter = new MyhistoryListAdapter(this, doctorsList);
@@ -99,6 +102,7 @@ public class MyHistoryListActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+     //诊疗记录详情
        private void gotoDetail(MyhistoryInfo info) {
         Intent intent = new Intent(this, MyHistoryDetailActivity.class);
 

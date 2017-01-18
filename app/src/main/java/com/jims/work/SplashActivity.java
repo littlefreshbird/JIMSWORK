@@ -7,6 +7,9 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
+/**
+ * 引导页
+ */
 public class SplashActivity extends AppCompatActivity {
     Handler mHandler=new Handler();
 

@@ -13,6 +13,9 @@ import android.widget.RelativeLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 注册页面
+ */
 public class RegisterActivity extends AppCompatActivity {
 
 
@@ -36,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
+        //注册下一步跳转到设置密码页
         accessNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //返回
         imgRegisterback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

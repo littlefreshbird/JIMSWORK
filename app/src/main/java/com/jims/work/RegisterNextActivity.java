@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 注册设置密码
+ */
 public class RegisterNextActivity extends AppCompatActivity {
 
     @BindView(R.id.img_registernext_back)
@@ -30,12 +33,14 @@ public class RegisterNextActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_register_next);
         ButterKnife.bind(this);
+        //返回
         imgRegisternextBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                finish();
             }
         });
+        //注册成功跳转到主页
         btnRegisterNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
