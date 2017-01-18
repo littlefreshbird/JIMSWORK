@@ -47,20 +47,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@drawable/base_horization_line" />
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
             <EditText
                 android:id="@+id/etPassWord"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="45.0dp"
                 android:background="@color/transparent"
                 android:drawableLeft="@drawable/login_icon_password"
                 android:textSize="@dimen/small_text_size"
+                android:layout_weight="8"
+
                 android:hint="请输入密码"
                 android:inputType="textPassword"
                 android:drawablePadding="20dip"
                 android:paddingLeft="15dip"
                 android:textColorHint="@color/gray" />
-
+            <ImageView
+                android:id="@+id/img_displaypass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/hide_password" />
+            </LinearLayout>
         </LinearLayout>
 
         <Button

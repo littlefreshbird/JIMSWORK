@@ -10,13 +10,16 @@ import android.widget.ImageView;
 
 import com.jims.work.utils.Utils;
 
+/****
+ * 找回密码第一页
+ */
 public class LookforActivity extends Activity {
 private ImageView imageView;
 	protected void onCreate(Bundle savedInstanceState) {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lookforpassword);
-
+         //跳转到找回密码第二页
 		Button lookaccess_login = (Button) findViewById(R.id.lookaccess_login);
 		lookaccess_login.setOnClickListener(new OnClickListener() {
 
@@ -32,6 +35,7 @@ private ImageView imageView;
 			finish();
 			}
 		});
+		//登录按钮跳转到登陆页
 		ImageView imageView= (ImageView) findViewById(R.id.img_lookpass_back);
 		imageView.setOnClickListener(new OnClickListener() {
 			@Override

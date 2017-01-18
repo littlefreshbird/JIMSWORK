@@ -16,7 +16,7 @@ public class LookforFinishActivity extends Activity {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_lookforpassword_next);
-		
+		//找回密码成功跳转到主页
 		Button lookaccess_login = (Button) findViewById(R.id.lookfor_login);
 		lookaccess_login.setOnClickListener(new OnClickListener() {
 
@@ -32,13 +32,12 @@ public class LookforFinishActivity extends Activity {
 			finish();
 			}
 		});
+		//返回
 		ImageView imageView= (ImageView) findViewById(R.id.img_lookpassfinish_back);
 		imageView.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(LookforFinishActivity.this,
-						LookforActivity.class);
-				startActivity(intent);
+				finish();
 			}
 		});
 	}

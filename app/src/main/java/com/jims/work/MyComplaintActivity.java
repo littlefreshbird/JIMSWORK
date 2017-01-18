@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 
+/****
+ * 我的投诉
+ */
 public class MyComplaintActivity extends AppCompatActivity {
 
     @Override
@@ -14,6 +17,7 @@ public class MyComplaintActivity extends AppCompatActivity {
         MyComplaintActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
         getSupportActionBar().hide();
         setContentView(R.layout.activity_mycomplaint);
+        //返回
         ImageView iv_title_bar_left = (ImageView) findViewById(R.id.img_mycomplaint_back);
         iv_title_bar_left.setOnClickListener(new View.OnClickListener() {
 

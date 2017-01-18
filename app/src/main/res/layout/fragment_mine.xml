@@ -22,7 +22,7 @@
                 android:id="@+id/layout_not_logined"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:background="@drawable/my_personal_not_login_bg"
+                android:background="@drawable/my_personal_bg"
                 android:gravity="center" >
 
                 <RelativeLayout

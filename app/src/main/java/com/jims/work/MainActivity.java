@@ -35,6 +35,7 @@ public class MainActivity extends FragmentActivity {
 
         initTab();
     }
+    //初始化Tab
     private void initTab() {
         Tab tab_home = new Tab(HomeFragment.class,R.string.home,R.drawable.selector_icon_home);
         Tab tab_health = new Tab(HealthFragment.class,R.string.health,R.drawable.selector_icon_health);
@@ -55,7 +56,7 @@ public class MainActivity extends FragmentActivity {
         mTabhost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
         mTabhost.setCurrentTab(0);
     }
-
+//Tabhost布局样式
     private View buildIndicator(Tab tab){
         View view =mInflater.inflate(R.layout.tab_indicator,null);
         ImageView img = (ImageView) view.findViewById(R.id.icon_tab);

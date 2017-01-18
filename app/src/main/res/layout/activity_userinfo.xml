@@ -377,6 +377,7 @@
                     android:layout_toLeftOf="@+id/userarrow9"
                     android:layout_marginTop="8dp"
                     android:text="未填写"
+                    android:maxEms="10"
                     />
 
                 <ImageView
