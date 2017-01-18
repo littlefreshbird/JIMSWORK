@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private int[] mBanner = new int[]{R.drawable.img_home_banner1,
             R.drawable.img_home_banner2, R.drawable.img_home_banner3,
             R.drawable.img_home_banner4};
-    private TextView mTextview;
+    private TextView mTextview,text_search;
     private ImageView mImageView;
     private ImageView mImgCover;
     private TextView mTextView;
@@ -88,12 +88,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mImageView = (ImageView) layout.findViewById(R.id.img_indicator01);
 
        mTextview = (TextView) layout.findViewById(R.id.top_title_text);
-        mTextview.setOnClickListener(new View.OnClickListener() {
+        text_search= (TextView) layout.findViewById(R.id.mainactivity_title_text);
+        text_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                startActivity(new Intent(getActivity(), CityPositionActivity.class));
-
+                startActivity(new Intent(getActivity(), DoctorClassActivity.class));
             }
         });
 
@@ -342,7 +341,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void setOnListener() {
-
+        layout.findViewById(R.id.layout_city).setOnClickListener(this);
         layout.findViewById(R.id.quick_ask).setOnClickListener(this);
 
         layout.findViewById(R.id.quick_find).setOnClickListener(this);
@@ -359,10 +358,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-           /* case R.id.top_title_text: // 城市定位
+           case R.id.layout_city: // 城市定位
                 startActivity(new Intent(getActivity(), CityPositionActivity.class));
-               // getActivity().finish();
-                break;*/
+
+                break;
 
             case R.id.quick_ask: // 快速问诊
                 startActivity(new Intent(getActivity(), PostActivity.class));
