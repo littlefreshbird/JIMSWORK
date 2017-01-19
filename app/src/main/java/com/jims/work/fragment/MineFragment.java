@@ -19,6 +19,8 @@ import com.jims.work.R;
 import com.jims.work.UserInfoActivity;
 
 
+
+
 public class MineFragment extends Fragment implements View.OnClickListener {
     private View layout;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
 
     private void setOnListener() {
 
+       // layout.findViewById(R.id.userIcon).setOnClickListener(this);
         layout.findViewById(R.id.layout_userinfo).setOnClickListener(this);
         layout.findViewById(R.id.personal_login_button).setOnClickListener(this);
         layout.findViewById(R.id.layout_more).setOnClickListener(this);
@@ -47,6 +50,10 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+           /* case R.id.userIcon: // 登录
+                new SelectPopuWindow(getActivity(), layout);
+                break;*/
+
             case R.id.personal_login_button: // 登录
                 login();
                 break;
@@ -103,4 +110,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);
     }
+
+
+
 }

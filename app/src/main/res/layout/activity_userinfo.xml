@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#EDEDED"
@@ -61,15 +62,22 @@
                     android:text="头像"
                     android:textSize="@dimen/small_text_size"
                     />
-                <ImageView
+               <!-- <ImageView
                     android:id="@+id/userset"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/userarrowaa"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/icon_default_user_photo"/>
-
+                    android:src="@drawable/icon_default_user_photo"/>-->
+                <com.jims.work.view.CircleImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_toLeftOf="@+id/userarrowaa"
+                    android:src="@drawable/icon_default_user_photo"
+                    app:border_color="@color/white"
+                    android:id="@+id/userIcon"
+                    app:border_width="2dp" />
                 <ImageView
                     android:id="@+id/userarrowaa"
                     android:layout_width="wrap_content"
