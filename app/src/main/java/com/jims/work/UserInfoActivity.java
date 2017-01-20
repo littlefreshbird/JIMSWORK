@@ -46,9 +46,13 @@ import java.util.Calendar;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
+
 public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
     String fileName = String.valueOf(System.currentTimeMillis()) + ".jpg";
+    @BindView(R.id.generate_qrcode)
+    RelativeLayout generateQrcode;
     private View slidView;
     @BindView(R.id.userinfo_back)
     ImageView userinfoBack;
@@ -78,8 +82,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     @BindView(R.id.userIcon)
     CircleImageView userIcon;
     private PopupWindow mPopWindow;
-
-
+    private String str = "aa";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +109,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         datepicker.setOnClickListener(this);
         userHeight.setOnClickListener(this);
         userAddress.setOnClickListener(this);
+        generateQrcode.setOnClickListener(this);
     }
 
     @Override
@@ -126,6 +130,9 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             case R.id.datepicker:
                 showDialog(DATE_DIALOG);
                 break;
+            case R.id.generate_qrcode:       //创建带logo
+                    //createQRCodeWithLogo();
+                break;
             case R.id.user_height:
                 showInputDialog1();
                 break;
@@ -136,6 +143,28 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 break;
         }
     }
+   /* //创建二维码
+    private void createQRCodeWithLogo() {
+
+        new AsyncTask<Void, Void, Bitmap>() {
+            @Override
+            protected Bitmap doInBackground(Void... params) {
+                Bitmap looBitmap = BitmapFactory.decodeResource(UserInfoActivity.this.getResources(), R.drawable.icon_default_user_photo);
+                return QRCodeEncoder.syncEncodeQRCode(str, BGAQRCodeUtil.dp2px(UserInfoActivity.this, 150), Color.BLACK, Color.WHITE, logoBitmap);
+            }
+
+            @Override
+            protected void onPostExecute(Bitmap bitmap) {
+                if (bitmap != null) {
+                    ivqr.setImageBitmap(bitmap);
+                    bp = bitmap;
+                } else {
+                    Toast.makeText(UserInfoActivity.this, "生成带logo的二维码失败", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }.execute();
+    }*/
+
     //上传头像
 
     public class SelectPopuWindow extends PopupWindow {
@@ -208,7 +237,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 }
             });
         }
-        }
+    }
+
     public void saveImageToFile(Bitmap bitmap) {
 
         FileOutputStream fos = null;
@@ -239,7 +269,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 Toast.makeText(UserInfoActivity.this, fileName + "上传成功",
                         Toast.LENGTH_LONG).show();
                 //initProgressDialog();
-               // AjaxParams ap = new AjaxParams();
+                // AjaxParams ap = new AjaxParams();
              /*   try {
                     ap.put("file", new File(fileName));
                     ap.put("id", userBean.getId());
@@ -288,8 +318,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             if (data != null) {
                 uri = data.getData();
                 System.out.println("Data");
-            }else{
-                uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(),fileName));
+            } else {
+                uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), fileName));
             }
 
             cropImage(uri, 98, 98, 3);
@@ -299,7 +329,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             ContentResolver resolver = getContentResolver();
             Uri uri = data.getData();
             try {
-				/*Bitmap bitmap = MediaStore.Images.Media
+                /*Bitmap bitmap = MediaStore.Images.Media
 						.getBitmap(resolver, uri);*/
                 cropImage(uri, 98, 98, 3);
 				/*Bitmap resizeBmp = ThumbnailUtils.extractThumbnail(bitmap, 88,
@@ -310,7 +340,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 e.printStackTrace();
             }
 
-        } else if(requestCode==3 && respCode==RESULT_OK){
+        } else if (requestCode == 3 && respCode == RESULT_OK) {
             Bitmap photo = null;
             Uri photoUri = data.getData();
             if (photoUri != null) {
@@ -319,12 +349,12 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             if (photo == null) {
                 Bundle extra = data.getExtras();
                 if (extra != null) {
-                    photo = (Bitmap)extra.get("data");
+                    photo = (Bitmap) extra.get("data");
                     ByteArrayOutputStream stream = new ByteArrayOutputStream();
                     photo.compress(Bitmap.CompressFormat.JPEG, 100, stream);
                 }
             }
-            if(photo!=null){
+            if (photo != null) {
 
                 Bitmap resizeBmp = ThumbnailUtils.extractThumbnail(photo, 98, 98);
                 userIcon.setImageBitmap(resizeBmp);
@@ -336,7 +366,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
 
     //截取图片
-    public void cropImage(Uri uri, int outputX, int outputY, int requestCode){
+    public void cropImage(Uri uri, int outputX, int outputY, int requestCode) {
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(uri, "image/*");
         intent.putExtra("crop", "true");
@@ -349,6 +379,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         intent.putExtra("return-data", true);
         startActivityForResult(intent, requestCode);
     }
+
     //姓名
     private void showInputDialog() {
     /*@setView 装入一个EditView
