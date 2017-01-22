@@ -47,7 +47,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-
 public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
     String fileName = String.valueOf(System.currentTimeMillis()) + ".jpg";
@@ -81,8 +80,6 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     RelativeLayout userAddress;
     @BindView(R.id.userIcon)
     CircleImageView userIcon;
-    private PopupWindow mPopWindow;
-    private String str = "aa";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,8 +127,9 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             case R.id.datepicker:
                 showDialog(DATE_DIALOG);
                 break;
-            case R.id.generate_qrcode:       //创建带logo
-                    //createQRCodeWithLogo();
+            case R.id.generate_qrcode:
+               Intent intent=new Intent(UserInfoActivity.this,QRCodeActivity.class);
+                startActivity(intent);
                 break;
             case R.id.user_height:
                 showInputDialog1();
@@ -143,27 +141,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 break;
         }
     }
-   /* //创建二维码
-    private void createQRCodeWithLogo() {
 
-        new AsyncTask<Void, Void, Bitmap>() {
-            @Override
-            protected Bitmap doInBackground(Void... params) {
-                Bitmap looBitmap = BitmapFactory.decodeResource(UserInfoActivity.this.getResources(), R.drawable.icon_default_user_photo);
-                return QRCodeEncoder.syncEncodeQRCode(str, BGAQRCodeUtil.dp2px(UserInfoActivity.this, 150), Color.BLACK, Color.WHITE, logoBitmap);
-            }
-
-            @Override
-            protected void onPostExecute(Bitmap bitmap) {
-                if (bitmap != null) {
-                    ivqr.setImageBitmap(bitmap);
-                    bp = bitmap;
-                } else {
-                    Toast.makeText(UserInfoActivity.this, "生成带logo的二维码失败", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }.execute();
-    }*/
 
     //上传头像
 
@@ -266,8 +244,14 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             } finally {
+
+
                 Toast.makeText(UserInfoActivity.this, fileName + "上传成功",
                         Toast.LENGTH_LONG).show();
+
+
+
+
                 //initProgressDialog();
                 // AjaxParams ap = new AjaxParams();
              /*   try {
@@ -370,8 +354,10 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(uri, "image/*");
         intent.putExtra("crop", "true");
+        // aspectX aspectY 是宽高的比例
         intent.putExtra("aspectX", 1);
         intent.putExtra("aspectY", 1);
+        // outputX outputY 是裁剪图片宽高
         intent.putExtra("outputX", outputX);
         intent.putExtra("outputY", outputY);
         intent.putExtra("outputFormat", "JPEG");
