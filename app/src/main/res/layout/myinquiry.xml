@@ -11,7 +11,7 @@
         android:background="@color/gray" />
     <fragment
         android:id="@+id/complainitems"
-        android:name="com.jims.work.fragment.MyEvaluateDetailFragment"
+        android:name="com.jims.work.fragment.MyinquiryDetailFragment"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

@@ -19,6 +19,9 @@ import butterknife.ButterKnife;
 import cn.bingoogolapple.qrcode.core.BGAQRCodeUtil;
 import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder;
 
+/**
+ * 我的二维码名片
+ */
 public class QRCodeActivity extends AppCompatActivity {
 
     private ImageView ivqr;
@@ -30,10 +33,11 @@ public class QRCodeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_qrcode);
         setCustomActionBar();
         ivqr = (ImageView) findViewById(R.id.iv_qr);
-       //创建带logo
+       //创建带logo二维码
         createQRCodeWithLogo();
 
     }
+    //创建带logo二维码
     private void createQRCodeWithLogo() {
 
         new AsyncTask<Void, Void, Bitmap>() {
