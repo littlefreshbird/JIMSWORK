@@ -83,7 +83,7 @@
             android:layout_marginLeft="28.0dip"
             android:layout_marginRight="28.0dip"
             android:layout_marginTop="15.0dip"
-            android:background="@drawable/btn_login_green_bg"
+            android:background="@drawable/registerbutton"
             android:gravity="center"
             android:paddingTop="4.0dip"
             android:text="登 录"

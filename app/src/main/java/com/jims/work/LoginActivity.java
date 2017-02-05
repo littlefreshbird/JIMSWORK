@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static com.jims.work.R.id.etPassWord;
 
 /****
  * 登录
@@ -19,7 +22,7 @@ public class LoginActivity extends Activity {
     //显示密码和切换图片
     private ImageView img_displaypass;
     //设置密码
-    private EditText et_password;
+    private EditText et_password,et_account;
     private Button btnlogin;
     private TextView btnRegister,zhaohuipass;
     int count = 0;
@@ -31,12 +34,13 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        et_password = (EditText) findViewById(R.id.etPassWord);
+        et_account= (EditText) findViewById(R.id.etAccount);
+        et_password = (EditText) findViewById(etPassWord);
         btnlogin=(Button)findViewById(R.id.login);
         btnRegister=(TextView) findViewById(R.id.btn_register);
         img_displaypass = (ImageView) findViewById(R.id.img_displaypass);
         zhaohuipass= (TextView) findViewById(R.id.zhaohuipass);
-//密码显示与隐藏
+         //密码显示与隐藏
         img_displaypass.setImageResource(image[0]);
         img_displaypass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +67,61 @@ public class LoginActivity extends Activity {
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+               /* if(!et_account.getText().toString().isEmpty()){
+
+                    if(!et_password.getText().toString().isEmpty()){
+
+
+                        if(AppUtils.checkNetwork(LoginActivity.this)==true){
+
+
+                  Map<String,Object> params = new HashMap<>(2);
+                  params.put("phone",phone);
+                  params.put("password", DESUtil.encode(Contants.DES_KEY,pwd));
+                  okHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
+
+
+                  @Override
+                  public void onSuccess(Response response, LoginRespMsg<User> userLoginRespMsg) {
+
+
+                  JimsApplication application =  JimsApplication.getInstance();
+                application.putUser(userLoginRespMsg.getData(), userLoginRespMsg.getToken());
+
+                if(application.getIntent() == null){
+                    setResult(RESULT_OK);
+                    finish();
+                }else{
+
+                    application.jumpToTargetActivity(LoginActivity.this);
+                    finish();
+
+                }
+
+
+
+            }
+
+            @Override
+            public void onError(Response response, int code, Exception e) {
+
+            }
+        });
+
+
+                        }else{
+                            showToast("亲，您还没有联网了!");
+                        }
+
+                    }else{
+                        showToast("密码不能为空");
+                    }
+                }else{
+                    showToast("用户名不能为空");
+                }
+*/
+
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -86,5 +145,7 @@ public class LoginActivity extends Activity {
         });
     }
 
-
+    public void showToast(String str){
+        Toast.makeText(LoginActivity.this, str, Toast.LENGTH_LONG).show();
+    }
 }
