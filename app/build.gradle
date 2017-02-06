@@ -47,6 +47,6 @@ dependencies {
     compile 'cn.bingoogolapple:bga-zxing:1.1.5@aar'
     // -------------------- 以上三个库是必须依赖的 ----------------------------
     compile 'com.squareup.okhttp:okhttp:2.7.5'
-    compile 'com.squareup.okio:okio:1.11.0'
+    compile 'com.squareup.okio:okio:1.main_page_icon_quick_ask.0'
     compile 'com.google.code.gson:gson:2.8.0'
 }
