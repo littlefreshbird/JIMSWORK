@@ -60,6 +60,7 @@
                 <TextView
                     android:id="@+id/tv_user_comment_date"
                     style="@style/SmallTitleString"
+                    android:layout_marginLeft="50dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true" />
@@ -78,7 +79,7 @@
                 <TextView
                     android:id="@+id/tv_user_pinglun"
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="100dp"
+                    android:layout_toRightOf="@+id/tv_user_comment_date"
                     android:layout_height="wrap_content"
                     android:focusable="false"
                     android:paddingRight="10dp"
@@ -89,9 +90,9 @@
                 <RatingBar
                     android:id="@+id/ratingbar2"
                     style="?android:attr/ratingBarStyleSmall"
-                    android:layout_marginLeft="150dp"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_toRightOf="@+id/tv_user_pinglun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:isIndicator="false"
                     android:numStars="5"
                     android:rating = "3"

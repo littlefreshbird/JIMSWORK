@@ -20,6 +20,9 @@ import com.jims.work.adapter.MyFragmentPagerAdapter;
 
 import java.util.ArrayList;
 
+/**
+ * 我的服务
+ */
 public class ServiceFragment extends Fragment   {
    // private View layout;
     private Resources mResources;
@@ -33,6 +36,15 @@ public class ServiceFragment extends Fragment   {
     private int mPositionOne,mPositionTwo;
     public final static int num = 3;
     private int mCurrentIndex = 0;
+
+    /**
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     * fragment中的初始化
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,6 +63,7 @@ public class ServiceFragment extends Fragment   {
 
         return view;
     }
+    //点击事件
     private void initTextView(View parentView){
         /* one=(TextView)parentView.findViewById(R.id.one);
            one.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG );*/
@@ -62,7 +75,7 @@ public class ServiceFragment extends Fragment   {
         mTxTwo.setOnClickListener(new MyClickListener(1));
         mTxThree.setOnClickListener(new MyClickListener(2));
     }
-
+     //数据源捆绑适配器
     private void initViewPager(View parentView){
         mPager = (ViewPager) parentView.findViewById(R.id.fragment_more_vp);
         mFragmentList = new ArrayList<Fragment>();
@@ -92,7 +105,7 @@ public class ServiceFragment extends Fragment   {
         mPositionOne = avg + mOffset;
         mPositionTwo = avg*2 + mOffset;
     }
-
+     //点击事件具体执行
     private class MyClickListener implements OnClickListener{
         private int index = 0;
 

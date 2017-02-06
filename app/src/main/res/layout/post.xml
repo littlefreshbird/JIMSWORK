@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+<RelativeLayout
+    android:id="@+id/activity_main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     android:orientation="vertical"
     >
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="horizontal"
+        android:fadingEdge="horizontal">
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/biankaugn"
         android:orientation="vertical"
         >
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         >
         <TextView
             android:id="@+id/neike"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="30dp"
             android:text="内科"
             android:background="@drawable/biankuang"
@@ -31,7 +42,7 @@
             android:gravity="center"/>
         <TextView
             android:id="@+id/waike"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_marginLeft="20dp"
             android:text="外科"
@@ -39,9 +50,10 @@
             android:textSize="@dimen/small_middle_text_size"
             android:textColor="@color/colorText"
             android:gravity="center"/>
+
         <TextView
             android:id="@+id/jingshenke"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="30dp"
             android:text="精神科"
             android:background="@drawable/biankuang"
@@ -58,7 +70,7 @@
             >
             <TextView
                 android:id="@+id/meirongke"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:text="美容科"
                 android:background="@drawable/biankuang"
@@ -68,7 +80,7 @@
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/fangsheke"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:text="放射科"
                 android:background="@drawable/biankuang"
@@ -78,7 +90,7 @@
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/nanke"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:text="男科"
                 android:background="@drawable/biankuang"
@@ -95,7 +107,7 @@
             >
             <TextView
                 android:id="@+id/muyingke"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:text="母婴科"
                 android:background="@drawable/biankuang"
@@ -105,7 +117,7 @@
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/guke"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:text="骨科"
                 android:background="@drawable/biankuang"
@@ -115,7 +127,7 @@
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/huayanke"
-                android:layout_width="100dp"
+                android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:text="化验科"
                 android:background="@drawable/biankuang"
@@ -125,6 +137,7 @@
                 android:gravity="center"/>
         </LinearLayout>
     </LinearLayout>
+    </HorizontalScrollView>
     <!-- 底部按钮 -->
     <!-- 显示图片 -->
 
@@ -177,13 +190,10 @@
                     android:id="@+id/button_1"
                     android:layout_width="300dp"
                     android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
                     android:textColor="@color/white"
                     android:background="@drawable/bg_edittext"
                     android:paddingTop="5dip"
                     android:text="下一步"
-
-
                     android:textSize="@dimen/small_text_size"
                     android:gravity="center"
                     android:layout_alignParentTop="true"
@@ -194,3 +204,4 @@
 
 
 </RelativeLayout>
+</ScrollView>

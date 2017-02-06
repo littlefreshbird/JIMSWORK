@@ -18,7 +18,9 @@ import java.util.Map;
 
 import static com.jims.work.R.id.ratingbar;
 
-
+/**
+ * 问诊详情
+ */
 public class MyinquiryDetailreplyFragment extends Fragment {
     private String[] name = { "王林" };
 

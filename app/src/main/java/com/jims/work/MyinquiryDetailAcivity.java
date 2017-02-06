@@ -16,14 +16,14 @@ import android.widget.Toast;
 
 import com.jims.work.fragment.ServiceFragment;
 
-public class MyinquiryDetailAcivity extends AppCompatActivity {
+public class MyinquiryDetailAcivity extends BaseActivity {
     private ImageView mimageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.myinquiry);
-        setCustomActionBar();
+        setCustomActionBar("我的问诊");
        /* ImageView mimageView= (ImageView) findViewById(R.id.img_myevaluatedetial_back);
         mimageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,17 +67,5 @@ public class MyinquiryDetailAcivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_inquiry, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
 }

@@ -10,6 +10,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jims.work.application.JimsApplication;
 import com.jims.work.bean.Tab;
 import com.jims.work.fragment.HealthFragment;
 import com.jims.work.fragment.HomeFragment;
@@ -20,6 +21,7 @@ import com.jims.work.widget.FragmentTabHost;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MainActivity extends FragmentActivity {
 
     private LayoutInflater mInflater;
@@ -29,7 +31,6 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 

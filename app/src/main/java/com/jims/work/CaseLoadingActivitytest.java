@@ -16,13 +16,19 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import butterknife.ButterKnife;
+
 import static com.jims.work.R.menu.main;
 
-public class CaseLoadingActivitytest extends AppCompatActivity {
+/**
+ * 病例详情页
+ */
+public class CaseLoadingActivitytest extends BaseActivity {
     private GridView gridView;
     private Button button_1;
     private final int IMAGE_OPEN = 1;        //打开图片标记
@@ -34,6 +40,12 @@ public class CaseLoadingActivitytest extends AppCompatActivity {
     private static final int CAMERA_SUCCESS = 2;
     private boolean bl=false;
     private int position1=0;
+
+    /**
+     *
+     * @param savedInstanceState
+     * 初始化页面布局
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +59,7 @@ public class CaseLoadingActivitytest extends AppCompatActivity {
                 CaseLoadingActivitytest.this.finish();
             }
         });
-        setCustomActionBar();
+        setCustomActionBar("病例详情");
         /*
          * 防止键盘挡住输入框
          * 不希望遮挡设置activity属性 android:windowSoftInputMode="adjustPan"
@@ -75,17 +87,5 @@ public class CaseLoadingActivitytest extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_test, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
 }

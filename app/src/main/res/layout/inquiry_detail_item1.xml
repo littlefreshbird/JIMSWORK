@@ -33,16 +33,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
-                    android:text=""
+                    android:text="11"
                     android:textColor="@color/royalblue"
                     android:textSize="@dimen/small_text_size" />
 
                 <ImageView
                     android:id="@+id/reply_sexmaletop"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_toRightOf="@+id/tweet_listitem_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/reply_listitem_username"
                     />
 
                 <TextView
@@ -50,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:text="fd"
+                    android:text=""
                     android:textColor="@color/gray"
                     android:textSize="@dimen/micro_text_size" />
 
@@ -83,13 +83,13 @@
                 android:layout_marginTop="8dip"
                 android:orientation="horizontal" >
 
-                <TextView
+               <!-- <TextView
                     android:id="@+id/reply_listitem_client"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dip"
 
-                    android:textSize="@dimen/micro_text_size" />
+                    android:textSize="@dimen/micro_text_size" />-->
                 <ImageView
                     android:id="@+id/reply_listitem_dianzan"
                     android:layout_width="80dp"
@@ -115,13 +115,13 @@
                      android:layout_marginLeft="2dip"
                      android:src="@drawable/img_star" />-->
 
-                <TextView
+                <!--<TextView
                     android:id="@+id/reply_listitem_commentCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dip"
                     android:textColor="@color/gray"
-                    android:textSize="@dimen/micro_text_size" />
+                    android:textSize="@dimen/micro_text_size" />-->
             </LinearLayout>
 
         </LinearLayout>

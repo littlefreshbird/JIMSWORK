@@ -10,6 +10,11 @@ import com.jims.work.utils.Utils;
 public class EvaluateDetailActivity extends FragmentActivity {
     private	String itemclick="";
 
+    /**
+     *
+     * @param savedInstanceState
+     * 页面布局并初始化
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 

@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.jims.work.adapter.CityListAdapter;
 import com.jims.work.adapter.SearchResultAdapter;
 import com.jims.work.db.AllCitySqliteOpenHelper;
@@ -23,7 +22,6 @@ import com.jims.work.db.CitySqliteOpenHelper;
 import com.jims.work.entity.City;
 import com.jims.work.utils.PingYinUtil;
 import com.jims.work.view.MyLetterView;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;

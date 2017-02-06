@@ -1,52 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
 
+    <LinearLayout
+    android:id="@+id/activity_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:background="@color/white"
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@drawable/biankaugn"
+        android:background="@drawable/wubiankuang"
         >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/wubiankuang"
             >
        <EditText
-           android:layout_width="50dp"
-           android:layout_height="40dp"
+           android:id="@+id/editbianhao"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
            android:enabled="false"
            android:gravity="center"
            android:background="@drawable/wubiankuang"
            android:text="编 号: "
+           android:padding="5dp"
            android:textColor="@color/black"
            android:textSize="@dimen/text_size_small"/>
         <EditText
-            android:layout_width="fill_parent"
-            android:gravity="start"
-            android:background="@drawable/wubiankuang"
-            android:layout_height="40dp"/>
-        </LinearLayout>
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:padding="5dp"
+            android:layout_toRightOf="@+id/editbianhao"
+            android:textSize="@dimen/item_margin_top"
+            android:background="@drawable/wubiankuang"
+           />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/wubiankuang"
             >
             <EditText
-                android:layout_width="50dp"
+                android:id="@+id/editxm"
+                android:layout_width="wrap_content"
                 android:enabled="false"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="5dp"
                 android:text="姓 名: "
@@ -54,15 +68,21 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_small"/>
             <EditText
-                android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:id="@+id/editxm1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/editxm"
+                android:textSize="@dimen/item_margin_top"
+                android:padding="5dp"
                 android:background="@drawable/wubiankuang"
                 android:gravity="center"/>
 
             <EditText
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
+                android:id="@+id/editxb"
+                android:layout_toRightOf="@id/editxm1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:padding="5dp"
                 android:gravity="center"
                 android:enabled="false"
@@ -71,16 +91,22 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_small"/>
             <EditText
-                android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:id="@+id/editxb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/editxb"
+                android:padding="5dp"
+                android:textSize="@dimen/item_margin_top"
                 android:background="@drawable/wubiankuang"
                 android:gravity="center"/>
 
             <EditText
-                android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:id="@+id/editnl"
+                android:layout_toRightOf="@id/editxb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:enabled="false"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="20dp"
                 android:padding="5dp"
                 android:gravity="center"
                 android:background="@drawable/wubiankuang"
@@ -88,21 +114,26 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_small"/>
             <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="40dp"
+                android:layout_toRightOf="@id/editnl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/item_margin_top"
+                android:padding="5dp"
                 android:background="@drawable/wubiankuang"
                 android:gravity="center"/>
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/wubiankuang"
+            android:layout_marginLeft="10dp"
             android:orientation="horizontal"
             >
             <EditText
-                android:layout_width="60dp"
-                android:layout_height="40dp"
+                android:id="@+id/editsfz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:enabled="false"
                 android:padding="5dp"
@@ -111,21 +142,26 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_small"/>
             <EditText
+                android:layout_toRightOf="@id/editsfz"
                 android:layout_width="fill_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/item_margin_top"
+                android:padding="5dp"
                 android:background="@drawable/wubiankuang"
-                android:gravity="center"/>
-        </LinearLayout>
+                android:gravity="start"/>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/wubiankuang"
             >
             <EditText
-                android:layout_width="70dp"
-                android:layout_height="40dp"
+                android:id="@+id/editlxfs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@drawable/wubiankuang"
                 android:enabled="false"
                 android:gravity="center"
@@ -134,65 +170,87 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_small"/>
             <EditText
+                android:layout_toRightOf="@+id/editlxfs"
                 android:layout_width="fill_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/item_margin_top"
+                android:padding="5dp"
                 android:background="@drawable/wubiankuang"
-                android:gravity="center"/>
-        </LinearLayout>
+                android:gravity="start"/>
+        </RelativeLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:orientation="horizontal"
         android:background="@drawable/wubiankuang"
         >
-    <EditText
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:enabled="false"
-        android:gravity="center"
-        android:text="病情描述: "
-        android:background="@drawable/wubiankuang"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_size_small"/>
+
         <EditText
-            android:layout_width="50dp"
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:enabled="false"
-            android:layout_height="40dp"
-            android:layout_marginLeft="50dp"
+            android:gravity="center"
+            android:text="病情描述: "
+            android:padding="5dp"
+            android:background="@drawable/wubiankuang"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_small"
+           />
+
+        <EditText
+            android:id="@+id/editkm"
+            android:layout_marginLeft="80dp"
+            android:layout_width="wrap_content"
+            android:enabled="false"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="科目: "
+            android:padding="5dp"
             android:background="@drawable/wubiankuang"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_small"/>
         <EditText
-            android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:id="@+id/editkm1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/editkm"
+           android:textSize="@dimen/item_margin_top"
+            android:padding="5dp"
             android:background="@drawable/wubiankuang"
             android:gravity="center"/>
 
         <EditText
-            android:layout_width="60dp"
+            android:id="@+id/editys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:enabled="false"
-            android:layout_height="40dp"
-            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/editkm1"
             android:gravity="center"
+            android:padding="5dp"
             android:text="主治医师: "
             android:background="@drawable/wubiankuang"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_small"/>
         <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/editys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/wubiankuang"
+            android:padding="5dp"
+            android:textSize="@dimen/item_margin_top"
             android:gravity="center"/>
-    </LinearLayout>
+    </RelativeLayout>
     <EditText
                 android:id="@+id/edit"
                 android:layout_height="60dp"
                 android:layout_width="fill_parent"
                 android:layout_margin="12dp"
+                android:background="@drawable/biankuang"
                 android:textSize="@dimen/micro_text_size"
                 android:hint="暂定格式..."
                 android:gravity="start"
@@ -201,13 +259,13 @@
                 />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@drawable/biankaugn"
+        android:background="@drawable/wubiankuang"
         >
         <EditText
             android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:enabled="false"
             android:gravity="center"
             android:text="医治药物: "
@@ -216,7 +274,7 @@
             android:textSize="@dimen/text_size_small"/>
         <EditText
             android:layout_width="fill_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/wubiankuang"
             android:gravity="center"/>
     </LinearLayout>
@@ -252,7 +310,7 @@
         <Button
             android:id="@+id/button_1"
             android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:background="@drawable/bg_edittext"
@@ -266,7 +324,6 @@
     </LinearLayout>
 
             </LinearLayout>
-
-
+</ScrollView>
 
 
