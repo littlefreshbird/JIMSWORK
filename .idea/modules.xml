@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JIMSWORK.iml" filepath="$PROJECT_DIR$/JIMSWORK.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calendarlistview/calendarlistview.iml" filepath="$PROJECT_DIR$/calendarlistview/calendarlistview.iml" />
       <module fileurl="file://$PROJECT_DIR$/dropdownmenu/dropdownmenu.iml" filepath="$PROJECT_DIR$/dropdownmenu/dropdownmenu.iml" />
     </modules>
   </component>

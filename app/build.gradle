@@ -36,7 +36,6 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile files('libs/jpush-sdk-release1.7.3.jar')
     compile project(':dropdownmenu')
-    compile 'com.kelin.calendarlistview:library:1.0.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile files('src/main/libs/locSDK_6.23.jar')
     compile files('src/main/libs/pinyin4j-2.5.0.jar')
@@ -46,4 +45,5 @@ dependencies {
     compile 'cn.bingoogolapple:bga-qrcodecore:1.1.5@aar'
     compile 'cn.bingoogolapple:bga-zxing:1.1.5@aar'
     // -------------------- 以上三个库是必须依赖的 ----------------------------
+    compile project(':calendarlistview')
 }

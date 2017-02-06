@@ -4,132 +4,147 @@
               android:layout_height="match_parent"
               android:background="@color/white"
               android:orientation="vertical">
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:orientation="horizontal"
+
         android:background="@drawable/biankaugn"
         >
+
         <EditText
-            android:layout_width="300dp"
-            android:background="@drawable/biankaugn"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:textSize="@dimen/micro_text_size"
+
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/biankaugn"
             android:enabled="false"
-            android:textColorHint="@color/dim_foreground_material_light"
             android:hint="昵称:"
+            android:textColorHint="@color/dim_foreground_material_light"
+            android:textSize="@dimen/micro_text_size"
             />
+
         <EditText
             android:id="@+id/editone"
-            android:layout_width="fill_parent"
-            android:background="@drawable/biankaugn"
-            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
             android:layout_height="60dp"
-            android:textSize="@dimen/micro_text_size"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/biankaugn"
             android:gravity="center"
             android:hint="匿名"
+            android:textSize="@dimen/micro_text_size"
             />
-    </LinearLayout>
+    </RelativeLayout>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:orientation="horizontal"
         android:background="@drawable/biankaugn"
+        android:orientation="horizontal"
         >
+
         <EditText
             android:id="@+id/textthree"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
             android:enabled="false"
-            android:textSize="@dimen/micro_text_size"
+            android:hint="性别:"
             android:paddingTop="5dip"
             android:textColorHint="@color/dim_foreground_material_light"
-            android:hint="性别:"/>
+            android:textSize="@dimen/micro_text_size"/>
 
         <RadioGroup
             android:id="@+id/rgSex"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:paddingTop="10dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
             android:checkedButton="@+id/male"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="10dip">
 
             <RadioButton
                 android:id="@+id/radiobutton1"
-                android:textSize="10dp"
-                android:checked="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="男"/>
+                android:checked="true"
+                android:text="男"
+                android:textSize="10dp"/>
 
             <RadioButton
                 android:id="@+id/radiobutton2"
-                android:layout_marginEnd="1dp"
-                android:textSize="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="女"/>
+                android:layout_marginEnd="1dp"
+                android:text="女"
+                android:textSize="10dp"/>
         </RadioGroup>
-    </LinearLayout>
+    </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:orientation="horizontal"
         android:background="@drawable/biankaugn"
         >
+
         <EditText
             android:id="@+id/textfour"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
             android:enabled="false"
-            android:textSize="@dimen/micro_text_size"
+            android:hint="出生日期："
             android:paddingTop="5dip"
             android:textColorHint="@color/dim_foreground_material_light"
-            android:hint="出生日期："/>
+            android:textSize="@dimen/micro_text_size"/>
+
         <TextView
             android:id="@+id/textfive"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
             android:hint="请选择出生日期"
-            android:gravity="end"
             android:textSize="@dimen/micro_text_size"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
             />
-    </LinearLayout>
-
+    </RelativeLayout>
 
 
     <RelativeLayout
         android:id="@+id/Layout_bottom"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-         >
+        android:layout_alignParentBottom="true"
+        >
+
         <Button
             android:id="@+id/buttonone"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:background="@drawable/bg_edittext"
-            android:paddingTop="5dip"
             android:layout_marginTop="20dp"
+            android:background="@drawable/bg_edittext"
+            android:gravity="center"
+            android:paddingTop="5dip"
             android:text="选择已有档案"
-            android:textSize="@dimen/small_text_size"
-            android:gravity="center"/>
+            android:textColor="@color/white"
+            android:textSize="@dimen/small_text_size"/>
+
         <Button
             android:id="@+id/buttontwo"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
             android:background="@drawable/bg_edittext"
+            android:gravity="center"
             android:paddingTop="5dip"
             android:text="完成"
-            android:layout_marginTop="80dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/small_text_size"
-            android:gravity="center"/>
+            android:textSize="@dimen/small_text_size"/>
     </RelativeLayout>
 </LinearLayout>

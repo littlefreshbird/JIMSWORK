@@ -86,7 +86,7 @@ public class FreeTreatActivity extends AppCompatActivity {
         patientname.setText("姓名：李国胜");
         patientage.setText("年龄：28");
         patientsex.setText("性别：男");
-        setCustomActionBar();
+        setCustomActionBar("义诊信息");
         getWindow().setSoftInputMode(WindowManager.LayoutParams.
                 SOFT_INPUT_ADJUST_PAN);
         //锁定屏幕
@@ -306,11 +306,11 @@ public class FreeTreatActivity extends AppCompatActivity {
         builder.create().show();
     }
 
-    public void setCustomActionBar() {
+    public void setCustomActionBar(String title) {
         ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
         View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
         TextView textView=ButterKnife.findById(mActionBarView,android.R.id.title);
-        textView.setText("提交义诊");
+        textView.setText(title);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setCustomView(mActionBarView, lp);
         actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
