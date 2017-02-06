@@ -16,10 +16,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jims.work.CaseLoadingActivity;
 import com.jims.work.CaseseclectActivity;
 import com.jims.work.CityPositionActivity;
+import com.jims.work.CodeScanActivity;
 import com.jims.work.DoctorClassActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.NewDoctorListActivity;
@@ -31,6 +33,7 @@ import com.jims.work.view.UPMarqueeView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
 
 
@@ -134,22 +137,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }, 3000);
 
 
- /*   @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-           *//* case R.id.img_home_category: // 切换到分类
-                activeCategory();
-                break;*//*
-           // case R.id.img_home_search_code: // 二维码扫描
-              //  ((MainActivity) getActivity()).scanQRCode();
-               // break;
-
-
-
-            default:
-                break;
-        }
-    }
+ /*
 /**
          * 转到商品详情
          *//*
@@ -341,6 +329,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private void setOnListener() {
         layout.findViewById(R.id.layout_city).setOnClickListener(this);
+        layout.findViewById(R.id.img_home_search_code).setOnClickListener(this);
         layout.findViewById(R.id.quick_ask).setOnClickListener(this);
 
         layout.findViewById(R.id.quick_find).setOnClickListener(this);
@@ -361,7 +350,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), CityPositionActivity.class));
 
                 break;
-
+            case R.id.img_home_search_code: // 二维码扫描
+                startActivity(new Intent(getActivity(), CodeScanActivity.class));
+                break;
             case R.id.quick_ask: // 快速问诊
                 startActivity(new Intent(getActivity(), PostActivity.class));
                 //getActivity().finish();
@@ -388,11 +379,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), ScanPatientActivity.class));
                 break;
 
-            case R.id.img_home_search_code: // 二维码扫描
-                // ((MainActivity) getActivity()).scanQRCode();
-                break;
+
             default:
                 break;
         }
     }
+
 }
