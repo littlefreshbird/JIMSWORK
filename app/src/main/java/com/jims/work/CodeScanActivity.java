@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,12 +23,13 @@ public class CodeScanActivity extends AppCompatActivity implements QRCodeView.De
     private static final int REQUEST_CODE_CHOOSE_QRCODE_FROM_GALLERY = 666;
 
     private QRCodeView mQRCodeView;
-
+private Button open_flashlight,close_flashlight;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_codescan);
         setCustomActionBar();
-
+        open_flashlight= (Button) findViewById(R.id.open_flashlight);
+        close_flashlight= (Button) findViewById(R.id.close_flashlight);
         mQRCodeView = (ZXingView) findViewById(R.id.zxingview);
         mQRCodeView.setDelegate(this);
 
@@ -119,14 +121,12 @@ public class CodeScanActivity extends AppCompatActivity implements QRCodeView.De
 
    public void onClick(View v) {
        switch (v.getId()) {
-
-
-           /* case R.id.open_flashlight://开灯
+            case R.id.open_flashlight://开灯
                 mQRCodeView.openFlashlight();
                 break;
             case R.id.close_flashlight://关灯
                 mQRCodeView.closeFlashlight();
-                break;*/
+                break;
 
 
        }
