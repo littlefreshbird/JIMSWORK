@@ -8,6 +8,9 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.jims.work.utils.AppUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,10 +47,40 @@ public class RegisterNextActivity extends AppCompatActivity {
         btnRegisterNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                checkUserInput();
                 Intent intent=new Intent(RegisterNextActivity.this,MainActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
+    }
+    public void checkUserInput(){
+        int len = editCode.getText().toString().length();
+        boolean result = editCode.getText().toString().equals(editCopycode.getText().toString());
+        if(!"".equals(editCode.getText().toString().trim())){
+            if (len > 5 && len < 21) {
+                if(!editCopycode.getText().toString().trim().isEmpty()){
+                    if(result) {
+                        if (AppUtils.checkNetwork(RegisterNextActivity.this) == true) {
+                            //executeHttp();
+                        } else {
+                            showToast("亲，您还没有联网!");
+                        }
+                    }else{
+                        showToast("两次密码不一致");
+                    }
+                }else{
+                    showToast("重复密码不能为空");
+                }
+            }else{
+                showToast(" \"密码为6-20的字母或数字！\\n\" + \"请检查！\"");
+            }
+        }else {
+            showToast("密码不能为空");
+        }
+    }
+
+    public void showToast(String str){
+        Toast.makeText(RegisterNextActivity.this, str, Toast.LENGTH_LONG).show();
     }
 }

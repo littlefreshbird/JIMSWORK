@@ -112,29 +112,29 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.userIcon:
+            case R.id.userIcon://上传头像
                 new SelectPopuWindow(UserInfoActivity.this, slidView);
                 break;
-            case R.id.userinfo_back:
+            case R.id.userinfo_back://返回
                 finish();
                 break;
-            case R.id.username_info:
+            case R.id.username_info://姓名
                 showInputDialog();
                 break;
             case R.id.sex_info1:
-                showSingleChoiceDialog();
+                showSingleChoiceDialog();//性别
                 break;
-            case R.id.datepicker:
+            case R.id.datepicker://出生日期
                 showDialog(DATE_DIALOG);
                 break;
-            case R.id.generate_qrcode:
+            case R.id.generate_qrcode://二维码
                Intent intent=new Intent(UserInfoActivity.this,QRCodeActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.user_height:
+            case R.id.user_height://身高
                 showInputDialog1();
                 break;
-            case R.id.user_address:
+            case R.id.user_address://地址
                 showInputDialog2();
                 break;
             default:
@@ -216,7 +216,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             });
         }
     }
-
+    //保存照片到文件
     public void saveImageToFile(Bitmap bitmap) {
 
         FileOutputStream fos = null;
