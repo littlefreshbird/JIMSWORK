@@ -32,7 +32,7 @@ public class MycomplaintListitemFragment extends  Fragment {
 	  
 	    private int[] imageids = { R.drawable.image_myhead, R.drawable.image_myhead,
 	            R.drawable.image_myhead, R.drawable.image_myhead ,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead};
-	    private String[] time = {"2016-09-29","2016-08-23","2016-06-05","2015-12-18","2015-11-11","2015-10-10","2015-06-09","2015-05-03","2015-03-10"};
+	    private String[] time = {"2016-09-29","2016-08-23","2016-06-05","2015-12-18","2015--11-05","2015-10-10","2015-06-09","2015-05-03","2015-03-10"};
 		// private String[] client ={"满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:"};
 		// private  int[] count = {5,4,4,5,5,3,4,1,2};
 		 private int[]  sexmaletop={R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male};

@@ -12,7 +12,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jims.work.bean.LoginResult;
+import com.jims.work.bean.User;
+import com.jims.work.service.LoginService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 import static com.jims.work.R.id.etPassWord;
+
 
 /****
  * 登录
@@ -58,16 +69,45 @@ public class LoginActivity extends Activity {
             }
         });
 
-
-
-
-
-
         //登录成功跳转到主页
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("http://192.168.2.215:8080/restfulDemo/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+                LoginService loginService = retrofit.create(LoginService.class);
 
+                Call<LoginResult> call = loginService.getData(new User(et_account.getText().toString(),et_password.getText().toString()));
+                call.enqueue(new Callback<LoginResult>() {
+                    @Override
+                    public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
+                        if (response.isSuccessful()) {
+                            LoginResult loginResult=response.body();
+                            if(loginResult.getCode().equals("200")){
+                                Intent intent = new Intent(LoginActivity.this,
+                                        MainActivity.class);
+                                startActivity(intent);
+                            }
+                            if(loginResult.getCode().equals("201")){
+                                Toast.makeText(LoginActivity.this,"密码错误",Toast.LENGTH_SHORT).show();
+                            }
+                            if(loginResult.getCode().equals("202")){
+                                Toast.makeText(LoginActivity.this,"用户名错误",Toast.LENGTH_SHORT).show();
+                            }
+
+                        } else {
+                            Toast.makeText(LoginActivity.this,"网络有问题",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<LoginResult> call, Throwable t) {
+
+                        // do onFailure代码
+                    }
+                });
                /* if(!et_account.getText().toString().isEmpty()){
 
                     if(!et_password.getText().toString().isEmpty()){
@@ -122,9 +162,9 @@ public class LoginActivity extends Activity {
                 }
 */
 
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+              /*  Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
-                finish();
+                finish();*/
             }
         });
         //注册按钮跳转到注册页面
