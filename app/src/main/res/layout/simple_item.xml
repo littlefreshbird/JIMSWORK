@@ -111,6 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:isIndicator="true"
+                android:progressTint="@color/orange"
                 android:numStars="5"
                 android:rating = "5"
                 android:stepSize="1"/>
@@ -172,20 +173,16 @@
         </RelativeLayout>
 
     </LinearLayout>
-   <LinearLayout
+   <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_alignParentRight="true"
-           android:text=""/>
+
     <TextView
-        android:id="@+id/tv_buy"
+        android:id="@+id/add_myevaluate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+
        android:layout_marginLeft="10dp"
         android:layout_marginBottom="3dp"
         android:layout_marginTop="10dp"
@@ -193,23 +190,35 @@
         android:paddingLeft="3sp"
         android:paddingRight="3sp"
         android:text="追加评价"
-        android:textColor="@color/palegreen"
+        android:textColor="@color/black"
         android:textSize="@dimen/micro_text_size"/>
         <TextView
-            android:id="@+id/tvbuy"
+            android:id="@+id/del_myevaluate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/tv_buy"
-            android:layout_marginLeft="200dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/update_myevaluate"
             android:background="@drawable/rect_green"
-            android:layout_alignParentRight="true"
             android:paddingLeft="3sp"
             android:paddingRight="3sp"
             android:text="删除评价"
             android:textColor="@color/black"
             android:textSize="@dimen/micro_text_size"/>
-    </LinearLayout>
+       <TextView
+           android:id="@+id/update_myevaluate"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp"
+           android:gravity="right"
+           android:layout_alignParentRight="true"
+           android:background="@drawable/rect_green"
+           android:paddingLeft="3sp"
+           android:paddingRight="3sp"
+           android:text="修改评价"
+           android:textColor="@color/black"
+           android:textSize="@dimen/micro_text_size"/>
+    </RelativeLayout>
 </LinearLayout>
 
     </LinearLayout>

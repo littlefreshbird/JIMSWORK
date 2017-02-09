@@ -12,16 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jims.work.bean.LoginResult;
-import com.jims.work.bean.User;
-import com.jims.work.service.LoginService;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-
 import static com.jims.work.R.id.etPassWord;
 
 
@@ -73,7 +63,7 @@ public class LoginActivity extends Activity {
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Retrofit retrofit = new Retrofit.Builder()
+             /*   Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl("http://192.168.2.215:8080/restfulDemo/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
@@ -91,14 +81,14 @@ public class LoginActivity extends Activity {
                                 startActivity(intent);
                             }
                             if(loginResult.getCode().equals("201")){
-                                Toast.makeText(LoginActivity.this,"密码错误",Toast.LENGTH_SHORT).show();
+                                showToast("密码错误");
                             }
                             if(loginResult.getCode().equals("202")){
-                                Toast.makeText(LoginActivity.this,"用户名错误",Toast.LENGTH_SHORT).show();
+                                showToast("用户名错误");
                             }
 
                         } else {
-                            Toast.makeText(LoginActivity.this,"网络有问题",Toast.LENGTH_SHORT).show();
+                            showToast("网络有问题");
                         }
                     }
 
@@ -107,64 +97,12 @@ public class LoginActivity extends Activity {
 
                         // do onFailure代码
                     }
-                });
-               /* if(!et_account.getText().toString().isEmpty()){
-
-                    if(!et_password.getText().toString().isEmpty()){
+                });*/
 
 
-                        if(AppUtils.checkNetwork(LoginActivity.this)==true){
-
-
-                  Map<String,Object> params = new HashMap<>(2);
-                  params.put("phone",phone);
-                  params.put("password", DESUtil.encode(Contants.DES_KEY,pwd));
-                  okHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
-
-
-                  @Override
-                  public void onSuccess(Response response, LoginRespMsg<User> userLoginRespMsg) {
-
-
-                  JimsApplication application =  JimsApplication.getInstance();
-                application.putUser(userLoginRespMsg.getData(), userLoginRespMsg.getToken());
-
-                if(application.getIntent() == null){
-                    setResult(RESULT_OK);
-                    finish();
-                }else{
-
-                    application.jumpToTargetActivity(LoginActivity.this);
-                    finish();
-
-                }
-
-
-
-            }
-
-            @Override
-            public void onError(Response response, int code, Exception e) {
-
-            }
-        });
-
-
-                        }else{
-                            showToast("亲，您还没有联网了!");
-                        }
-
-                    }else{
-                        showToast("密码不能为空");
-                    }
-                }else{
-                    showToast("用户名不能为空");
-                }
-*/
-
-              /*  Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+               Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
-                finish();*/
+                finish();
             }
         });
         //注册按钮跳转到注册页面
