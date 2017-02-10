@@ -1,8 +1,11 @@
 package com.jims.work.fragment;
 
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,6 +16,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jims.work.MoreActivity;
 import com.jims.work.MyEvaluateDetailAcivity;
@@ -89,14 +93,7 @@ public class ListitemActivityFragment extends  Fragment {
 					            }
 						 });
 
-		/*add_myevaluate.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getActivity(),
-						MyEvaluateDetailAcivity.class);
-				startActivity(intent);
-			}
-		});*/
+
 
 		initView(view);
 		return view;
@@ -125,6 +122,32 @@ public class ListitemActivityFragment extends  Fragment {
 
 				}
 			});
+			TextView del_myevaluate=(TextView) v.findViewById(R.id.del_myevaluate);
+			del_myevaluate.setTag(position);
+			del_myevaluate.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					dialog();
+
+
+				}
+			});
+			TextView update_myevaluate=(TextView) v.findViewById(R.id.update_myevaluate);
+			update_myevaluate.setTag(position);
+			update_myevaluate.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent intent = new Intent(getActivity(),
+							MoreActivity.class);
+					startActivity(intent);
+
+
+				}
+			});
 			return v;
 		}
 
@@ -132,5 +155,32 @@ public class ListitemActivityFragment extends  Fragment {
 			super(context, data, resource, from, to);
 			// TODO Auto-generated constructor stub
 		}
+	}
+	private void dialog(){
+		//先new出一个监听器，设置好监听
+		DialogInterface.OnClickListener dialogOnclicListener=new DialogInterface.OnClickListener(){
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				switch(which){
+					case Dialog.BUTTON_POSITIVE:
+						Toast.makeText(getActivity(), "确认" + which, Toast.LENGTH_SHORT).show();
+						break;
+					case Dialog.BUTTON_NEGATIVE:
+						Toast.makeText(getActivity(), "取消" + which, Toast.LENGTH_SHORT).show();
+						break;
+
+				}
+			}
+		};
+		//dialog参数设置
+		AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());  //先得到构造器
+		builder.setTitle("提示"); //设置标题
+		builder.setMessage("是否确认删除?"); //设置内容
+		builder.setIcon(R.mipmap.ic_launcher);//设置图标，图片id即可
+		builder.setPositiveButton("确认",dialogOnclicListener);
+		builder.setNegativeButton("取消", dialogOnclicListener);
+
+		builder.create().show();
 	}
 }
