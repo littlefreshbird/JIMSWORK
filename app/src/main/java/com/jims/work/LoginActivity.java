@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import static com.jims.work.R.id.etPassWord;
 
+
 /****
  * 登录
  */
@@ -58,71 +59,48 @@ public class LoginActivity extends Activity {
             }
         });
 
-
-
-
-
-
         //登录成功跳转到主页
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+             /*   Retrofit retrofit = new Retrofit.Builder()
+                        .baseUrl("http://192.168.2.215:8080/restfulDemo/")
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build();
+                LoginService loginService = retrofit.create(LoginService.class);
 
-               /* if(!et_account.getText().toString().isEmpty()){
+                Call<LoginResult> call = loginService.getData(new User(et_account.getText().toString(),et_password.getText().toString()));
+                call.enqueue(new Callback<LoginResult>() {
+                    @Override
+                    public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
+                        if (response.isSuccessful()) {
+                            LoginResult loginResult=response.body();
+                            if(loginResult.getCode().equals("200")){
+                                Intent intent = new Intent(LoginActivity.this,
+                                        MainActivity.class);
+                                startActivity(intent);
+                            }
+                            if(loginResult.getCode().equals("201")){
+                                showToast("密码错误");
+                            }
+                            if(loginResult.getCode().equals("202")){
+                                showToast("用户名错误");
+                            }
 
-                    if(!et_password.getText().toString().isEmpty()){
-
-
-                        if(AppUtils.checkNetwork(LoginActivity.this)==true){
-
-
-                  Map<String,Object> params = new HashMap<>(2);
-                  params.put("phone",phone);
-                  params.put("password", DESUtil.encode(Contants.DES_KEY,pwd));
-                  okHttpHelper.post(Contants.API.LOGIN, params, new SpotsCallBack<LoginRespMsg<User>>(this) {
-
-
-                  @Override
-                  public void onSuccess(Response response, LoginRespMsg<User> userLoginRespMsg) {
-
-
-                  JimsApplication application =  JimsApplication.getInstance();
-                application.putUser(userLoginRespMsg.getData(), userLoginRespMsg.getToken());
-
-                if(application.getIntent() == null){
-                    setResult(RESULT_OK);
-                    finish();
-                }else{
-
-                    application.jumpToTargetActivity(LoginActivity.this);
-                    finish();
-
-                }
-
-
-
-            }
-
-            @Override
-            public void onError(Response response, int code, Exception e) {
-
-            }
-        });
-
-
-                        }else{
-                            showToast("亲，您还没有联网了!");
+                        } else {
+                            showToast("网络有问题");
                         }
-
-                    }else{
-                        showToast("密码不能为空");
                     }
-                }else{
-                    showToast("用户名不能为空");
-                }
-*/
 
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    @Override
+                    public void onFailure(Call<LoginResult> call, Throwable t) {
+
+                        // do onFailure代码
+                    }
+                });*/
+
+
+               Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

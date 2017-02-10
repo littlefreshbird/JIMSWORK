@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Just on 2017/1/11.
+ * Created by Just on 2017/1/main_page_icon_quick_ask.
  */
 
 public class ReplyActivity extends AppCompatActivity {

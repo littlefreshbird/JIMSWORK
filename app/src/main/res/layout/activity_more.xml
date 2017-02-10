@@ -5,30 +5,7 @@
     android:background="@drawable/android_layout_bg"
     tools:context=".MoreActivity" >
 
-    <RelativeLayout
-        android:id="@+id/layout_login_topbar"
-        android:layout_width="fill_parent"
-        android:layout_height="45dip">
 
-        <ImageView
-            android:id="@+id/img_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="10dp"
-            android:src="@drawable/action_bar_back" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="更多"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/black"
-            android:textSize="@dimen/small_middle_text_size" />
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"

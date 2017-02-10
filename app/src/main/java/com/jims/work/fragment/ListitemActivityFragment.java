@@ -1,7 +1,11 @@
 package com.jims.work.fragment;
 
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.Fragment;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +15,10 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.jims.work.MoreActivity;
 import com.jims.work.MyEvaluateDetailAcivity;
 import com.jims.work.R;
 
@@ -20,7 +27,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+
 public class ListitemActivityFragment extends  Fragment {
+	private TextView add_myevaluate;
 	 
 	  private String[] name = { "张强", "张强", "张强", "张强","张强","张强","张强","张强","张强" };
 	private String[] service = { "拔牙服务", "推拿服务", "拔牙服务", "拔牙服务","推拿服务","推拿服务","推拿服务","推拿服务","推拿服务" };
@@ -30,7 +40,7 @@ public class ListitemActivityFragment extends  Fragment {
 	  
 	    private int[] imageids = { R.drawable.image_myhead, R.drawable.image_myhead,
 	            R.drawable.image_myhead, R.drawable.image_myhead ,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead};
-	    private String[] time = {"2016-09-29","2016-08-23","2016-06-05","2015-12-18","2015-11-11","2015-10-10","2015-06-09","2015-05-03","2015-03-10"};
+	    private String[] time = {"2016-09-29","2016-08-23","2016-06-05","2015-12-18","2015-11-15","2015-10-10","2015-06-09","2015-05-03","2015-03-10"};
 		 private String[] client ={"满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:","满意度:"};
 		 //private  int[] count = {5,4,4,5,5,3,4,1,2};
 		 private int[]  sexmaletop={R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male};
@@ -53,10 +63,10 @@ public class ListitemActivityFragment extends  Fragment {
             listItem.put("sexmaletop", sexmaletop[i]); 
             
             listItems.add(listItem);  
-        }  
+        }
 
-	   
-			SimpleAdapter simpleAdapter = new SimpleAdapter(getActivity(), listItems,
+
+		MySimpleAdapter simpleAdapter = new MySimpleAdapter(getActivity(), listItems,
 		            R.layout.simple_item, 
 		            new String[] { "imageids", "name", "service","desc","time","client","count","sexmaletop"   },
 		            new int[] { R.id.tweet_listitem_userface, R.id.tweet_listitem_username,R.id.listitem_content,R.id.tweetcontent ,R.id.questiontime,R.id.tweet_listitem_client,R.id.tweet_listitem_commentCount,R.id.sexmaletop});
@@ -82,13 +92,95 @@ public class ListitemActivityFragment extends  Fragment {
 			
 					            }
 						 });
-						
+
+
+
 		initView(view);
 		return view;
 	}
 	private void initView(View view){
-		
+
 	
 	}
-	
+	private class MySimpleAdapter extends SimpleAdapter {
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			// TODO Auto-generated method stub
+			View v = super.getView(position, convertView, parent);
+
+			TextView add_myevaluate=(TextView) v.findViewById(R.id.add_myevaluate);
+			add_myevaluate.setTag(position);
+			add_myevaluate.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent intent = new Intent(getActivity(),
+							MoreActivity.class);
+					startActivity(intent);
+
+
+				}
+			});
+			TextView del_myevaluate=(TextView) v.findViewById(R.id.del_myevaluate);
+			del_myevaluate.setTag(position);
+			del_myevaluate.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					dialog();
+
+
+				}
+			});
+			TextView update_myevaluate=(TextView) v.findViewById(R.id.update_myevaluate);
+			update_myevaluate.setTag(position);
+			update_myevaluate.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent intent = new Intent(getActivity(),
+							MoreActivity.class);
+					startActivity(intent);
+
+
+				}
+			});
+			return v;
+		}
+
+		public MySimpleAdapter(Context context, List<? extends Map<String, ?>> data, int resource, String[] from, int[] to) {
+			super(context, data, resource, from, to);
+			// TODO Auto-generated constructor stub
+		}
+	}
+	private void dialog(){
+		//先new出一个监听器，设置好监听
+		DialogInterface.OnClickListener dialogOnclicListener=new DialogInterface.OnClickListener(){
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				switch(which){
+					case Dialog.BUTTON_POSITIVE:
+						Toast.makeText(getActivity(), "确认" + which, Toast.LENGTH_SHORT).show();
+						break;
+					case Dialog.BUTTON_NEGATIVE:
+						Toast.makeText(getActivity(), "取消" + which, Toast.LENGTH_SHORT).show();
+						break;
+
+				}
+			}
+		};
+		//dialog参数设置
+		AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());  //先得到构造器
+		builder.setTitle("提示"); //设置标题
+		builder.setMessage("是否确认删除?"); //设置内容
+		builder.setIcon(R.mipmap.ic_launcher);//设置图标，图片id即可
+		builder.setPositiveButton("确认",dialogOnclicListener);
+		builder.setNegativeButton("取消", dialogOnclicListener);
+
+		builder.create().show();
+	}
 }

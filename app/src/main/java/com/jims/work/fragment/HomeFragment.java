@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jims.work.CaseLoadingActivity;
 import com.jims.work.CaseseclectActivity;
@@ -28,12 +27,13 @@ import com.jims.work.NewDoctorListActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
 import com.jims.work.ScanPatientActivity;
+import com.jims.work.pulltorefresh.MyListener;
+import com.jims.work.pulltorefresh.PullToRefreshLayout;
 import com.jims.work.view.UPMarqueeView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
 
 
@@ -73,6 +73,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         initupView();
         setOnListener();
         return layout;
+
 
     }
     private void initcity() {
@@ -339,7 +340,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_special3).setOnClickListener(this);
         layout.findViewById(R.id.layout_special4).setOnClickListener(this);
         layout.findViewById(R.id.layout_freetreat).setOnClickListener(this);
-
+        ((PullToRefreshLayout) layout.findViewById(R.id.refresh_view))
+                .setOnRefreshListener(new MyListener());
 
     }
 
