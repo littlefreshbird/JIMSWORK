@@ -176,7 +176,7 @@ public class ListitemActivityFragment extends  Fragment {
 		//dialog参数设置
 		AlertDialog.Builder builder=new AlertDialog.Builder(getActivity());  //先得到构造器
 		builder.setTitle("提示"); //设置标题
-		builder.setMessage("是否确认删除?"); //设置内容
+		builder.setMessage("确定删除这条评论吗?"); //设置内容
 		builder.setIcon(R.mipmap.ic_launcher);//设置图标，图片id即可
 		builder.setPositiveButton("确认",dialogOnclicListener);
 		builder.setNegativeButton("取消", dialogOnclicListener);
