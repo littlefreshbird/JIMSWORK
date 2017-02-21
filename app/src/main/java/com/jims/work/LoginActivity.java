@@ -1,6 +1,7 @@
 package com.jims.work;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
@@ -31,6 +32,7 @@ public class LoginActivity extends Activity {
             R.drawable.hide_password,
             R.drawable.display_password
     };
+    ProgressDialog pd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,41 +65,57 @@ public class LoginActivity extends Activity {
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             /*   Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://192.168.2.215:8080/restfulDemo/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-                LoginService loginService = retrofit.create(LoginService.class);
+            /*    if(!et_account.getText().toString().isEmpty()) {
 
-                Call<LoginResult> call = loginService.getData(new User(et_account.getText().toString(),et_password.getText().toString()));
-                call.enqueue(new Callback<LoginResult>() {
-                    @Override
-                    public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
-                        if (response.isSuccessful()) {
-                            LoginResult loginResult=response.body();
-                            if(loginResult.getCode().equals("200")){
-                                Intent intent = new Intent(LoginActivity.this,
-                                        MainActivity.class);
-                                startActivity(intent);
-                            }
-                            if(loginResult.getCode().equals("201")){
-                                showToast("密码错误");
-                            }
-                            if(loginResult.getCode().equals("202")){
-                                showToast("用户名错误");
-                            }
+                    if (!et_password.getText().toString().isEmpty()) {
+                        if(AppUtils.checkNetwork(LoginActivity.this)==true) {
+                            pd = ProgressDialog.show(LoginActivity.this, "请稍候", "正在连接服务器...", true, true);
+                            Retrofit retrofit = new Retrofit.Builder()
+                                    .baseUrl("http://192.168.2.215:8080/restfulDemo/")
+                                    .addConverterFactory(GsonConverterFactory.create())
+                                    .build();
+                            LoginService loginService = retrofit.create(LoginService.class);
 
-                        } else {
-                            showToast("网络有问题");
+                            Call<LoginResult> call = loginService.getData(new User(et_account.getText().toString(), et_password.getText().toString()));
+                            call.enqueue(new Callback<LoginResult>() {
+                                @Override
+                                public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
+                                    pd.dismiss();
+                                    if (response.isSuccessful()) {
+                                        LoginResult loginResult = response.body();
+                                        if (loginResult.getCode().equals("200")) {
+                                            Intent intent = new Intent(LoginActivity.this,
+                                                    MainActivity.class);
+                                            startActivity(intent);
+                                        }
+                                        if (loginResult.getCode().equals("201")) {
+                                            showToast("密码错误");
+
+                                        }
+                                        if (loginResult.getCode().equals("202")) {
+                                            showToast("用户名错误");
+                                        }
+
+                                    } else {
+                                        showToast("网络有问题");
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<LoginResult> call, Throwable t) {
+
+                                    // do onFailure代码
+                                }
+                            });
+                        }else{
+                            showToast("亲，您还没有联网!");
                         }
+                    } else {
+                        showToast("密码不能为空");
                     }
-
-                    @Override
-                    public void onFailure(Call<LoginResult> call, Throwable t) {
-
-                        // do onFailure代码
-                    }
-                });*/
+                }else{
+                    showToast("用户名不能为空");
+                }*/
 
 
                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
