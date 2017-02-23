@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingTop="8dp" >
+    android:orientation="vertical"
+    android:paddingRight="20dp" >
 <!--
     <ImageView
         android:id="@+id/img_icon"
@@ -14,7 +14,56 @@
         android:background="#ffffff"
         android:padding="3dp"
         android:src="@mipmap/load_logo" />-->
+   <!-- <View
+        android:id="@+id/view_0"
+        android:layout_width="1dp"
+        android:layout_height="10dp"
+
+        android:layout_marginLeft="80dp"
+        android:background="#A6A6A6" />
+
+    <View
+        android:id="@+id/view_1"
+        android:layout_width="1dp"
+        android:layout_height="25dp"
+
+        android:layout_marginLeft="80dp"
+        android:background="#A6A6A6" />-->
+
     <TextView
+        android:id="@+id/tV_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="2014-02-30"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="75dp"
+        android:src="@drawable/color_circle"
+       />
+
+    <View
+        android:id="@+id/view_2"
+        android:layout_width="1dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/image"
+        android:layout_marginLeft="82dp"
+        android:background="#A6A6A6" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:layout_marginTop="-15dp"
+        android:layout_toRightOf="@+id/image"
+
+        android:padding="0dp">
+   <!-- <TextView
         android:id="@+id/tv_timetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +74,18 @@
         android:text="诊疗时间："
         android:textColor="@color/black"
         android:textSize="@dimen/small_text_size"/>
-
+        <TextView
+            android:id="@+id/tV_tim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_timetext"
+            android:layout_marginBottom="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/tv_timetext"
+            android:text="2016-12-12"
+            android:textColor="@color/black"
+            android:textSize="@dimen/small_text_size"/>-->
     <TextView
         android:id="@+id/tv_num"
         android:layout_width="wrap_content"
@@ -34,31 +94,20 @@
         android:layout_alignBottom="@+id/tv_percent"
 
         android:layout_toRightOf="@+id/tv_percent"
-        android:layout_alignLeft="@+id/tV_time"
+        android:layout_marginLeft="10dp"
         android:text="张强"
         android:textColor="@color/black"
         android:textSize="@dimen/small_text_size" />
 
-    <TextView
-        android:id="@+id/tV_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tv_timetext"
-        android:layout_marginBottom="0dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="2dp"
-        android:layout_toRightOf="@+id/tv_timetext"
-        android:text="2016-12-12"
-        android:textColor="@color/black"
-        android:textSize="@dimen/small_text_size"/>
+
 
     <TextView
         android:id="@+id/tv_percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_timetext"
-        android:layout_alignLeft="@+id/tv_timetext"
+
         android:text="就诊人："
+        android:layout_marginLeft="6dp"
         android:textColor="@color/black"
         android:textSize="@dimen/small_text_size" />
 
@@ -156,11 +205,11 @@
         android:textColor="@color/black" />
 
 
-    <View
+   <!-- <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/layout_height_0.5"
         android:layout_below="@+id/tv_title"
         android:layout_marginTop="8dp"
-        android:background="@color/divider_color" />
-
+        android:background="@color/divider_color" />-->
+    </RelativeLayout>
 </RelativeLayout>

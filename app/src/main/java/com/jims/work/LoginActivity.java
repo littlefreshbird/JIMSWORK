@@ -4,14 +4,28 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.alibaba.fastjson.JSON;
+import com.jims.work.bean.BaseBean;
+import com.jims.work.utils.AppUtils;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+
+import java.io.IOException;
 
 import static com.jims.work.R.id.etPassWord;
 
@@ -65,13 +79,13 @@ public class LoginActivity extends Activity {
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            /*    if(!et_account.getText().toString().isEmpty()) {
+                if(!et_account.getText().toString().isEmpty()) {
 
                     if (!et_password.getText().toString().isEmpty()) {
                         if(AppUtils.checkNetwork(LoginActivity.this)==true) {
-                            pd = ProgressDialog.show(LoginActivity.this, "请稍候", "正在连接服务器...", true, true);
+                           /* pd = ProgressDialog.show(LoginActivity.this, "请稍候", "正在连接服务器...", true, true);
                             Retrofit retrofit = new Retrofit.Builder()
-                                    .baseUrl("http://192.168.2.215:8080/restfulDemo/")
+                                    .baseUrl("http://192.168.2.215:8080/Mybaits/")
                                     .addConverterFactory(GsonConverterFactory.create())
                                     .build();
                             LoginService loginService = retrofit.create(LoginService.class);
@@ -106,7 +120,80 @@ public class LoginActivity extends Activity {
 
                                     // do onFailure代码
                                 }
+                            });*/
+
+                            Thread thread=new Thread(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    String LOGIN_NAME=et_account.getText().toString().trim();
+                                    String PASSWORD=et_password.getText().toString().trim();
+                                    String url="http://192.168.2.212:8088/JimsService/user/userLogin.do";
+                                    //创建OkHttpClient对象，用于稍后发起请求
+                                    OkHttpClient client = new OkHttpClient();
+                                    //通过FormEncodingBuilder对象添加多个请求参数键值对
+                                    FormEncodingBuilder builder = new FormEncodingBuilder();
+                                    builder.add("LOGIN_NAME", LOGIN_NAME)
+                                            .add("PASSWORD", PASSWORD);
+                                    //通过FormEncodingBuilder对象构造Post请求体
+                                    RequestBody body = builder.build();
+                                    //通过请求地址和请求体构造Post请求对象Request
+                                    Request request = new Request.Builder().url(url).post(body).build();
+
+                                    try {
+                                        Response response = client.newCall(request).execute();
+                                    } catch (IOException e1) {
+                                        // TODO Auto-generated catch block
+                                        e1.printStackTrace();
+                                    }
+
+
+                                    //android不允许UI线程中访问网络 根据Request对象发起POST异步Http请求，并添加请求回调  请求加入调度
+                                    client.newCall(request).enqueue(new Callback() {
+                                        @Override
+                                        public void onResponse(final Response response) throws IOException {
+                                            //请求成功，此处对请求结果进行处理
+                                            String result=response.body().string();
+                                            Log.e("result", result);
+                                            BaseBean b= JSON.parseObject(result, BaseBean.class);
+                                            Log.e("b", b+"");
+                                            //获取get值
+                                            String respcode=b.getRespcode();
+                                            String message=b.getMessage();
+                                            Log.e("message", message);
+                                            String str=null;
+                                            if(respcode.equals("-1")){
+                                                str="用户不存在";
+                                            }
+                                            if(respcode.equals("1")){
+                                                str="用户名或密码不正确";
+                                            }
+                                            if(respcode.equals("0")){
+
+                                                str="登录成功";
+                                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                                startActivity(intent);
+                                                finish();
+                                            }
+                                            Looper.prepare();
+                                            showToast(str);
+                                            Looper.loop();
+                                        }
+
+                                        @Override
+                                        public void onFailure(Request request, IOException e) {
+                                            //请求失败
+                                        }
+                                    });
+
+                                }
                             });
+
+                            thread.start();
+
+
+
+
                         }else{
                             showToast("亲，您还没有联网!");
                         }
@@ -115,12 +202,12 @@ public class LoginActivity extends Activity {
                     }
                 }else{
                     showToast("用户名不能为空");
-                }*/
+                }
 
-
+/*
                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
-                finish();
+                finish();*/
             }
         });
         //注册按钮跳转到注册页面
