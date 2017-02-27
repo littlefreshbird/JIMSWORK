@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Looper;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,17 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.alibaba.fastjson.JSON;
-import com.jims.work.bean.BaseBean;
-import com.jims.work.utils.AppUtils;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.Response;
-
-import java.io.IOException;
+import com.jims.work.utils.Utils;
 
 import static com.jims.work.R.id.etPassWord;
 
@@ -79,11 +67,15 @@ public class LoginActivity extends Activity {
        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!et_account.getText().toString().isEmpty()) {
+                // 防止按钮连续点击
+                if (Utils.isFastClick()) {
+                    return;
+                }
+            /*    if(!et_account.getText().toString().isEmpty()) {
 
                     if (!et_password.getText().toString().isEmpty()) {
                         if(AppUtils.checkNetwork(LoginActivity.this)==true) {
-                           /* pd = ProgressDialog.show(LoginActivity.this, "请稍候", "正在连接服务器...", true, true);
+                           *//* pd = ProgressDialog.show(LoginActivity.this, "请稍候", "正在连接服务器...", true, true);
                             Retrofit retrofit = new Retrofit.Builder()
                                     .baseUrl("http://192.168.2.215:8080/Mybaits/")
                                     .addConverterFactory(GsonConverterFactory.create())
@@ -120,7 +112,7 @@ public class LoginActivity extends Activity {
 
                                     // do onFailure代码
                                 }
-                            });*/
+                            });*//*
 
                             Thread thread=new Thread(new Runnable() {
 
@@ -128,13 +120,13 @@ public class LoginActivity extends Activity {
                                 public void run() {
                                     String LOGIN_NAME=et_account.getText().toString().trim();
                                     String PASSWORD=et_password.getText().toString().trim();
-                                    String url="http://192.168.2.212:8088/JimsService/user/userLogin.do";
+                                    String url="http://192.168.2.212:8888/JimsService/user/userLogin.do";
                                     //创建OkHttpClient对象，用于稍后发起请求
                                     OkHttpClient client = new OkHttpClient();
                                     //通过FormEncodingBuilder对象添加多个请求参数键值对
                                     FormEncodingBuilder builder = new FormEncodingBuilder();
-                                    builder.add("LOGIN_NAME", LOGIN_NAME)
-                                            .add("PASSWORD", PASSWORD);
+                                    builder.add("account", LOGIN_NAME)
+                                            .add("password", PASSWORD);
                                     //通过FormEncodingBuilder对象构造Post请求体
                                     RequestBody body = builder.build();
                                     //通过请求地址和请求体构造Post请求对象Request
@@ -202,12 +194,18 @@ public class LoginActivity extends Activity {
                     }
                 }else{
                     showToast("用户名不能为空");
-                }
+                }*/
 
 /*
                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();*/
+
+
+
+
+
+
             }
         });
         //注册按钮跳转到注册页面
@@ -229,6 +227,7 @@ public class LoginActivity extends Activity {
     }
 
     public void showToast(String str){
-        Toast.makeText(LoginActivity.this, str, Toast.LENGTH_LONG).show();
+        Toast.makeText(LoginActivity.this, str, Toast.LENGTH_SHORT).show();
     }
+
 }

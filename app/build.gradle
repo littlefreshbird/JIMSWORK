@@ -21,7 +21,11 @@ android {
         }
     }
 }
-
+repositories {
+    flatDir{
+        dirs 'libs'
+    }
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -52,4 +56,8 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
     compile files('src/main/libs/fastjson-1.1.38.jar')
+    compile files('src/main/libs/MobCommons-2016.1012.1447.jar')
+    compile files('src/main/libs/MobTools-2016.1012.1447.jar')
+
+
 }
