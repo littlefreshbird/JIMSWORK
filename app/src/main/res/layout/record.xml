@@ -4,147 +4,139 @@
               android:layout_height="match_parent"
               android:background="@color/white"
               android:orientation="vertical">
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
         android:background="@drawable/biankaugn"
         >
-
         <EditText
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
-
-            android:layout_marginLeft="20dp"
             android:background="@drawable/biankaugn"
-            android:enabled="false"
-            android:hint="昵称:"
-            android:textColorHint="@color/dim_foreground_material_light"
+            android:layout_height="60dp"
             android:textSize="@dimen/micro_text_size"
+            android:enabled="false"
+            android:textColorHint="@color/dim_foreground_material_light"
+            android:hint="昵称:"
             />
-
         <EditText
             android:id="@+id/editone"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
             android:background="@drawable/biankaugn"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_height="60dp"
+            android:textSize="@dimen/micro_text_size"
             android:gravity="center"
             android:hint="匿名"
-            android:textSize="@dimen/micro_text_size"
             />
     </RelativeLayout>
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@drawable/biankaugn"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:orientation="horizontal"
+        android:background="@drawable/biankaugn"
         >
-
         <EditText
             android:id="@+id/textthree"
-            android:layout_width="wrap_content"
+            android:layout_width="260dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
             android:enabled="false"
-            android:hint="性别:"
+            android:textSize="@dimen/micro_text_size"
             android:paddingTop="5dip"
             android:textColorHint="@color/dim_foreground_material_light"
-            android:textSize="@dimen/micro_text_size"/>
+            android:hint="性别:"/>
 
         <RadioGroup
             android:id="@+id/rgSex"
             android:layout_width="wrap_content"
-            android:layout_height="60dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
+            android:layout_height="60dp"
+            android:paddingTop="10dip"
             android:checkedButton="@+id/male"
-            android:orientation="horizontal"
-            android:paddingTop="10dip">
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radiobutton1"
+                android:textSize="10dp"
+                android:checked="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="男"
-                android:textSize="10dp"/>
+                android:text="男"/>
 
             <RadioButton
                 android:id="@+id/radiobutton2"
+                android:layout_marginEnd="1dp"
+                android:textSize="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="1dp"
-                android:text="女"
-                android:textSize="10dp"/>
+                android:text="女"/>
         </RadioGroup>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal"
         android:background="@drawable/biankaugn"
         >
-
         <EditText
             android:id="@+id/textfour"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
             android:enabled="false"
-            android:hint="出生日期："
+            android:textSize="@dimen/micro_text_size"
             android:paddingTop="5dip"
             android:textColorHint="@color/dim_foreground_material_light"
-            android:textSize="@dimen/micro_text_size"/>
-
+            android:hint="出生日期："/>
         <TextView
             android:id="@+id/textfive"
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="20dp"
-            android:gravity="center"
             android:hint="请选择出生日期"
+           android:gravity="center"
+            android:layout_alignParentRight="true"
             android:textSize="@dimen/micro_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
             />
     </RelativeLayout>
 
 
+
     <RelativeLayout
         android:id="@+id/Layout_bottom"
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        >
-
+         >
         <Button
             android:id="@+id/buttonone"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/bg_edittext"
-            android:gravity="center"
-            android:paddingTop="5dip"
-            android:text="选择已有档案"
             android:textColor="@color/white"
-            android:textSize="@dimen/small_text_size"/>
-
+            android:background="@drawable/bg_edittext"
+            android:paddingTop="5dip"
+            android:layout_marginTop="20dp"
+            android:text="选择已有档案"
+            android:textSize="@dimen/small_text_size"
+            android:gravity="center"/>
         <Button
             android:id="@+id/buttontwo"
             android:layout_width="300dp"
             android:layout_height="40dp"
+            android:layout_below="@+id/buttonone"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp"
             android:background="@drawable/bg_edittext"
-            android:gravity="center"
             android:paddingTop="5dip"
             android:text="完成"
+            android:layout_marginTop="20dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/small_text_size"/>
+            android:textSize="@dimen/small_text_size"
+            android:gravity="center"/>
     </RelativeLayout>
 </LinearLayout>

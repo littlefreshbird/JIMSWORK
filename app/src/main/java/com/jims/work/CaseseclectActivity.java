@@ -20,14 +20,21 @@ import butterknife.ButterKnife;
 
 /**
  * Created by Just on 2017/1/12.
+ * 病历查询
  */
 
-public class CaseseclectActivity extends AppCompatActivity {
+public class CaseseclectActivity extends BaseActivity {
     private ArrayList<MyhistoryseclectInfo> doctorsList = new ArrayList<MyhistoryseclectInfo>();
     private MyListView mListView;
     private TextView top_title_text;
 
     MyhistoryListseclectAdapter mDoctorsListAdapter;
+
+    /**
+     *
+     * @param savedInstanceState
+     * 初始化页面布局
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +51,10 @@ public class CaseseclectActivity extends AppCompatActivity {
             }
         });
         ButterKnife.bind(this);
-
-      //setCustomActionBar();
         initGoods();
         initview();
     }
-
+    //加载数据
     private void initGoods() {
         doctorsList.add(new MyhistoryseclectInfo("感冒", "承德市第一附属医院", "心血管内科", "", "100001", "2016-12-15", "填写时间：", "填写人：", "张强"));
         doctorsList.add(new MyhistoryseclectInfo("发烧", "承德市中心医院", "神经外科", "", "100002", "2016-12-01", "填写时间：", "填写人：", "张强"));
@@ -64,7 +69,7 @@ public class CaseseclectActivity extends AppCompatActivity {
         doctorsList.add(new MyhistoryseclectInfo("咽喉不痛了", "承德市妇幼保健院", "小儿科", "", "100003", "2015-08-14", "填写时间：", "填写人：", "张强"));
 
     }
-
+    //绑定数据源
     private void initview() {
         mListView = (MyListView) findViewById(R.id.listView1);
         mDoctorsListAdapter = new MyhistoryListseclectAdapter(this, doctorsList);
@@ -92,19 +97,7 @@ public class CaseseclectActivity extends AppCompatActivity {
         });
 
     }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_seclect, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
     //点击事件
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

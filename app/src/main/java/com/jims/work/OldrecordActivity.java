@@ -26,15 +26,18 @@ import java.util.HashMap;
  * 选择已有档案
  */
 
-public class OldrecordActivity extends AppCompatActivity implements View.OnClickListener{
+public class OldrecordActivity extends BaseActivity implements View.OnClickListener{
     private Button wancheng;
     private RadioButton radiobutton1;
-
+    /**
+     *
+     * @param savedInstanceState
+     * 初始化页面布局
+     */
     @Override
     public void onCreate(Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.oldrecord);
-
         //绑定Layout里面的ListView
         ListView list = (ListView) findViewById(R.id.listview01);
         //生成动态数组，加入数据
@@ -87,7 +90,7 @@ public class OldrecordActivity extends AppCompatActivity implements View.OnClick
         wancheng=(Button)findViewById(R.id.wancheng);
         wancheng.setOnClickListener(this);
 
-        setCustomActionBar();
+        setCustomActionBar("选择档案");
     }
     public void onClick(View v){
         switch (v.getId()){
@@ -101,6 +104,13 @@ public class OldrecordActivity extends AppCompatActivity implements View.OnClick
         }
 
     }
+
+    /**
+     *
+     * @param menu
+     * @return
+     * 调用menu资源
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater mf=getMenuInflater();
@@ -121,17 +131,5 @@ public class OldrecordActivity extends AppCompatActivity implements View.OnClick
                 return super.onOptionsItemSelected(item);
         }
     }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_oldrecord, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
 }

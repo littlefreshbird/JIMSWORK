@@ -28,9 +28,21 @@ public  class BaseActivity extends AppCompatActivity implements BaseInterfaces {
 		super.onCreate(arg0);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		initViews();
+		//setCustomActionBar();
 	}
 	public void setCustomActionBar(String title) {
 		ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
+	//全局唯一性
+	private static class LazyHolder {
+
+		private static final BaseActivity INSTANCE = new BaseActivity();
+	}
+
+	public static final BaseActivity getInstance() {
+		return LazyHolder.INSTANCE;
+	}
+	public void setCustomActionBar(String str) {
+		ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
 		View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
 		TextView textView= ButterKnife.findById(mActionBarView,android.R.id.title);
 		textView.setText(title);

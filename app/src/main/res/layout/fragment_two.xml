@@ -2,10 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-              android:background="@color/colorPrimary"
+              android:background="@color/white"
+
     android:orientation="vertical" >
 
-
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:text="暂定格式"
+        android:background="@drawable/biankuang"
+        android:layout_marginLeft="20dp"
+        android:textSize="@dimen/small_middle_text_size"
+        android:textColor="@color/colorText"
+        android:gravity="center"/>
 
 
 </LinearLayout>

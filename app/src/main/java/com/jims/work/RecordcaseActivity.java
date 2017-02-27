@@ -22,12 +22,15 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+import butterknife.ButterKnife;
+
 
 /**
  * Created by Just on 2016/12/29.
+ * 选择提交病例的档案
  */
 
-public class RecordcaseActivity extends AppCompatActivity {
+public class RecordcaseActivity extends BaseActivity {
     private EditText editone;
     private RadioButton radiobutton1,radiobutton2;
     private TextView textone,textthree,textfour,textfive ;
@@ -38,22 +41,23 @@ public class RecordcaseActivity extends AppCompatActivity {
     private int mMonth;
     private int mDay;
 
-
+    /**
+     *
+     * @param savedInstanceState
+     * 页面布局的初始化
+     */
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.record_case);
-        setCustomActionBar();
+        setCustomActionBar("提交病例");
         editone = (EditText) findViewById(R.id.editone);
-      //  edittwo = (EditText) findViewById(R.id.edittwo);
         radiobutton1= (RadioButton) findViewById(R.id.radiobutton1);
         radiobutton2= (RadioButton) findViewById(R.id.radiobutton2);
-        //textone= (TextView) findViewById(R.id.textone);
         textthree= (TextView) findViewById(R.id.textthree);
         textfive= (TextView) findViewById(R.id.textfive);
         buttonone=(Button)findViewById(R.id.buttonone);
         buttontwo=(Button)findViewById(R.id.buttontwo);
-        //buttontwo.setBackgroundColor(Color.GREEN);
         radiogroup=(RadioGroup) findViewById(R.id.rgSex);
         radiogroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -91,6 +95,13 @@ public class RecordcaseActivity extends AppCompatActivity {
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
     }
+
+    /**
+     *
+     * @param id
+     * @return
+     * 选择的时间控件
+     */
     @Override
     protected Dialog onCreateDialog(int id) {
         // TODO Auto-generated method stub
@@ -128,17 +139,5 @@ public class RecordcaseActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    private void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_recordcase, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
 }
