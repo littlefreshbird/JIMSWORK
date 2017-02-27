@@ -3,11 +3,13 @@ package com.jims.work.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
+import com.jims.work.Contants;
 import com.jims.work.FreeTreatTaskActivity;
 import com.jims.work.LoginActivity;
 import com.jims.work.MoreActivity;
@@ -17,26 +19,60 @@ import com.jims.work.MyEvaluateActivity;
 import com.jims.work.MyHistoryListActivity;
 import com.jims.work.R;
 import com.jims.work.UserInfoActivity;
+import com.jims.work.application.JimsApplication;
+import com.jims.work.bean.User;
+import com.jims.work.fragment.base.BaseFragment;
 
 
-
-
-public class MineFragment extends Fragment implements View.OnClickListener {
+public class MineFragment extends BaseFragment implements View.OnClickListener {
     private View layout;
+    private Button mbtnLogout;
+    private TextView mTxtUserName;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (layout == null){
 
             layout = inflater.inflate(R.layout.fragment_mine,container,false);
         }
+        mbtnLogout = (Button) layout.findViewById(R.id.btn_logout);
+        mTxtUserName = (TextView) layout.findViewById(R.id.txt_username);
         setOnListener();
+        init();
         return layout;
     }
 
+    public void init() {
+
+        //showUser();
+    }
+
+
+    private  void showUser(){
+
+        User user = JimsApplication.getInstance().getUser();
+        if(user == null){
+
+            mbtnLogout.setVisibility(View.GONE);
+
+            mTxtUserName.setText(R.string.personal_login);
+
+        }
+        else{
+
+            mbtnLogout.setVisibility(View.VISIBLE);
+          /*  if(!TextUtils.isEmpty(user.getLogo_url()))
+                Picasso.with(getActivity()).load(Uri.parse(user.getLogo_url())).into(mImageHead);*/
+
+            mTxtUserName.setText(user.getName());
+
+        }
+
+    }
     private void setOnListener() {
 
-       // layout.findViewById(R.id.userIcon).setOnClickListener(this);
+        layout.findViewById(R.id.userIcon).setOnClickListener(this);
         layout.findViewById(R.id.layout_userinfo).setOnClickListener(this);
-        layout.findViewById(R.id.personal_login_button).setOnClickListener(this);
+        layout.findViewById(R.id.txt_username).setOnClickListener(this);
         layout.findViewById(R.id.layout_more).setOnClickListener(this);
         layout.findViewById(R.id.layout_mine_evaluate).setOnClickListener(this);
         layout.findViewById(R.id.layout_mine_complaint).setOnClickListener(this);
@@ -50,15 +86,14 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-           /* case R.id.userIcon: // 登录
-                new SelectPopuWindow(getActivity(), layout);
-                break;*/
-
-            case R.id.personal_login_button: // 登录
+           case R.id.userIcon: // 点击头像登录
+               login();
+                break;
+            case R.id.txt_username: // 点击文字登录
                 login();
                 break;
             case R.id.layout_userinfo: // 个人信息
-                startActivity(new Intent(getActivity(), UserInfoActivity.class));
+                startActivity(new Intent(getActivity(), UserInfoActivity.class),true);
                 break;
             case R.id.layout_mine_evaluate: // 我的评价
                 startActivity(new Intent(getActivity(), MyEvaluateActivity.class));
@@ -108,9 +143,14 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     }
     private void login() {
         Intent intent = new Intent(getActivity(), LoginActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, Contants.REQUEST_CODE);
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        showUser();
+    }
 
 }

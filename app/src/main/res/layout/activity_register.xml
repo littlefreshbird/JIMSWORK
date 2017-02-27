@@ -159,7 +159,7 @@
 
     </LinearLayout>
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:id="@+id/layout_login_topbar"
         android:layout_width="fill_parent"
         android:layout_height="45dip">
@@ -182,6 +182,6 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/black"
             android:textSize="@dimen/small_middle_text_size" />
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 </LinearLayout>

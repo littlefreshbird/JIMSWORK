@@ -9,8 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,8 +23,6 @@ import butterknife.ButterKnife;
 public class RegisterActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.layout_login_topbar)
-    RelativeLayout layoutLoginTopbar;
     @BindView(R.id.edit_mobile)
     EditText editMobile;
     @BindView(R.id.access_password)
@@ -35,8 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText editCode;
     @BindView(R.id.access_next)
     Button accessNext;
-    @BindView(R.id.img_registerback)
-    ImageView imgRegisterback;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +52,12 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         //返回
-        imgRegisterback.setOnClickListener(new View.OnClickListener() {
+       /* imgRegisterback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
-        });
+        });*/
     }
     public void checkUserInput(){
         if(!"".equals(editMobile.getText().toString().trim())){
@@ -77,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                     showToast("验证码不能为空");
                 }
             }else{
-                showToast("手机号码格式不对哦");
+                showToast("手机号码格式不对");
             }
         }else {
             showToast("手机号码不能为空");
