@@ -49,7 +49,7 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'com.squareup.okio:okio:1.main_page_icon_quick_ask.0'
     compile 'com.google.code.gson:gson:2.8.0'
-
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile files('src/main/libs/fastjson-1.1.38.jar')
 }

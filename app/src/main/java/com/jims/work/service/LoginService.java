@@ -13,6 +13,6 @@ import retrofit2.http.POST;
  */
 
 public interface LoginService {
-    @POST("login/")
+    @POST("/user/login")
     Call<LoginResult> getData(@Body User user);
 }
