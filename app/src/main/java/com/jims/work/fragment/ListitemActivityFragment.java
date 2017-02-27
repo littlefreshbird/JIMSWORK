@@ -18,7 +18,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jims.work.MoreActivity;
+import com.jims.work.EvaluateActivity;
 import com.jims.work.MyEvaluateDetailAcivity;
 import com.jims.work.R;
 
@@ -116,7 +116,7 @@ public class ListitemActivityFragment extends  Fragment {
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					Intent intent = new Intent(getActivity(),
-							MoreActivity.class);
+							EvaluateActivity.class);
 					startActivity(intent);
 
 
@@ -142,7 +142,7 @@ public class ListitemActivityFragment extends  Fragment {
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					Intent intent = new Intent(getActivity(),
-							MoreActivity.class);
+							EvaluateActivity.class);
 					startActivity(intent);
 
 
