@@ -26,10 +26,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+<<<<<<< HEAD
+ * Created by Just on 2017/1/11.
+ * 我的问诊
+=======
  * Created by Just on 2017/1/main_page_icon_quick_ask.
+>>>>>>> origin/master
  */
 
-public class ReplyActivity extends AppCompatActivity {
+public class ReplyActivity extends BaseActivity {
     private ListView lv_user_comments;
     private Button btn_comment, btn_reply;
     private EditText edt_reply;
@@ -51,7 +56,7 @@ public class ReplyActivity extends AppCompatActivity {
                 ratingBar.setRating(rating);
             }
         });*/
-        setCustomActionBar();
+        setCustomActionBar("我的问诊");
         initView();
         initCommentData();
     }
@@ -161,7 +166,6 @@ public class ReplyActivity extends AppCompatActivity {
                             Comment comment = new Comment();
                             comment.setUsername("方医生");
                             comment.setContent(edt_reply.getText().toString());
-
                             commentList.add(comment);
                             commentAdapter.clearList();
                             commentAdapter.updateList(commentList);
@@ -233,17 +237,5 @@ public class ReplyActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_reply, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
 }

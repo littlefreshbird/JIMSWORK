@@ -28,7 +28,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class NewDoctorListActivity extends AppCompatActivity {
+public class NewDoctorListActivity extends BaseActivity {
 
     @BindView(R.id.dropDownMenu)
     DropDownMenu dropDownMenu;
@@ -58,7 +58,7 @@ public class NewDoctorListActivity extends AppCompatActivity {
         context = NewDoctorListActivity.this;
         initGoods();
         initview();
-        setCustomActionBar();
+        setCustomActionBar("找医生");
     }
     //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
@@ -176,17 +176,5 @@ public class NewDoctorListActivity extends AppCompatActivity {
             default:}
         return super.onOptionsItemSelected(item);
     }
-    private void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_msg, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
 }

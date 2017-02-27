@@ -33,8 +33,9 @@ import com.jims.work.fragment.TwoFragment;
 
 /**
  * Created by Just on 2017/1/5.
+ * 我的服务
  */
-public class MyServiceActivity extends AppCompatActivity {
+public class MyServiceActivity extends BaseActivity {
     private OneFragment f1 = new OneFragment();
     private TwoFragment f2 = new TwoFragment();
     private ThreeFragment f3 = new ThreeFragment();
@@ -61,7 +62,7 @@ public class MyServiceActivity extends AppCompatActivity {
         setValues();
         setUpViewPager();
         setListeners();
-        setCustomActionBar();
+        setCustomActionBar("我的服务");
     }
 
     private void initValues() {
@@ -225,19 +226,6 @@ public class MyServiceActivity extends AppCompatActivity {
         private String string;
     }
 
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_service, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
     //点击事件
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

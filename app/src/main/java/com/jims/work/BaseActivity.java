@@ -12,9 +12,11 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
+import android.widget.TextView;
 
 import com.jims.work.utils.BaseInterfaces;
 
+import butterknife.ButterKnife;
 
 
 public  class BaseActivity extends AppCompatActivity implements BaseInterfaces {
@@ -25,12 +27,23 @@ public  class BaseActivity extends AppCompatActivity implements BaseInterfaces {
 		// TODO Auto-generated method stub
 		super.onCreate(arg0);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setCustomActionBar();
+		//setCustomActionBar();
 	}
-	public void setCustomActionBar() {
+	//全局唯一性
+	private static class LazyHolder {
+
+		private static final BaseActivity INSTANCE = new BaseActivity();
+	}
+
+	public static final BaseActivity getInstance() {
+		return LazyHolder.INSTANCE;
+	}
+	public void setCustomActionBar(String str) {
 		ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
 		View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
 		ActionBar actionBar = getSupportActionBar();
+		TextView textView= ButterKnife.findById(mActionBarView,android.R.id.title);
+		textView.setText(str);
 		actionBar.setCustomView(mActionBarView, lp);
 		actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 		actionBar.setDisplayShowCustomEnabled(true);

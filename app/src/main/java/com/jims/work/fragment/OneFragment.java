@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 
 import com.jims.work.R;
 
+/**
+ * 我的问诊
+ */
 public class OneFragment extends Fragment {
 
 	private View view;

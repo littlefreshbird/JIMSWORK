@@ -22,13 +22,15 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
+import butterknife.ButterKnife;
+
 
 /**
  * Created by Just on 2016/12/29.
  * 创建档案或选择已有档案
  */
 
-public class RecordActivity extends AppCompatActivity {
+public class RecordActivity extends BaseActivity {
     private EditText editone,edittwo;
     private RadioButton radiobutton1,radiobutton2;
     private TextView textone,texttwo,textthree,textfour,textfive ;
@@ -38,18 +40,19 @@ public class RecordActivity extends AppCompatActivity {
     private int mYear;
     private int mMonth;
     private int mDay;
-
+    /**
+     *
+     * @param savedInstanceState
+     * 初始化页面布局
+     */
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.record);
-        setCustomActionBar();
+        setCustomActionBar("注册档案");
         editone = (EditText) findViewById(R.id.editone);
-       // edittwo = (EditText) findViewById(R.id.edittwo);
         radiobutton1= (RadioButton) findViewById(R.id.radiobutton1);
         radiobutton2= (RadioButton) findViewById(R.id.radiobutton2);
-      //  textone= (TextView) findViewById(R.id.textone);
-        //texttwo= (TextView) findViewById(R.id.texttwo);
         textthree= (TextView) findViewById(R.id.textthree);
         textfour= (TextView) findViewById(R.id.textfour);
         textfive= (TextView) findViewById(R.id.textfive);
@@ -96,6 +99,13 @@ public class RecordActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     *
+     * @param id
+     * @return
+     * 展现时钟控件
+     */
     @Override
     protected Dialog onCreateDialog(int id) {
         // TODO Auto-generated method stub
@@ -114,6 +124,10 @@ public class RecordActivity extends AppCompatActivity {
             updateDisplay();
         }
     };
+
+    /**
+     * 展示时间画面
+     */
     private void updateDisplay() {
         textfive.setText(new StringBuilder().append(mYear).append("-")
                 .append(mMonth + 1).append("-").append(mDay).append(" "));
@@ -144,17 +158,5 @@ public class RecordActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    private void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_record, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
 }

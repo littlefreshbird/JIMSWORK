@@ -42,18 +42,12 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import butterknife.OnClick;
-
-import static com.baidu.location.h.i.v;
-import static com.jims.work.fragment.ServiceFragment.num;
-
-
 /**
  * Created by Just on 2016/12/25.
  * 提交病例
  */
 
-public class PostActivity extends AppCompatActivity implements View.OnClickListener {
+public class PostActivity extends BaseActivity implements View.OnClickListener {
     private TextView neike,waike,jingshenke,meirongke,fangsheke,nanke,muyingke,guke,huayanke;
     private EditText edit;
     private GridView gridView;
@@ -71,6 +65,11 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
     float scaleWidth;
     float scaleHeight;
 
+    /**
+     *
+     * @param savedInstanceState
+     * 初始化页面布局
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +87,6 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
         muyingke=(TextView) findViewById(R.id.muyingke);
         guke=(TextView) findViewById(R.id.guke);
         huayanke=(TextView) findViewById(R.id.huayanke);
-
         button_1.setOnClickListener(this);
         neike.setOnClickListener(this);
         waike.setOnClickListener(this);
@@ -99,7 +97,7 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
         muyingke.setOnClickListener(this);
         guke.setOnClickListener(this);
         huayanke.setOnClickListener(this);
-       setCustomActionBar();
+        setCustomActionBar("提交病情");//actionbar格式
         /*
          * 防止键盘挡住输入框
          * 不希望遮挡设置activity属性 android:windowSoftInputMode="adjustPan"
@@ -187,10 +185,15 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
+
+    /**
+     *
+     * 点击事件
+     */
    public void onClick(View v){
          switch (v.getId()) {
              case R.id.button_1:
-                 Intent intent = new Intent(PostActivity.this, RecordActivity.class);
+                 Intent intent = new Intent(PostActivity.this,RecordActivity.class);//
                  startActivity(intent);
                  PostActivity.this.finish();
                  break;
@@ -289,19 +292,21 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
         finish();
         return super.onSupportNavigateUp();
     }*/
-    //调用menu中的main资源
+
+    /**
+     *
+     *  调用menu中的main资源
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater mf=getMenuInflater();
         mf.inflate(R.menu.main,menu);
         return super.onCreateOptionsMenu(menu);
     }
-    //点击事件
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-
                 finish();
             case R.id.action:
                openInputMethod(edit);
@@ -354,7 +359,16 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
 
         }, 200);
     }
-    //获取图片路径 响应startActivityForResult
+
+
+    /**
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     * 获取图片路径 响应startActivityForResult
+     *
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //打开图片
@@ -379,7 +393,9 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
             }
         }  //end if 打开图片
     }
-    //刷新图片
+    /**
+     * 刷新图片
+     */
     @Override
     protected void onResume() {
         super.onResume();
@@ -436,18 +452,6 @@ public class PostActivity extends AppCompatActivity implements View.OnClickListe
         });
         builder.create().show();
     }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
 }
 
