@@ -204,4 +204,9 @@
     <color name="divider_color">#cccccc</color>
   <color name="text_color">#222222</color>
     <color name="line">#ffd3dde6</color>
+
+  <!--下拉刷新背景色-->
+  <color name="grey_refresh_color">#d7d7d7</color>
+  <!--下拉刷新字体色-->
+  <color name="grey_refresh_color_text">#ff9e9e9e</color>
 </resources>

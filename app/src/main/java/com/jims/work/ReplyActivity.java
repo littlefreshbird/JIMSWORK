@@ -26,8 +26,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+<<<<<<< HEAD
  * Created by Just on 2017/1/11.
  * 我的问诊
+=======
+ * Created by Just on 2017/1/main_page_icon_quick_ask.
+>>>>>>> origin/master
  */
 
 public class ReplyActivity extends BaseActivity {

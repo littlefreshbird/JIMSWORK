@@ -103,8 +103,9 @@
         <activity android:name=".DoctorDetailActivity" />
         <activity android:name=".FreeTreatTaskActivity" />
         <activity android:name=".MyHistoryDetailActivity" />
-        <activity android:name=".SubscibeActivity"></activity>
-        <activity android:name=".QRCodeActivity"></activity>
+        <activity android:name=".SubscibeActivity" />
+        <activity android:name=".QRCodeActivity" />
+        <activity android:name=".CodeScanActivity"></activity>
     </application>
 
 </manifest>

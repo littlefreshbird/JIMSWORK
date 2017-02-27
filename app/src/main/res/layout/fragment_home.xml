@@ -82,7 +82,14 @@
         android:layout_height="0.1dp"
         android:background="@color/gray" />
 
-    <ScrollView android:layout_height="wrap_content"
+    <com.jims.work.pulltorefresh.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_relativelayout">
+    <include layout="@layout/refresh_head" />
+    <com.jims.work.pulltorefresh.PullableScrollView
+        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
@@ -110,5 +117,7 @@
 
 
         </LinearLayout>
-    </ScrollView>
+    </com.jims.work.pulltorefresh.PullableScrollView>
+        <include layout="@layout/load_more" />
+    </com.jims.work.pulltorefresh.PullToRefreshLayout>
 </RelativeLayout>

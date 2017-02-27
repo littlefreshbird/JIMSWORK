@@ -20,12 +20,15 @@ import android.widget.TextView;
 import com.jims.work.CaseLoadingActivity;
 import com.jims.work.CaseseclectActivity;
 import com.jims.work.CityPositionActivity;
+import com.jims.work.CodeScanActivity;
 import com.jims.work.DoctorClassActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.NewDoctorListActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
 import com.jims.work.ScanPatientActivity;
+import com.jims.work.pulltorefresh.MyListener;
+import com.jims.work.pulltorefresh.PullToRefreshLayout;
 import com.jims.work.view.UPMarqueeView;
 
 import java.util.ArrayList;
@@ -70,6 +73,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         initupView();
         setOnListener();
         return layout;
+
 
     }
     private void initcity() {
@@ -134,22 +138,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }, 3000);
 
 
- /*   @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-           *//* case R.id.img_home_category: // 切换到分类
-                activeCategory();
-                break;*//*
-           // case R.id.img_home_search_code: // 二维码扫描
-              //  ((MainActivity) getActivity()).scanQRCode();
-               // break;
-
-
-
-            default:
-                break;
-        }
-    }
+ /*
 /**
          * 转到商品详情
          *//*
@@ -341,6 +330,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private void setOnListener() {
         layout.findViewById(R.id.layout_city).setOnClickListener(this);
+        layout.findViewById(R.id.img_home_search_code).setOnClickListener(this);
         layout.findViewById(R.id.quick_ask).setOnClickListener(this);
 
         layout.findViewById(R.id.quick_find).setOnClickListener(this);
@@ -350,7 +340,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_special3).setOnClickListener(this);
         layout.findViewById(R.id.layout_special4).setOnClickListener(this);
         layout.findViewById(R.id.layout_freetreat).setOnClickListener(this);
-
+        ((PullToRefreshLayout) layout.findViewById(R.id.refresh_view))
+                .setOnRefreshListener(new MyListener());
 
     }
 
@@ -361,7 +352,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), CityPositionActivity.class));
 
                 break;
-
+            case R.id.img_home_search_code: // 二维码扫描
+                startActivity(new Intent(getActivity(), CodeScanActivity.class));
+                break;
             case R.id.quick_ask: // 快速问诊
                 startActivity(new Intent(getActivity(), PostActivity.class));
                 //getActivity().finish();
@@ -388,11 +381,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), ScanPatientActivity.class));
                 break;
 
-            case R.id.img_home_search_code: // 二维码扫描
-                // ((MainActivity) getActivity()).scanQRCode();
-                break;
+
             default:
                 break;
         }
     }
+
 }

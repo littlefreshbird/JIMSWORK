@@ -3,9 +3,9 @@ package com.jims.work.fragment;
 /**
  * Created by Just on 2017/1/7.
  */
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +14,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.jims.work.MyEvaluateDetailAcivity;
-import com.jims.work.MyinquiryDetailAcivity;
 import com.jims.work.R;
 import com.jims.work.ReplyActivity;
 
@@ -23,9 +21,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static android.R.attr.name;
-import static com.jims.work.R.id.idquiry_listitem_userface;
 
 public class MyinquiryFragment extends  Fragment {
 
@@ -38,7 +33,7 @@ public class MyinquiryFragment extends  Fragment {
             R.drawable.image_myhead, R.drawable.image_myhead ,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead,R.drawable.image_myhead};
     private int[] imageids = { R.mipmap.dianzan,  R.mipmap.dianzan,
             R.mipmap.dianzan,  R.mipmap.dianzan, R.mipmap.dianzan, R.mipmap.dianzan, R.mipmap.dianzan, R.mipmap.dianzan, R.mipmap.dianzan};
-    private String[] time = {"2016-09-29","2016-08-23","2016-06-05","2015-12-18","2015-11-11","2015-10-10","2015-06-09","2015-05-03","2015-03-10"};
+    private String[] time = {"2016-09-29","2016-08-23","2016-06-05","2015-12-18","2015-12-08","2015-10-10","2015-06-09","2015-05-03","2015-03-10"};
     private String[] client ={"已完结","未完结","已完结","未完结","已完结","未完结","已完结","未完结","已完结"};
    // private  int[] count = {5,4,4,5,5,3,4,1,2};
    //private int[]  sexmaletop={R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male,R.drawable.male};
