@@ -1,5 +1,6 @@
 package com.jims.work;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,7 +28,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FreeTreatTaskActivity extends AppCompatActivity implements View.OnClickListener{
+public class FreeTreatTaskActivity extends AppCompatActivity {
     private ArrayList<TimelineRow> TimelineRowsList = new ArrayList<>();
     ArrayAdapter<TimelineRow> myAdapter;
     @BindView(R.id.timelineListView)
@@ -74,8 +76,17 @@ public class FreeTreatTaskActivity extends AppCompatActivity implements View.OnC
 
 
         //Get the ListView and Bind it with the Timeline Adapter
-        ListView myListView = (ListView) findViewById(R.id.timelineListView);
-        myListView.setAdapter(myAdapter);
+
+        timelineListView.setAdapter(myAdapter);
+        AdapterView.OnItemClickListener adapterListener = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TimelineRow row = TimelineRowsList.get(position);
+                startActivity(new Intent(FreeTreatTaskActivity.this,FreeTreatListActivity.class));
+
+            }
+        };
+        timelineListView.setOnItemClickListener(adapterListener);
 
     }
     public Date getRandomDate () {
@@ -128,8 +139,5 @@ public class FreeTreatTaskActivity extends AppCompatActivity implements View.OnC
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View view) {
 
-    }
 }

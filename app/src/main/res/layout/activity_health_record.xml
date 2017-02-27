@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_health_record"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.jims.work.HealthRecordActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/thistle">
+
+            <TextView
+                android:id="@+id/title_daytest"
+                style="@style/HealthRecordTitle"
+                android:text="日常检测"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_blood_pressure"
+                    style="@style/HealthRecordText"
+                    android:text="最近血压：120/80"/>
+
+                <TextView
+                    android:id="@+id/text_blood_sugar"
+                    style="@style/HealthRecordText"
+                    android:text="最近血糖：20"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_allergic"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/lightcoral">
+
+            <TextView
+                android:id="@+id/title_allergic"
+                style="@style/HealthRecordTitle"
+                android:text="过敏/症状"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_allergic"
+                    style="@style/HealthRecordText"
+                    android:text="过敏源：花粉、花生"/>
+
+                <TextView
+                    android:id="@+id/text_symptom"
+                    style="@style/HealthRecordText"
+                    android:text="症状：打喷嚏、起红点"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_immune"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/skyblue">
+
+            <TextView
+                android:id="@+id/title_immune"
+                style="@style/HealthRecordTitle"
+                android:text="免疫"/>
+
+            <TextView
+                android:id="@+id/text_immune"
+                style="@style/HealthRecordText"
+                android:layout_centerVertical="true"
+
+                android:text="免疫：暂无"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/layout_health"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/aquamarine">
+
+            <TextView
+                android:id="@+id/title_health"
+                style="@style/HealthRecordTitle"
+                android:text="健康史"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_family"
+                    style="@style/HealthRecordText"
+                    android:text="家族史：心脏病"/>
+
+                <TextView
+                    android:id="@+id/text_genetics"
+                    style="@style/HealthRecordText"
+                    android:text="遗传史：暂无"/>
+
+                <TextView
+                    android:id="@+id/text_trauma"
+                    style="@style/HealthRecordText"
+                    android:text="外伤史：暂无"/>
+
+                <TextView
+                    android:id="@+id/text_operation"
+                    style="@style/HealthRecordText"
+                    android:text="手术史：暂无"/>
+
+                <TextView
+                    android:id="@+id/text_transfusion"
+                    style="@style/HealthRecordText"
+                    android:text="输血史：暂无"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_medicine"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/cyan">
+
+            <TextView
+                android:id="@+id/title_medicine"
+                style="@style/HealthRecordTitle"
+                android:text="用药史"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_medicine"
+                    style="@style/HealthRecordText"
+                    android:text="最近用药：麦迪霉素、复方新诺明、诺氟沙星、乙酰螺旋霉素、黄连素、克霉唑"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

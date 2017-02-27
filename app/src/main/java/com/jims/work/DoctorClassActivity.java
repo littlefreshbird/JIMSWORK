@@ -55,22 +55,11 @@ public class DoctorClassActivity extends FragmentActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
-				switch (position){
-					case 0:
+
 					Intent intent = new Intent(DoctorClassActivity.this,
 							NewDoctorListActivity.class);
 					startActivity(intent);
 						finish();
-						break;
-					case 1:
-						Intent intent1 = new Intent(DoctorClassActivity.this,
-								NewDoctorListActivity.class);
-						startActivity(intent1);
-						finish();
-						break;
-					default:
-						break;
-				}
 
 
 

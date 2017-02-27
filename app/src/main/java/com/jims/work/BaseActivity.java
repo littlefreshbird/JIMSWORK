@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import butterknife.ButterKnife;
 public  class BaseActivity extends AppCompatActivity implements BaseInterfaces {
 
 	private Dialog loadbar = null;
+	private String title;
 	@Override
 	protected void onCreate(Bundle arg0) {
 		// TODO Auto-generated method stub
@@ -30,8 +32,7 @@ public  class BaseActivity extends AppCompatActivity implements BaseInterfaces {
 		initViews();
 		//setCustomActionBar();
 	}
-	public void setCustomActionBar(String title) {
-		ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
+
 	//全局唯一性
 	private static class LazyHolder {
 
@@ -61,7 +62,14 @@ public  class BaseActivity extends AppCompatActivity implements BaseInterfaces {
 		intent.setClass(ctx, cla);
 		startActivity(intent);
 	}
-
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				finish();
+			default:}
+		return super.onOptionsItemSelected(item);
+	}
 	@Override
 	public void initViews() {
 		// TODO Auto-generated method stub

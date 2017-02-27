@@ -22,6 +22,7 @@ import com.jims.work.CaseseclectActivity;
 import com.jims.work.CityPositionActivity;
 import com.jims.work.CodeScanActivity;
 import com.jims.work.DoctorClassActivity;
+import com.jims.work.HealthRecordActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.NewDoctorListActivity;
 import com.jims.work.PostActivity;
@@ -340,6 +341,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_special3).setOnClickListener(this);
         layout.findViewById(R.id.layout_special4).setOnClickListener(this);
         layout.findViewById(R.id.layout_freetreat).setOnClickListener(this);
+        layout.findViewById(R.id.layout_health_manage).setOnClickListener(this);
         ((PullToRefreshLayout) layout.findViewById(R.id.refresh_view))
                 .setOnRefreshListener(new MyListener());
 
@@ -379,6 +381,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.layout_freetreat: //义诊
                 startActivity(new Intent(getActivity(), ScanPatientActivity.class));
+                break;
+            case R.id.layout_health_manage: //健康管理
+                startActivity(new Intent(getActivity(), HealthRecordActivity.class));
                 break;
 
 

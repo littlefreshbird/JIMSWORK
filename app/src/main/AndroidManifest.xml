@@ -101,12 +101,15 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".DoctorDetailActivity" />
-        <activity android:name=".FreeTreatTaskActivity" />
-        <activity android:name=".MyHistoryDetailActivity" />
-        <activity android:name=".SubscibeActivity" />
-        <activity android:name=".QRCodeActivity" />
-        <activity android:name=".CodeScanActivity"></activity>
+        <activity android:name=".DoctorDetailActivity"/>
+        <activity android:name=".FreeTreatTaskActivity"/>
+        <activity android:name=".MyHistoryDetailActivity"/>
+        <activity android:name=".SubscibeActivity"/>
+        <activity android:name=".QRCodeActivity"/>
+        <activity android:name=".FreeTreatListActivity"/>
+        <activity android:name=".CodeScanActivity"/>
+        <activity android:name=".HealthRecordActivity">
+        </activity>
     </application>
 
 </manifest>
