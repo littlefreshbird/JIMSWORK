@@ -3,17 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
     android:scrollbars="vertical"
     android:fadingEdge="vertical">
 <LinearLayout
 
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
 
     android:background="@color/white"
     android:orientation="vertical">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="horizontal"
+        android:fadingEdge="horizontal">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -159,58 +165,60 @@
                 android:textSize="12sp"
                 android:gravity="center"/>
         </LinearLayout>
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/wubiankuang"
+            >
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="病情描述: "
+                android:background="@drawable/wubiankuang"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"/>
+            <EditText
+                android:layout_width="50dp"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:text="科目: "
+                android:background="@drawable/wubiankuang"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"/>
+            <EditText
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/wubiankuang"
+                android:text="外科"
+                android:textSize="12sp"
+                android:gravity="center"/>
+            <EditText
+                android:layout_width="60dp"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:gravity="center"
+                android:text="主治医师: "
+                android:background="@drawable/wubiankuang"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"/>
+            <EditText
+                android:layout_width="fill_parent"
+                android:textSize="12sp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/wubiankuang"
+                android:text="张强"
+                android:gravity="center"/>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/wubiankuang"
-        >
-        <EditText
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:gravity="center"
-            android:text="病情描述: "
-            android:background="@drawable/wubiankuang"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_small"/>
-        <EditText
-            android:layout_width="50dp"
-            android:enabled="false"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:gravity="center"
-            android:text="科目: "
-            android:background="@drawable/wubiankuang"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_small"/>
-        <EditText
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/wubiankuang"
-            android:text="外科"
-            android:textSize="12sp"
-            android:gravity="center"/>
-        <EditText
-            android:layout_width="60dp"
-            android:enabled="false"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:gravity="center"
-            android:text="主治医师: "
-            android:background="@drawable/wubiankuang"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_small"/>
-        <EditText
-            android:layout_width="fill_parent"
-            android:textSize="12sp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/wubiankuang"
-            android:text="张强"
-            android:gravity="center"/>
     </LinearLayout>
+    </HorizontalScrollView>
+
 
     <EditText
         android:id="@+id/edit"
@@ -252,7 +260,7 @@
     <GridView
         android:id="@+id/gridView"
         android:layout_width="fill_parent"
-        android:layout_height="130dp"
+        android:layout_height="150dp"
         android:layout_margin="5dp"
         android:background="@color/white"
         android:horizontalSpacing="5dp"
@@ -280,7 +288,7 @@
             android:id="@+id/button_1"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:textColor="@color/white"
             android:background="@drawable/bg_edittext"
             android:paddingTop="5dip"

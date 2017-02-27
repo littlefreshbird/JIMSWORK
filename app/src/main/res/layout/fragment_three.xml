@@ -5,8 +5,13 @@
     android:orientation="vertical" >
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="my" />
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:text="暂定格式"
+        android:background="@drawable/biankuang"
+        android:layout_marginLeft="20dp"
+        android:textSize="@dimen/small_middle_text_size"
+        android:textColor="@color/colorText"
+        android:gravity="center"/>
 
 </LinearLayout>

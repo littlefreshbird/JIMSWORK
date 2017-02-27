@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 /***
  * 诊疗记录
  */
-public class MyHistoryListActivity extends AppCompatActivity {
+public class MyHistoryListActivity extends BaseActivity {
 
 
 
@@ -35,7 +35,7 @@ public class MyHistoryListActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_myhistory_list);
         ButterKnife.bind(this);
-        setCustomActionBar();
+        setCustomActionBar("诊疗记录");//actionbar格式
         initGoods();
         initview();
     }
@@ -77,19 +77,7 @@ public class MyHistoryListActivity extends AppCompatActivity {
         });
 
     }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp =new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_history, null);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
     //点击事件
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

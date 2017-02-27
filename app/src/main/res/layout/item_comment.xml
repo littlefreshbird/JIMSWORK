@@ -93,6 +93,7 @@
                     android:layout_toRightOf="@+id/tv_user_pinglun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:progressTint="@color/orange"
                     android:isIndicator="false"
                     android:numStars="5"
                     android:rating = "3"

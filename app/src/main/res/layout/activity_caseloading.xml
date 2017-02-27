@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/white"
     android:scrollbars="vertical"
     android:fadingEdge="vertical">
 
@@ -247,7 +248,7 @@
     </RelativeLayout>
     <EditText
                 android:id="@+id/edit"
-                android:layout_height="60dp"
+                android:layout_height="130dp"
                 android:layout_width="fill_parent"
                 android:layout_margin="12dp"
                 android:background="@drawable/biankuang"
