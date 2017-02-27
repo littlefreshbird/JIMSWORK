@@ -93,7 +93,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 login();
                 break;
             case R.id.layout_userinfo: // 个人信息
-                startActivity(new Intent(getActivity(), UserInfoActivity.class),true);
+                startActivity(new Intent(getActivity(), UserInfoActivity.class));
                 break;
             case R.id.layout_mine_evaluate: // 我的评价
                 startActivity(new Intent(getActivity(), MyEvaluateActivity.class));
