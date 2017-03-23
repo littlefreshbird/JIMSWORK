@@ -36,4 +36,5 @@ public class ToastUtils {
         toast.setText(msg);
         toast.show();
     }
+
 }

@@ -1,26 +1,54 @@
 package com.jims.work.bean;
 
 
-public class User {
-	public String name;
+import java.io.Serializable;
+
+public class User  implements Serializable {
+
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	private Long id;
+	public String account;
 	public String password;
-	public String getName() {
-		return name;
+	private String userIcon;
+
+
+	public String getAccount() {
+		return account;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
+
+	public String getUserIcon() {
+
+		return userIcon;
+	}
+
+	public void setUserIcon(String userIcon) {
+		this.userIcon = userIcon;
+	}
+
+
+
+
+
+
 	public String getPassword() {
 		return password;
 	}
 
-	public User(String name, String password) {
-		this.name = name;
-		this.password = password;
-	}
+
 
 	public void setPassword(String password) {
-		this.password = password;
 	}
 
 }

@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.jims.work.Contants;
 import com.jims.work.FreeTreatTaskActivity;
 import com.jims.work.LoginActivity;
 import com.jims.work.MoreActivity;
@@ -19,8 +18,6 @@ import com.jims.work.MyEvaluateActivity;
 import com.jims.work.MyHistoryListActivity;
 import com.jims.work.R;
 import com.jims.work.UserInfoActivity;
-import com.jims.work.application.JimsApplication;
-import com.jims.work.bean.User;
 import com.jims.work.fragment.base.BaseFragment;
 
 
@@ -49,8 +46,8 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
     private  void showUser(){
 
-        User user = JimsApplication.getInstance().getUser();
-        if(user == null){
+        //User user = JimsApplication.getInstance().getUser();
+       /* if(user == null){
 
             mbtnLogout.setVisibility(View.GONE);
 
@@ -60,12 +57,12 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         else{
 
             mbtnLogout.setVisibility(View.VISIBLE);
-          /*  if(!TextUtils.isEmpty(user.getLogo_url()))
-                Picasso.with(getActivity()).load(Uri.parse(user.getLogo_url())).into(mImageHead);*/
+          *//*  if(!TextUtils.isEmpty(user.getLogo_url()))
+                Picasso.with(getActivity()).load(Uri.parse(user.getLogo_url())).into(mImageHead);*//*
 
-            mTxtUserName.setText(user.getName());
+            mTxtUserName.setText(user.getAccount());
 
-        }
+        }*/
 
     }
     private void setOnListener() {

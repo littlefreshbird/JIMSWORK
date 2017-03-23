@@ -7,10 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jims.work.LoginActivity;
-import com.jims.work.application.JimsApplication;
-import com.jims.work.bean.User;
-
 /**
  * Created by gong on 2016/12/27.
  */
@@ -21,7 +17,7 @@ public class BaseFragment extends Fragment {
     }
 
     public void startActivity(Intent intent, boolean isNeedLogin){
-
+/*
 
         if(isNeedLogin){
 
@@ -40,8 +36,8 @@ public class BaseFragment extends Fragment {
         }
         else{
             super.startActivity(intent);
-        }
-
+        }*/
+        super.startActivity(intent);
     }
 
 }

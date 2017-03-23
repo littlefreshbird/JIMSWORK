@@ -5,7 +5,7 @@ android {
 
     }
     compileSdkVersion 25
-    buildToolsVersion "24.0.3"
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.jims.work"
         minSdkVersion 21
@@ -58,6 +58,6 @@ dependencies {
     compile files('src/main/libs/fastjson-1.1.38.jar')
     compile files('src/main/libs/MobCommons-2016.1012.1447.jar')
     compile files('src/main/libs/MobTools-2016.1012.1447.jar')
-
-
+    compile 'com.github.d-max:spots-dialog:0.7'
+    compile 'com.facebook.fresco:fresco:1.1.0'
 }
