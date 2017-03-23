@@ -1,7 +1,9 @@
 package com.jims.work.fragment;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,37 +36,43 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         mbtnLogout = (Button) layout.findViewById(R.id.btn_logout);
         mTxtUserName = (TextView) layout.findViewById(R.id.txt_username);
         setOnListener();
-        init();
+        initData();
         return layout;
     }
 
-    public void init() {
+    public void initData() {
 
-        //showUser();
+
+        showUser();
     }
 
 
-    private  void showUser(){
+    private  void showUser() {
 
-        //User user = JimsApplication.getInstance().getUser();
-       /* if(user == null){
+        SharedPreferences preferences = getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+        String account = preferences.getString("ACCOUNT", "点击登录/注册");
+
+        if (account == null) {
 
             mbtnLogout.setVisibility(View.GONE);
 
             mTxtUserName.setText(R.string.personal_login);
 
-        }
-        else{
+        } else {
 
             mbtnLogout.setVisibility(View.VISIBLE);
-          *//*  if(!TextUtils.isEmpty(user.getLogo_url()))
-                Picasso.with(getActivity()).load(Uri.parse(user.getLogo_url())).into(mImageHead);*//*
+            /*  if(!TextUtils.isEmpty(user.getLogo_url()))
+                Picasso.with(getActivity()).load(Uri.parse(user.getLogo_url())).into(mImageHead);*//**//*
 
+
+
+        }*//*
             mTxtUserName.setText(user.getAccount());
-
         }*/
-
+            mTxtUserName.setText(account);
+        }
     }
+
     private void setOnListener() {
 
         layout.findViewById(R.id.userIcon).setOnClickListener(this);
@@ -87,7 +95,13 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                login();
                 break;
             case R.id.txt_username: // 点击文字登录
+                if (mTxtUserName.getText().toString().equals("点击登录/注册")){
                 login();
+                }else {
+                    Intent intent=new Intent();
+                    intent.setClass(getActivity(), UserInfoActivity.class);
+                    startActivity(intent);
+                }
                 break;
             case R.id.layout_userinfo: // 个人信息
                 startActivity(new Intent(getActivity(), UserInfoActivity.class));
@@ -140,7 +154,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     }
     private void login() {
         Intent intent = new Intent(getActivity(), LoginActivity.class);
-        startActivityForResult(intent, Contants.REQUEST_CODE);
+        startActivity(intent);
     }
 
     @Override
@@ -149,5 +163,6 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
         showUser();
     }
+
 
 }

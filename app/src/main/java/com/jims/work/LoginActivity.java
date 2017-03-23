@@ -2,7 +2,9 @@ package com.jims.work;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.jims.work.bean.BaseBean;
+import com.jims.work.bean.UserBean;
 import com.jims.work.service.LoginService;
 import com.jims.work.utils.AppUtils;
 
@@ -148,9 +151,21 @@ public class LoginActivity extends Activity {
                             String message = b.getMessage();
                             Log.e("message", message);
                             if (b.getRespcode().equals("0")) {
-                                Intent intent = new Intent(LoginActivity.this,
-                                        MainActivity.class);
+                                UserBean u=JSON.parseObject(b.getData(), UserBean.class);
+                                Intent intent = new Intent();
+                                intent.putExtra("user", u);
+                                intent.setClass(LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
+
+
+                                SharedPreferences preferences = getSharedPreferences("user", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putString("ACCOUNT", u.getAccount());
+                                editor.commit();
+
+
+
+
                             }
                             if (b.getRespcode().equals("1")) {
                                 showToast("用户名或密码错误");
