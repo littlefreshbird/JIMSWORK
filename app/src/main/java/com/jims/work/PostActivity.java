@@ -8,21 +8,15 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -48,7 +42,7 @@ import java.util.TimerTask;
  */
 
 public class PostActivity extends BaseActivity implements View.OnClickListener {
-    private TextView neike,waike,jingshenke,meirongke,fangsheke,nanke,muyingke,guke,huayanke;
+    private TextView neike,waike,jingshenke,meirongke,fangsheke,nanke,muyingke,guke,huayanke,erbihouke,pifuke,kouqiangke,chanke,xueyeke;
     private EditText edit;
     private GridView gridView;
     private Button button_1;
@@ -61,7 +55,7 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
     private static final int CAMERA_SUCCESS = 2;
     private boolean bl=false;
     private int position1=0;
-    private boolean nei,wai,jingshen,meirong,fangshe,nan,muying,gu,huayan=false;
+    private boolean nei,wai,jingshen,meirong,fangshe,nan,muying,gu,huayan,erbihou,pifu,xueye,kouqiang,chan=false;
     float scaleWidth;
     float scaleHeight;
 
@@ -87,6 +81,11 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
         muyingke=(TextView) findViewById(R.id.muyingke);
         guke=(TextView) findViewById(R.id.guke);
         huayanke=(TextView) findViewById(R.id.huayanke);
+        erbihouke=(TextView) findViewById(R.id.erbihouke);
+        kouqiangke=(TextView) findViewById(R.id.kouqiangke);
+        chanke=(TextView) findViewById(R.id.chanke);
+        xueyeke=(TextView) findViewById(R.id.xueyeke);
+        pifuke=(TextView) findViewById(R.id.pifuke);
         button_1.setOnClickListener(this);
         neike.setOnClickListener(this);
         waike.setOnClickListener(this);
@@ -97,6 +96,13 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
         muyingke.setOnClickListener(this);
         guke.setOnClickListener(this);
         huayanke.setOnClickListener(this);
+        erbihouke.setOnClickListener(this);
+        kouqiangke.setOnClickListener(this);
+        xueyeke.setOnClickListener(this);
+        chanke.setOnClickListener(this);
+        pifuke.setOnClickListener(this);
+
+
         setCustomActionBar("提交病情");//actionbar格式
         /*
          * 防止键盘挡住输入框
@@ -276,6 +282,51 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
                  }else{
                      huayanke.setBackgroundColor(Color.WHITE);
                      huayan=false;
+                 }
+                 break;
+             case R.id.erbihouke:
+                 if(erbihou==false){
+                     erbihouke.setBackgroundColor(Color.GREEN);
+                     erbihou=true;
+                 }else{
+                     erbihouke.setBackgroundColor(Color.WHITE);
+                     erbihou=false;
+                 }
+                 break;
+             case R.id.kouqiangke:
+                 if(kouqiang==false){
+                     kouqiangke.setBackgroundColor(Color.GREEN);
+                     kouqiang=true;
+                 }else{
+                     kouqiangke.setBackgroundColor(Color.WHITE);
+                     kouqiang=false;
+                 }
+                 break;
+             case R.id.pifuke:
+                 if(pifu==false){
+                     pifuke.setBackgroundColor(Color.GREEN);
+                     pifu=true;
+                 }else{
+                     pifuke.setBackgroundColor(Color.WHITE);
+                     pifu=false;
+                 }
+                 break;
+             case R.id.xueyeke:
+                 if(xueye==false){
+                     xueyeke.setBackgroundColor(Color.GREEN);
+                     xueye=true;
+                 }else{
+                     xueyeke.setBackgroundColor(Color.WHITE);
+                     xueye=false;
+                 }
+                 break;
+             case R.id.chanke:
+                 if(chan==false){
+                     chanke.setBackgroundColor(Color.GREEN);
+                     chan=true;
+                 }else{
+                     chanke.setBackgroundColor(Color.WHITE);
+                     chan=false;
                  }
                  break;
              default:

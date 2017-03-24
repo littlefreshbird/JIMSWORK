@@ -156,15 +156,10 @@ public class LoginActivity extends Activity {
                                 intent.putExtra("user", u);
                                 intent.setClass(LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
-
-
                                 SharedPreferences preferences = getSharedPreferences("user", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = preferences.edit();
                                 editor.putString("ACCOUNT", u.getAccount());
                                 editor.commit();
-
-
-
 
                             }
                             if (b.getRespcode().equals("1")) {
