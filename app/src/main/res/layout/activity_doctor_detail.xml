@@ -129,7 +129,6 @@
                         android:padding="10dp"
                         android:text="@string/subscibe"
                         android:textColor="@color/white" />
-
                     <com.jims.work.view.DrawableCenterButton
                         android:id="@+id/btnRead"
                         android:layout_width="0dp"

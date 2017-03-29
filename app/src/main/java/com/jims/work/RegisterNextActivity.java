@@ -1,5 +1,6 @@
 package com.jims.work;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,7 @@ public class RegisterNextActivity extends AppCompatActivity {
     EditText editCopycode;
     @BindView(R.id.btn_register_next)
     Button btnRegisterNext;
-
+    ProgressDialog pd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,9 @@ public class RegisterNextActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_register_next);
         ButterKnife.bind(this);
+        Intent intent= getIntent();
+        String phone= intent.getStringExtra("phone");
+
         //返回
         imgRegisternextBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +83,14 @@ public class RegisterNextActivity extends AppCompatActivity {
             showToast("密码不能为空");
         }
     }
+    public void executeHttp(){
+
+
+
+
+    }
+
+
 
     public void showToast(String str){
         Toast.makeText(RegisterNextActivity.this, str, Toast.LENGTH_LONG).show();

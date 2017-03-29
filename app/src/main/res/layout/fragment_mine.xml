@@ -108,7 +108,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layout_mine_wallet"
+                    android:id="@+id/layout_mine_bookcode"
                     style="@style/MineItemStyle"
                     android:background="@drawable/bg_item_bottom" >
 
@@ -126,7 +126,7 @@
                         android:layout_weight="1.0"
                         android:ellipsize="end"
                         android:singleLine="true"
-                        android:text="我的账号"
+                        android:text="我的预约"
                         android:textColor="@color/black"
                         android:textSize="14sp" />
 
@@ -138,8 +138,6 @@
                         android:paddingLeft="8.0dip"
                         android:paddingRight="8.0dip"
                         android:paddingTop="2.0dip"
-                        android:text="余额"
-                        android:textColor="@color/gray"
                         android:textSize="@dimen/micro_text_size" />
 
                     <ImageView

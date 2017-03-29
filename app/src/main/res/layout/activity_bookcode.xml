@@ -1,0 +1,145 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <RelativeLayout
+        android:id="@+id/layout_category_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/main_home_search_shape" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/img_search"
+            android:text="搜索症状、疾病、医院、科室、医生名"
+            android:textColor="#a0a0a0" />
+
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="6dp"
+            android:src="@mipmap/common_search" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="10dp" >
+
+            <ImageView
+                android:id="@+id/grab_doctor_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/find_doc_icon_famous_grab" />
+
+            <TextView
+                android:id="@+id/grab_doctor_tit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@id/grab_doctor_img"
+                android:text="名医限量抢"
+                android:textSize="@dimen/small_text_size" />
+            <TextView
+                android:id="@+id/grab_doctor_det_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/grab_doctor_tit_text"
+                android:layout_below="@id/grab_doctor_tit_text"
+                android:text="全国名医 ，限量服务"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/micro_text_size" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/gray" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="10dp" >
+
+            <ImageView
+                android:id="@+id/volunteer_doctor_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/find_doc_icon_volunteer" />
+
+            <TextView
+                android:id="@+id/volunteer_doctor_tit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@id/volunteer_doctor_img"
+                android:text="今日义诊"
+                android:textSize="@dimen/small_text_size" />
+            <TextView
+                android:id="@+id/volunteer_doctor_det_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/volunteer_doctor_tit_text"
+                android:layout_below="@id/volunteer_doctor_tit_text"
+                android:text="免费出诊，服务群众"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/micro_text_size" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="按科室找医生"/>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+        <com.jims.work.utils.MyGridView1
+            android:id="@+id/doctor_class_gridview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="0dp"
+            android:numColumns="4"
+            android:layout_marginBottom="10dp"
+            android:verticalSpacing="0dp" >
+        </com.jims.work.utils.MyGridView1>
+    </ScrollView>
+
+
+
+</LinearLayout>

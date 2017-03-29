@@ -45,26 +45,22 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 checkUserInput();
-                Intent intent = new Intent(RegisterActivity.this, RegisterNextActivity.class);
+                Intent intent = new Intent();
+                intent.putExtra("phone", editMobile.getText().toString().trim());
+                intent.setClass(RegisterActivity.this, RegisterNextActivity.class);
                 startActivity(intent);
             }
         });
 
 
-        //返回
-       /* imgRegisterback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });*/
+
     }
     public void checkUserInput(){
         if(!"".equals(editMobile.getText().toString().trim())){
             if(AppUtils.isMobileNO(editMobile.getText().toString().trim())==true){
                 if(!editCode.getText().toString().trim().isEmpty()){
                             if(AppUtils.checkNetwork(RegisterActivity.this)==true){
-                                //executeHttp();
+                                //xecuteHttp();
                             }else{
                                 showToast("亲，您还没有联网!");
                             }
@@ -78,6 +74,14 @@ public class RegisterActivity extends AppCompatActivity {
             showToast("手机号码不能为空");
         }
     }
+
+
+
+
+
+
+
+
 
     public void showToast(String str){
         Toast.makeText(RegisterActivity.this, str, Toast.LENGTH_LONG).show();

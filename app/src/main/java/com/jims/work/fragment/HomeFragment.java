@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.jims.work.BookcodeActivity;
 import com.jims.work.CaseLoadingActivity;
 import com.jims.work.CaseseclectActivity;
 import com.jims.work.CityPositionActivity;
@@ -333,7 +334,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_city).setOnClickListener(this);
         layout.findViewById(R.id.img_home_search_code).setOnClickListener(this);
         layout.findViewById(R.id.quick_ask).setOnClickListener(this);
-
+        layout.findViewById(R.id.guahao).setOnClickListener(this);
         layout.findViewById(R.id.quick_find).setOnClickListener(this);
         layout.findViewById(R.id.layout_case_uploading).setOnClickListener(this);
         layout.findViewById(R.id.layout_special1).setOnClickListener(this);
@@ -361,14 +362,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), PostActivity.class));
                 //getActivity().finish();
                 break;
+            case R.id.guahao: // 预约挂号
+                startActivity(new Intent(getActivity(), BookcodeActivity.class));
+                break;
             case R.id.quick_find: // 查找医生
                 startActivity(new Intent(getActivity(), DoctorClassActivity.class));
                 break;
             case R.id.layout_case_uploading: // 病例上传
                 startActivity(new Intent(getActivity(), CaseLoadingActivity.class));
                 break;
-            case R.id.layout_special1: //
-                startActivity(new Intent(getActivity(), PostActivity.class));
+            case R.id.layout_special1: //家庭医生
+                startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
                 break;
             case R.id.layout_special2: // 我的病例
                 startActivity(new Intent(getActivity(), CaseseclectActivity.class));

@@ -18,6 +18,7 @@ import com.jims.work.MyComplaintActivity;
 import com.jims.work.MyDoctorsListActivity;
 import com.jims.work.MyEvaluateActivity;
 import com.jims.work.MyHistoryListActivity;
+import com.jims.work.MybookcodeActivity;
 import com.jims.work.R;
 import com.jims.work.UserInfoActivity;
 import com.jims.work.fragment.base.BaseFragment;
@@ -84,7 +85,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         layout.findViewById(R.id.layout_mine_doctors).setOnClickListener(this);
         layout.findViewById(R.id.layout_mine_history).setOnClickListener(this);
         layout.findViewById(R.id.layout_mine_free_treat_task).setOnClickListener(this);
-
+        layout.findViewById(R.id.layout_mine_bookcode).setOnClickListener(this);
     }
 
 
@@ -105,6 +106,9 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.layout_userinfo: // 个人信息
                 startActivity(new Intent(getActivity(), UserInfoActivity.class));
+                break;
+            case R.id.layout_mine_bookcode: // 我的预约
+                startActivity(new Intent(getActivity(), MybookcodeActivity.class));
                 break;
             case R.id.layout_mine_evaluate: // 我的评价
                 startActivity(new Intent(getActivity(), MyEvaluateActivity.class));

@@ -22,7 +22,7 @@ android {
     }
 }
 repositories {
-    flatDir{
+    flatDir {
         dirs 'libs'
     }
 }
@@ -31,33 +31,34 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    testCompile 'junit:junit:4.12'
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile 'com.jakewharton:butterknife:8.4.0'
     compile files('libs/ActiveAndroid-3.1.jar')
     compile files('libs/lib_yuchen0309_for_jd.jar')
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile files('libs/jpush-sdk-release1.7.3.jar')
     compile project(':dropdownmenu')
     compile project(':calendarlistview')
-    compile 'com.squareup.picasso:picasso:2.5.2'
     compile files('src/main/libs/locSDK_6.23.jar')
     compile files('src/main/libs/pinyin4j-2.5.0.jar')
-    compile 'com.android.support:design:25.1.0'
     // -------------------- 以下三个库是必须依赖的 ----------------------------
+    // -------------------- 以上三个库是必须依赖的 ----------------------------
+    compile files('src/main/libs/fastjson-1.1.38.jar')
+    compile files('src/main/libs/MobCommons-2016.1012.1447.jar')
+    compile files('src/main/libs/MobTools-2016.1012.1447.jar')
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:design:25.1.0'
     compile 'com.google.zxing:core:3.2.1'
     compile 'cn.bingoogolapple:bga-qrcodecore:1.1.5@aar'
     compile 'cn.bingoogolapple:bga-zxing:1.1.5@aar'
-    // -------------------- 以上三个库是必须依赖的 ----------------------------
     compile 'com.squareup.okhttp:okhttp:2.7.5'
     compile 'com.squareup.okio:okio:1.main_page_icon_quick_ask.0'
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
-    compile files('src/main/libs/fastjson-1.1.38.jar')
-    compile files('src/main/libs/MobCommons-2016.1012.1447.jar')
-    compile files('src/main/libs/MobTools-2016.1012.1447.jar')
     compile 'com.github.d-max:spots-dialog:0.7'
     compile 'com.facebook.fresco:fresco:1.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
 }

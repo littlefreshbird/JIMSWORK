@@ -111,6 +111,8 @@ public class DoctorDetailActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.btnRead:
+                Intent i = new Intent(this, BooksureActivity.class);
+                startActivity(i);
                 break;
         }
     }

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaeaea"
+    android:orientation="vertical">
+
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="#eaeaea"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="#eaeaea"
+            android:orientation="horizontal">
+            <com.jims.work.view.CircleImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/doctor_img"
+                app:border_color="@color/white"
+                android:id="@+id/DoctorIcon"
+                />
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#eaeaea"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/doctor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="马云龙"
+                android:textColor="@color/black"
+                android:textSize="@dimen/medium_text_size"/>
+                <TextView
+                    android:id="@+id/doctor_professional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="助理医师"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="@dimen/small_middle_text_size"/>
+                <TextView
+                    android:id="@+id/doctor_department"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="康复科门诊"
+                    android:textSize="@dimen/small_middle_text_size"
+                    android:textColor="@color/darkgrey"/>
+        </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#cbcbcb"
+                android:orientation="vertical"
+                android:padding="0.2px">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:padding="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/small_middle_text_size"
+                        android:text="挂号时间"
+                        android:textSize="@dimen/small_text_size"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/book_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:text="2017-3-27"
+                        android:textColor="@color/black"
+                       />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0.2px"
+                    android:background="#fff"
+                    android:padding="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/small_middle_text_size"
+                        android:text="门诊时间"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/service_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:text="星期四全天"
+                        android:textColor="@color/black"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0.2px"
+                    android:background="#fff"
+                    android:padding="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/small_middle_text_size"
+                        android:text="就诊时间"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/visit_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:text="2017-3-30星期四全天"
+                        android:textColor="@color/black"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0.2px"
+                    android:background="#fff"
+                    android:padding="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/small_middle_text_size"
+                        android:text="挂号+诊疗费"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/book_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:text="1.8元"
+                        android:textColor="@color/red"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0.2px"
+                    android:background="#fff"
+                    android:padding="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/small_middle_text_size"
+                        android:text="就诊人"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/visit_person"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:text="张三"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0.2px"
+                    android:background="#fff"
+                    android:padding="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/small_middle_text_size"
+                        android:text="剩余就诊号"
+                        android:textColor="@color/black"/>
+
+
+                    <TextView
+                        android:id="@+id/remain_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:text="5个"
+                        android:textColor="@color/black"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eaeaea">
+
+                <Button
+                    android:id="@+id/btn_person_change"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/registerbutton"
+                    android:gravity="center"
+                    android:text="更换就诊人信息"
+                    android:textColor="@android:color/white" />
+                <Button
+                    android:id="@+id/btn_book"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/btn_person_change"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/registerbutton"
+                    android:gravity="center"
+                    android:text="预约完成"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

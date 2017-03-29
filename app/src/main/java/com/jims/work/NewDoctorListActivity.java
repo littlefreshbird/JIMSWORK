@@ -1,10 +1,8 @@
 package com.jims.work;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -13,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.jims.work.adapter.DoctorsListAdapter;
 import com.jims.work.adapter.GirdDropDownAdapter;
@@ -58,7 +57,7 @@ public class NewDoctorListActivity extends BaseActivity {
         context = NewDoctorListActivity.this;
         initGoods();
         initview();
-        setCustomActionBar("找医生");
+        setCustomActionBar();
     }
     //调用onSuppprtNavigateup()为actionbar左上角点击事件
     @Override
@@ -82,7 +81,21 @@ public class NewDoctorListActivity extends BaseActivity {
         doctorsList.add(new DoctorsInfo("周慧敏", "承德妇幼保健院", "小儿科", "副主任医师", "100003", "新生儿疾病、发育、幼儿急疹、母乳性黄疸、手足口病、尿布皮炎", context.getResources().getDrawable(R.drawable.doctor1, null), "", "149.00", "暂无评价", 1856, 0, 0));
 
     }
-
+    public void setCustomActionBar() {
+        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
+        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
+        TextView textView = ButterKnife.findById(mActionBarView, android.R.id.title);
+        textView.setText("找医生");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setCustomView(mActionBarView, lp);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
+        actionBar.setElevation(2);
+    }
     private void initview() {
         //init department menu
         final View constellationView = getLayoutInflater().inflate(R.layout.custom_layout, null);
