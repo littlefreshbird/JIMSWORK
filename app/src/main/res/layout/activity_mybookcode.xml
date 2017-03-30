@@ -1,13 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eaeaea"
-    android:orientation="vertical">
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/toolbar_profile"
+        style="@style/hospital_title"
+        android:orientation="horizontal" >
 
+        <ImageView
+            android:id="@+id/toolbar_profile_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:src="@drawable/action_bar_back_normal" />
 
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="33dp"
+            android:layout_centerInParent="true" >
 
+            <TextView
+                android:id="@+id/text_view_toolbar_title"
+                style="@style/text_20_blacks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="我的预约单" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <com.jims.work.utils.MyListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/good_color"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:listSelector="#00000000" >
+        </com.jims.work.utils.MyListView>
+
+        <ImageView
+            android:id="@+id/img_overlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="12dp"
+            android:src="@drawable/c_up_button"
+            android:visibility="invisible" />
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminateDrawable="@drawable/progressbar_circle_1" />
+    </RelativeLayout>
 
 
     </LinearLayout >
