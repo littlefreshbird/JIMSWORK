@@ -29,7 +29,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/listview01"
         android:textColor="@color/white"
-        android:background="@drawable/bg_edittext"
+        android:background="@drawable/registerbutton"
         android:paddingTop="5dip"
         android:layout_gravity="center"
         android:text="完成"

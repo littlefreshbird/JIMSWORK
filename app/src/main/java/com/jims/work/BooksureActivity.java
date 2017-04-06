@@ -84,12 +84,14 @@ public class BooksureActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_person_change://更换就诊者
+                Intent intent=new Intent(BooksureActivity.this,OldrecordActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn_book://预约完成
                 Intent i=new Intent(BooksureActivity.this,MybookcodeActivity.class);
                 startActivity(i);
 
-
+                finish();
                 break;
         }
     }

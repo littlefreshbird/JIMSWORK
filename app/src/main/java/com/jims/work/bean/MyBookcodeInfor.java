@@ -19,10 +19,11 @@ public class MyBookcodeInfor {
 	//@Column
 	String book_price; // 挂号费
 	//@Column
-	String book_time;//预约诊疗时间
+	String book_time;
 
 
-	public String getBook_class() {
+
+    public String getBook_class() {
 		return book_class;
 	}
 

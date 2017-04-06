@@ -3,11 +3,7 @@ package com.jims.work;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +13,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.SimpleAdapter;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -95,8 +92,6 @@ public class OldrecordActivity extends BaseActivity implements View.OnClickListe
     public void onClick(View v){
         switch (v.getId()){
             case R.id.wancheng:
-                Intent intent1=new Intent(OldrecordActivity.this,NewDoctorListActivity.class);
-                startActivity(intent1);
                 finish();
                 break;
             default:
