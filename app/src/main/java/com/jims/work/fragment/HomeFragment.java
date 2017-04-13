@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.jims.work.BookcodeActivity;
 import com.jims.work.CaseLoadingActivity;
 import com.jims.work.CaseseclectActivity;
+import com.jims.work.CheckResultActivity;
 import com.jims.work.CityPositionActivity;
 import com.jims.work.CodeScanActivity;
 import com.jims.work.DoctorClassActivity;
@@ -29,6 +30,7 @@ import com.jims.work.NewDoctorListActivity;
 import com.jims.work.PostActivity;
 import com.jims.work.R;
 import com.jims.work.ScanPatientActivity;
+import com.jims.work.TestResultsActivity;
 import com.jims.work.pulltorefresh.MyListener;
 import com.jims.work.pulltorefresh.PullToRefreshLayout;
 import com.jims.work.view.UPMarqueeView;
@@ -377,11 +379,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.layout_special2: // 我的病例
                 startActivity(new Intent(getActivity(), CaseseclectActivity.class));
                 break;
-            case R.id.layout_special3: //热门科室
-                startActivity(new Intent(getActivity(), DoctorClassActivity.class));
+            case R.id.layout_special3: //检测结果
+                startActivity(new Intent(getActivity(), TestResultsActivity.class));
                 break;
             case R.id.layout_special4: //
-                startActivity(new Intent(getActivity(), MyDoctorsListActivity.class));
+                startActivity(new Intent(getActivity(), CheckResultActivity.class));
                 break;
             case R.id.layout_freetreat: //义诊
                 startActivity(new Intent(getActivity(), ScanPatientActivity.class));
