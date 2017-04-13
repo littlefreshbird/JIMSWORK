@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp" >
+
+
+
+    <TextView
+        android:id="@+id/myservice_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:text="2017/3/20 14:52"
+        android:textColor="@color/dimgray"
+        android:textSize="@dimen/small_text_size" />
+    <TextView
+        android:id="@+id/myservice_evaluate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_alignBottom="@+id/myservice_time"
+        android:text="待评价"
+        android:textColor="@color/dimgray"
+        android:textSize="@dimen/small_text_size" />
+
+
+    <TextView
+        android:id="@+id/myservice_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/myservice_time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@+id/img_icon"
+        android:text="2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合"
+        android:lines="2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/myservice_content"
+        android:gravity="center_vertical"
+        android:id="@+id/layout">
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <com.jims.work.view.CircleImageView
+        android:id="@+id/myservice_doctorimg"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/doctor_img"
+        app:border_color="@color/white"/>
+
+    <TextView
+        android:id="@+id/myservice_doctorname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/myservice_doctorimg"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBottom="@+id/myservice_doctorimg"
+        android:text="马云龙"
+        android:textColor="@color/dimgray"
+        android:textSize="@dimen/small_text_size" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="15dp"
+            android:layout_toRightOf="@id/myservice_doctorname"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:background="@color/divider_color" />
+        <TextView
+            android:id="@+id/myservice_doctorclass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/myservice_doctorimg"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_alignBottom="@+id/myservice_doctorimg"
+            android:text="神经内科"
+            android:textColor="@color/dimgray"
+            android:textSize="@dimen/small_text_size" />
+</LinearLayout>
+            <TextView
+                android:id="@+id/myservice_kind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+             android:layout_marginTop="10dp"
+                android:text="图文资询"
+                android:textColor="@color/dimgray"
+                android:textSize="@dimen/small_text_size" />
+
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_0.5"
+        android:layout_below="@id/layout"
+        android:layout_marginTop="5dp"
+        android:background="@color/divider_color" />
+
+</RelativeLayout>
