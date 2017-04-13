@@ -17,8 +17,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SplashActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
-        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_splash);
        // tv = (TextView) findViewById(R.id.textView);
        // mc = new MyCountDownTimer(3000, 1000);

@@ -42,7 +42,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class FreeTreatActivity extends AppCompatActivity {
+public class FreeTreatActivity extends BaseActivity1 {
 
     @BindView(R.id.image)
     ImageView image;
@@ -71,12 +71,26 @@ public class FreeTreatActivity extends AppCompatActivity {
     private int position1 = 0;
     private final int IMAGE_OPEN = 1;               //打开图片标记
 
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_free_treat);
-        ButterKnife.bind(this);
+    public int getLayoutId() {
+        return R.layout.activity_free_treat;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("义诊信息");
+    }
+
+    @Override
+    public void initDatas() {
         initview();
+    }
+
+    @Override
+    public void configViews() {
 
     }
 
@@ -86,7 +100,7 @@ public class FreeTreatActivity extends AppCompatActivity {
         patientname.setText("姓名：李国胜");
         patientage.setText("年龄：28");
         patientsex.setText("性别：男");
-        setCustomActionBar("义诊信息");
+
         getWindow().setSoftInputMode(WindowManager.LayoutParams.
                 SOFT_INPUT_ADJUST_PAN);
         //锁定屏幕
@@ -306,21 +320,6 @@ public class FreeTreatActivity extends AppCompatActivity {
         builder.create().show();
     }
 
-    public void setCustomActionBar(String title) {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView=ButterKnife.findById(mActionBarView,android.R.id.title);
-        textView.setText(title);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
 
     @OnClick(R.id.button_1)
     public void onClick() {

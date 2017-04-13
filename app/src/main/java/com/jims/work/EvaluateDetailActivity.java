@@ -7,35 +7,29 @@ import android.widget.ImageView;
 
 import com.jims.work.utils.Utils;
 
-public class EvaluateDetailActivity extends FragmentActivity {
+public class EvaluateDetailActivity extends BaseActivity1 {
     private	String itemclick="";
 
-    /**
-     *
-     * @param savedInstanceState
-     * 页面布局并初始化
-     */
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
 
-        setContentView(R.layout.activity_item_details_top);
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_item_details_top;
+    }
 
-        ImageView iv_title_bar_complainleft = (ImageView) findViewById(R.id.img_myevaluate_detail_back);
-        iv_title_bar_complainleft.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("评价详情");
+    }
 
-            public void onClick(View v) {
-                // 防止多次点击
-                if (Utils.isFastClick()) {
-                    return;
-                }
-                finish();
-//				Intent intent = new Intent(Complaindetail_activity.this,
-//						Complain_activity.class);
-//				Complaindetail_activity.this.startActivity(intent);
+    @Override
+    public void initDatas() {
 
-            }
-        });
+    }
+
+    @Override
+    public void configViews() {
 
     }
 }

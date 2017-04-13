@@ -14,8 +14,7 @@ public class MyComplaintDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MyComplaintDetailActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
-        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_mycomplaint_detail);
         //返回
         ImageView mimageView= (ImageView) findViewById(R.id.img_mycomplaint_detail_back);

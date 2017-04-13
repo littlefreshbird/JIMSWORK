@@ -211,7 +211,7 @@
   <!-- 亮天蓝色 -->
   <color name="skyblue">#87ceeb</color>
   <!-- 天蓝色 -->
-  <color name="gray">#808080</color>
+
   <!-- 灰色 -->
   <color name="grey">#808080</color>
   <!-- 灰色 -->
@@ -343,4 +343,6 @@
   <color name="grey_refresh_color">#d7d7d7</color>
   <!--下拉刷新字体色-->
   <color name="grey_refresh_color_text">#ff9e9e9e</color>
+
+  <color name="reader_menu_bg_color">#191919</color>
 </resources>

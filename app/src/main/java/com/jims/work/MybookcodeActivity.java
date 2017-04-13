@@ -1,6 +1,7 @@
 package com.jims.work;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +18,7 @@ import com.jims.work.utils.MyListView;
 
 import java.util.ArrayList;
 
-public class MybookcodeActivity extends Activity implements View.OnClickListener {
+public class MybookcodeActivity extends BaseActivity1 implements View.OnClickListener {
 
     private ArrayList<MyBookcodeInfor> goodsList = new ArrayList<MyBookcodeInfor>();
     private ArrayList<MyBookcodeInfor> goodsListCopy = new ArrayList<MyBookcodeInfor>();	//备份，用于排序后恢复
@@ -27,15 +28,33 @@ public class MybookcodeActivity extends Activity implements View.OnClickListener
     private MyListView mListView;
     private ProgressBar mProgressBar;
 
+    public static void startActivity(Context context, String bookId) {
+        context.startActivity(new Intent(context, MybookcodeActivity.class)
+                .putExtra("id", bookId));
+    }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mybookcode);
+    public int getLayoutId() {
+        return R.layout.activity_mybookcode;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("我的预约");
+    }
+
+    @Override
+    public void initDatas() {
         initGoods();
         initView();
         setOnListener();
         initListView();
         mProgressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void configViews() {
+
     }
 
     private void initGoods() {
@@ -59,7 +78,7 @@ public class MybookcodeActivity extends Activity implements View.OnClickListener
 
     private void setOnListener() {
         mImgOverlay.setOnClickListener(this);
-        findViewById(R.id.toolbar_profile_back).setOnClickListener(this);
+
 
     }
 
@@ -80,7 +99,7 @@ public class MybookcodeActivity extends Activity implements View.OnClickListener
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 MyBookcodeInfor Infor = goodsList.get(position);
-                gotoDetail(Infor);
+                BookSucessActivity.startActivity(MybookcodeActivity.this,"11");
             }
         });
         mListView.setOnScroll2TopListener(new MyListView.OnScroll2TopListener() {
@@ -110,15 +129,7 @@ public class MybookcodeActivity extends Activity implements View.OnClickListener
 
     }
 
-    /**
-     * 商品详情
-     * @param info
-     */
-    private void gotoDetail(MyBookcodeInfor info) {
-        Intent intent = new Intent(this, BooksureActivity.class);
 
-        startActivity(intent);
-    }
 
     /**
      * 将二级菜单的选择结果设置给一级菜单
@@ -202,11 +213,6 @@ public class MybookcodeActivity extends Activity implements View.OnClickListener
                 mListView.setSelection(0);
 
                 break;
-
-            case R.id.toolbar_profile_back: // 返回
-                finish();
-                break;
-
 
             default:
                 break;

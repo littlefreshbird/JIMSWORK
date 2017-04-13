@@ -20,7 +20,7 @@ import com.jims.work.utils.Constants;
  * Created by Just on 2016/12/29.
  * 医生详情页
  */
-public class DoctorClassActivity extends FragmentActivity {
+public class DoctorClassActivity extends BaseActivity1 {
 
 	private GridView doctor_class_gridview;
 	private Adapter_GridView_Doctorclass adapter_GridView_doctorclass;
@@ -32,15 +32,20 @@ public class DoctorClassActivity extends FragmentActivity {
 			R.mipmap.clinic_07_color_icon, R.mipmap.clinic_17_color_icon, R.mipmap.clinic_15_color_icon, R.mipmap.clinic_13_color_icon,
 			R.mipmap.clinic_14_color_icon, R.mipmap.clinic_11_color_icon, R.mipmap.clinic_16_color_icon, R.mipmap.clinic_06_color_icon,};
 
-	/**
-	 *
-	 * @param savedInstanceState
-	 * 页面布局并初始化
-     */
+
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_doctorclass);
+	public int getLayoutId() {
+		return R.layout.activity_doctorclass;
+	}
+
+	@Override
+	public void initToolBar() {
+		mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+		toolbarTitle.setText("寻医");
+	}
+
+	@Override
+	public void initDatas() {
 
 		doctor_class_gridview = (GridView) findViewById(R.id.doctor_class_gridview);
 
@@ -56,25 +61,20 @@ public class DoctorClassActivity extends FragmentActivity {
 			public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
 
-					Intent intent = new Intent(DoctorClassActivity.this,
-							NewDoctorListActivity.class);
-					startActivity(intent);
-						finish();
-
-
-
-			}
-		});
-
-
-		ImageView toolbar_profile_back = (ImageView) findViewById(R.id.toolbar_profile_back);
-		toolbar_profile_back.setOnClickListener(new OnClickListener() {
-
-			public void onClick(View v) {
-
+				Intent intent = new Intent(DoctorClassActivity.this,
+						NewDoctorListActivity.class);
+				startActivity(intent);
 				finish();
+
+
+
 			}
 		});
+	}
+
+	@Override
+	public void configViews() {
+
 	}
 
 }

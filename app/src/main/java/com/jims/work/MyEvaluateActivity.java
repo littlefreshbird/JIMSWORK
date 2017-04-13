@@ -14,8 +14,7 @@ public class MyEvaluateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        MyEvaluateActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
-        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_myevaluate);
 
         ImageView iv_title_bar_left = (ImageView) findViewById(R.id.img_myevaluate_back);

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jims.work.SubscibeDetailActivity">
+<include layout="@layout/common_toolbar"></include>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/common_divider_narrow" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/ivBookCover"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/doctor1"/>
+
+        <TextView
+            android:id="@+id/tv_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="糖尿病随诊服务（三个月）"
+            android:textColor="@color/darkturquoise"
+            android:textSize="16sp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/ivBookCover"/>
+
+        <TextView
+            android:id="@+id/tv_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_Title"
+            android:layout_toRightOf="@+id/ivBookCover"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="医生会定期关注患者的健康状况，并在不同阶段为患者提供《随诊服务》"
+            android:textColor="@color/black"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_intro"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/ivBookCover"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="￥300.00"
+            android:textColor="@color/orange"
+            android:textSize="14sp"/>
+
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/subscibe_detail_tv_kind"
+                android:text="服务地点:"
+               />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="双滦区"
+                android:textColor="@color/colorText"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/subscibe_detail_tv_kind"
+                android:text="详细地点:"
+                />
+
+            <TextView
+                android:id="@+id/tv_street"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="中心大街"
+                android:textColor="@color/colorText"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/subscibe_detail_tv_kind"
+                android:text="服务费用:"
+                />
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="300元/年"
+                android:textColor="@color/colorText"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/subscibe_detail_tv_kind"
+
+                android:text="有效期至:"
+                />
+
+            <TextView
+                android:id="@+id/tv_dateend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="2017-10-25"
+                android:textColor="@color/colorText"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/margin_10"
+        android:background="@color/gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dp_40"
+            android:background="@color/wheat"
+            android:textColor="@color/darkturquoise"
+            android:gravity="center"
+            android:text="服务详情"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_severdetail"
+        android:layout_margin="@dimen/margin_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="@string/severdetail"/>
+</LinearLayout>

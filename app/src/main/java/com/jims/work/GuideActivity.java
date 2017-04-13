@@ -29,8 +29,7 @@ public class GuideActivity extends AppCompatActivity implements OnPageChangeList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        GuideActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
-        getSupportActionBar().hide();
+
         setContentView(R.layout.activity_guide);
         initViews();
         initDots();
@@ -52,7 +51,7 @@ public class GuideActivity extends AppCompatActivity implements OnPageChangeList
 
             @Override
             public void onClick(View arg0) {
-                Intent i = new Intent(GuideActivity.this, LoginActivity.class);
+                Intent i = new Intent(GuideActivity.this, MainActivity.class);
                 startActivity(i);
                 finish();
             }

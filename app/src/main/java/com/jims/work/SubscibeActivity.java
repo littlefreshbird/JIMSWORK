@@ -34,11 +34,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class SubscibeActivity extends AppCompatActivity {
+public class SubscibeActivity extends BaseActivity1 {
     @BindView(R.id.listView_cart)
     SwipeMenuListView listViewCart;
-    @BindView(R.id.progressBar_cart)
-    ProgressBar progressBarCart;
+
     @BindView(R.id.btn_check_all)
     CheckBox btnCheckAll;
     @BindView(R.id.tv_add_all)
@@ -92,14 +91,27 @@ public class SubscibeActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subscibe);
-        ButterKnife.bind(this);
-        setCustomActionBar();
+    public int getLayoutId() {
+        return R.layout.activity_subscibe;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("订阅服务");
+    }
+
+    @Override
+    public void initDatas() {
         initView();
         initListView();
     }
+
+    @Override
+    public void configViews() {
+
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -110,30 +122,14 @@ public class SubscibeActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView = ButterKnife.findById(mActionBarView, android.R.id.title);
-        textView.setText("订阅服务");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
     private void initView() {
 
-        mData.add(new InCart("10001", "电话咨询",R.drawable.doc_service_phone_big_on, "12元/分钟，至少十分钟，如有剩余，余额将返还至您的账户，超时将提示您进行续费！", 120));
-        mData.add(new InCart("10002", "图文咨询",R.drawable.doc_service_problem_big_on, "按次收费，每次您提的问题将及时反馈，直到问题解决为止", 99));
-        mData.add(new InCart("10003", "院后指导",R.drawable.doc_service_hospital_guide_big_on, "按日收费，对您术后问题进行随时指导。", 300));
-        mData.add(new InCart("10004", "私人医生",R.drawable.doc_service_personal_doc_big_on, "按周收费，可对您进行私人指导", 180));
-        mData.add(new InCart("10005", "诊所预约",R.drawable.doc_service_add_reg_big_on, "按次收费，可进行提前预约，按医生出诊时间就诊", 150));
-        mData.add(new InCart("10006", "视频咨询",R.drawable.doc_service_video_big_on, "10元/分钟，至少十分钟，如有剩余，余额将返还至您的账户，超时将提示您进行续费！，", 100));
-        progressBarCart.setVisibility(View.GONE);
+        mData.add(new InCart("10001", "高血压随诊服务（三个月）",R.drawable.doc_service_phone_big_on, "300元/年，定期关注患者健康状况，不同阶段进行随诊服务", 300));
+        mData.add(new InCart("10002", "糖尿病随诊服务（三个月）",R.drawable.doc_service_problem_big_on,  "300元/年，定期关注患者健康状况，不同阶段进行随诊服务", 300));
+        mData.add(new InCart("10003", "契约式家庭医生服务（十二个月）",R.drawable.doc_service_hospital_guide_big_on, "把家庭医生签回家，随时享受六大免费服务", 50));
+
+
         btnCheckAll.setOnCheckedChangeListener(checkAllListener);
     }
     private void initListView() {
@@ -180,7 +176,7 @@ public class SubscibeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-
+                SubscibeDetailActivity.startActivity(SubscibeActivity.this,"11");
             }
         });
     }

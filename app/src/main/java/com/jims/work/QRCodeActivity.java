@@ -22,21 +22,37 @@ import cn.bingoogolapple.qrcode.zxing.QRCodeEncoder;
 /**
  * 我的二维码名片
  */
-public class QRCodeActivity extends AppCompatActivity {
+public class QRCodeActivity extends BaseActivity1 {
 
     private ImageView ivqr;
     private Bitmap bp;
     private String str = "woshi";
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qrcode);
-        setCustomActionBar();
+    public int getLayoutId() {
+        return R.layout.activity_qrcode;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("我的二维码名片");
+    }
+
+    @Override
+    public void initDatas() {
+
         ivqr = (ImageView) findViewById(R.id.iv_qr);
-       //创建带logo二维码
+        //创建带logo二维码
         createQRCodeWithLogo();
+    }
+
+    @Override
+    public void configViews() {
 
     }
+
     //创建带logo二维码
     private void createQRCodeWithLogo() {
 
@@ -60,31 +76,5 @@ public class QRCodeActivity extends AppCompatActivity {
             }
         }.execute();
     }
-    //点击事件
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
 
-                finish();
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView= ButterKnife.findById(mActionBarView,android.R.id.title);
-        textView.setText("我的二维码名片");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
 }

@@ -1,5 +1,6 @@
 package com.jims.work;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -20,7 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DoctorDetailActivity extends AppCompatActivity {
+public class DoctorDetailActivity extends BaseActivity1 {
 
     @BindView(R.id.ivBookCover)
     ImageView ivBookCover;
@@ -62,46 +63,37 @@ public class DoctorDetailActivity extends AppCompatActivity {
     TextView tvRecommendBookList;
     @BindView(R.id.rvRecommendBoookList)
     RecyclerView rvRecommendBoookList;
+    @BindView(R.id.btnBook)
+    DrawableCenterButton btnBook;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_detail);
-        ButterKnife.bind(this);
-        setCustomActionBar();
-        initview();
+    public static void startActivity(Context context, String bookId) {
+        context.startActivity(new Intent(context, DoctorDetailActivity.class)
+                .putExtra("id", bookId));
     }
 
-    private void initview() {
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_doctor_detail;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("医生详情");
+    }
+
+    @Override
+    public void initDatas() {
         tvlongIntro.setText(R.string.doctormessage);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
+    public void configViews() {
 
-                finish();
-            default:
-        }
-        return super.onOptionsItemSelected(item);
     }
 
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView = ButterKnife.findById(mActionBarView, android.R.id.title);
-        textView.setText("医生详情");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
+
 
     @OnClick({R.id.btnJoinCollection, R.id.btnRead})
     public void onClick(View view) {
@@ -111,9 +103,14 @@ public class DoctorDetailActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.btnRead:
-                Intent i = new Intent(this, BooksureActivity.class);
-                startActivity(i);
+
                 break;
         }
+    }
+
+    @OnClick(R.id.btnBook)
+    public void onClick() {
+        Intent i = new Intent(this, BooksureActivity.class);
+        startActivity(i);
     }
 }

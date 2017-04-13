@@ -1,6 +1,7 @@
 package com.jims.work;
 
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -26,7 +27,7 @@ import java.util.HashMap;
  * 评价详情
  */
 
-public class EvaluateActivity extends BaseActivity{
+public class EvaluateActivity extends BaseActivity1{
 
     private EditText edit;
     private GridView button;
@@ -38,19 +39,27 @@ public class EvaluateActivity extends BaseActivity{
     private static final int PHOTO_SUCCESS = 1;
     private static final int CAMERA_SUCCESS = 2;
 
-    /**
-     *
-     * @param savedInstanceState
-     * 页面布局并初始化
-     */
+    public static void startActivity(Context context, String bookId) {
+        context.startActivity(new Intent(context, EvaluateActivity.class)
+                .putExtra("id", bookId));
+    }
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.evaluate);
+    public int getLayoutId() {
+        return R.layout.evaluate;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("评价详情");
+    }
+
+    @Override
+    public void initDatas() {
         edit=(EditText)findViewById(R.id.edit);
         button=(GridView)findViewById(R.id.photobutton);
-       // button.setOnClickListener(this);
-        setCustomActionBar("评价详情");
+
 
         bmp = BitmapFactory.decodeResource(getResources(), R.drawable.gridview_addpic); //加号
         imageItem = new ArrayList<HashMap<String, Object>>();
@@ -103,19 +112,13 @@ public class EvaluateActivity extends BaseActivity{
                 }
             }
         });
-            }
+    }
 
-            //点击事件
-            public boolean onOptionsItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case android.R.id.home:
+    @Override
+    public void configViews() {
 
-                        finish();
+    }
 
-                    default:
-                        return super.onOptionsItemSelected(item);
-                }
-            }
     /**
      *
      * @param requestCode

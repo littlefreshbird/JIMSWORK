@@ -18,16 +18,26 @@ import butterknife.ButterKnife;
 import cn.bingoogolapple.qrcode.core.QRCodeView;
 import cn.bingoogolapple.qrcode.zxing.ZXingView;
 
-public class CodeScanActivity extends AppCompatActivity implements QRCodeView.Delegate {
+public class CodeScanActivity extends BaseActivity1 implements QRCodeView.Delegate {
     private static final String TAG = CodeScanActivity.class.getSimpleName();
     private static final int REQUEST_CODE_CHOOSE_QRCODE_FROM_GALLERY = 666;
 
     private QRCodeView mQRCodeView;
 private Button open_flashlight,close_flashlight;
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_codescan);
-        setCustomActionBar();
+ 
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_codescan;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("扫描二维码");
+    }
+
+    @Override
+    public void initDatas() {
         open_flashlight= (Button) findViewById(R.id.open_flashlight);
         close_flashlight= (Button) findViewById(R.id.close_flashlight);
         mQRCodeView = (ZXingView) findViewById(R.id.zxingview);
@@ -38,6 +48,12 @@ private Button open_flashlight,close_flashlight;
         mQRCodeView.startSpotAndShowRect();//延时1.5s识别
         mQRCodeView.changeToScanQRCodeStyle();
     }
+
+    @Override
+    public void configViews() {
+
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -48,21 +64,6 @@ private Button open_flashlight,close_flashlight;
         return super.onOptionsItemSelected(item);
     }
 
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView = ButterKnife.findById(mActionBarView, android.R.id.title);
-        textView.setText("扫描二维码");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
     @Override
     protected void onStart() {
         super.onStart();

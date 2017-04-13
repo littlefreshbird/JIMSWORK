@@ -34,7 +34,7 @@ import java.util.List;
 >>>>>>> origin/master
  */
 
-public class ReplyActivity extends BaseActivity {
+public class ReplyActivity extends BaseActivity1 {
     private ListView lv_user_comments;
     private Button btn_comment, btn_reply;
     private EditText edt_reply;
@@ -45,10 +45,21 @@ public class ReplyActivity extends BaseActivity {
     private List<Reply> replyList;
     private RatingBar ratingBar;
 
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.reply);
+    public int getLayoutId() {
+        return R.layout.reply;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("我的问诊");
+    }
+
+    @Override
+    public void initDatas() {
         ratingBar = (RatingBar)findViewById(R.id.ratingbar2);
        /* ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -56,9 +67,14 @@ public class ReplyActivity extends BaseActivity {
                 ratingBar.setRating(rating);
             }
         });*/
-        setCustomActionBar("我的问诊");
+
         initView();
         initCommentData();
+    }
+
+    @Override
+    public void configViews() {
+
     }
 
     private void initView() {
@@ -229,8 +245,7 @@ public class ReplyActivity extends BaseActivity {
             case android.R.id.home:
                 ServiceFragment serviceFragment=new ServiceFragment();
                 serviceFragment.setMenuVisibility(true);
-                /*Intent intent1=new Intent(ReplyActivity.this,MainActivity.class);//点击回主页
-                startActivity(intent1);*/
+
                 finish();
                 return true;
             default:

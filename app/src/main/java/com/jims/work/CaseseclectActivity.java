@@ -23,24 +23,28 @@ import butterknife.ButterKnife;
  * 病历查询
  */
 
-public class CaseseclectActivity extends BaseActivity {
+public class CaseseclectActivity extends BaseActivity1 {
     private ArrayList<MyhistoryseclectInfo> doctorsList = new ArrayList<MyhistoryseclectInfo>();
     private MyListView mListView;
     private TextView top_title_text;
 
     MyhistoryListseclectAdapter mDoctorsListAdapter;
 
-    /**
-     *
-     * @param savedInstanceState
-     * 初始化页面布局
-     */
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        CaseseclectActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
-        getSupportActionBar().hide();
-        setContentView(R.layout.caseseclect);
+    public int getLayoutId() {
+        return R.layout.caseseclect;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("寻医");
+    }
+
+    @Override
+    public void initDatas() {
         top_title_text=(TextView)findViewById(R.id.top_title_text);
         top_title_text.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,10 +54,15 @@ public class CaseseclectActivity extends BaseActivity {
                 finish();
             }
         });
-        ButterKnife.bind(this);
         initGoods();
         initview();
     }
+
+    @Override
+    public void configViews() {
+
+    }
+
     //加载数据
     private void initGoods() {
         doctorsList.add(new MyhistoryseclectInfo("感冒", "承德市第一附属医院", "心血管内科", "", "100001", "2016-12-15", "填写时间：", "填写人：", "张强"));
@@ -98,16 +107,4 @@ public class CaseseclectActivity extends BaseActivity {
 
     }
 
-    //点击事件
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-
-                finish();
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }

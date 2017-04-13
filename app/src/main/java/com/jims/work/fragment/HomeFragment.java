@@ -41,9 +41,10 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     private ViewPager mPager;
-    private int[] mBanner = new int[]{R.drawable.img_home_banner1,
+    private int[] mBanner = new int[]{R.drawable.jims_homepage_lunbo,
             R.drawable.img_home_banner2, R.drawable.img_home_banner3,
             R.drawable.img_home_banner4};
+
     private TextView mTextview,text_search;
     private ImageView mImageView;
     private ImageView mImgCover;
@@ -80,7 +81,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
     private void initcity() {
         SharedPreferences pref = getContext().getSharedPreferences("data",MODE_PRIVATE);
-        String city = pref.getString("CITY","北京");//第二个参数为默认值
+        String city = pref.getString("CITY","承德");//第二个参数为默认值
         mTextview.setText(city);
     }
     @Override

@@ -17,7 +17,7 @@ import com.jims.work.utils.MyListView;
 
 import java.util.ArrayList;
 
-public class MyDoctorsListActivity extends Activity implements
+public class MyDoctorsListActivity extends BaseActivity1 implements
         View.OnClickListener {
 
     private ArrayList<MyDoctorsInfor> goodsList = new ArrayList<MyDoctorsInfor>();
@@ -28,15 +28,30 @@ public class MyDoctorsListActivity extends Activity implements
     private MyListView mListView;
     private ProgressBar mProgressBar;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mydoctors);
+    public int getLayoutId() {
+        return R.layout.activity_mydoctors;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("我的医生");
+    }
+
+    @Override
+    public void initDatas() {
         initGoods();
         initView();
         setOnListener();
         initListView();
         mProgressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void configViews() {
+
     }
 
     private void initGoods() {
@@ -60,9 +75,7 @@ public class MyDoctorsListActivity extends Activity implements
 
     private void setOnListener() {
         mImgOverlay.setOnClickListener(this);
-        findViewById(R.id.toolbar_profile_back).setOnClickListener(this);
-
-    }
+        }
 
     private void initView() {
         mImgOverlay = (ImageView) findViewById(R.id.img_overlay);
@@ -204,12 +217,7 @@ public class MyDoctorsListActivity extends Activity implements
 
                 break;
 
-            case R.id.toolbar_profile_back: // 返回
-                finish();
-                break;
-
-
-            default:
+              default:
                 break;
         }
     }

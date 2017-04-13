@@ -44,7 +44,7 @@ import static com.jims.work.R.menu.main;
 /**
  * 病例上传
  */
-public class CaseLoadingActivity extends BaseActivity {
+public class CaseLoadingActivity extends BaseActivity1 {
     private EditText edit;
     private GridView gridView;
     private Button button_1;
@@ -58,15 +58,21 @@ public class CaseLoadingActivity extends BaseActivity {
     private boolean bl=false;
     private int position1=0;
 
-    /**
-     *
-     * @param savedInstanceState
-     * 页面布局的初始化
-     */
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caseloading);
+    public int getLayoutId() {
+        return R.layout.activity_caseloading;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("提交病情");
+    }
+
+    @Override
+    public void initDatas() {
         edit=(EditText)findViewById(R.id.edit);
         button_1=(Button)findViewById(R.id.button_1);
         //button_1.setBackgroundColor(Color.GREEN);
@@ -79,7 +85,7 @@ public class CaseLoadingActivity extends BaseActivity {
             }
         });
 
-        setCustomActionBar("提交病情");
+
         /*
          * 防止键盘挡住输入框
          * 不希望遮挡设置activity属性 android:windowSoftInputMode="adjustPan"
@@ -172,6 +178,11 @@ public class CaseLoadingActivity extends BaseActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void configViews() {
+
     }
 
     /**

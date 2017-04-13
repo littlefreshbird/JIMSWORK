@@ -5,9 +5,12 @@
     android:id="@+id/activity_health_record"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context="com.jims.work.HealthRecordActivity">
-
+   <include layout="@layout/common_toolbar"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -170,5 +173,6 @@
 
             </LinearLayout>
         </RelativeLayout>
+    </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -1,10 +1,8 @@
 package com.jims.work;
 
-import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
+import android.content.Context;
+import android.content.Intent;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -14,7 +12,7 @@ import android.widget.ToggleButton;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MoreActivity extends BaseActivity implements View.OnClickListener {
+public class MoreActivity extends BaseActivity1 implements View.OnClickListener {
 
 
     @BindView(R.id.layout_location)
@@ -34,14 +32,31 @@ public class MoreActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.btn_logout)
     Button btnLogout;
 
+    public static void startActivity(Context context, String bookId) {
+        context.startActivity(new Intent(context, MoreActivity.class)
+                .putExtra("id", bookId));
+    }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_more);
-        ButterKnife.bind(this);
-        setCustomActionBar();
+    public int getLayoutId() {
+        return R.layout.activity_more;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("更多");
+    }
+
+    @Override
+    public void initDatas() {
 
     }
+
+    @Override
+    public void configViews() {
+
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -68,31 +83,6 @@ public class MoreActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView=ButterKnife.findById(mActionBarView,android.R.id.title);
-        textView.setText("更多");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-
-                finish();
-            default:}
-        return super.onOptionsItemSelected(item);
-    }
 
 
 }

@@ -83,8 +83,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        UserInfoActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
-        getSupportActionBar().hide();
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_userinfo);

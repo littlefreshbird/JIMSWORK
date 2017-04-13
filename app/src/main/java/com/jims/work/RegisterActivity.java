@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 /**
  * 注册页面
  */
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends BaseActivity1 {
 
 
     @BindView(R.id.edit_mobile)
@@ -33,14 +33,20 @@ public class RegisterActivity extends AppCompatActivity {
     Button accessNext;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_register);
-        setCustomActionBar();
-        ButterKnife.bind(this);
-        //注册下一步跳转到设置密码页
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_register;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("注册");
+    }
+
+    @Override
+    public void initDatas() {
         accessNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,10 +57,13 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
-
+    @Override
+    public void configViews() {
 
     }
+
     public void checkUserInput(){
         if(!"".equals(editMobile.getText().toString().trim())){
             if(AppUtils.isMobileNO(editMobile.getText().toString().trim())==true){
@@ -86,19 +95,5 @@ public class RegisterActivity extends AppCompatActivity {
     public void showToast(String str){
         Toast.makeText(RegisterActivity.this, str, Toast.LENGTH_LONG).show();
     }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView = ButterKnife.findById(mActionBarView, android.R.id.title);
-        textView.setText("注册");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
 }

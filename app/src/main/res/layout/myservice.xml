@@ -5,7 +5,7 @@
               android:layout_height="fill_parent"
               android:background="@android:color/white"
               android:orientation="vertical" >
-
+<include layout="@layout/common_toolbar"></include>
     <GridView
         android:id="@+id/gv_main_footer_menu"
         android:layout_width="400dp"

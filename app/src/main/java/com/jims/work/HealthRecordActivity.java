@@ -15,7 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class HealthRecordActivity extends AppCompatActivity {
+public class HealthRecordActivity extends BaseActivity1 {
 
     @BindView(R.id.title_daytest)
     TextView titleDaytest;
@@ -60,40 +60,29 @@ public class HealthRecordActivity extends AppCompatActivity {
     @BindView(R.id.activity_health_record)
     LinearLayout activityHealthRecord;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_health_record);
-        ButterKnife.bind(this);
-        setCustomActionBar();
-    }
 
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView = ButterKnife.findById(mActionBarView, android.R.id.title);
-        textView.setText("健康档案");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_health_record;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-
-                finish();
-            default:
-        }
-        return super.onOptionsItemSelected(item);
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("健康档案");
     }
+
+    @Override
+    public void initDatas() {
+
+    }
+
+    @Override
+    public void configViews() {
+
+    }
+
+
 
     @OnClick({R.id.layout_allergic, R.id.layout_immune, R.id.layout_health, R.id.layout_medicine})
     public void onClick(View view) {

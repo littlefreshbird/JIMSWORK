@@ -17,6 +17,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.SimpleAdapter;
+
+import com.jims.work.view.MyListView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -26,20 +29,24 @@ import java.util.HashMap;
  * 选择已有档案
  */
 
-public class OldrecordActivity extends BaseActivity implements View.OnClickListener{
+public class OldrecordActivity extends BaseActivity1 implements View.OnClickListener{
     private Button wancheng;
     private RadioButton radiobutton1;
-    /**
-     *
-     * @param savedInstanceState
-     * 初始化页面布局
-     */
+
     @Override
-    public void onCreate(Bundle savedInstanceState ) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.oldrecord);
-        //绑定Layout里面的ListView
-        ListView list = (ListView) findViewById(R.id.listview01);
+    public int getLayoutId() {
+        return R.layout.oldrecord;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("选择档案");
+    }
+
+    @Override
+    public void initDatas() {
+        MyListView list = (MyListView) findViewById(R.id.listview01);
         //生成动态数组，加入数据
         ArrayList<HashMap<String, Object>> listItem = new ArrayList<HashMap<String, Object>>();
         for(int i=0;i<3;i++)
@@ -89,14 +96,17 @@ public class OldrecordActivity extends BaseActivity implements View.OnClickListe
         });
         wancheng=(Button)findViewById(R.id.wancheng);
         wancheng.setOnClickListener(this);
-
-        setCustomActionBar("选择档案");
     }
+
+    @Override
+    public void configViews() {
+
+    }
+
     public void onClick(View v){
         switch (v.getId()){
             case R.id.wancheng:
-                Intent intent1=new Intent(OldrecordActivity.this,NewDoctorListActivity.class);
-                startActivity(intent1);
+                NewDoctorListActivity.startActivity(OldrecordActivity.this,"11");
                 finish();
                 break;
             default:

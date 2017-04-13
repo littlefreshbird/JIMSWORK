@@ -1,6 +1,7 @@
 package com.jims.work;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.Gravity;
@@ -27,7 +28,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class NewDoctorListActivity extends BaseActivity {
+public class NewDoctorListActivity extends BaseActivity1 {
 
     @BindView(R.id.dropDownMenu)
     DropDownMenu dropDownMenu;
@@ -48,25 +49,33 @@ public class NewDoctorListActivity extends BaseActivity {
     private List<View> popupViews = new ArrayList<>();
     private int constellationPosition = 0;
 
+    public static void startActivity(Context context, String bookId) {
+        context.startActivity(new Intent(context, NewDoctorListActivity.class)
+                .putExtra("id", bookId));
+    }
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_new_doctor_list;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_doctor_list);
-        ButterKnife.bind(this);
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("找医生");
+    }
+
+    @Override
+    public void initDatas() {
         context = NewDoctorListActivity.this;
         initGoods();
         initview();
-        setCustomActionBar();
     }
-    //调用onSuppprtNavigateup()为actionbar左上角点击事件
+
     @Override
-    public boolean onSupportNavigateUp() {
-//        Intent intent=new Intent(NewDoctorListActivity.this,RecordActivity.class);
-//        startActivity(intent);
-        finish();
-        return super.onSupportNavigateUp();
+    public void configViews() {
+
     }
+
     private void initGoods() {
         doctorsList.add(new DoctorsInfo("李云龙", "承德附属医院", "心血管内科", "副主任医师", "100001", "胸闷、心悸、高血压、心功能不全、心脏病、肺动脉高压", context.getResources().getDrawable(R.drawable.doctor1, null), "", "153.00", "好评96%", 1224, 1, 0));
         doctorsList.add(new DoctorsInfo("李运昌", "承德市中心医院", "神经外科", "副主任医师", "100002", "脑肿瘤、脑外伤、呕吐、脑缺血、脑积水、动脉瘤", context.getResources().getDrawable(R.drawable.doctor2, null), "", "479.00", "好评95%", 645, 0, 0));
@@ -81,21 +90,7 @@ public class NewDoctorListActivity extends BaseActivity {
         doctorsList.add(new DoctorsInfo("周慧敏", "承德妇幼保健院", "小儿科", "副主任医师", "100003", "新生儿疾病、发育、幼儿急疹、母乳性黄疸、手足口病、尿布皮炎", context.getResources().getDrawable(R.drawable.doctor1, null), "", "149.00", "暂无评价", 1856, 0, 0));
 
     }
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView = ButterKnife.findById(mActionBarView, android.R.id.title);
-        textView.setText("找医生");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
+
     private void initview() {
         //init department menu
         final View constellationView = getLayoutInflater().inflate(R.layout.custom_layout, null);
@@ -180,14 +175,6 @@ public class NewDoctorListActivity extends BaseActivity {
             super.onBackPressed();
         }
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
 
-                finish();
-            default:}
-        return super.onOptionsItemSelected(item);
-    }
 
 }

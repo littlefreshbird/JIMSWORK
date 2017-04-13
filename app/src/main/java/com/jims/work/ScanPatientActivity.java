@@ -16,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ScanPatientActivity extends AppCompatActivity {
+public class ScanPatientActivity extends BaseActivity1 {
 
 
     @BindView(R.id.input_message)
@@ -27,29 +27,26 @@ public class ScanPatientActivity extends AppCompatActivity {
     Button next;
 
     public static ScanPatientActivity sScanPatientActivity;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scan_patient);
-        ButterKnife.bind(this);
-        setCustomActionBar();
+    public int getLayoutId() {
+        return R.layout.activity_scan_patient;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("查找病人");
+    }
+
+    @Override
+    public void initDatas() {
         sScanPatientActivity=this;
     }
 
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView = ButterKnife.findById(mActionBarView, android.R.id.title);
-        textView.setText("查找病人");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
+    @Override
+    public void configViews() {
+
     }
 
 
@@ -67,16 +64,6 @@ public class ScanPatientActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-
-                finish();
-            default:
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
 
 }

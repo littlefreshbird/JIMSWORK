@@ -1,5 +1,6 @@
 package com.jims.work;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -16,26 +17,34 @@ import android.widget.Toast;
 
 import com.jims.work.fragment.ServiceFragment;
 
-public class MyinquiryDetailAcivity extends BaseActivity {
+public class MyinquiryDetailAcivity extends BaseActivity1 {
     private ImageView mimageView;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.myinquiry);
-        setCustomActionBar("我的问诊");
-       /* ImageView mimageView= (ImageView) findViewById(R.id.img_myevaluatedetial_back);
-        mimageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ServiceFragment serviceFragment=new ServiceFragment();
-                serviceFragment.setMenuVisibility(true);
-               // Intent intent=new Intent(MyinquiryDetailAcivity.this,ServiceFragment.class);
-               // startActivity(intent);
-                finish();
-            }
-        });*/
+    public static void startActivity(Context context, String bookId) {
+        context.startActivity(new Intent(context, MyinquiryDetailAcivity.class)
+                .putExtra("id", bookId));
     }
+    @Override
+    public int getLayoutId() {
+        return R.layout.myinquiry;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("我的问诊");
+    }
+
+    @Override
+    public void initDatas() {
+
+    }
+
+    @Override
+    public void configViews() {
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater mf=getMenuInflater();

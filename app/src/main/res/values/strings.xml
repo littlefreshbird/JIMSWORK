@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JIMSWORK</string>
+    <string name="app_name">极目云医</string>
     <string name="home">首页</string>
     <string name="health">义诊</string>
     <string name="service">我的服务</string>
@@ -16,6 +16,7 @@
     <string name="add_tag">Add Tag</string>
     <string name="subscibe">订阅</string>
     <string name="attention">关注</string>
+    <string name="book">预约</string>
     <string name="booktext">预约挂号</string>
     <string name="YEAR">year</string>
     <string name="YEARS">years</string>
@@ -33,7 +34,8 @@
     <string name="doctormessage">哈尔滨市中西医结合学会脑病学分会常务委员，黑龙江省内科资深专家，从事内科工作40余年，著书多部，在学界引起强烈反响。在心脑血管病、内科急危重症和疑难病症方面有丰富的临床诊疗经验，
 擅于以中西医结合疗法针对性治疗急慢性胃炎、消化性溃疡等，精通冠心病、心肌梗死、心绞痛、心律失常、心肌炎、心力衰竭的诊治，潜心于控制高脂血症、糖尿病、高血压症从而预防心脑血管病的专项研究。其医德医风深受好评。</string>
 
-
+    <string name="severdetail">制定糖尿病相关个性体检，过往检测报告解读，详细了解病情，在线提供基本病情评估报告。详细评估饮食、运动、知识掌握情况，有针对性的在线制定指导建议和教育计划，制定饮食、运动、知识掌握评估报告。
+        定期了解治疗方案执行情况，有针对性的督促执行，前四周每周在线进行督促反馈，之后每月进行，每三个月在心进行饮食、运动、知识掌握评估。在服务周期内，为糖尿病患者提供不限次的在线图文留言咨询服务。可提供时间：90:00至17:00</string>
     <string name="pull_to_refresh">下拉刷新</string>
     <string name="release_to_refresh">释放立即刷新</string>
     <string name="refreshing">正在刷新...</string>

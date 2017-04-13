@@ -30,7 +30,7 @@ import butterknife.ButterKnife;
  * 创建档案或选择已有档案
  */
 
-public class RecordActivity extends BaseActivity {
+public class RecordActivity extends BaseActivity1 {
     private EditText editone,edittwo;
     private RadioButton radiobutton1,radiobutton2;
     private TextView textone,texttwo,textthree,textfour,textfive ;
@@ -40,16 +40,21 @@ public class RecordActivity extends BaseActivity {
     private int mYear;
     private int mMonth;
     private int mDay;
-    /**
-     *
-     * @param savedInstanceState
-     * 初始化页面布局
-     */
+
+
     @Override
-    public void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.record);
-        setCustomActionBar("注册档案");
+    public int getLayoutId() {
+        return R.layout.record;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("注册档案");
+    }
+
+    @Override
+    public void initDatas() {
         editone = (EditText) findViewById(R.id.editone);
         radiobutton1= (RadioButton) findViewById(R.id.radiobutton1);
         radiobutton2= (RadioButton) findViewById(R.id.radiobutton2);
@@ -100,6 +105,11 @@ public class RecordActivity extends BaseActivity {
         });
     }
 
+    @Override
+    public void configViews() {
+
+    }
+
     /**
      *
      * @param id
@@ -146,17 +156,6 @@ public class RecordActivity extends BaseActivity {
         }
     };*/
 
-    //点击事件
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                Intent intent=new Intent(RecordActivity.this,PostActivity.class);
-                startActivity(intent);
-                finish();
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+
 
 }

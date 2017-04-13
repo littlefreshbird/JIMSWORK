@@ -19,25 +19,32 @@ import com.jims.work.utils.Constants;
 
 import butterknife.ButterKnife;
 
-public class BookcodeActivity extends BaseActivity {
-    private ProgressBar mProgressBar;
-
-
+public class BookcodeActivity extends BaseActivity1 {
 
     private GridView doctor_class_gridview;
     private Adapter_GridView_Doctorclass adapter_GridView_doctorclass;
-
+    public static   BookcodeActivity mBookcodeActivity;
 
     private String[] str_path_hot = Constants.MyString.DEPARTMENT_CLS;
     private int[] pic_path_hot = { R.mipmap.clinic_08_color_icon, R.mipmap.clinic_01_color_icon, R.mipmap.clinic_02_color_icon, R.mipmap.clinic_21_color_icon,
             R.mipmap.clinic_09_color_icon, R.mipmap.clinic_03_color_icon, R.mipmap.clinic_12_color_icon, R.mipmap.clinic_04_color_icon,
             R.mipmap.clinic_07_color_icon, R.mipmap.clinic_17_color_icon, R.mipmap.clinic_15_color_icon, R.mipmap.clinic_13_color_icon,
             R.mipmap.clinic_14_color_icon, R.mipmap.clinic_11_color_icon, R.mipmap.clinic_16_color_icon, R.mipmap.clinic_06_color_icon,};
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bookcode);
-        setCustomActionBar();
+    public int getLayoutId() {
+        return R.layout.activity_bookcode;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("预约挂号");
+    }
+
+    @Override
+    public void initDatas() {
+        mBookcodeActivity=this;
         doctor_class_gridview = (GridView) findViewById(R.id.doctor_class_gridview);
 
         doctor_class_gridview.setSelector(new ColorDrawable(Color.TRANSPARENT));
@@ -48,45 +55,13 @@ public class BookcodeActivity extends BaseActivity {
         doctor_class_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-
-
-                Intent intent = new Intent(BookcodeActivity.this,
-                        NewDoctorListActivity.class);
-                startActivity(intent);
-                finish();
-
-
-
+                BookListActivity.startActivity(BookcodeActivity.this,"11");
             }
         });
-
-
     }
 
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView = ButterKnife.findById(mActionBarView, android.R.id.title);
-        textView.setText("预约挂号");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
-    }
-    //点击事件
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+    public void configViews() {
 
+    }
 }

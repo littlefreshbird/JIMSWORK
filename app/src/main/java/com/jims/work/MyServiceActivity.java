@@ -35,7 +35,7 @@ import com.jims.work.fragment.TwoFragment;
  * Created by Just on 2017/1/5.
  * 我的服务
  */
-public class MyServiceActivity extends BaseActivity {
+public class MyServiceActivity extends BaseActivity1 {
     private OneFragment f1 = new OneFragment();
     private TwoFragment f2 = new TwoFragment();
     private ThreeFragment f3 = new ThreeFragment();
@@ -57,12 +57,33 @@ public class MyServiceActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.myservice);
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.myservice;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("我的服务");
+    }
+
+    @Override
+    public void initDatas() {
         initValues();
         findViews();
         setValues();
         setUpViewPager();
         setListeners();
-        setCustomActionBar("我的服务");
+
+    }
+
+    @Override
+    public void configViews() {
+
     }
 
     private void initValues() {

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:paddingLeft="10dp"
+                android:paddingTop="4dp">
+
+    <ImageView
+        android:id="@+id/img_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/tv_date"
+        android:background="#ffffff"
+        android:padding="3dp"
+        android:src="@mipmap/load_logo"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toLeftOf="@+id/tv_week"
+        android:text="2017-04-09"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"/>
+
+    <TextView
+        android:id="@+id/tv_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+
+        android:text="口腔科"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"/>
+
+    <TextView
+        android:id="@+id/tv_longtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tv_week"
+        android:text="主任医师"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"/>
+    <TextView
+        android:id="@+id/tv_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tv_longtime"
+        android:text="主任医师"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_0.5"
+        android:layout_below="@+id/img_icon"
+        android:layout_marginTop="4dp"
+        android:background="@color/divider_color"/>
+
+
+</RelativeLayout>

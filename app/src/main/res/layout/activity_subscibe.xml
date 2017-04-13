@@ -6,11 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.jims.work.SubscibeActivity">
+    <include android:id="@+id/common_toolbar"  layout="@layout/common_toolbar"></include>
     <com.jims.work.view.SwipeMenuListView
         android:id="@+id/listView_cart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar_profile"
+        android:layout_below="@id/common_toolbar"
         android:layout_centerHorizontal="true"
 
         android:cacheColorHint="@color/transparent"
@@ -19,14 +20,6 @@
         android:listSelector="@color/transparent">
     </com.jims.work.view.SwipeMenuListView>
 
-    <ProgressBar
-        android:id="@+id/progressBar_cart"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:indeterminateDrawable="@drawable/progressbar_circle_1" />
 
     <RelativeLayout
         android:id="@+id/layout_pay_bar"

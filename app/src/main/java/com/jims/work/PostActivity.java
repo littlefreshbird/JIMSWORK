@@ -41,7 +41,7 @@ import java.util.TimerTask;
  * 提交病例
  */
 
-public class PostActivity extends BaseActivity implements View.OnClickListener {
+public class PostActivity extends BaseActivity1 implements View.OnClickListener {
     private TextView neike,waike,jingshenke,meirongke,fangsheke,nanke,muyingke,guke,huayanke,erbihouke,pifuke,kouqiangke,chanke,xueyeke;
     private EditText edit;
     private GridView gridView;
@@ -59,15 +59,21 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
     float scaleWidth;
     float scaleHeight;
 
-    /**
-     *
-     * @param savedInstanceState
-     * 初始化页面布局
-     */
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.post);
+    public int getLayoutId() {
+        return R.layout.post;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("提交病情");
+    }
+
+    @Override
+    public void initDatas() {
         edit=(EditText)findViewById(R.id.edit);
         DisplayMetrics dm=new DisplayMetrics();//创建矩阵
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -101,10 +107,11 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
         xueyeke.setOnClickListener(this);
         chanke.setOnClickListener(this);
         pifuke.setOnClickListener(this);
+    }
 
-
-        setCustomActionBar("提交病情");//actionbar格式
-        /*
+    @Override
+    public void configViews() {
+  /*
          * 防止键盘挡住输入框
          * 不希望遮挡设置activity属性 android:windowSoftInputMode="adjustPan"
          * 希望动态调整高度 android:windowSoftInputMode="adjustResize"
@@ -112,7 +119,7 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.
                 SOFT_INPUT_ADJUST_PAN);
         //锁定屏幕
-       setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //获取控件对象
         gridView = (GridView) findViewById(R.id.gridView);
 
@@ -176,7 +183,7 @@ public class PostActivity extends BaseActivity implements View.OnClickListener {
                     dlg.show();
                 }
                 else {
-                  //增加点击放大效果
+                    //增加点击放大效果
                     position1=position;
                     if(bl==false){
                         Animation testAnim = AnimationUtils.loadAnimation(PostActivity.this, R.anim.anim);

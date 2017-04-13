@@ -1,307 +1,333 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="fill_parent"
-    android:background="@color/white"
-    android:scrollbars="vertical"
-    android:fadingEdge="vertical">
-<LinearLayout
-
     android:id="@+id/activity_main"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-
     android:background="@color/white"
     android:orientation="vertical">
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="horizontal"
-        android:fadingEdge="horizontal">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/biankaugn"
-        >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/wubiankuang"
-            >
-            <EditText
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:gravity="center"
-                android:background="@drawable/wubiankuang"
-                android:text="编 号: "
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_small"/>
-            <EditText
-                android:layout_width="fill_parent"
-                android:gravity="center"
-                android:background="@drawable/wubiankuang"
-                android:text="11111111111"
-                android:textSize="12sp"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
+    <include layout="@layout/common_toolbar"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/wubiankuang"
-            >
-            <EditText
-                android:layout_width="50dp"
-                android:enabled="false"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="姓 名: "
-                android:background="@drawable/wubiankuang"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_small"/>
-            <EditText
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:text="李雷"
-                android:textSize="12sp"
-                android:background="@drawable/wubiankuang"
-                android:gravity="center"/>
+    <ScrollView
 
-            <EditText
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:padding="5dp"
-                android:gravity="center"
-                android:enabled="false"
-                android:text="性 别: "
-                android:background="@drawable/wubiankuang"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_small"/>
-
-            <EditText
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/wubiankuang"
-                android:gravity="center"
-                android:text="男"
-                android:textSize="12sp"
-                android:id="@+id/editText"/>
-
-            <EditText
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:layout_marginLeft="5dp"
-                android:padding="5dp"
-                android:gravity="center"
-                android:background="@drawable/wubiankuang"
-                android:text="年 龄: "
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_small"/>
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="20"
-                android:textSize="12sp"
-                android:background="@drawable/wubiankuang"
-                android:gravity="center"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/wubiankuang"
-            android:orientation="horizontal"
-            >
-            <EditText
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:enabled="false"
-                android:padding="5dp"
-                android:text="身份证: "
-                android:background="@drawable/wubiankuang"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_small"/>
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/wubiankuang"
-                android:text="11111111111"
-                android:textSize="12sp"
-                android:gravity="center"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/wubiankuang"
-            >
-            <EditText
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/wubiankuang"
-                android:enabled="false"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="联系方式: "
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_small"/>
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/wubiankuang"
-                android:text="11111111111"
-                android:textSize="12sp"
-                android:gravity="center"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/wubiankuang"
-            >
-            <EditText
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:gravity="center"
-                android:text="病情描述: "
-                android:background="@drawable/wubiankuang"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_small"/>
-            <EditText
-                android:layout_width="50dp"
-                android:enabled="false"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:gravity="center"
-                android:text="科目: "
-                android:background="@drawable/wubiankuang"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_small"/>
-            <EditText
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/wubiankuang"
-                android:text="外科"
-                android:textSize="12sp"
-                android:gravity="center"/>
-            <EditText
-                android:layout_width="60dp"
-                android:enabled="false"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:gravity="center"
-                android:text="主治医师: "
-                android:background="@drawable/wubiankuang"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_small"/>
-            <EditText
-                android:layout_width="fill_parent"
-                android:textSize="12sp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/wubiankuang"
-                android:text="张强"
-                android:gravity="center"/>
-        </LinearLayout>
-
-    </LinearLayout>
-    </HorizontalScrollView>
-
-
-    <EditText
-        android:id="@+id/edit"
-        android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        android:layout_margin="12dp"
-        android:textSize="@dimen/micro_text_size"
-        android:background="@drawable/biankuang"
-        android:text="外科是研究外科疾病的发生，发展规律及其临床表现，诊断，预防和治疗的科学，是以手术切除、修补为主要治病手段的专业科室。随着显微外科技术的应用，外科得到了较大的发展。各医院外科的专科设置原则与内科类同，通常与内科相对应。外科疾病分为五大类：创伤，感染，肿瘤，畸形和功能障碍。"
-        android:gravity="start"
-        android:maxLength="500"
-
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/wubiankuang"
-        >
-    <EditText
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:enabled="false"
-        android:gravity="center"
-        android:text="医治药物: "
-        android:background="@drawable/biankaugn"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_size_small"/>
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/wubiankuang"
-        android:textSize="@dimen/micro_text_size"
-        android:text="罗西霉素等抗生素"
-        android:gravity="center"/>
-
-    </LinearLayout>
-    <!-- 网格显示图片 行列间距5dp 每列宽度90dp -->
-    <GridView
-        android:id="@+id/gridView"
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:layout_margin="5dp"
+        android:layout_height="fill_parent"
         android:background="@color/white"
-        android:horizontalSpacing="5dp"
-        android:verticalSpacing="5dp"
-        android:numColumns="4"
-        android:columnWidth="90dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center" >
-    </GridView>
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="15dp"
-        android:textSize="@dimen/micro_text_size"
-        android:text="(友情提示:只能添加5张图片,右上角可以删除已添加图片)"
-        android:gravity="center" />
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical">
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        >
-        <Button
-            android:id="@+id/button_1"
-            android:layout_width="300dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:textColor="@color/white"
-            android:background="@drawable/bg_edittext"
-            android:paddingTop="5dip"
-            android:text="完成"
-            android:textSize="@dimen/small_text_size"
+            android:background="@drawable/wubiankuang"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
 
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/wubiankuang"
+                >
 
-    </LinearLayout>
+                <TextView
 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/wubiankuang"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="编 号: "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"/>
+
+                <EditText
+                    android:id="@+id/edit_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/wubiankuang"
+                    android:gravity="start"
+                    android:padding="5dp"
+                    android:textSize="@dimen/item_margin_top"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/wubiankuang"
+                >
+
+                <EditText
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/wubiankuang"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="姓 名: "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"/>
+
+                <EditText
+                    android:id="@+id/edit_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/wubiankuang"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="@dimen/item_margin_top"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+
+                    android:background="@drawable/wubiankuang"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="性 别: "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"/>
+
+                <EditText
+                    android:id="@+id/edit_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/wubiankuang"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="@dimen/item_margin_top"/>
+
+                <EditText
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/wubiankuang"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="年 龄: "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"/>
+
+                <EditText
+                    android:id="@+id/edit_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/wubiankuang"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="@dimen/item_margin_top"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/wubiankuang"
+                android:orientation="horizontal"
+                >
+
+                <EditText
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/wubiankuang"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="身份证: "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"/>
+
+                <EditText
+                    android:id="@+id/edit_cardid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/wubiankuang"
+                    android:gravity="start"
+                    android:padding="5dp"
+                    android:textSize="@dimen/item_margin_top"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/wubiankuang"
+
+                >
+
+                <EditText
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/wubiankuang"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="联系方式: "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"/>
+
+                <EditText
+                    android:id="@+id/edit_tel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/wubiankuang"
+                    android:gravity="start"
+                    android:padding="5dp"
+                    android:textSize="@dimen/item_margin_top"/>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/wubiankuang"
+                android:orientation="horizontal"
+                >
+
+
+
+                <EditText
+                    android:id="@+id/editkm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/wubiankuang"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="科目: "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"/>
+
+                <EditText
+                    android:id="@+id/editkm1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/editkm"
+                    android:background="@drawable/wubiankuang"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="@dimen/item_margin_top"/>
+
+                <EditText
+                    android:id="@+id/editys"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="90dp"
+                    android:layout_toRightOf="@+id/editkm1"
+                    android:background="@drawable/wubiankuang"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="主治医师: "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_small"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/editys"
+                    android:background="@drawable/wubiankuang"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textSize="@dimen/item_margin_top"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_height_0.5"
+                android:layout_below="@+id/img_icon"
+                android:layout_marginTop="4dp"
+                android:background="@color/divider_color"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginTop="4dp"
+                android:text="病情描述"
+                android:textColor="@color/black"
+                android:textSize="@dimen/medium_text_size"
+                />
+            <EditText
+                android:id="@+id/edit"
+                android:layout_width="fill_parent"
+                android:layout_height="130dp"
+                android:layout_margin="6dp"
+                android:background="@drawable/biankuang"
+                android:gravity="start"
+                android:hint="暂定格式..."
+                android:maxLength="500"
+                android:textSize="@dimen/micro_text_size"
+
+                />
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="医治药物 "
+                android:textColor="@color/black"
+                android:textSize="@dimen/medium_text_size"/>
+
+
+            <!-- 网格显示图片 行列间距5dp 每列宽度90dp -->
+            <GridView
+                android:id="@+id/gridView"
+                android:layout_width="fill_parent"
+                android:layout_height="130dp"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:columnWidth="90dp"
+                android:gravity="center"
+                android:horizontalSpacing="5dp"
+                android:numColumns="4"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="5dp">
+            </GridView>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:text="(友情提示:只能添加5张图片,右上角可以删除已添加图片)"
+                android:textSize="@dimen/micro_text_size"/>
+
+
+
+
+            <Button
+                android:id="@+id/button_1"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_edittext"
+                android:paddingTop="5dip"
+                android:text="完成"
+
+                android:textColor="@color/white"
+                android:textSize="@dimen/small_text_size"/>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 </LinearLayout>
-</ScrollView>
 
 
 

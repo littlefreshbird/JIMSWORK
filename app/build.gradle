@@ -43,6 +43,8 @@ dependencies {
     compile files('src/main/libs/fastjson-1.1.38.jar')
     compile files('src/main/libs/MobCommons-2016.1012.1447.jar')
     compile files('src/main/libs/MobTools-2016.1012.1447.jar')
+
+
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.jakewharton:butterknife:8.4.0'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
@@ -57,8 +59,8 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
     compile 'com.github.d-max:spots-dialog:0.7'
-    compile 'com.facebook.fresco:fresco:1.1.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
 }

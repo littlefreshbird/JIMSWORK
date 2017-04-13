@@ -30,7 +30,7 @@ import butterknife.ButterKnife;
  * 选择提交病例的档案
  */
 
-public class RecordcaseActivity extends BaseActivity {
+public class RecordcaseActivity extends BaseActivity1 {
     private EditText editone;
     private RadioButton radiobutton1,radiobutton2;
     private TextView textone,textthree,textfour,textfive ;
@@ -41,16 +41,21 @@ public class RecordcaseActivity extends BaseActivity {
     private int mMonth;
     private int mDay;
 
-    /**
-     *
-     * @param savedInstanceState
-     * 页面布局的初始化
-     */
+
+
     @Override
-    public void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.record_case);
-        setCustomActionBar("提交病例");
+    public int getLayoutId() {
+        return R.layout.record_case;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("提交病例");
+    }
+
+    @Override
+    public void initDatas() {
         editone = (EditText) findViewById(R.id.editone);
         radiobutton1= (RadioButton) findViewById(R.id.radiobutton1);
         radiobutton2= (RadioButton) findViewById(R.id.radiobutton2);
@@ -96,6 +101,11 @@ public class RecordcaseActivity extends BaseActivity {
         mDay = c.get(Calendar.DAY_OF_MONTH);
     }
 
+    @Override
+    public void configViews() {
+
+    }
+
     /**
      *
      * @param id
@@ -127,17 +137,5 @@ public class RecordcaseActivity extends BaseActivity {
     }
 
 
-    //点击事件
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                Intent intent=new Intent(RecordcaseActivity.this,CaseLoadingActivity.class);
-                startActivity(intent);
-                finish();
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
 }

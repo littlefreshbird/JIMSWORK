@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 /**
  * 注册设置密码
  */
-public class RegisterNextActivity extends AppCompatActivity {
+public class RegisterNextActivity extends BaseActivity1 {
 
     @BindView(R.id.img_registernext_back)
     ImageView imgRegisternextBack;
@@ -30,13 +30,20 @@ public class RegisterNextActivity extends AppCompatActivity {
     @BindView(R.id.btn_register_next)
     Button btnRegisterNext;
     ProgressDialog pd;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        RegisterNextActivity.this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
-        getSupportActionBar().hide();
-        setContentView(R.layout.activity_register_next);
-        ButterKnife.bind(this);
+    public int getLayoutId() {
+        return R.layout.activity_register_next;
+    }
+
+    @Override
+    public void initToolBar() {
+
+    }
+
+    @Override
+    public void initDatas() {
         Intent intent= getIntent();
         String phone= intent.getStringExtra("phone");
 
@@ -44,7 +51,7 @@ public class RegisterNextActivity extends AppCompatActivity {
         imgRegisternextBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               finish();
+                finish();
             }
         });
         //注册成功跳转到主页
@@ -58,6 +65,12 @@ public class RegisterNextActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void configViews() {
+
+    }
+
     public void checkUserInput(){
         int len = editCode.getText().toString().length();
         boolean result = editCode.getText().toString().equals(editCopycode.getText().toString());

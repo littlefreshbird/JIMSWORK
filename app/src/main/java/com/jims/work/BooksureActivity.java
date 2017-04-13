@@ -1,5 +1,6 @@
 package com.jims.work;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -17,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class BooksureActivity extends AppCompatActivity {
+public class BooksureActivity extends BaseActivity1 {
 
     @BindView(R.id.DoctorIcon)
     CircleImageView DoctorIcon;
@@ -46,39 +47,34 @@ public class BooksureActivity extends AppCompatActivity {
     @BindView(R.id.btn_book)
     Button btnBook;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_booksure);
-        ButterKnife.bind(this);
-        setCustomActionBar();
-    }
 
-    public void setCustomActionBar() {
-        ActionBar.LayoutParams lp = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        View mActionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar, null);
-        TextView textView = ButterKnife.findById(mActionBarView, android.R.id.title);
-        textView.setText("预约挂号");
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setCustomView(mActionBarView, lp);
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeAsUpIndicator(R.drawable.action_bar_back);
-        actionBar.setElevation(2);
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_booksure;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-            default:
-        }
-        return super.onOptionsItemSelected(item);
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("预约挂号");
     }
+
+    @Override
+    public void initDatas() {
+
+    }
+
+    @Override
+    public void configViews() {
+
+    }
+
+    public static void startActivity(Context context, String bookId) {
+        context.startActivity(new Intent(context, BooksureActivity.class)
+                .putExtra("id", bookId));
+    }
+
 
     @OnClick({R.id.btn_person_change, R.id.btn_book})
     public void onViewClicked(View view) {
@@ -88,7 +84,9 @@ public class BooksureActivity extends AppCompatActivity {
             case R.id.btn_book://预约完成
                 Intent i=new Intent(BooksureActivity.this,MybookcodeActivity.class);
                 startActivity(i);
-
+                if(BookListActivity.mBookListActivity!=null){BookListActivity.mBookListActivity.finish();};
+                if(BookcodeActivity.mBookcodeActivity!=null){BookcodeActivity.mBookcodeActivity.finish();};
+                 finish();
 
                 break;
         }

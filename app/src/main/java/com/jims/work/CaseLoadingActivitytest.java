@@ -28,7 +28,7 @@ import static com.jims.work.R.menu.main;
 /**
  * 病例详情页
  */
-public class CaseLoadingActivitytest extends BaseActivity {
+public class CaseLoadingActivitytest extends BaseActivity1 {
     private GridView gridView;
     private Button button_1;
     private final int IMAGE_OPEN = 1;        //打开图片标记
@@ -41,15 +41,21 @@ public class CaseLoadingActivitytest extends BaseActivity {
     private boolean bl=false;
     private int position1=0;
 
-    /**
-     *
-     * @param savedInstanceState
-     * 初始化页面布局
-     */
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caseloadingtest);
+    public int getLayoutId() {
+        return R.layout.activity_caseloadingtest;
+    }
+
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("病例详情");
+    }
+
+    @Override
+    public void initDatas() {
         button_1=(Button)findViewById(R.id.button_1) ;
         button_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +65,7 @@ public class CaseLoadingActivitytest extends BaseActivity {
                 CaseLoadingActivitytest.this.finish();
             }
         });
-        setCustomActionBar("病例详情");
+
         /*
          * 防止键盘挡住输入框
          * 不希望遮挡设置activity属性 android:windowSoftInputMode="adjustPan"
@@ -70,22 +76,17 @@ public class CaseLoadingActivitytest extends BaseActivity {
         //锁定屏幕
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
+
+    @Override
+    public void configViews() {
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater mf=getMenuInflater();
         mf.inflate(main,menu);
         return super.onCreateOptionsMenu(menu);
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                Intent intent=new Intent(CaseLoadingActivitytest.this,CaseseclectActivity.class);//点击回主页
-                startActivity(intent);
-                finish();
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
 }

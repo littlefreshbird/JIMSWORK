@@ -1,5 +1,6 @@
 package com.jims.work;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -21,7 +22,7 @@ import butterknife.ButterKnife;
 /***
  * 诊疗记录
  */
-public class MyHistoryListActivity extends BaseActivity {
+public class MyHistoryListActivity extends BaseActivity1 {
 
 
 
@@ -29,15 +30,30 @@ public class MyHistoryListActivity extends BaseActivity {
     private MyListView mListView;
 
     MyhistoryListAdapter mDoctorsListAdapter;
+    public static void startActivity(Context context, String bookId) {
+        context.startActivity(new Intent(context, MyHistoryListActivity.class)
+                .putExtra("id", bookId));
+    }
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public int getLayoutId() {
+        return R.layout.activity_myhistory_list;
+    }
 
-        setContentView(R.layout.activity_myhistory_list);
-        ButterKnife.bind(this);
-        setCustomActionBar("诊疗记录");//actionbar格式
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("诊疗记录");
+    }
+
+    @Override
+    public void initDatas() {
         initGoods();
         initview();
+    }
+
+    @Override
+    public void configViews() {
+
     }
 
     private void initGoods() {
@@ -65,7 +81,7 @@ public class MyHistoryListActivity extends BaseActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 MyhistoryInfo info = doctorsList.get(position);
-                gotoDetail(info);
+                MyHistoryDetailActivity.startActivity(MyHistoryListActivity.this,"11");
             }
         });
         mListView.setOnScroll2TopListener(new MyListView.OnScroll2TopListener() {
@@ -78,22 +94,5 @@ public class MyHistoryListActivity extends BaseActivity {
 
     }
 
-    //点击事件
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
 
-                finish();
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-     //诊疗记录详情
-       private void gotoDetail(MyhistoryInfo info) {
-        Intent intent = new Intent(this, MyHistoryDetailActivity.class);
-
-        startActivity(intent);
-    }
 }

@@ -1,5 +1,7 @@
 package com.jims.work;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -17,7 +19,10 @@ public class MyHistoryDetailActivity extends AppCompatActivity {
     ImageView imgMyhistoryBack;
     @BindView(R.id.id_title)
     RelativeLayout idTitle;
-
+    public static void startActivity(Context context, String bookId) {
+        context.startActivity(new Intent(context, MyHistoryDetailActivity.class)
+                .putExtra("id", bookId));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

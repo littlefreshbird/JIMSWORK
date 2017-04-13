@@ -5,127 +5,135 @@
               android:background="@color/white"
               android:orientation="vertical">
 
+    <include layout="@layout/common_toolbar"></include>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/biankaugn"
         android:layout_marginLeft="10dp"
-        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/biankaugn"
         >
+
         <EditText
             android:id="@+id/textthree"
             android:layout_width="wrap_content"
-            android:enabled="false"
             android:layout_height="60dp"
-            android:textSize="@dimen/micro_text_size"
+            android:enabled="false"
             android:gravity="bottom"
+            android:hint="病例类别:"
             android:textColorHint="@color/dim_foreground_material_light"
-            android:hint="病例类别:"/>
+            android:textSize="@dimen/micro_text_size"/>
 
         <RadioGroup
             android:id="@+id/rgSex"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:paddingTop="30dip"
             android:layout_alignParentRight="true"
             android:checkedButton="@+id/male"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="30dip">
 
             <RadioButton
                 android:id="@+id/radiobutton1"
-                android:textSize="10dp"
-                android:checked="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="门诊病历"/>
+                android:checked="true"
+                android:text="门诊病历"
+                android:textSize="10dp"/>
 
             <RadioButton
                 android:id="@+id/radiobutton2"
-                android:layout_marginEnd="1dp"
-                android:textSize="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="住院病历"/>
+                android:layout_marginEnd="1dp"
+                android:text="住院病历"
+                android:textSize="10dp"/>
         </RadioGroup>
     </RelativeLayout>
-    <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/biankaugn"
-    android:orientation="horizontal"
-    android:layout_marginLeft="10dp"
-   >
-        <EditText
-            android:id="@+id/editone"
-            android:layout_width="wrap_content"
-            android:enabled="false"
-            android:layout_height="60dp"
-            android:textSize="@dimen/micro_text_size"
-            android:gravity="bottom"
-            android:textColorHint="@color/dim_foreground_material_light"
-            android:hint="门诊机构:"
-            />
-        <EditText
-            android:layout_toRightOf="@+id/editone"
-            android:layout_width="fill_parent"
-            android:layout_height="60dp"
-            android:paddingTop="30dp"
-            android:gravity="center"
-            android:text="XXX医院"
-            android:background="@drawable/biankaugn"
-            android:textSize="@dimen/micro_text_size"
-            android:textColorHint="@color/dim_foreground_material_light"
 
-            />
-    </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/biankaugn"
         >
+
         <EditText
-            android:id="@+id/textfour"
+            android:id="@+id/editone"
             android:layout_width="wrap_content"
-            android:enabled="false"
             android:layout_height="60dp"
+            android:enabled="false"
             android:gravity="bottom"
-            android:textSize="@dimen/micro_text_size"
+            android:hint="门诊机构:"
             android:textColorHint="@color/dim_foreground_material_light"
-            android:hint="住院日期:"/>
-        <TextView
-            android:id="@+id/textfive"
-            android:hint="请选择住院日期"
-            android:paddingTop="30dip"
-            android:gravity="end"
             android:textSize="@dimen/micro_text_size"
-            android:layout_alignParentRight="true"
+            />
+
+        <EditText
             android:layout_width="fill_parent"
             android:layout_height="60dp"
+            android:layout_toRightOf="@+id/editone"
+            android:background="@drawable/biankaugn"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="XXX医院"
+            android:textColorHint="@color/dim_foreground_material_light"
+            android:textSize="@dimen/micro_text_size"
+
             />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/biankaugn"
+        >
+
+        <EditText
+            android:id="@+id/textfour"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:enabled="false"
+            android:gravity="bottom"
+            android:hint="住院日期:"
+            android:textColorHint="@color/dim_foreground_material_light"
+            android:textSize="@dimen/micro_text_size"/>
+
+        <TextView
+            android:id="@+id/textfive"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:gravity="end"
+            android:hint="请选择住院日期"
+            android:paddingTop="30dip"
+            android:textSize="@dimen/micro_text_size"
+            />
+    </RelativeLayout>
 
 
     <RelativeLayout
         android:id="@+id/Layout_bottom"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-      >
+        android:layout_alignParentBottom="true"
+        >
+
         <Button
             android:id="@+id/buttontwo"
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
             android:background="@drawable/bg_edittext"
+            android:gravity="center"
             android:paddingTop="5dip"
             android:text="完成"
-            android:layout_marginTop="30dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/small_text_size"
-            android:gravity="center"/>
+            android:textSize="@dimen/small_text_size"/>
     </RelativeLayout>
 </LinearLayout>

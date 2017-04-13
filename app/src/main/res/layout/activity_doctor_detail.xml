@@ -22,7 +22,7 @@
               android:fitsSystemWindows="true"
               android:orientation="vertical">
 
-    <!--<include layout="@layout/common_toolbar"/>-->
+    <include layout="@layout/common_toolbar"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -133,6 +133,7 @@
                         android:id="@+id/btnRead"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/shape_common_btn_solid_selector"
                         android:clickable="true"
@@ -140,6 +141,18 @@
                         android:drawablePadding="5dp"
                         android:padding="10dp"
                         android:text="@string/attention"
+                        android:textColor="@color/white" />
+                    <com.jims.work.view.DrawableCenterButton
+                        android:id="@+id/btnBook"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_common_btn_solid_selector"
+                        android:clickable="true"
+                        android:drawableLeft="@drawable/book_detail_info_search_img"
+                        android:drawablePadding="5dp"
+                        android:padding="10dp"
+                        android:text="@string/book"
                         android:textColor="@color/white" />
                 </LinearLayout>
 
