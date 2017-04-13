@@ -16,19 +16,26 @@ import com.jims.work.bean.Check_result;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CheckResultActivity extends BaseActivity {
+public class CheckResultActivity extends BaseActivity1 {
+
+      @Override
+    public int getLayoutId() {
+        return R.layout.activity_check_result;
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_result);
-        setCustomActionBar("检验明细");
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("检测明细");
+    }
 
-    //设置表格标题的背景颜色
-    ViewGroup tableTitle = (ViewGroup) findViewById(R.id.table_title);
-    tableTitle.setBackgroundColor(Color.rgb(177, 173, 172));
+    @Override
+    public void initDatas() {
+        //设置表格标题的背景颜色
+        ViewGroup tableTitle = (ViewGroup) findViewById(R.id.table_title);
+        tableTitle.setBackgroundColor(Color.rgb(177, 173, 172));
 
-    List<Check_result> list = new ArrayList<Check_result>();
+        List<Check_result> list = new ArrayList<Check_result>();
         list.add(new Check_result("白细胞", "6.30", "10＾9/L","N","4-10"));
         list.add(new Check_result("中性细胞比率", "58.6", "%","N","50-70"));
         list.add(new Check_result("中性细胞数", "3.8", "10＾9/L","N","2-7.7"));
@@ -40,14 +47,19 @@ public class CheckResultActivity extends BaseActivity {
         list.add(new Check_result("血红蛋白", "138.0", "g/L","N","110-160"));
         list.add(new Check_result("红细胞压积", "0.414", "L/L","N","0.36-0.5"));
 
-    ListView tableListView = (ListView) findViewById(R.id.list);
+        ListView tableListView = (ListView) findViewById(R.id.list);
 
-    TableAdapter adapter = new TableAdapter(this, list);
+        TableAdapter adapter = new TableAdapter(this, list);
 
-    tableListView.setAdapter(adapter);
-}
+        tableListView.setAdapter(adapter);
+    }
 
-     class TableAdapter extends BaseAdapter {
+    @Override
+    public void configViews() {
+
+    }
+
+    class TableAdapter extends BaseAdapter {
 
         private List<Check_result> list;
         private LayoutInflater inflater;

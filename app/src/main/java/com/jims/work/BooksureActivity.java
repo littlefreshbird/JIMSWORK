@@ -80,10 +80,12 @@ public class BooksureActivity extends BaseActivity1 {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_person_change://更换就诊者
+                Intent intent=new Intent(BooksureActivity.this,OldrecordActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn_book://预约完成
-                Intent i=new Intent(BooksureActivity.this,MybookcodeActivity.class);
-                startActivity(i);
+               MybookcodeActivity.startActivity(BooksureActivity.this,"11");
+
                 if(BookListActivity.mBookListActivity!=null){BookListActivity.mBookListActivity.finish();};
                 if(BookcodeActivity.mBookcodeActivity!=null){BookcodeActivity.mBookcodeActivity.finish();};
                  finish();

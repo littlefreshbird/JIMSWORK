@@ -119,10 +119,11 @@
         </activity>
         <activity android:name=".SubscibeDetailActivity">
         </activity>
-        <activity android:name=".BookSucessActivity">
+        <activity android:name=".BookSucessActivity"></activity>
             <activity android:name=".TestResultsActivity" />
+
             <activity android:name=".CheckResultActivity"></activity>
-        </activity>
+
     </application>
 
 </manifest>
