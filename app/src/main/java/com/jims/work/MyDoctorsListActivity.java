@@ -226,16 +226,6 @@ public class MyDoctorsListActivity extends BaseActivity1 implements
 
 
 
-    public void toggleFilterMenu() {
-//		mDrawer.toggleMenu();
-    }
-
-    private void gotoSearch() {
-//		Intent intent = new Intent(this, SearchActivity.class);
-//		startActivity(intent);
-//		// activity开启无动画
-//		overridePendingTransition(0, 0);
-    }
 
     public class ViewHolder {
         ImageView imgIcon;

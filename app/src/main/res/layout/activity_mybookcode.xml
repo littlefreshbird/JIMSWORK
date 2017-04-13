@@ -7,7 +7,8 @@
    <include layout="@layout/common_toolbar"></include>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:background="@color/bg_color">
 
         <com.jims.work.utils.MyListView
             android:id="@+id/listView1"

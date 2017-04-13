@@ -125,7 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="6dp"
-                    android:text="热门科室"
+                    android:text="检测结果"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/color_theme"
                     android:textSize="@dimen/small_text_size" />
