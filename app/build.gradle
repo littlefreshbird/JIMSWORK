@@ -60,7 +60,7 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
     compile 'com.github.d-max:spots-dialog:0.7'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.2'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
+
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
 }

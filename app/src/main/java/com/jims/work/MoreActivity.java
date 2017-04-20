@@ -2,7 +2,6 @@ package com.jims.work;
 
 import android.content.Context;
 import android.content.Intent;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MoreActivity extends BaseActivity1 implements View.OnClickListener {
 

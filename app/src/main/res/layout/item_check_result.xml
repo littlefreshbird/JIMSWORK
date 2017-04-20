@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+        <View
+            android:layout_width="1.5dip"
+            android:layout_height="fill_parent"
+            android:background="#B4B3B3"/>
+        <TextView
+            android:id="@+id/check_name"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:textSize="@dimen/small_text_size"
+            android:gravity="center"
+            android:text="B超" />
+
+        <View
+            android:layout_width="1.5dip"
+            android:layout_height="fill_parent"
+            android:background="#B4B3B3"/>
+
+        <TextView
+            android:id="@+id/check_time"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:paddingBottom="10dip"
+            android:textColor="#000000"
+            android:textSize="@dimen/small_text_size"
+            android:singleLine="true"
+            android:paddingTop="10dip"
+            android:gravity="center"
+            android:text="2017-03-20 09:15:16" />
+
+        <View
+            android:layout_width="1.5dip"
+            android:layout_height="fill_parent"
+            android:background="#B4B3B3"/>
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="#B4B3B3"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+</LinearLayout>
