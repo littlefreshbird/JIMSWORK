@@ -157,7 +157,7 @@ public class ServiceFragment extends Fragment   {
                         animation = new TranslateAnimation(mPositionTwo, mPositionOne, 0, 0);
                         mTxThree.setTextColor(mResources.getColor(R.color.black));
                     }
-                    mTxTwo.setTextColor(mResources.getColor(R.color.red));
+                    mTxTwo.setTextColor(mResources.getColor(R.color.color_theme));
                     break;
                 case 2:
                     if(mCurrentIndex == 1){

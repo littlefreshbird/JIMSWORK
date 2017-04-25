@@ -7,7 +7,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:background="@color/hintColor">
 
         <com.jims.work.utils.MyListView
             android:id="@+id/listView"
@@ -20,24 +21,7 @@
             android:listSelector="#00000000" >
         </com.jims.work.utils.MyListView>
 
-        <ImageView
-            android:id="@+id/img_overlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_margin="12dp"
-            android:src="@drawable/c_up_button"
-            android:visibility="invisible" />
 
-        <ProgressBar
-            android:id="@+id/progressBar1"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:indeterminateDrawable="@drawable/progressbar_circle_1" />
     </RelativeLayout>
 
 
