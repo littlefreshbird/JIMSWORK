@@ -1,121 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:descendantFocusability="blocksDescendants"
-    android:orientation="horizontal"
-    android:paddingBottom="7dip"
-    android:paddingLeft="6dip"
-    android:paddingRight="6dip"
-    android:paddingTop="8dip" >
+    android:layout_height="match_parent"
+    android:padding="10dp" >
 
-    <ImageView
-        android:id="@+id/idquiry_listitem_userface"
-        style="@style/user_face_image" />
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="6dip"
-    android:orientation="vertical" >
-    <LinearLayout
-        android:layout_width="fill_parent"
+
+
+    <TextView
+        android:id="@+id/begin_time"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="6dip"
-        android:orientation="vertical" >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/idquiry_listitem_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:includeFontPadding="false"
-                android:text="fd"
-                android:textColor="@color/royalblue"
-                android:textSize="@dimen/small_text_size" />
-
-            <ImageView
-            android:id="@+id/idquiry_sexmaletop"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@+id/tweet_listitem_username"
-             />
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:text="2017/3/20 14:52"
+        android:textColor="@color/dimgray"
+        android:textSize="@dimen/small_text_size" />
+    <TextView
+        android:id="@+id/myask_evaluate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_alignBottom="@+id/begin_time"
+        android:text="待评价"
+        android:textColor="@color/dimgray"
+        android:textSize="@dimen/small_text_size" />
 
 
-            <TextView
-                android:id="@+id/idquiry_questiontime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="fd"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/micro_text_size" />
-        </RelativeLayout>
-
-        <!--
-         	<TextView
-			android:id="@+id/tweet_listitem_content"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="8dip"
-			android:textSize="@dimen/text_size_15"
-			android:textColor="@color/listitem_black"
-			android:textColorLink="@color/listitem_blue"/>
-        -->
-
-        <TextView
-            android:id="@+id/idquiry_tweetcontent"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:includeFontPadding="false"
-            android:lineSpacingMultiplier="1.5"
-            android:textColor="@color/black"
-            android:textSize="@dimen/small_text_size" />
-
+    <TextView
+        android:id="@+id/myask_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/begin_time"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@+id/img_icon"
+        android:text="2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合"
+        android:lines="2"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_text_size" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/myask_content"
+        android:gravity="center_vertical"
+        android:id="@+id/layout">
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dip"
-            android:orientation="horizontal" >
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <com.jims.work.view.CircleImageView
+                android:id="@+id/myask_doctorimg"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/doctor_img"
+                app:border_color="@color/white"/>
 
             <TextView
-                android:id="@+id/idquiry_listitem_client"
+                android:id="@+id/myask_doctorname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dip"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/micro_text_size" />
-
-
+                android:layout_toRightOf="@id/myservice_doctorimg"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_alignBottom="@+id/myservice_doctorimg"
+                android:text="马云龙"
+                android:textColor="@color/dimgray"
+                android:textSize="@dimen/small_text_size" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="15dp"
+                android:layout_toRightOf="@id/myask_doctorname"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:background="@color/divider_color" />
             <TextView
-                android:id="@+id/idquiry_listitem_commentCount"
+                android:id="@+id/myask_doctorclass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="3dip"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/micro_text_size" />
-            <ImageView
-                android:id="@+id/idquiry_listitem_dianzan"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@mipmap/dianzan"/>
+                android:layout_toRightOf="@id/myask_doctorimg"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_alignBottom="@+id/myask_doctorimg"
+                android:text="神经内科"
+                android:textColor="@color/dimgray"
+                android:textSize="@dimen/small_text_size" />
         </LinearLayout>
+        <TextView
+            android:id="@+id/myask_kind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:text="免费资询"
+            android:textColor="@color/dimgray"
+            android:textSize="@dimen/small_text_size" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="6dip"
-        android:orientation="vertical"
-        android:background="@color/bg_color">
+    </RelativeLayout>
+<!--    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/layout_height_0.5"
+        android:layout_below="@id/layout"
+        android:layout_marginTop="5dp"
+        android:background="@color/divider_color" />-->
 
-    </LinearLayout>
-</LinearLayout>
-    </LinearLayout>
-
+</RelativeLayout>
