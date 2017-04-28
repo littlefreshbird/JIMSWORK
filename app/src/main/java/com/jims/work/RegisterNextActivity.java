@@ -2,27 +2,21 @@ package com.jims.work;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.jims.work.utils.AppUtils;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * 注册设置密码
  */
 public class RegisterNextActivity extends BaseActivity1 {
 
-    @BindView(R.id.img_registernext_back)
-    ImageView imgRegisternextBack;
+
     @BindView(R.id.edit_code)
     EditText editCode;
     @BindView(R.id.edit_copycode)
@@ -39,7 +33,8 @@ public class RegisterNextActivity extends BaseActivity1 {
 
     @Override
     public void initToolBar() {
-
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("设置密码");
     }
 
     @Override
@@ -47,13 +42,6 @@ public class RegisterNextActivity extends BaseActivity1 {
         Intent intent= getIntent();
         String phone= intent.getStringExtra("phone");
 
-        //返回
-        imgRegisternextBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
         //注册成功跳转到主页
         btnRegisterNext.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -147,7 +147,7 @@ public class ServiceFragment extends Fragment   {
                         animation = new TranslateAnimation(mPositionTwo, mOffset, 0, 0);
                         mTxThree.setTextColor(mResources.getColor(R.color.black));
                     }
-                    mTxOne.setTextColor(mResources.getColor(R.color.red));
+                    mTxOne.setTextColor(mResources.getColor(R.color.color_theme));
                     break;
                 case 1:
                     if(mCurrentIndex == 0){
@@ -167,7 +167,7 @@ public class ServiceFragment extends Fragment   {
                         animation = new TranslateAnimation(mOffset,mPositionTwo,0,0);
                         mTxOne.setTextColor(mResources.getColor(R.color.black));
                     }
-                    mTxThree.setTextColor(mResources.getColor(R.color.red));
+                    mTxThree.setTextColor(mResources.getColor(R.color.color_theme));
                     break;
             }
             mCurrentIndex = arg0;

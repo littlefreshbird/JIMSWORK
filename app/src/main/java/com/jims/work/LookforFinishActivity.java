@@ -1,21 +1,30 @@
 package com.jims.work;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageView;
 
 import com.jims.work.utils.Utils;
 
-public class LookforFinishActivity extends Activity {
+public class LookforFinishActivity extends BaseActivity1 {
 
-	protected void onCreate(Bundle savedInstanceState) {
-		
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_lookforpassword_next);
+
+
+	@Override
+	public int getLayoutId() {
+		return R.layout.activity_lookforpassword_next;
+	}
+
+	@Override
+	public void initToolBar() {
+		mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+		toolbarTitle.setText("重设密码");
+	}
+
+	@Override
+	public void initDatas() {
+
 		//找回密码成功跳转到主页
 		Button lookaccess_login = (Button) findViewById(R.id.lookfor_login);
 		lookaccess_login.setOnClickListener(new OnClickListener() {
@@ -25,26 +34,19 @@ public class LookforFinishActivity extends Activity {
 				if (Utils.isFastClick()) {
 					return;
 				}
-			
+
 				Intent intent = new Intent(LookforFinishActivity.this,
 						MainActivity.class);
 				LookforFinishActivity.this.startActivity(intent);
-			finish();
-			}
-		});
-		//返回
-		ImageView imageView= (ImageView) findViewById(R.id.img_lookpassfinish_back);
-		imageView.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
 				finish();
 			}
 		});
 	}
 
-	
-	
-	
-	
-	
+	@Override
+	public void configViews() {
+
+	}
+
+
 }

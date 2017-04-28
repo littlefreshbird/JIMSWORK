@@ -1,31 +1,29 @@
 package com.jims.work;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.widget.ImageView;
-
 /****
  * 我的投诉
  */
-public class MyComplaintActivity extends AppCompatActivity {
+public class MyComplaintActivity extends BaseActivity1 {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public int getLayoutId() {
+        return R.layout.activity_mycomplaint;
+    }
 
-        setContentView(R.layout.activity_mycomplaint);
-        //返回
-        ImageView iv_title_bar_left = (ImageView) findViewById(R.id.img_mycomplaint_back);
-        iv_title_bar_left.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("我的投诉");
+    }
 
-            public void onClick(View v) {
+    @Override
+    public void initDatas() {
 
-                finish();
+    }
 
+    @Override
+    public void configViews() {
 
-            }
-        });
     }
 }

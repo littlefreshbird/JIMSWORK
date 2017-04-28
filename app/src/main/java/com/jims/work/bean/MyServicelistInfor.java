@@ -7,12 +7,21 @@ public class MyServicelistInfor {
 	/**
 	 *
 	 */
-
+int id;
 	//@Column
 	String myservice_time; // 我的服务时间
 
 	//@Column
 	String myservice_evaluate; // 评价状态
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	//@Column
 	String myservice_content; // 服务内容
 

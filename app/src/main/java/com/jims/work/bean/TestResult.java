@@ -1,7 +1,7 @@
 package com.jims.work.bean;
 
 
-public class TestResult2 {
+public class TestResult {
 	/**
 	 *
 	 */
@@ -44,7 +44,7 @@ public class TestResult2 {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TestResult2 other = (TestResult2) obj;
+		TestResult other = (TestResult) obj;
 		if (test_name == null) {
 			if (other.test_name != null)
 				return false;
@@ -58,7 +58,7 @@ public class TestResult2 {
 
 		return true;
 	}
-	public TestResult2(String test_name, String test_time) {
+	public TestResult(String test_name, String test_time) {
 		super();
 		this.test_name = test_name;
 		this.test_time = test_time;

@@ -8,7 +8,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="8dp"
         android:background="@color/divider_color" />
 
     <TextView
@@ -47,7 +47,7 @@
         android:textSize="@dimen/small_text_size" />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/myask_content"
         android:gravity="center_vertical"
         android:id="@+id/layout">
@@ -55,18 +55,18 @@
             android:id="@+id/line"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="2dp"
             android:background="@color/divider_color" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="10dp">
 
 
             <com.jims.work.view.CircleImageView
                 android:id="@+id/myask_doctorimg"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:layout_marginLeft="10dp"
                 android:src="@drawable/doctor_img"
                 app:border_color="@color/white"/>
@@ -107,17 +107,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:text="免费资询"
             android:textColor="@color/dimgray"
             android:textSize="@dimen/micro_text_size" />
 
     </RelativeLayout>
- <!-- <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:layout_below="@id/layout"
-        android:layout_marginTop="3dp"
-        android:background="@color/divider_color" />-->
+
 
 </RelativeLayout>

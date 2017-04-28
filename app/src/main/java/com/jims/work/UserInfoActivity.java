@@ -16,17 +16,14 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.view.Window;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -47,14 +44,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener {
+public class UserInfoActivity extends BaseActivity1 implements View.OnClickListener {
 
     String fileName = String.valueOf(System.currentTimeMillis()) + ".jpg";
     @BindView(R.id.generate_qrcode)
     RelativeLayout generateQrcode;
     private View slidView;
-    @BindView(R.id.userinfo_back)
-    ImageView userinfoBack;
+
     @BindView(R.id.username_info)
     RelativeLayout usernameInfo;
     @BindView(R.id.name_text)
@@ -81,12 +77,23 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     @BindView(R.id.userIcon)
     CircleImageView userIcon;
 
+
+
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public int getLayoutId() {
+        return R.layout.activity_userinfo;
+    }
 
-        super.onCreate(savedInstanceState);
+    @Override
+    public void initToolBar() {
+        mCommonToolbar.setNavigationIcon(R.drawable.action_bar_back);
+        toolbarTitle.setText("个人信息");
+    }
 
-        setContentView(R.layout.activity_userinfo);
+    @Override
+    public void initDatas() {
         slidView = LayoutInflater.from(UserInfoActivity.this).inflate(R.layout.activity_userinfo, null);
         ButterKnife.bind(this);
         setOnListener();
@@ -94,12 +101,16 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         mYear = ca.get(Calendar.YEAR);
         mMonth = ca.get(Calendar.MONTH);
         mDay = ca.get(Calendar.DAY_OF_MONTH);
+    }
+
+    @Override
+    public void configViews() {
 
     }
 
+
     private void setOnListener() {
         userIcon.setOnClickListener(this);
-        userinfoBack.setOnClickListener(this);
         usernameInfo.setOnClickListener(this);
         sexInfo.setOnClickListener(this);
         datepicker.setOnClickListener(this);
@@ -113,9 +124,6 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         switch (v.getId()) {
             case R.id.userIcon://上传头像
                 new SelectPopuWindow(UserInfoActivity.this, slidView);
-                break;
-            case R.id.userinfo_back://返回
-                finish();
                 break;
             case R.id.username_info://姓名
                 showInputDialog();

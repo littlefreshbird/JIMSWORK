@@ -1,13 +1,10 @@
 package com.jims.work.service;
 
-import com.jims.work.bean.MyAsklistInfor;
-
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
-import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 /**
  * 问诊
@@ -22,8 +19,8 @@ import retrofit2.http.Query;
  */
 public interface InquiryAskService {
     @FormUrlEncoded
-    @POST("Mybaits/user/getList.do")
+    @POST("Mybaits/inquiry_ask/askgetList.do")
         //Call<ResponseBody> getUserByLogin(@Field("account") String account, @Field("password") String password);
-    Call<MyAsklistInfor> getList(@Path("category") String category, @Query("id") int id, @Query("page") int page, @Query("rows") int rows);
+    Call<ResponseBody> getList(@Field("id") int id);
 
 }

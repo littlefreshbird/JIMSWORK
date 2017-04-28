@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.jims.work.R;
-import com.jims.work.bean.MyAsklistInfor;
+import com.jims.work.bean.CheckResult;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  * 问诊.
  */
 
-public class InquiryaskAdapter extends BaseAdapter {
+public class CheckAdapter extends BaseAdapter {
 
 
     public Context getContext() {
@@ -32,22 +32,21 @@ public class InquiryaskAdapter extends BaseAdapter {
         this.context = context;
     }
 
-    public List<MyAsklistInfor> getList() {
+    public List<CheckResult> getList() {
         return list;
     }
 
-    public void setList(ArrayList<MyAsklistInfor> list) {
+    public void setList(ArrayList<CheckResult> list) {
         this.list = list;
     }
 
     private Context context;
-    private List<MyAsklistInfor> list;
-    public InquiryaskAdapter(Context context, List<MyAsklistInfor> list) {
+    private List<CheckResult> list;
+
+    public CheckAdapter(Context context, List<CheckResult> list) {
         this.context = context;
         this.list = list;
     }
-
-
 
 
     @Override
@@ -65,7 +64,7 @@ public class InquiryaskAdapter extends BaseAdapter {
         return list.get(position).getId();
     }
 
-    public void addAll(Collection<? extends MyAsklistInfor> collection){
+    public void addAll(Collection<? extends CheckResult> collection) {
         list.addAll(collection);
         notifyDataSetChanged();
     }
@@ -76,7 +75,7 @@ public class InquiryaskAdapter extends BaseAdapter {
         if (convertView != null) {
             viewHolder = (ViewHolder) convertView.getTag();
         } else {
-            convertView = LayoutInflater.from(context).inflate(R.layout.simple1_item, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_check_result, null);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         }
@@ -87,34 +86,20 @@ public class InquiryaskAdapter extends BaseAdapter {
 
     private void fillValue(int position, ViewHolder viewHolder) {
         //viewHolder.imgIcon.setImageDrawable(list.get(position).getIcon());
-        viewHolder.begin_time.setText(list.get(position).getBegin_time());
-        //viewHolder.tvClasses.setText(list.get(position).getClasses());
-        //viewHolder.myask_evaluate.setText(list.get(position).getMyask_evaluate());
-        viewHolder.myask_content.setText(list.get(position).getContent());
-        viewHolder.myask_doctorname.setText(list.get(position).getDoctor());
-        // viewHolder.tv_timetext.setText(list.get(position).getPrice());
-        //viewHolder.myask_doctorclass.setText(list.get(position).getMyask_doctorclass());
-       // viewHolder.myask_kind.setText(list.get(position).getMyask_kind());
+        viewHolder.checkName.setText(list.get(position).getItem());
+
+        viewHolder.checkTime.setText(list.get(position).getCheck_date());
+
 
     }
 
 
 
     class ViewHolder {
-        @BindView(R.id.begin_time)
-        TextView begin_time;
-        @BindView(R.id.myask_evaluate)
-        TextView myask_evaluate;
-        @BindView(R.id.myask_content)
-        TextView myask_content;
-      /*  @BindView(R.id.myask_doctorimg)
-        CircleImageView myask_doctorimg;*/
-        @BindView(R.id.myask_doctorname)
-        TextView myask_doctorname;
-        @BindView(R.id.myask_doctorclass)
-        TextView myask_doctorclass;
-        @BindView(R.id.myask_kind)
-        TextView myask_kind;
+        @BindView(R.id.check_name)
+        TextView checkName;
+        @BindView(R.id.check_time)
+        TextView checkTime;
 
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
