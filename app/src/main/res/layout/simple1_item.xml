@@ -42,9 +42,11 @@
         android:layout_marginTop="7dp"
         android:layout_toRightOf="@+id/img_icon"
         android:text="2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合"
-        android:lines="2"
+        android:maxLines="2"
+        android:ellipsize="end"
         android:textColor="@color/black"
         android:textSize="@dimen/small_text_size" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"

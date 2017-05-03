@@ -112,7 +112,7 @@ public class OneFragment extends Fragment  {
         return view;
     }
 
-
+/*
     private void initGoods() {
         asksList.add(new MyAsklistInfor("2017/3/12 9：56", "待评价", "2010年4月做的阑尾手术，术后伤口一直不愈合，2010年11月再次做了窦道切除手术，至今伤口任然不愈合", "", "李云龙", "心血管内科", "免费咨询"));
         asksList.add(new MyAsklistInfor("2017/3/15 11：15", "已评价", "神经内科", "", "李运昌", "神经内科", "免费咨询"));
@@ -120,7 +120,7 @@ public class OneFragment extends Fragment  {
         asksList.add(new MyAsklistInfor("2017/3/15 11：15", "已评价", "神经内科", "", "李运昌", "神经内科", "免费咨询"));
         asksList.add(new MyAsklistInfor("2017/3/22 18：45", "待评价", "最近食欲差，精神状态不好？", "", "周慧敏", "神经外科", "免费咨询"));
 
-    }
+    }*/
 
     // 初始化
     private void initview() {

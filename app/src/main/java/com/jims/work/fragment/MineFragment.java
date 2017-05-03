@@ -62,6 +62,12 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         } else {
 
             mbtnLogout.setVisibility(View.VISIBLE);
+            mbtnLogout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    System.exit(0);
+                }
+            });
             /*  if(!TextUtils.isEmpty(user.getLogo_url()))
                 Picasso.with(getActivity()).load(Uri.parse(user.getLogo_url())).into(mImageHead);*//**//*
 
@@ -130,6 +136,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), MoreActivity.class));
 
                 break;
+
  /* case R.id.layout_mine_android_my_jd_assitant: // 贴心服务
                 Intent intent = new Intent(getActivity(), WebActivity.class);
                 intent.putExtra("direction", 5);

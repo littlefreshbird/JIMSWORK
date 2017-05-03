@@ -17,6 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
 /**
  * 问诊.
  */
@@ -90,12 +91,12 @@ public class InquiryaskAdapter extends BaseAdapter {
         viewHolder.begin_time.setText(list.get(position).getBegin_time());
         //viewHolder.tvClasses.setText(list.get(position).getClasses());
         //viewHolder.myask_evaluate.setText(list.get(position).getMyask_evaluate());
-        viewHolder.myask_content.setText(list.get(position).getContent());
+        viewHolder.myask_content.setText(list.get(position).getContent()+"("+list.get(position).getSex()+","+list.get(position).getAge()+"岁)");
         viewHolder.myask_doctorname.setText(list.get(position).getDoctor());
         // viewHolder.tv_timetext.setText(list.get(position).getPrice());
         //viewHolder.myask_doctorclass.setText(list.get(position).getMyask_doctorclass());
-       // viewHolder.myask_kind.setText(list.get(position).getMyask_kind());
-
+        viewHolder.myask_kind.setText(list.get(position).getIspay().equals("0")?"免费咨询":"付费咨询");
+       //viewHolder.myask_kind.setText(list.get(position).getMyask_kind());
     }
 
 

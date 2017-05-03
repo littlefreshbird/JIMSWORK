@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  * 当前服务.
  */
 
-public class CurrentserviceAdapter extends BaseAdapter {
+public class   CurrentserviceAdapter extends BaseAdapter {
 
 
     public Context getContext() {
@@ -83,8 +83,8 @@ public class CurrentserviceAdapter extends BaseAdapter {
     }
 
     private void fillValue(int position, ViewHolder holder) {
-        holder.myserviceTime.setText(list.get(position).getMyservice_evaluate());
-        holder.myserviceContent.setText(list.get(position).getMyservice_doctorname());
+        holder.myserviceTime.setText(list.get(position).getMyservice_time());
+        holder.myserviceContent.setText(list.get(position).getMyservice_content());
 
 
         holder.myserviceEvaluate.setText(list.get(position).getMyservice_evaluate());

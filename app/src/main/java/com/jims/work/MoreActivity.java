@@ -47,7 +47,12 @@ public class MoreActivity extends BaseActivity1 implements View.OnClickListener 
 
     @Override
     public void initDatas() {
-
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.exit(0);
+            }
+        });
     }
 
     @Override
@@ -70,11 +75,10 @@ public class MoreActivity extends BaseActivity1 implements View.OnClickListener 
                 break;
             case R.id.layout_recom_apps: // 应用推荐
                 startActivity(new Intent(this, DownloadActivity.class));
-                break;
-            case R.id.btn_logout: // 注销
-                LogoutDialogFragment fragment = new LogoutDialogFragment();
-                fragment.show(getSupportFragmentManager(), null);
                 break;*/
+            case R.id.btn_logout: // 注销
+                System.exit(0);
+                break;
 
             default:
                 break;

@@ -8,27 +8,34 @@ public class MyAsklistInfor {
 	 *
 	 */
 	int id;
-    int sex;
+
+
+	String sysuserid;
+	String sex;//性别
+	String age;//年龄
 	//@Column
-	String begin_time; // 我的服务时间
+	String begin_time; // 问诊开始时间
 
 	//@Column
 	//String myask_evaluate; // 评价状态
 	//@Column
-	String content; // 服务内容
+	String content; // 问诊内容
 
 
 
 	//@Column
 	//String myask_doctorimg; // 医生头像
 	//@Column
-	String doctor;//医生姓名
+	String doctor;//回复医生姓名
 
 	//@Column
 	//String myask_doctorclass;//医生科室
 
-	//@Column
-	//String myask_kind;//服务种类
+
+
+
+	String ispay;//是否付费
+
 
 	public int getId() {
 		return id;
@@ -38,12 +45,27 @@ public class MyAsklistInfor {
 		this.id = id;
 	}
 
-	public int getSex() {
+	public String getSysuserid() {
+		return sysuserid;
+	}
+
+	public void setSysuserid(String sysuserid) {
+		this.sysuserid = sysuserid;
+	}
+	public String getSex() {
 		return sex;
 	}
 
-	public void setSex(int sex) {
+	public void setSex(String sex) {
 		this.sex = sex;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
 	}
 
 	public String getBegin_time() {
@@ -69,7 +91,13 @@ public class MyAsklistInfor {
 	public void setDoctor(String doctor) {
 		this.doctor = doctor;
 	}
+	public String getIspay() {
+		return ispay;
+	}
 
+	public void setIspay(String ispay) {
+		this.ispay = ispay;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -77,10 +105,12 @@ public class MyAsklistInfor {
 		result = prime * result + ((begin_time == null) ? 0 : begin_time.hashCode());
 		//result = prime * result + ((myask_evaluate == null) ? 0 : myask_evaluate.hashCode());
 		result = prime * result + ((content == null) ? 0 : content.hashCode());
+		result = prime * result + ((sex == null) ? 0 : sex.hashCode());
+		result = prime * result + ((age == null) ? 0 : age.hashCode());
 		//result = prime * result + ((myask_doctorimg == null) ? 0 : myask_doctorimg.hashCode());
 		result = prime * result + ((doctor == null) ? 0 : doctor.hashCode());
 		//result = prime * result + ((myask_doctorclass == null) ? 0 : myask_doctorclass.hashCode());
-		//result = prime * result + ((myask_kind == null) ? 0 : myask_kind.hashCode());
+		result = prime * result + ((ispay == null) ? 0 : ispay.hashCode());
 		return result;
 	}
 	@Override
@@ -107,6 +137,16 @@ public class MyAsklistInfor {
 				return false;
 		} else if (!content.equals(other.content))
 			return false;
+		if (sex == null) {
+			if (other.sex != null)
+				return false;
+		} else if (!sex.equals(other.sex))
+			return false;
+		if (age == null) {
+			if (other.age != null)
+				return false;
+		} else if (!age.equals(other.age))
+			return false;
 		/*if (myask_doctorimg == null) {
 			if (other.myask_doctorimg != null)
 				return false;
@@ -121,17 +161,17 @@ public class MyAsklistInfor {
 			if (other.myask_doctorclass != null)
 				return false;
 		} else if (!myask_doctorclass.equals(other.myask_doctorclass))
-			return false;
-		if (myask_kind == null) {
-			if (other.myask_kind != null)
-				return false;
-		} else if (!myask_kind.equals(other.myask_kind))
 			return false;*/
+		if (ispay == null) {
+			if (other.ispay != null)
+				return false;
+		} else if (!ispay.equals(other.ispay))
+			return false;
 
 		return true;
 	}
-	public MyAsklistInfor(String begin_time, String myask_evaluate, String content, String myask_doctorimg, String doctor, String myask_doctorclass,
-                          String myask_kind) {
+	public MyAsklistInfor(String begin_time, String myask_evaluate, String content,String sex,String age, String myask_doctorimg, String doctor, String myask_doctorclass,
+                          String ispay) {
 
 
 
@@ -139,10 +179,12 @@ public class MyAsklistInfor {
 		this.begin_time = begin_time;
 		//this.myask_evaluate = myask_evaluate;
 		this.content = content;
+		this.sex = sex;
+		this.age = age;
 		//this.myask_doctorimg = myask_doctorimg;
 		this.doctor = doctor;
 		//this.myask_doctorclass = myask_doctorclass;
-		//this.myask_kind = myask_kind;
+		this.ispay = ispay;
 
 	}
 

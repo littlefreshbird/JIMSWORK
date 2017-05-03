@@ -10,7 +10,7 @@ import retrofit2.http.POST;
 public interface CheckTestService {
 
     @FormUrlEncoded
-    @POST("Mybaits/checktest/checkList.do")
+    @POST("ServiceforJims/checktest/checkList.do")
         //Call<ResponseBody> getUserByLogin(@Field("account") String account, @Field("password") String password);
     Call<ResponseBody> checkList(@Field("id") int id);
 

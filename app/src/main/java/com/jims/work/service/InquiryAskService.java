@@ -19,7 +19,7 @@ import retrofit2.http.POST;
  */
 public interface InquiryAskService {
     @FormUrlEncoded
-    @POST("Mybaits/inquiry_ask/askgetList.do")
+    @POST("ServiceforJims/inquiry_ask/askgetList.do")
         //Call<ResponseBody> getUserByLogin(@Field("account") String account, @Field("password") String password);
     Call<ResponseBody> getList(@Field("id") int id);
 
