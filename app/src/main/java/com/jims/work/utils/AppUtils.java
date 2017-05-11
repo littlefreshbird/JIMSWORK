@@ -97,4 +97,19 @@ public class AppUtils {
 		}
 		return false;
 	}
+
+
+	public void init(){
+
+		if(SdCardUtil.checkSdCard()==true){
+			SdCardUtil.createFileDir(SdCardUtil.FILEDIR);
+			SdCardUtil.createFileDir(SdCardUtil.FILEDIR+"/"+SdCardUtil.FILEPHOTO);
+			SdCardUtil.createFileDir(SdCardUtil.FILEDIR+"/"+SdCardUtil.FILEIMAGE);
+			SdCardUtil.createFileDir(SdCardUtil.FILEDIR+"/"+SdCardUtil.FILECACHE);
+			SdCardUtil.createFileDir(SdCardUtil.FILEDIR+"/"+SdCardUtil.FILEUSER+"/icon");
+		}else{
+			//LogUtil.i("create file exception...");
+		}
+
+	}
 }

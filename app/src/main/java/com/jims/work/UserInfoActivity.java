@@ -30,6 +30,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.jims.work.bean.BaseBean;
+import com.jims.work.bean.UserBean;
+import com.jims.work.service.LoginService;
 import com.jims.work.utils.SdCardUtil;
 import com.jims.work.view.CircleImageView;
 
@@ -39,9 +43,20 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class UserInfoActivity extends BaseActivity1 implements View.OnClickListener {
@@ -76,7 +91,8 @@ public class UserInfoActivity extends BaseActivity1 implements View.OnClickListe
     RelativeLayout userAddress;
     @BindView(R.id.userIcon)
     CircleImageView userIcon;
-
+    private UserBean userBean;
+    LoginService loginService;
 
 
 
@@ -101,6 +117,17 @@ public class UserInfoActivity extends BaseActivity1 implements View.OnClickListe
         mYear = ca.get(Calendar.YEAR);
         mMonth = ca.get(Calendar.MONTH);
         mDay = ca.get(Calendar.DAY_OF_MONTH);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.2.212:8080/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        loginService = retrofit.create(LoginService.class);
+
+
+
+       /* UserBean u = (UserBean) getIntent().getSerializableExtra("user");
+        this.userBean = u;*/
     }
 
     @Override
@@ -227,6 +254,7 @@ public class UserInfoActivity extends BaseActivity1 implements View.OnClickListe
     public void saveImageToFile(Bitmap bitmap) {
 
         FileOutputStream fos = null;
+
         String fileName = SdCardUtil.getSdPath() + SdCardUtil.FILEDIR + "/"
                 + SdCardUtil.FILEUSER + "/icon" + "/" + "userIcon"
                 + String.valueOf(System.currentTimeMillis()) + ".png";
@@ -253,50 +281,69 @@ public class UserInfoActivity extends BaseActivity1 implements View.OnClickListe
             } finally {
 
 
-                Toast.makeText(UserInfoActivity.this, fileName + "上传成功",
-                        Toast.LENGTH_LONG).show();
+                Toast.makeText(UserInfoActivity.this, fileName + "上传成功",Toast.LENGTH_LONG).show();
+                //
+             /*   File file1 = new File(fileName);
+                RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file1);
+                fileUpload2Args.put("file", file1);
+                //map.put("id", userBean.getId());
+                fileUpload2Args.put("id", "1");*/
+
+                Map<String, Object> map = new HashMap<>();
+                map.put("id", 3);
+
+                //RequestBody id = RequestBody.create(textType, "24");
+                RequestBody file = RequestBody.create(MediaType.parse("application/octet-stream"), "这里是模拟文件的内容");
+                MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", fileName, file);
+                Call<ResponseBody> call = loginService.uploadUserIcon(map,filePart);
+                call.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        if (response.isSuccessful()) {
+                            String result = null;
+                            try {
+                                result = response.body().string();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            BaseBean b = JSON.parseObject(result, BaseBean.class);
+                            if (b.getRespcode().equals("0")) {
+                                Toast.makeText(UserInfoActivity.this, "修改头像成功",
+                                        Toast.LENGTH_LONG).show();
+
+
+                            }
+                            if (b.getRespcode().equals("1")) {
+                                Toast.makeText(UserInfoActivity.this, "文件不合法",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        Toast.makeText(UserInfoActivity.this, "修改图像失败",
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
 
 
 
-
-                //initProgressDialog();
-                // AjaxParams ap = new AjaxParams();
-             /*   try {
-                    ap.put("file", new File(fileName));
-                    ap.put("id", userBean.getId());
-                    FinalHttp fh = new FinalHttp();
-                    fh.post(HttpConstants.HTTP_UPDATE_USERICON, ap,
-                            new AjaxCallBack<Object>() {
-
-                                @Override
-                                public void onFailure(Throwable t, int errorNo,
-                                                      String strMsg) {
-                                    // TODO Auto-generated method stub
-                                    super.onFailure(t, errorNo, strMsg);
-                                    Toast.makeText(UserInfoActivity.this, "修改图像失败",
-                                            Toast.LENGTH_LONG).show();
-                                    close();
-                                }
-
-                                @Override
-                                public void onSuccess(Object t) {
-                                    // TODO Auto-generated method stub
-                                    super.onSuccess(t);
-                                    close();
-                                    Toast.makeText(UserInfoActivity.this,
-                                            String.valueOf(t),
-                                            Toast.LENGTH_LONG).show();
-                                }
-
-                            });
-                } catch (FileNotFoundException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                    close();
-                }*/
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int respCode, Intent data) {
@@ -349,11 +396,14 @@ public class UserInfoActivity extends BaseActivity1 implements View.OnClickListe
 
                 Bitmap resizeBmp = ThumbnailUtils.extractThumbnail(photo, 98, 98);
                 userIcon.setImageBitmap(resizeBmp);
+
                 saveImageToFile(photo);
             }
 
         }
     }
+
+
 
 
     //截取图片

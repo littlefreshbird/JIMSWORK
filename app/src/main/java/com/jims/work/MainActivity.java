@@ -10,8 +10,8 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jims.work.application.JimsApplication;
 import com.jims.work.bean.Tab;
+import com.jims.work.bean.UserBean;
 import com.jims.work.fragment.HealthFragment;
 import com.jims.work.fragment.HomeFragment;
 import com.jims.work.fragment.MineFragment;
@@ -23,7 +23,7 @@ import java.util.List;
 
 
 public class MainActivity extends FragmentActivity {
-
+    private UserBean userBean;
     private LayoutInflater mInflater;
     private FragmentTabHost mTabhost;
     private List<Tab> mTabs = new ArrayList<>(4);
@@ -33,8 +33,15 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         //getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
-
+        initData();
         initTab();
+    }
+
+
+    public void initData() {
+        UserBean u = (UserBean) getIntent().getSerializableExtra("user");
+        this.userBean = u;
+
     }
     //初始化Tab
     private void initTab() {

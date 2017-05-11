@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -51,7 +50,7 @@ public class GuideActivity extends AppCompatActivity implements OnPageChangeList
 
             @Override
             public void onClick(View arg0) {
-                Intent i = new Intent(GuideActivity.this, MainActivity.class);
+                Intent i = new Intent(GuideActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
             }

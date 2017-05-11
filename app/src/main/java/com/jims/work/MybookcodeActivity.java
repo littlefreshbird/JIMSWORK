@@ -1,9 +1,7 @@
 package com.jims.work;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -223,16 +221,6 @@ public class MybookcodeActivity extends BaseActivity1 implements View.OnClickLis
 
 
 
-    public void toggleFilterMenu() {
-//		mDrawer.toggleMenu();
-    }
-
-    private void gotoSearch() {
-//		Intent intent = new Intent(this, SearchActivity.class);
-//		startActivity(intent);
-//		// activity开启无动画
-//		overridePendingTransition(0, 0);
-    }
 
     public class ViewHolder {
         TextView book_hospital;

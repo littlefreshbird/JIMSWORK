@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jims.work.FreeTreatTaskActivity;
@@ -21,14 +22,18 @@ import com.jims.work.MyHistoryListActivity;
 import com.jims.work.MybookcodeActivity;
 import com.jims.work.R;
 import com.jims.work.UserInfoActivity;
+import com.jims.work.bean.UserBean;
 import com.jims.work.fragment.base.BaseFragment;
+
+import static com.jims.work.R.id.userIcon;
 
 
 public class MineFragment extends BaseFragment implements View.OnClickListener {
     private View layout;
     private Button mbtnLogout;
+    private ImageView mImageHead;
     private TextView mTxtUserName;
-
+    private UserBean userBean;
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (layout == null){
 
@@ -42,7 +47,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     }
 
     public void initData() {
-
+        mImageHead=(ImageView) layout.findViewById(R.id.userIcon);
 
         showUser();
     }
@@ -69,20 +74,24 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 }
             });
             /*  if(!TextUtils.isEmpty(user.getLogo_url()))
-                Picasso.with(getActivity()).load(Uri.parse(user.getLogo_url())).into(mImageHead);*//**//*
+                Picasso.with(getActivity()).load(Uri.parse(user.getLogo_url())).into(mImageHead);/**//*
 
 
 
         }*//*
             mTxtUserName.setText(user.getAccount());
         }*/
+
+           /* if(!TextUtils.isEmpty(userBean.getUserIcon()))
+                Picasso.with(getActivity()).load(Uri.parse(userBean.getUserIcon())).into(mImageHead);*/
             mTxtUserName.setText(account);
+
         }
     }
 
     private void setOnListener() {
 
-        layout.findViewById(R.id.userIcon).setOnClickListener(this);
+        layout.findViewById(userIcon).setOnClickListener(this);
         layout.findViewById(R.id.layout_userinfo).setOnClickListener(this);
         layout.findViewById(R.id.txt_username).setOnClickListener(this);
         layout.findViewById(R.id.layout_more).setOnClickListener(this);
@@ -98,7 +107,7 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-           case R.id.userIcon: // 点击头像登录
+           case userIcon: // 点击头像登录
                login();
                 break;
             case R.id.txt_username: // 点击文字登录

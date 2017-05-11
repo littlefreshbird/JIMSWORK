@@ -2,6 +2,7 @@ package com.jims.work.application;
 
 import android.app.Application;
 
+import com.jims.work.utils.AppUtils;
 import com.jims.work.utils.Utils;
 
 /**
@@ -21,6 +22,8 @@ public class JimsApplication extends Application {
         super.onCreate();
         appContext =this;
         Utils.init(this);
+
+        new AppUtils().init();
 
     }
 
