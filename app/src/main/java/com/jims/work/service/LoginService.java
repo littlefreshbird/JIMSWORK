@@ -23,7 +23,10 @@ public interface LoginService {
   Call<ResponseBody> getUserByLogin(@FieldMap Map<String, Object> map);
 
 
+  @FormUrlEncoded
+  @POST("ServiceforJims/user/userRegist.do")
 
+  Call<ResponseBody> userRegist(@FieldMap Map<String, Object> map);
 
 
 

@@ -15,11 +15,19 @@ public class UserBean implements Serializable {
 	private String id;
 	
 	private String account;
-	
 
+	private String password;
 
 	
 	private String userIcon;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public String getId() {
 		return id;

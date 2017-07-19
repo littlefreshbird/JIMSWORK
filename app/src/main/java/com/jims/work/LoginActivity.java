@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.jims.work.bean.BaseBean;
 import com.jims.work.bean.UserBean;
+import com.jims.work.encrypt.JiaMi;
 import com.jims.work.service.LoginService;
 import com.jims.work.utils.AppUtils;
 
@@ -70,12 +71,8 @@ public class LoginActivity extends Activity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         loginService = retrofit.create(LoginService.class);
-
-
-
         et_account = (EditText) findViewById(R.id.etAccount);
         et_password = (EditText) findViewById(R.id.etPassWord);
-
         btnRegister = (TextView) findViewById(R.id.btn_register);
         img_displaypass = (ImageView) findViewById(R.id.img_displaypass);
         zhaohuipass = (TextView) findViewById(R.id.zhaohuipass);
@@ -152,6 +149,7 @@ public class LoginActivity extends Activity {
                             Log.e("message", message);
                             if (b.getRespcode().equals("0")) {
                                 UserBean u=JSON.parseObject(b.getData(), UserBean.class);
+                                if (JiaMi.validatePassword(et_password.getText().toString().trim(), u.getPassword())) {
                                 Intent intent = new Intent();
                                 intent.putExtra("user", u);
                                 intent.setClass(LoginActivity.this, MainActivity.class);
@@ -159,11 +157,15 @@ public class LoginActivity extends Activity {
                                 SharedPreferences preferences = getSharedPreferences("user", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = preferences.edit();
                                 editor.putString("ACCOUNT", u.getAccount());
+                                editor.putString("userIcon", u.getUserIcon());
                                 editor.commit();
-
+                                }else{
+                                    showToast("密码错误");
+                                }
                             }
-                            if (b.getRespcode().equals("1")) {
-                                showToast("用户名或密码错误");
+
+                            if (b.getRespcode().equals("10003")) {
+                                showToast("用户名不存在");
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
