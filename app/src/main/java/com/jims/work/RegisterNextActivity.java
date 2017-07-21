@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.jims.work.bean.BaseBean;
-import com.jims.work.bean.UserBean;
 import com.jims.work.encrypt.JiaMi;
 import com.jims.work.service.LoginService;
 import com.jims.work.utils.AppUtils;
@@ -121,8 +120,6 @@ public class RegisterNextActivity extends BaseActivity1 {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-
-
                     try {
                         String result = response.body().string();
                         Log.e("result", result);
@@ -131,12 +128,15 @@ public class RegisterNextActivity extends BaseActivity1 {
                         String message = b.getMessage();
                         Log.e("message", message);
                         if (b.getRespcode().equals("0")) {
-                            UserBean u=JSON.parseObject(b.getData(), UserBean.class);
-
+                            showToast("注册成功");
+                            Intent intent=new Intent(RegisterNextActivity.this,LoginActivity.class);
+                            startActivity(intent);
                         }
-
-                        if (b.getRespcode().equals("10003")) {
-                            showToast("用户名不存在");
+                        if (b.getErrorcode().equals("10000")) {
+                            showToast("用户已存在");
+                        }
+                        if (b.getErrorcode().equals("1")) {
+                            showToast("注册失败");
                         }
                     } catch (IOException e) {
                         e.printStackTrace();

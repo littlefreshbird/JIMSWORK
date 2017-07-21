@@ -57,11 +57,10 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
 
         SharedPreferences preferences = getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
         String account = preferences.getString("ACCOUNT", "点击登录/注册");
-
+        String userIcon = preferences.getString("userIcon","");
         if (account == null) {
 
             mbtnLogout.setVisibility(View.GONE);
-
             mTxtUserName.setText(R.string.personal_login);
 
         } else {
@@ -81,9 +80,9 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         }*//*
             mTxtUserName.setText(user.getAccount());
         }*/
-
-           /* if(!TextUtils.isEmpty(userBean.getUserIcon()))
-                Picasso.with(getActivity()).load(Uri.parse(userBean.getUserIcon())).into(mImageHead);*/
+/*
+           if(!TextUtils.isEmpty(userIcon))
+                Picasso.with(getActivity()).load(Uri.parse(userIcon)).into(mImageHead);*/
             mTxtUserName.setText(account);
 
         }
@@ -141,7 +140,6 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), FreeTreatTaskActivity.class));
                 break;
             case R.id.layout_more: // 更多
-
                 startActivity(new Intent(getActivity(), MoreActivity.class));
 
                 break;
